@@ -20,7 +20,7 @@
     
     
       
-        <title>IDT Broker - Documentation DS2</title>
+        <title>IDT - Documentation DS2</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#idt-broker" class="md-skip">
+        <a href="#idt" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              IDT Broker
+              IDT
             
           </span>
         </div>
@@ -347,7 +347,7 @@
   
   
   <span class="md-ellipsis">
-    IDT Broker
+    IDT
     
   </span>
   
@@ -360,7 +360,7 @@
   
   
   <span class="md-ellipsis">
-    IDT Broker
+    IDT
     
   </span>
   
@@ -386,6 +386,15 @@
   <a href="#general-description" class="md-nav__link">
     <span class="md-ellipsis">
       General Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture
     </span>
   </a>
   
@@ -521,6 +530,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#other-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapi-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenAPI Specification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#additional-links" class="md-nav__link">
     <span class="md-ellipsis">
       Additional Links
@@ -551,74 +578,6 @@
   
   <span class="md-ellipsis">
     Orchestration
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    openAPI
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            openAPI
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../openAPI/idt/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    IDT
     
   </span>
   
@@ -672,6 +631,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#component-definition" class="md-nav__link">
     <span class="md-ellipsis">
       Component Definition
@@ -801,6 +769,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#other-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapi-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenAPI Specification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#additional-links" class="md-nav__link">
     <span class="md-ellipsis">
       Additional Links
@@ -825,13 +811,31 @@
 
 
 
-<h1 id="idt-broker">IDT Broker</h1>
-<h2 id="general-description">General Description</h2>
+<h1 id="idt">IDT</h1>
+<table>
+<thead>
+<tr>
+<th>Project Links</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Software GitHub Repository <a href="https://github.com/ds2-eu/idt.git">https://github.com/ds2-eu/idt.git</a></td>
+</tr>
+<tr>
+<td>Progress GitHub Project <a href="https://github.com/orgs/ds2-eu/projects/3">https://github.com/orgs/ds2-eu/projects/3</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="general-description"><strong>General Description</strong></h2>
 <p>IDT is the core enabler of DS2 who purpose is to be deployed in front of participants data source/spaces and network connected to any other IDT-enabled data source. As such its aim is to run all DS2 modules, including the DS2 Connector, the core module for Inter-Dataspace communication and data transfer, and the Containerisation module for DS2 module deployment. The IDT contains the core Kubernetes runtime to run all containerised modules and a series of additional open-source software for module management.</p>
 <p>The IDT contains the Kubernetes runtime that is the core service to run all modules in a containerised way. Those modules descriptors are uploaded to the DS2 Portal Marketplace and then, using the IDT Kubernetes UI, are deployed to the Kubernetes runtime. The Containerisation module kicks-in and then converts those module descriptors to full module charts effectively deploying the DS2 modules. The Kubernetes UI, alongside the Management and Monitoring Controller, will be used to manage and monitor all DS modules running on a participants IDT. Additional services will also be run as part of the IDT such as certificate management, ingress network traffic management using traditional ingress controllers with ingress resources to expose modules and eventually transitioning to service mesh and gateway API, storage management and possibly other useful open-source tools. The other key component of the IDT is the DS2 Connector used for Dataspace like communications following current IDSA and Gaia-X standards. An additional IDT UI will be provided for module navigation and Connector management.</p>
-<h2 id="component-definition">Component Definition</h2>
+<h2 id="architecture"><strong>Architecture</strong></h2>
+<p>The figure below represents the module fit into the DS-DS environment.
+<img alt="DS2 IDT Architecturefits" src="../images/IDT-architecturefits.png" /></p>
 <p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.
 <img alt="DS2 IDT Architecture" src="../images/IDT-ds2architecture.png" /></p>
+<h2 id="component-definition"><strong>Component Definition</strong></h2>
 <p>This module has the following subcomponent and other functions:</p>
 <ul>
 <li>
@@ -880,9 +884,10 @@
 <p><strong>External Storage Systems</strong>: This refers to any external storage system, physical or software defined, that a participant has already in place and where data from the IDT and DS2 ecosystem can be persisted, thus, is mapped via the Storage Manager into the IDT Kubernetes</p>
 </li>
 </ul>
-<h2 id="screenshots">Screenshots</h2>
-<p>Display an animated gif with 4 representative screenshots of the module</p>
-<h2 id="commercial-information">Commercial Information</h2>
+<h2 id="screenshots"><strong>Screenshots</strong></h2>
+<p>Display an animated gif with 4 representative screenshots of the module
+<img alt="DS2 IDT Screenshots" src="../images/IDT-screenshots.gif" /></p>
+<h2 id="commercial-information"><strong>Commercial Information</strong></h2>
 <p>Table with some admin information : authors, company, ipr, etc.</p>
 <table>
 <thead>
@@ -900,29 +905,31 @@
 </tr>
 </tbody>
 </table>
-<h2 id="top-features">Top Features</h2>
+<h2 id="top-features"><strong>Top Features</strong></h2>
 <p>Add 8 - 12 relevant features of the module</p>
 <ol>
 <li><strong>Kubernetes Platform</strong>: The IDT provides a Kubernetes based platform for ease of integration and deployment of the modules</li>
 <li><strong>Flexible Installation Process</strong>: The IDT provides a user friendly installation process for easy installation to non-experienced users.
    In any case, management of the platform itself, will require some expertise. In addition, it supports different installation modes from on-cloud to on-prem and edge.</li>
 <li><strong>Management Interface</strong>: A Rancher based UI is provided for the Kubernetes cluster management. Management of Kubernetes itself will require some expertise. The Management UI  provides the interface and API for module management : deployment, deletion, upgrade</li>
-<li><strong>Monitoring of Platfom and Apps</strong>: provides the interface and API to monitor the cluster itself and the modules</li>
+<li><strong>Monitoring of Platfom and Apps</strong>: Provides the interface and API to monitor the cluster itself and the modules</li>
 <li><strong>Seamless Integration with Containerisation Deployment</strong>: IDT integrates seamlessly with the Containerisation module for ease of module deployment</li>
-<li><strong>Networking</strong>: provides secure networking and connectivity among the installed apps and to and from outside the cluster</li>
-<li><strong>Log management</strong>: ability to retrieve module logs for troubleshooting and debugging</li>
-<li><strong>Native Storage</strong>: provides Kubernetes native storage for stateful applications</li>
-<li><strong>IDT Portal</strong>: provides a local version of the DS2 Portal as the entry point to the IDT, single sign on and module navigation </li>
-<li><strong>DS2 Connector</strong>: the IDT incorporates the DS2 Connector for DS2 data exchange</li>
+<li><strong>Networking</strong>: Provides secure networking and connectivity among the installed apps and to and from outside the cluster</li>
+<li><strong>Log management</strong>: Ability to retrieve module logs for troubleshooting and debugging</li>
+<li><strong>Native Storage</strong>: Provides Kubernetes native storage for stateful applications</li>
+<li><strong>IDT Portal</strong>: Provides a local version of the DS2 Portal as the entry point to the IDT, single sign on and module navigation </li>
+<li><strong>DS2 Connector</strong>: The IDT incorporates the DS2 Connector for DS2 data exchange</li>
 </ol>
-<h2 id="how-to-install">How To Install</h2>
+<h2 id="how-to-install"><strong>How To Install</strong></h2>
 <p>The IDT installs a pre-packaged enterprise ready Kubernetes cluster along with some extra features for management and deployment.</p>
 <h3 id="requirements">Requirements</h3>
 <p>Provision a Linux VM (Ubuntu 18.04 or 20.04)
 Resources:</p>
-<p>Kubernetes Node
-* Minimum: 2 cpu cores, 4 GB RAM and 10 GB disk capacity.
-* Recommended: 4 cpu cores, 8 GB RAM and 50 GB disk capacity.</p>
+<p>Kubernetes Node</p>
+<ul>
+<li>Minimum: 2 cpu cores, 4 GB RAM and 10 GB disk capacity.</li>
+<li>Recommended: 4 cpu cores, 8 GB RAM and 50 GB disk capacity.</li>
+</ul>
 <p>These numbers may change since a number of IDT components will be deployed, check specific requirements for specific components.</p>
 <h3 id="software">Software</h3>
 <p>IDT installs these software utilities and specific tested compatible versions:</p>
@@ -996,13 +1003,13 @@ where ip is the ip of the vm where k3s will be installed and iface is the networ
 <p>DS2 IDT is now ready.</p>
 </li>
 </ul>
-<p><img alt="IDT-SH" src="images/IDT-idt-sh.png" /></p>
+<p><img alt="IDT-SH" src="../images/IDT-sh.JPG" /></p>
 <ul>
 <li>Access Rancher by accessing the Rancher url in the browser (https://rancher.$nodeip.ds2.sslip.io)</li>
 <li>Once in the Rancher UI, the admin password is set</li>
 <li>Then navigate to the workloads in the system project</li>
 </ul>
-<p><img alt="Rancher" src="images/IDT-Rancher.png" /></p>
+<p><img alt="Rancher" src="../images/IDT-Rancher.JPG" /></p>
 <ul>
 <li>
 <p>The nginx ingress controller is by default set to only accept https connections and redirect to https. In order to use http, run the script patch_nginx.sh which will configure nginx ingress controller to accept http (optional). </p>
@@ -1011,38 +1018,43 @@ where ip is the ip of the vm where k3s will be installed and iface is the networ
 <p>Now that the cluster is up and running, the Rancher UI can be accessed in order to manage the cluster and install modules. </p>
 </li>
 </ul>
-<h2 id="how-to-use">How To Use</h2>
+<h2 id="how-to-use"><strong>How To Use</strong></h2>
 <p>Once the IDT has been installed, the Rancher UI along with the IDT Portal (local Portal) and the core modules (to be done) can be accessed.</p>
 <h3 id="rancher-ui">Rancher UI</h3>
 <p>The Rancher UI is the main entry point for Kubernetes cluster management and configuration. </p>
 <ul>
 <li>
 <p>Inspect the cluster and check number of nodes, resources, etc
-      <img alt="Rancher Cluster" src="./images/IDT-ranchercluster.png" /></p>
+      <img alt="Rancher Cluster" src="../images/IDT-ranchercluster.JPG" /></p>
 </li>
 <li>
 <p>Create a Module Repository: A user can register a module catalog or repository in order to be able to deploy modules from that module repository. A catalog is just a repository, git or helm, where helm charts are stored. In general, users won't need to create any new repository in the IDT since a default DS2 catalog will be created for the organisation pulling from the organisation repository in DS2 intermediary platform. 
 If needed, in order to create a new repository, navigate to the cluster, apps, repositories, and click on the "Add Catalog" button. Fill in the form with the credentials for a private repository and click "Create". The Repository is added to Rancher and the modules will be displayed in the Apps view
-      <img alt="Rancher Catalog" src="./images/IDT-ranchercatalog.png" /></p>
+      <img alt="Rancher Catalog" src="../images/IDT-ranchercatalog.JPG" /></p>
 </li>
 <li>
 <p>Module Deployment: modules can be deployed from the registered Repository, but in general this will be done via the Containerisation module. If needed, navigate to Apps, Charts and the list of available charts (apps) is displayed. Select the chart to be deployed, click on Install, select the Namespace and Name for the instance of the chart and select whether to customize the Helm options before install. If customization is selected, fill in the configuration form and or yaml. Click Next then click Install. The application will be deployed to the platform.
-      <img alt="Rancher Charts" src="./images/IDT-ranchercharts.png" /></p>
+      <img alt="Rancher Charts" src="../images/IDT-ranchercharts.JPG" /></p>
 </li>
 <li>
 <p>Module logs: In order to review the modules logs, navigate to Apps, Installed Apps, and the list of installed modules is displayed. Select the module to be monitored and the list of Kubernees resources of that module are displayed. Select the Deployment and the Pod is displayed. Click on the three dots on the right and select View Logs. The logs of the module are displayed.
-      <img alt="Rancher Logs" src="./images/IDT-rancherlogs.png" /> </p>
+      <img alt="Rancher Logs" src="../images/IDT-rancherlogs.JPG" /> </p>
 </li>
 <li>
 <p>Module deletion: modules can be deleted by navigating to Apps, Installed apps and clicking on the three dots on the right and click on Delete. In general, this will be done via the Containerisation module
-      <img alt="Rancher Delete App" src="./images/IDT-rancherdeleteapp.png" /></p>
+      <img alt="Rancher Delete App" src="../images/IDT-rancherdeleteapp.JPG" /></p>
 </li>
 </ul>
 <h3 id="idt-portal">IDT Portal</h3>
 <p>To Be Done</p>
 <h3 id="connector-ui">Connector UI</h3>
 <p>To Be Done</p>
-<h2 id="additional-links">Additional Links</h2>
+<h2 id="other-information"><strong>Other Information</strong></h2>
+<p>No other information at the moment for IDT</p>
+<h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
+<p><img alt="OpenAPI" src="../images/IDT-openapi.JPG" /></p>
+<h2 id="additional-links"><strong>Additional Links</strong></h2>
+<p>Video <a href="https://youtube.com/idt">https://youtube.com/idt</a></p>
 <p>Kubernetes <a href="https://v1-26.docs.kubernetes.io/docs/home/">https://v1-26.docs.kubernetes.io/docs/home/</a></p>
 <p>Helm <a href="https://helm.sh/">https://helm.sh/</a></p>
 <p>K3s <a href="https://k3s.io/">https://k3s.io/</a></p>
