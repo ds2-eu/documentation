@@ -3,7 +3,7 @@ These are the instructions in order to create the on-line documentation for your
 
 * Create a docs/ folder in your module DS2 GitHub repository
 
-* Dowload the template README.md in the template/ folder of the documentation repostory. This is the template for the module on-line documentation
+* Dowload the template README.md in the template/ folder of the documentation repository. This is the template for the module on-line documentation
 
 * Use the template as it is. Don't change any section, just replace content 
 
