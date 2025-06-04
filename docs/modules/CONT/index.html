@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../CONT/">
+        <link rel="prev" href="../..">
       
       
-        <link rel="next" href="../IDM/">
+        <link rel="next" href="../DSHARE/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Datashare (DSHARE) - Documentation DS2</title>
+        <title>Containerisation - Documentation DS2</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#datashare-dshare" class="md-skip">
+        <a href="#containerisation" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Datashare (DSHARE)
+              Containerisation
             
           </span>
         </div>
@@ -261,29 +261,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../CONT/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Containerisation
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -301,7 +278,7 @@
   
   
   <span class="md-ellipsis">
-    Datashare (DSHARE)
+    Containerisation
     
   </span>
   
@@ -314,7 +291,7 @@
   
   
   <span class="md-ellipsis">
-    Datashare (DSHARE)
+    Containerisation
     
   </span>
   
@@ -481,6 +458,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DSHARE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Datashare (DSHARE)
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -745,7 +745,7 @@
 
 
 
-<h1 id="datashare-dshare">Datashare (DSHARE)</h1>
+<h1 id="containerisation">Containerisation</h1>
 <table>
 <thead>
 <tr>
@@ -754,41 +754,56 @@
 </thead>
 <tbody>
 <tr>
-<td>Software GitHub Repository <a href="https://github.com/ds2-eu/dshare.git">https://github.com/ds2-eu/dshare.git</a></td>
+<td>Software GitHub Repository <a href="https://github.com/ds2-eu/containerisation">https://github.com/ds2-eu/containerisation</a></td>
 </tr>
 <tr>
-<td>Progress GitHub Project <a href="https://github.com/orgs/ds2-eu/projects/3">https://github.com/orgs/ds2-eu/projects/3</a></td>
+<td>Progress GitHub Project <a href="https://github.com/orgs/ds2-eu/projects/7">https://github.com/orgs/ds2-eu/projects/7</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="general-description"><strong>General Description</strong></h2>
-<p>Purpose:
-To provide a user-orientated view of control plane information related to a specific exchange of data to monitor its status and to potentially limit or block it. It will access data through a Data Interceptor component which it shares with the DS2 Data Inspection component (DINS) which operates more at the data level. It can be seen as an In-Dataspace enablement module. Its role is especially important in an Inter-DS environment to provide extra monitoring and control of the data exchanges when partners are less known.
-Description:
-The DS2 DSHARE is for it to access control data regarding an exchange via the common Data Interceptor component and an API to the used connector - either within IDT or a specific Dataspace one. It will then log and monitor this information and allow it to be presented in user-friendly form. For short duration one-shot type transactions, this is more of an after-the-event easy-viewer. However, for longer duration transactions (e.g., querying records over a period of time) then it allows the user themselves to monitor the flow and perform control-type actions such as limiting or blocking the transaction.</p>
+<p>To allow easy and automated packaging and deployment of modules on the IDT Kubernetes runtime subcomponent environment. The containerisation module leverages on custom Helm Chart descriptors to automatically convert them into full Kubernetes Helm Charts representing the module, based on standard base templates located in the DS2 Portal Marketplace. The Helm Charts are then deployed on the IDT Module. </p>
+<p>The Containerisation module is a core module to the IDT Broker module that enables deployment of all the DS2 modules in the IDT Broker Kubernetes sub-component. The Containerisation module uses Helm Chart standard base templates describing a DS2 module. Those templates are provisioned by the IDT Broker module and provide the standard for DS2 module deployment in IDT Broker. Base templates are stored in the DS2 Portal Marketplace. Then, when uploading a DS2 module by module developers, to the DS2 Portal Marketplace, a custom Helm Chart descriptor that includes values for those base templates needs to be provided with the module. The Containerisation module will use the descriptor together with the base templates to create the Helm Chart for the DS2 module during deployment time on the IDT Broker.</p>
+<p>The Containerisation module can work in two different modes:</p>
+<ul>
+<li>The standard DS2 working mode: developers upload module Helm Chart descriptor to the DS2 Portal Marketplace. Participants use the IDT Broker Kubernetes UI to deploy the descriptor on the IDT. The Containerisation module is triggered when detecting the deployment of that descriptor, retrieves the base templates from the DS2 Portal Marketplace, creates the full Helm Chart and deploys it on the IDT Kubernetes Runtime sub-component</li>
+<li>The GitOps way: automatic deployment of the Helm Chart descriptor is triggered by the Source controller sub-component upon detecting a change on the descriptor in the DS2 Portal Marketplace. Then as in the previous mode, the Containerisation module, create the full Helm Chart and deploys it on the IDT. This could be the deployment mode of the DS2 Portal</li>
+</ul>
+<p>In both cases, the only difference is how the Helm Chart descriptor is deployed on the IDT either by the participant manually deploying the descriptor, or being automatically deployed by the Source Controller sub-component.</p>
 <h2 id="architecture"><strong>Architecture</strong></h2>
 <p>The figure below represents the module fit into the DS-DS environment.
-<img alt="DS2 DSHARE Architecturefits" src="../images/DSHARE-architecturefits.png" /></p>
+<img alt="DS2 CONT Architecturefits" src="../images/CONT-architecturefits.png" /></p>
 <p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.
-<img alt="DS2 DSHARE Architecture" src="../images/DSHARE-ds2architecture.png" /></p>
+<img alt="DS2 CONT Architecture" src="../images/CONT-ds2architecture.png" /></p>
 <h2 id="component-definition"><strong>Component Definition</strong></h2>
-<p>This module has the following subcomponents and other functions (as detailed in Data Share.pdf, pages 3-4):
-* Data Share Controller
-    * Data Share Manager: The primary module that onboards control data (from Connector, Interceptor, Trust environment), stores it in the DSC DB, correlates it, and handles triggers for data actions (limit/block).
-    * Data Share UI: For configuration, visualization of exchange-related data, and control actions (limiting, blocking).
-    * DSC DB: Stores component data for use by the UI and Data Share Management.
-* Connector and API: Primarily the connector within IDT; other local connectors will be explored. APIs (existing or extensions) service data to the Data Share Manager.
-* Tier 1 Service Stack for Marketplace and deployment and API: Generic DS2 stack implementation (Platform not used by DSHARE).
-* Tier 2: Data Inspector Manager and API: DINS may trigger DSHARE if anomalies suggest blocking data transfers.
-* Tier 3: Trust Environment and API: Feeds static agreement information to the Data Share Manager for visualization and control decisions.
-* Data Share Interceptor and API
-    * Interceptor: Intercepts data/query streams between IDT/Connector and participant's Business Application/Datastores. Interfaces with DSHARE (DSC) and DINS. Capable of receiving block/limit commands. Research ongoing for interception techniques (man-in-the-middle vs. duplicator).
-    * Interceptor UI: For configuring the Interceptor (I/O).
-* Participant DB/Application: Represents business applications feeding data to/receiving queries from the connector.</p>
+<p>This module has the following subcomponent and other functions:</p>
+<ul>
+<li>
+<p><strong>ChartController</strong>: The ChartController is a Kubernetes controller, following the Kubernetes controller pattern which keeps track of a new Kubernetes custom resource definition - the “HelmChartDescriptor”. When changes are detected on a descriptor, ie. addition, update, the Controller connects to a configured location ie. GitHub repository, to download the corresponding Helm Chart base templates. Then, together with the HelmChartDescriptor, the Chart Controller will create a full Helm Chart describing the module. This Helm Chart will be deployed into the IDT Kubernetes Runtime subcomponent using the Installer component. </p>
+</li>
+<li>
+<p><strong>ChartManager</strong>: The ChartManager is mainly used to monitor the Helm Charts and HelmChartDescriptors deployed in the system. It will query the IDT Module’s Kubernetes subcomponent to retrieve current Charts and descriptors. The Chart Manager can also be used to create a HelmChartDescriptor using some input parameters and install it via the Installer component. Once installed, the ChartController will detect the new ChartDescriptor and will convert it to a Chart deploying it back into the IDT Module’s Kubernetes subcomponent. </p>
+</li>
+<li>
+<p><strong>Installer</strong>: This is the component responsible for installing Helm Charts and HelmChartDescriptors in the IDT Kubernetes subcomponent. It will receive the corresponding Charts and HelmChartDescriptors and will apply them in the IDT Kubernetes subcomponent. The Installer also takes care of installing new Sources created by the Source Manager component.  </p>
+</li>
+<li>
+<p><strong>Containerisation UI</strong>: This is the main module UI that allows users to monitor current existing Charts, ChartDescriptors and Sources in the system. Users will have an overview of what is installed in the system and its current status regarding to those specific resources. The UI can also be used to create, update or delete ChartDescriptors via the ChartManager and Sources via the Source Manager.  </p>
+</li>
+<li>
+<p><strong>GitOps Source Controller</strong>: The Source Controller, similar to the ChartController,  is a Kubernetes controller that keeps track of the custom resource definition Source. A Source mainly represents a reference to a repository where ChartDescriptors are stored. The Source Controller monitors the status of the Source and reacts to changes by reflecting those changes in the IDT Kubernetes subcomponent. The Source Controller is an optional subcomponent, and users can just install the ChartDescriptors using the IDT or via Kubernetes standard kubectl. </p>
+</li>
+<li>
+<p><strong>(DS2) GitOps Source Manager</strong>: The Source Manager, similar to the ChartManager is mainly used to monitor the Source in the system and is customised to DS2. It can also be used to create, update, and delete new sources that will be installed via the Installer component. As the Source Controller, this is an optional component. </p>
+</li>
+<li>
+<p><strong>Tier 1 Service Stack for Marketplace and deployment and API</strong>: The full stack will be implemented as generically described elsewhere in this document. Exceptions: This module runs in the IDT and uses the IDT Kubernetes subcomponent for Chart and ChartDescriptor installations. The DS2 Portal Marketplace component and its repository system is used to store the Chart base templates. Since the DS2 Portal is also a DS2 module, it is deployed and run on the IDT, so Containerisation module can also be used for the DS2 Portal and other intermediary services. </p>
+</li>
+</ul>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
-<p><img alt="DS2 DSHARE Screenshots" src="../images/DSHARE-screenshots.gif" /></p>
+<p>The Containerisation UI development has not yet been started, so no screenshots.
+<img alt="DS2 CONT Screenshots" src="./images/CONT-screenshots.gif" /></p>
 <h2 id="commercial-information"><strong>Commercial Information</strong></h2>
-<p>Table with the organisation, license nature (Open Source, Commercial ... ) and the license. Replace with the values of your module.</p>
 <table>
 <thead>
 <tr>
@@ -806,50 +821,52 @@ The DS2 DSHARE is for it to access control data regarding an exchange via the co
 </tbody>
 </table>
 <h2 id="top-features"><strong>Top Features</strong></h2>
+<ol>
+<li><strong>Kubernetes Native</strong>: The CONT module is a Kubernetes native solution based on open-source system Flux and The GitOps Toolkit</li>
+<li><strong>Kubernetes Application Deployment Control</strong>: Provides control to Kubernetes administrators or SREs over what and how a module or application is deployed on a given Kubernets cluster ie. IDT2. </li>
+<li><strong>Kubernetes Application Abstraction</strong>: The CONT module abstracts developers from the Kubernetes complexity when creating a Kubernetes application, leveraging on a templating system based on Helm Charts and Flux HelmRelease CRD</li>
+<li><strong>Helm Chart Templates</strong>: Ability to create Helm Chart templates for different types of applications</li>
+<li><strong>Helm Release CRDs Templates</strong>: Based on the HelmRelease CRDs from Flux, the CONT module enables the creation of HelmRelease templates that will make use of the Helm Chart Templates</li>
+<li><strong>Application Management using API</strong>: Manage application (module) lifecycle (create, install, uninstall, delet) using the CONT Chart Manager API</li>
+<li><strong>Containerisation UI</strong>: Manage the Containerisation module using a modern web based UI</li>
+<li><strong>Operator vs Developer View</strong>: Access the Containerisation module features with different views depending on the role Operators vs Developer  </li>
+</ol>
+<h2 id="how-to-install"><strong>How To Install</strong></h2>
+<p>The Containerisation module will be part of the IDT installation, but a standalone installer is so far provided in order to be able to work with it, which installs Flux Helm and Source Controllers in order to create the Helm Chart from the HelmRelease and Chart templates. </p>
+<h3 id="requirements">Requirements</h3>
+<p>The IDT or a Kubernetes cluster is required.</p>
+<p>Resources:</p>
+<h3 id="software">Software</h3>
+<p>Containerisation module so far installs these software utilities and specific tested compatible versions:</p>
 <ul>
-<li>Consumer analytics: Comprehensive Data Exchange Monitoring, tracking Real-time of data exchanges between a provider and a consumer. The provider of the app can:<ul>
-<li>Know active contracts of the consumer</li>
-<li>Know how much data has been exchanged associated to a given contract</li>
-<li>Granular Control: Ability to monitor, limit, or block data transfers based on defined policies or user intervention.</li>
-<li>Advanced Analytics: Features weekly data charts, consumption pattern monitoring, and a consumer ranking system.</li>
+<li>Flux Helm Controller (Chart Controller + Installer)</li>
+<li>Flux Source Controller (Source Controller)</li>
+<li>Flux Notification Controller (default)</li>
+</ul>
+<p>To Be Implemented:
+* Chart Manager
+* Source Manager
+* Containerisation UI</p>
+<h3 id="summary-of-installation-steps">Summary of installation steps</h3>
+<ol>
+<li>Clone the repo</li>
+<li>Install the Containerisation module<ul>
+<li>Run the command installflux.sh </li>
 </ul>
 </li>
-<li>Assets analytics: DSHARE provides a cockpit to identify most used assets offered by the provider, weekly and monthly consumption trends helpful for identifying inner problems</li>
-<li>Alerting System: Notifies users or administrators about approaching or exceeded transfer limits. Alerts are also raisen when consumers have problems accessing an asset (insufficient credentials, etc)</li>
-</ul>
-<h2 id="how-to-install"><strong>How To Install</strong></h2>
-<p>The module is installed as part of the IDT.</p>
-<h3 id="requirements">Requirements</h3>
-<p>TBC</p>
-<h3 id="software">Software</h3>
-<ul>
-<li>Eclipse Dataspace Connector (EDC) - Specify version if applicable.</li>
-<li>PostgreSQL Database - Specify version if applicable.</li>
-<li>Java Development Kit (JDK) - Specify version.</li>
-<li>Apache Maven - Specify version.</li>
-</ul>
-<h3 id="summary-of-installation-steps">Summary of installation steps</h3>
-<p>TBC</p>
+</ol>
 <h3 id="detailed-steps">Detailed steps</h3>
-<p>TBC</p>
+<p>Installer is not yet fully ready: To Be Done</p>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
-<p>Accessing the DSHARE Dashboard:
-* Navigate to the DSHARE UI URL (e.g., http://<your-idt-host>:<port>/dshare-ui).
-<img alt="DS2 DSHARE Screenshots" src="./images/DSHARE-homepage.jpg" />
-* Analyse consumer data usage:
-* View real-time data on active transfers.
-* Analyze weekly data charts for usage trends.
-<img alt="DS2 DSHARE Screenshots" src="./images/DSHARE-consumerdatatrends.jpg" />
-* Data Assets Analytics:
-<img alt="DS2 DSHARE Screenshots" src="./images/DSHARE-assets-analytics.jpg" />
-* Alerts Manager:
-<img alt="DS2 DSHARE Screenshots" src="./images/DSHARE-alerts.jpg" /></p>
+<p>When first set of Helm Chart and HelmRelease Templates are ready: To Be Done</p>
 <h2 id="other-information"><strong>Other Information</strong></h2>
-<p>No other information at the moment for IDM</p>
+<p>No other information at the moment for Containerisation</p>
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
-<p>TBC</p>
+<p>To Be Done: No API</p>
 <h2 id="additional-links"><strong>Additional Links</strong></h2>
-<p>TBC</p>
+<p>Video <a href="https://youtube.com/cont">https://youtube.com/cont</a></p>
+<p>Flux <a href="https://fluxcd.io/">https://fluxcd.io/</a></p>
+<p>Containerisation Repository <a href="https://github.com/ds2-eu/containerisation">https://github.com/ds2-eu/containerisation</a> (Private Link for Project Members)</p>
 
 
 
