@@ -1,0 +1,1150 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../DINS/">
+      
+      
+        <link rel="next" href="../DSHARE/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>DRM - Documentation DS2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#drm" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Documentation DS2" class="md-header__button md-logo" aria-label="Documentation DS2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation DS2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DRM
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Documentation DS2" class="md-nav__button md-logo" aria-label="Documentation DS2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentation DS2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The DS2 Software Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Modules
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CAT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CAT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Containerisation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CUR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CUR - DS2 Data Curation module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Detection and Transformation (DDT)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DINS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Inspector (DINS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    DRM
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    DRM
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Definition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screenshots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commercial-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commercial Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Install
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary of installation steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailed steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapi-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenAPI Specification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Links
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DSHARE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Datashare (DSHARE)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DVM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Visualisation Module (DVM)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E2C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Edge to Cloud Connector (E2C)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Identity Management Module (IDM)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IDT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Development Toolkit (MDT)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ORC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ORC - Orchestration Module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PAE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Policy Agreement and Enforcement (PAE)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Portal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Portal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Definition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screenshots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commercial-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commercial Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Install
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary of installation steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailed steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapi-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenAPI Specification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Links
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="drm">DRM</h1>
+<p>Use the table below as an example and replace with the links to the module's DS2 GitHub repository and GitHub project.  </p>
+<table>
+<thead>
+<tr>
+<th>Project Links</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Software GitHub Repository <a href="https://github.com/ds2-eu/drm.git">https://github.com/ds2-eu/drm.git</a></td>
+</tr>
+<tr>
+<td>Progress GitHub Project <a href="https://github.com/ds2-eu/DRM/issues">https://github.com/ds2-eu/DRM/issues</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="general-description"><strong>General Description</strong></h2>
+<p>Purpose: To enhance the management and security of digital asset transactions through a robust blockchain-based Data Rights Management (DRM) system. It is designed to perform critical functions, including the notarization, tracking, and validation of all data rights transactions both within individual Dataspaces and across multiple participating Dataspaces </p>
+<p>Description: The Blockchain-based Data Rights Management module (based on the IDSA clearing house module specifications) will be a two-fold solution that will provide both inter (between Data Spaces) and intra (within Data Spaces) connectivity for data-sharing between Data providers and Data consumers of the participating Dataspaces.</p>
+<h2 id="architecture"><strong>Architecture</strong></h2>
+<p>The figure below represents the module fit into the DS-DS environment.
+<img alt="DS2 DRM Architecturefits" src="../images/DRM-architecturefits.png" /></p>
+<p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.
+<img alt="DS2 DRM Architecture" src="../images/drm-arch.png" /></p>
+<h2 id="component-definition"><strong>Component Definition</strong></h2>
+<p>These modules have the following subcomponent and other functions:
+•   DRM UI: This component is a dashboard that allows users to view logs and transactions occurring between or across dataspaces. Users can easily access detailed records of their interactions with other partners. This dashboard interacts with the DRM UI Backend subcomponent, which performs the necessary transformations of data extracted from the ledger extractor to be appropriately displayed on the dashboard and supports all necessary CRUD operations.</p>
+<p>•   DRM UI Backend: This subcomponent retrieves log information extracted from the ledger and performs additional transformations to make the data viewable on the dashboard. It interacts with the Ledger Extractor to access the requested data and communicates with the DRM UI to display the transformed data to users.</p>
+<p>•   Ledger Extractor: This subcomponent securely extracts data from the ledger, converts it into a readable format, forwards it to other services that require access to ledger information. It securely interacts with the DRM Blockchain Manager to retrieve the necessary logs that are stored to the Blockchain’s ledger, DRM UI Backend to provide information that need to be viewed in UI and with Policy Agreement and Enforcement through API to provide information that is needed for the app.</p>
+<p>•   Connector monitoring: This subcomponent is designed to retrieve logs from the connector and forward them to the blockchain for secure storage on the ledger. It interacts with the DRM Blockchain Manager to ensure that these logs are effectively recorded in the ledger. It is compatible with EDC connector and IDSA connector. This component is optional, allowing participants to use it solely for DRM to log transactions through supported APIs or restrict its use to DS2 tools if preferred. </p>
+<p>•   DRM Blockchain Core: This subcomponent is the core functionality of the blockchain incorporating essential components to initiate the blockchain network. It provides the functionality of storing immutable, verify information and encrypt information to the ledger. It interacts directly with the ledger to store information securely and works in conjunction with the Blockchain Manager to store additional logs provided by other DS2 modules.</p>
+<p>•   DRM Blockchain Manager: The subcomponent is responsible for fetching from the blockchain, transforming incoming data logs into the correct schema so they can be stored on the blockchain, and ensuring they are placed correctly within the blockchain's ledger. Furthermore, it interacts with the DS2 Policy Agreement and Enforcement Module via API to access and provide logs essential for its operations. Additionally, it interacts with other DS2 modules, that interact with data, via API to store logs about data process. </p>
+<h2 id="screenshots"><strong>Screenshots</strong></h2>
+<p><img alt="DS2 DRM Screenshots" src="../images/DRM-gif.gif" /></p>
+<h2 id="commercial-information"><strong>Commercial Information</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Organisation (s)</th>
+<th>License Nature</th>
+<th>License</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ATC</td>
+<td>Open Source</td>
+<td>Apache 2.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="top-features"><strong>Top Features</strong></h2>
+<ol>
+<li>
+<p>End-to-End Data Accountability: Provides full traceability and transparency of data usage events, ensuring organizations can demonstrate compliance with data responsibility and sharing agreements.</p>
+</li>
+<li>
+<p>Trusted Log Verification: Enables organizations to verify and audit logs in a tamper-evident way, fostering trust between data providers, consumers, and intermediaries.</p>
+</li>
+<li>
+<p>Cross-Organizational Visibility: Offers a unified interface for viewing data-related events across systems and partners, improving governance in federated or multi-stakeholder environments.</p>
+</li>
+<li>
+<p>Plug-and-Play Integration: Designed to integrate with existing DS2 components and Eclipse Dataspace Connectors with minimal effort, reducing the barrier to adoption.</p>
+</li>
+<li>
+<p>Configurable Policy Monitoring: Collects and displays policy-related events (e.g., usage constraints, violations), supporting proactive governance and dynamic enforcement of data policies.</p>
+</li>
+<li>
+<p>User-Centric Access to Ledger Insights: Through a visual interface, users can easily access and interpret ledger data without needing technical knowledge, democratizing access to compliance insights.</p>
+</li>
+<li>
+<p>Modular and Scalable Architecture: Built with modular sub-components, allowing organizations to deploy the module in stages or scale it based on operational needs.</p>
+</li>
+<li>
+<p>Designed for Interoperability in Data Spaces: Addresses real-world challenges of interoperability and trust in data spaces by aligning with emerging data sovereignty and governance requirements.</p>
+</li>
+<li>
+<p>Enhances Digital Trust for Data Sharing: By proving that data usage is being tracked and governed, the DRM module helps build confidence and reduce friction in data sharing collaborations.</p>
+</li>
+</ol>
+<h2 id="how-to-install"><strong>How To Install</strong></h2>
+<h3 id="requirements">Requirements</h3>
+<p>CPU: 8 vCPUs</p>
+<p>RAM: 16 GB</p>
+<p>Storage: 100 GB SSD (expandable depending on ledger size and log retention)</p>
+<p>OS: Ubuntu 22.04 LTS or equivalent</p>
+<p>Docker: Docker Engine ≥ 20.x, Docker Compose ≥ 2.x</p>
+<h3 id="software">Software</h3>
+<ol>
+<li>Hyperledger Fabric</li>
+<li>Docker</li>
+<li>Docker Compose</li>
+<li>Node.js</li>
+<li>Express.js</li>
+<li>CouchDB</li>
+<li>Swagger / OpenAPI</li>
+<li>Postman (Optional, used during development)</li>
+</ol>
+<h3 id="summary-of-installation-steps">Summary of installation steps</h3>
+<p>To Be Done</p>
+<h3 id="detailed-steps">Detailed steps</h3>
+<p>To Be Done</p>
+<h2 id="how-to-use"><strong>How To Use</strong></h2>
+<p>To Be Done</p>
+<h2 id="other-information"><strong>Other Information</strong></h2>
+<p>No other information at the moment for DRM.</p>
+<h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
+<p>•   DRM UI: N/A</p>
+<p>•   DRM UI Backend: open-api/swagger-ui-backend.json</p>
+<p>•   Ledger Extractor: open-api/swagger-ledger-extractor.json</p>
+<p>•   Connector monitoring: To Be Done</p>
+<p>•   DRM Blockchain Core: N/A</p>
+<p>•   DRM Blockchain Manager: open-api/swagger-blockchain-manager.json</p>
+<h2 id="additional-links"><strong>Additional Links</strong></h2>
+<p>N/A</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
