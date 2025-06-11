@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../DDT/">
+        <link rel="prev" href="../CUR/">
       
       
-        <link rel="next" href="../DMK/">
+        <link rel="next" href="../DDT/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Data Inspector (DINS) - Documentation DS2</title>
+        <title>DARC - Documentation DS2</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#data-inspector-dins" class="md-skip">
+        <a href="#darc" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Data Inspector (DINS)
+              DARC
             
           </span>
         </div>
@@ -353,52 +353,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../DARC/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    DARC
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../DDT/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Data Detection and Transformation (DDT)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -416,7 +370,7 @@
   
   
   <span class="md-ellipsis">
-    Data Inspector (DINS)
+    DARC
     
   </span>
   
@@ -429,7 +383,7 @@
   
   
   <span class="md-ellipsis">
-    Data Inspector (DINS)
+    DARC
     
   </span>
   
@@ -563,6 +517,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How To Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Queries
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -596,6 +565,52 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Detection and Transformation (DDT)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DINS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Inspector (DINS)
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1068,6 +1083,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How To Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Queries
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1113,7 +1143,7 @@
 
 
 
-<h1 id="data-inspector-dins">Data Inspector (DINS)</h1>
+<h1 id="darc">DARC</h1>
 <table>
 <thead>
 <tr>
@@ -1122,42 +1152,85 @@
 </thead>
 <tbody>
 <tr>
-<td>Software GitHub Repository <a href="https://github.com/ds2-eu/dins_module.git">https://github.com/ds2-eu/dins_module.git</a></td>
+<td>Software GitHub Repository <a href="https://github.com/ds2-eu/DARC.git">https://github.com/ds2-eu/DARC.git</a></td>
 </tr>
 <tr>
-<td>Progress GitHub Project <a href="https://github.com/orgs/ds2-eu/projects/28">https://github.com/orgs/ds2-eu/projects/28</a></td>
+<td>Progress GitHub Project <a href="https://github.com/orgs/ds2-eu/projects/29">https://github.com/orgs/ds2-eu/projects/29</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="general-description"><strong>General Description</strong></h2>
-<p>The Data Inspection Module (DINS) facilitates the configuration and deployment of processes for real-time data analysis, ensuring data quality and compliance with thresholds set by the parties involved. It performs several key functions: generating notifications based on the values of the exchanged data, executing reactions such as sending requests and notifications to external tools, and integrating with models developed to enhance its capabilities. It is a complement to the Data Share Controller which focuses on control information with both modules using the Data Interceptor.</p>
-<p>The Data Inspection is responsible for analysing the data provided and/or consumed by participants, ensuring the quality of the data shared amongst them. For example, a consumer can use DINS to set up analysis jobs that define rules for data validation. This includes establishing thresholds for specific data values; when these thresholds are exceeded, issues are generated and recorded for monitoring. Additionally, the DINS module can trigger notifications to other modules and components when issues are detected. For instance, it can notify the Data Share Controller Module, which may respond by blocking data sharing if certain limits are reached.</p>
+<p>To inquire, discover and assess though the conversational UI of an AI-driven agent, the In-Dataspace and Inter-Dataspace data-oriented capabilities and limitations of DS2 Dataspaces as well as DS2 modules (software prerequisites and/or recommendations) which will compose the “ideal use” scenarios/ paths that will fit the needs of the end-users. Then, to complement this by recommending to end-users, though the conversational UI of an AI-driven agent, the best DS2 modules for the implementation of the selected “ideal use” scenario/ path, based on the outcomes of the T5.2 module end-user interaction. Finally, to demonstrate the autoconfiguring, through APIs, a subset of module based on these recommendations so that they can easily create their DS2 pipeline and start using and sharing data. </p>
+<p>The DARC Module is responsible for allowing data space participants (Data Providers and Data Consumers) to inquire and discover and receive AI-driven assessment, of prerequisites for the successful execution of complex Digital Life Cycles (DLCs) between participating Dataspaces. Then, for DARC to make recommendations of modules and their configuration based on this assessment with the end game to automatically configure modules which are suitably enabled for configuration.</p>
 <h2 id="architecture"><strong>Architecture</strong></h2>
-<p>The figure below represents the module fit into the DS-DS environment.</p>
-<p><img alt="DS2 DINS Architecturefits" src="../images/DINS-big-picture.png" /></p>
-<p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.</p>
-<p><img alt="DS2 DINS Architecture" src="../images/DINS-architecture.png" /></p>
+<p>The figure below represents the module fit into the DS-DS environment.
+<img alt="DS2 DARC Architecturefits" src="./docs/images/DARC-architecturefits.png" /></p>
+<p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.
+<img alt="DS2 DARC Architecture" src="./docs/images/DARC-ds2architecture.png" /></p>
 <h2 id="component-definition"><strong>Component Definition</strong></h2>
-<p>This module has the following subcomponent and other functions:
-* Data Jobs IDE: This group of components is shared with the T4.1 Policy Enforcement Modules. Some of them will be developed based on existing technology, specifically the Dataflow component of the Onesait Platform open-source product. While T4.1 Policy Enforcement focuses on defining and executing data transformation jobs, the Data Inspection module will enhance the current capabilities of Dataflow to include data inspection, monitoring, and notifications. T6.2 will lead this component development, and T4.1 will be built on the improved version from T6.2. Therefore, T4.1 has a dependency on T6.2, but the opposite is not true.
-  * IDE UI: This graphical user interface allows users to define Data Inspection Jobs for monitoring data and triggering notifications and alerts. For example, it can evaluate values against specified thresholds. This component is based on the existing INDRA software, with updates needed to support new features for DS2.
-  * IDE Controller: This component manages Data Inspection Jobs during design time and oversees their deployment and monitoring at runtime. It is based on current INDRA software but requires significant upgrades to split the tool into the IDE component and the Runtime component (potentially several). 
-  * Job Definition Storage: This component stores definitions of Data Inspection Jobs, based on INDRA software, with extensions planned to improve version control of the definitions. The definitions are created through a graphical user interface, enabling users to design Data Inspection Jobs as data pipelines using a drag-and-drop approach. Each data pipeline will include, at a minimum, the configuration of data sources (e.g., data formats) and the rules for inspecting the data (e.g., detecting specific fields and value thresholds). In the end, each data pipeline definition is a JSON document and a set of parameters. They will be stored in a distributed persistence engine.
-  * Testing Framework: This component will include test definitions and the storage of small datasets for automatic testing. This component will enable users to define automated tests that are executed to validate Data Inspection Jobs before deployment.
-* Inspection Runtime: 
-  * Runtime Controller: This component will manage the execution of Data Inspection Jobs during runtime. It will define the interface for integrating job execution with external components and will handle the job lifecycle: deployment, upgrade, removal, start, and stop.
-  * Data Inspection Job: This component represents the runtime execution of a data inspection definition. Each type of data inspection supported will require a Data Inspection Job definition. One instance of this component will be created for each Data Inspection Job needed at runtime, even for the same definition. The creation of these instances will be managed by the Runtime Controller. The Data Inspection Job includes the definition of an SDK and interfaces that facilitate the extension of capabilities, such as supporting additional data formats.
-  * Job Logger: This component logs all relevant information about each job execution. Based on INDRA infrastructure, it will require minimal development to adapt to changes in other module components.
-  * Job States Storage: This component stores the states of job executions throughout their lifecycle, enabling job resumption in the event of failures during execution. Based on INDRA infrastructure, it will require minimal development.
-* Monitoring and Historic Data: This component will store historic metrics gathered by the analysis jobs. This set of elements will be based on the open-source stack of monitoring tools Grafana.
-  * Metrics/Alert Collector: This component will collect all the data from the Analysis Jobs.
-  * Alert Manager: It collects alerts, manages them by categorizing and prioritizing, and allows for the configuration of notification channels such as email and Teams. It also provides a centralized interface for tracking and managing active alerts.
-  * Inspector Dashboard: It allows the visual analysis of the data inspected.
-* Model Deployed: If a complex analysis is required for data inspection, the Data Inspection Jobs will have the capability to use data models deployed with the T4.2 Data Model Development Toolkit Module. For example, a field value could be used as input in a prediction model, and based on the result, a decision can be made whether an alert should be generated.
-* Data Share Controller: The Data Interception part of the Data Share Controller connects data in the data pipeline with the Data Inspection. If the Data Share Controller is not present, any other software that implements the Data Inspection API can provide the data. The Data Inspection will trigger notifications to the Data Share Controller Module (and other modules or components, if required) based on rules defined by the participants. For example, “stop data sharing”.
-* Other DS2 Modules / Other Participant’s Software: The Module can notify any software that needs to receive these notifications, provided that the software is compatible with the notification mechanisms implemented by DINS. This capability facilitates the integration of systems that can react to data shared between participants, such as the Data Share Controller.</p>
+<p>The subcomponents of DARC are as follows:
+*   AI-driven Chat Bot UI: The User interface subcomponent through which end-users interact with DARC. It allows end-users to provide inputs and receive outputs, facilitating a smooth and intuitive interaction DARC. This subcomponent directly interfaces with end-users for dialogue exchange.</p>
+<ul>
+<li>
+<p>Prompt Handler: The Prompt Handler facilitates the exchange of dialogue between the Large Language Model and end-users. It performs initial checks, correcting grammar errors and verifying supported languages. If a language is not supported, the module engages the Ontology/Multilingual Processor for language disambiguation before forwarding the prompt to the LLM Core. This ensures that interactions are both clear and linguistically compatible.</p>
+</li>
+<li>
+<p>LLM Manager: The LLM Manager subcomponent oversees and coordinates the operations of the language model. It ensures seamless integration with other DARC subcomponents and manages the flow of data to and from the LLM core. It acts as an manager and is responsible for all DARC’s module operations that interact with the LLM. This subcomponent facilitates interaction with the LLM Core, managing dialogues, transferring crucial information from the Knowledge Base (using the sentence encoder and semantic search subcomponents), and providing it to the LLM Core to generate outcomes based on user requests. Furthermore, it engages with the Auto Configuration subcomponent to forward the configuration file generated by the LLM Core and reports back to the LLM Core the status of auto configuration to update the user with the status.</p>
+</li>
+<li>
+<p>LLM Core: The primary language model that generates outputs based on the processed inputs and configurations. The LLM Core is the heart of DARC, providing the natural language processing capabilities that drive DARC’s recommendation and configuration capabilities. This subcomponent actively interacts with the LLM Manager, requesting additional details about user queries and receiving crucial information from the knowledge base to ensure dynamic and contextually aware interactions. Additionally, it works with the Prompt Handler, which forwards the tailored responses back to the user, completing the communication loop effectively.</p>
+</li>
+<li>
+<p>Sentence Encoder: The Sentence Encoder, an AI model, converts dialogues and knowledge base content into embeddings (a structured numerical format that makes complex linguistic data more understandable for the LLM and other AI components). This process supports LLM operations by enabling the Semantic Search subcomponent to extract and decode crucial information from these embeddings, transforming it back into text for the LLM Core. This integration enhances DARC’s ability to deliver precise and contextually relevant responses to user queries.</p>
+</li>
+<li>
+<p>Semantic Search: This subcomponent enhances search functionality by using context-aware algorithms to analyse transformed data from the Knowledge Base and inputs derived from user prompts. It processes this information and relays it to the Sentence Encoder subcomponent , which converts the embeddings back into textual data. This allows the LLM to further process and understand the content effectively.</p>
+</li>
+<li>
+<p>Internal Knowledge Base: This is a central repository that stores all essential data and knowledge, such as Regulations and DS2 module documentation, configuration. Serving as the backbone of the application, it provides a robust database that DARC subcomponents can access through Knowledge Management. This ensures that DARC has a solid informational foundation for making informed decisions and configurations. The Knowledge Base works in conjunction with the Knowledge Management subcomponent , which continuously populates it with critical operational details, such as module configurations and compliance with EC regulations. It also interfaces with Semantic Search to extract necessary information for the LLM.</p>
+</li>
+<li>
+<p>Knowledge Management System: The Knowledge Management System subcomponent organises, stores, and retrieves knowledge within DARC. It facilitates efficient information management by structuring and indexing data such as, Dataspace regulations, DS2 modules documentation and configuration information, for easy access and distribution of said data within DARC subcomponents.  The Knowledge Management subcomponent supports the internal Knowledge Base and interacts with other DARC subcomponents, namely LLM Manager and Ontology Processor, to provide relevant information as needed. This subcomponent engages with the Data Sovereign Module API, the Culture and Language Module API, and Dataspace Meta-data Broker ensuring that the Knowledge Base is continually updated with crucial information necessary for DARC’s operations. The Knowledge Management System also interacts with the internal knowledge base by incorporating previous information into the internal knowledge base for enhanced decision-making and operational efficiency.</p>
+</li>
+<li>
+<p>Ontology Processor:  This subcomponent plays a crucial role in managing ontology information within DARC. It is tasked with processing, storing, and updating ontology data in the Knowledge Base. Additionally, it retrieves and analyses the ontology of data already present in the Knowledge Base. By ensuring that ontology information is accurately maintained and accessible, this subcomponent enhances the DARC's ability to interpret and utilize data effectively, fostering a deeper understanding of the relationships and structures within the stored information.</p>
+</li>
+<li>
+<p>Multilingual Processor: This  subcomponent provides robust cross-language support, enhancing DARC's global functionality. It processes outputs from the Culture and Language subcomponent, enabling the LLM to comprehend and interact with previously unknown languages. Additionally, it interacts with the Prompt Handler subcomponent to ensure that multilingual interactions are seamlessly integrated, allowing users to receive assistance in their preferred language. This capability significantly improves accessibility and user experience across diverse linguistic backgrounds.</p>
+</li>
+<li>
+<p>Auto-Configuration:  This subcomponent plays a crucial role in automating the setup process for DS2 modules. It begins by receiving a configuration file that has been generated and forwarded by LLM Manager, originally derived from the LLM core. The subcomponent systematically examines this file to identify and rectify any potential errors or inconsistencies. Once it confirms that the configuration file is error-free, it proceeds to implement these settings directly on the DS2 modules’ endpoint. After its successful application, it completes the process by sending a detailed status report back to the LLM through the LLM Manager subcomponent, ensuring seamless communication and integration within DARC.</p>
+</li>
+<li>
+<p>Auto configuration Support Database: This subcomponent maintains essential information such as module endpoints and configuration rules to facilitate the functionality of the auto-configuration subcomponent.</p>
+</li>
+<li>
+<p>Services and APIs: </p>
+</li>
+<li>
+<p>Catalog Module: Catalog Module Meta data broker will send the requested Dataspaces meta-data to DARC’s Knowledge Management subcomponent for discovering data in the participating Dataspaces.</p>
+</li>
+<li>
+<p>Tier 2 DS Modules/Service: Auto-configuration service. For Tier 2 DS Modules via the Auto-Configuration Module.</p>
+</li>
+<li>
+<p>Tier 0 Support Service Stack:</p>
+<ul>
+<li>
+<p>Sovereignty Decision Support Module Risk Knowledge Base: API will be driven by DARC to provide information about potential security risks involved during the configuration, assessment, and definition of a participant’s DLC.</p>
+</li>
+<li>
+<p>Culture and Language Module. Ontology and Multi-language Facility Module API – will provide DARC with multilingual support and ontology disambiguation, enhancing DARC's ability to interpret and process diverse linguistic data accurately and effectively across different languages.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Tier 1 Service Stack for Marketplace and deployment and API: The full stack will be implemented as generically described elsewhere in this document. Exceptions: The Platform will only be needed for inter-participant service orchestrations were used</p>
+</li>
+</ul>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
-<p><img alt="DS2 DINS Screenshots" src="../images/DINS-running.gif" /></p>
+<p><img alt="DS2 DARC Screenshots" src="./docs/images/DARC-screenshots.gif" /></p>
+<p>[Changes on UI are still in progress to align with project's requirements.]</p>
 <h2 id="commercial-information"><strong>Commercial Information</strong></h2>
 <table>
 <thead>
@@ -1169,40 +1242,133 @@
 </thead>
 <tbody>
 <tr>
-<td>Indra</td>
-<td>Open Source</td>
+<td>ATC</td>
+<td>Commercial Use</td>
 <td>Apache 2.0</td>
 </tr>
 </tbody>
 </table>
 <h2 id="top-features"><strong>Top Features</strong></h2>
-<ul>
-<li>Connect with a large of data origins to obtain data.</li>
-<li>Definition of rules to analyze data transfer based on data values, data format, etc.</li>
-<li>Real time monitoring of the processes.</li>
-<li>Process template management.</li>
-<li>Integrated with EDC Connector.</li>
-<li>Capability to perform many data transformations: data format, enrich data with other sources, anonymization, masking, etc.</li>
-</ul>
+<ol>
+<li>
+<p><strong>AI-Driven Conversational UI</strong>:
+Provides an intelligent, user-friendly interface for end-users to interactively inquire, assess, and receive guidance about DS2 Dataspaces and modules.</p>
+</li>
+<li>
+<p><strong>In-Dataspace and Inter-Dataspace Assessment</strong>:
+Enables analysis of capabilities and limitations within a single Dataspace and across multiple interconnected Dataspaces, supporting more complex digital collaboration.</p>
+</li>
+<li>
+<p><strong>Dynamic End-User Profiling &amp; Needs Matching</strong>:
+Assesses user needs and recommends the best-suited DS2 modules to implement ideal data workflows and pipelines.</p>
+</li>
+<li>
+<p><strong>Modular Recommendation Engine</strong>:
+Recommends specific DS2 modules (with configurations and software prerequisites).</p>
+</li>
+<li>
+<p><strong>Auto-Configuration via APIs</strong>:
+Supports seamless, API-based automatic configuration of selected modules to build ready-to-use DS2 pipelines for data usage and sharing.</p>
+</li>
+<li>
+<p><strong>DARC Module for Digital Lifecycle Execution</strong>:
+DARC facilitates AI-driven assessment of prerequisites and feasibility for complex Digital Life Cycles (DLCs) involving multiple data providers and consumers.</p>
+</li>
+<li>
+<p><strong>Cross-Dataspace Collaboration Support</strong>:
+Allows participants from different Dataspaces to align requirements, assess interoperability, and coordinate execution of digital workflows.</p>
+</li>
+<li>
+<p><strong>Lifecycle-Aware Module Configuration</strong>:
+Recommendations and configurations are aware of and tailored to different stages of a data lifecycle, optimizing module use and integration.</p>
+</li>
+<li>
+<p><strong>Data Sharing &amp; Reusability Enablement</strong>:
+Streamlines the setup of reusable data workflows, enhancing data accessibility, shareability, and interoperability across modules and Dataspaces.</p>
+</li>
+<li>
+<p><strong>End-to-End Guided Experience</strong>:
+Offers a fully guided, conversational journey from assessment to configuration and activation, lowering the technical entry barrier for users.</p>
+</li>
+</ol>
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
-<p>TBC</p>
+<p>To install and run the DARC Assistant locally, first make sure you have the app (the docker image/code) and create the Conda environment provided in environment.yml. Once the environment is activated, start the Weaviate vector store using Docker Compose. After Weaviate is up and running, launch the conversational interface with our custom UI using Chainlit python package. Finally, open your browser and navigate to http://localhost:8000 (or the VMs IP if your are using a cloud provider for the Virtual Machine) to start using the DARC Assistant. </p>
 <h3 id="requirements">Requirements</h3>
-<p>TBC</p>
+<table>
+<thead>
+<tr>
+<th>Azure VM</th>
+<th>NC8as T4 v3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>8</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>56 GiB</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td>1xT4</td>
+</tr>
+</tbody>
+</table>
 <h3 id="software">Software</h3>
-<p>TBC</p>
+<ul>
+<li>Python 3.12</li>
+<li>Conda (Anaconda or Miniconda)</li>
+<li>OS: Linux (as indicated by your environment path)</li>
+<li>Docker &amp; Docker Compose</li>
+<li>Modern web browser (Chrome, Firefox, etc.)</li>
+</ul>
 <h3 id="summary-of-installation-steps">Summary of installation steps</h3>
-<p>TBC</p>
+<p>Install/Download the app (docker image), create and activate the Conda environment, start Weaviate with Docker, run the UI, and access the platform via http://localhost:8000 in your browser.</p>
 <h3 id="detailed-steps">Detailed steps</h3>
-<p>TBC</p>
+<ol>
+<li>
+<p><strong>Create the Conda Environment</strong>:</p>
+<p>Make sure Conda is installed. Then run:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
+</span></code></pre></div>
+where environment.yml include all the appropriate packages needed to run DARC module.
+2. <strong>Activate the Environment</strong>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>ds2
+</span></code></pre></div>
+</li>
+<li>
+<p><strong>Start Weaviate via Docker</strong>:</p>
+<p>Make sure Docker is running, then:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker-compose<span class="w"> </span>-f<span class="w"> </span>docker-compose-weaviate.yml<span class="w"> </span>up<span class="w"> </span>-d
+</span></code></pre></div>
+4. <strong>Run UI</strong>:</p>
+<p>From the root of the repo:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>chainlit<span class="w"> </span>run<span class="w"> </span>main.py<span class="w"> </span>-w
+</span></code></pre></div>
+5. <strong>Access the Web Interface</strong>:</p>
+<p>Open your browser and go to:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>http://localhost:8000
+</span></code></pre></div>
+<p>If running on a remote server, use your machine's IP address (e.g., http://192.168.x.x:8000)</p>
+</li>
+</ol>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
-<p>TBC</p>
+<p>As long as you have access to the Web Interface, you can type your questions in Natural Language (English) to ask about anything related to the DS2 project.</p>
+<p>You don’t need to use technical commands or specific syntax—just ask your questions like you would ask a person.</p>
+<h4 id="example-queries">Example Queries</h4>
+<p>Here are a few sample queries you can type:</p>
+<p>"What is DS2?"
+→  This will give you a general overview of the DS2 project, including its purpose and scope.</p>
+<p>"What modules are available in DS2?"
+→  This will list all current modules, tools, or components included in the DS2 system.</p>
 <h2 id="other-information"><strong>Other Information</strong></h2>
-<p>TBC</p>
+<p>No other information at the moment for MODULE.</p>
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
-<p>TBC</p>
+<p>To Be Done.</p>
 <h2 id="additional-links"><strong>Additional Links</strong></h2>
-<p>Add in here relevant links for your module. In this section we will also add the link to the module video.</p>
-<p>Documentation <a href="https://dataflow-docs.onesaitplatform.com/">https://dataflow-docs.onesaitplatform.com/</a></p>
+<p>N/A</p>
 
 
 

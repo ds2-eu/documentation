@@ -287,6 +287,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../CLM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WP05-CLM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../CONT/" class="md-nav__link">
         
   
@@ -333,6 +356,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../DARC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DARC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DDT/" class="md-nav__link">
         
   
@@ -362,6 +408,29 @@
   
   <span class="md-ellipsis">
     Data Inspector (DINS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DMK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Market Place (DMK)
     
   </span>
   
@@ -595,6 +664,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Detailed steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run container
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-e2c-stream-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running E2C stream component
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -682,7 +775,30 @@
   
   
   <span class="md-ellipsis">
-    IDT
+    IDT - IDT Broker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MCL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-cloud Module (MCL)
     
   </span>
   
@@ -769,12 +885,58 @@
   
   
     <li class="md-nav__item">
-      <a href="../Portal/" class="md-nav__link">
+      <a href="../PORTAL/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Portal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SDS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sovereignty-Decision-Support-System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SEC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-cloud Module (MCL)
     
   </span>
   
@@ -916,6 +1078,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Detailed steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run container
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-e2c-stream-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running E2C stream component
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1054,17 +1240,50 @@ Thin-edge.io is supporting any Linux distribution, in most cases even with the a
 <p><strong>7. Data mapping</strong>: Map data from source to target data models.</p>
 <p><strong>8. Configure once</strong>: Once the streaming services are configured, they can be executed on demand.</p>
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
-<p>To Be Done</p>
 <h3 id="requirements">Requirements</h3>
-<p>To Be DOne</p>
-<h3 id="software">Software</h3>
 <p>N/A</p>
+<h3 id="software">Software</h3>
+<ul>
+<li>Docker runtime</li>
+<li>Python3, pip</li>
+<li>Git</li>
+</ul>
 <h3 id="summary-of-installation-steps">Summary of installation steps</h3>
-<p>To Be Done</p>
+<ol>
+<li>Clone Git repository</li>
+<li>Set cloud platform user credentials</li>
+<li>Build &amp; run E2C streamer container</li>
+<li>Execute E2C streamer</li>
+<li>Configure E2C streamer using E2C UI</li>
+</ol>
 <h3 id="detailed-steps">Detailed steps</h3>
-<p>To Be Done</p>
+<h4 id="run-container">Run container</h4>
+<p>Clone E2C Git repository. <code>docker-compose.yaml</code> runs two containers.
+One contains an MQTT-Broker while the other contains the E2C streamer component.
+Both containers have access to the 'thin-edge' environment and can pub/sub to the broker.</p>
+<p>Prior to starting the infrastructure, credentials to target cloud platforms have to be set in the <code>docker-compose.yaml</code> file.
+Once the credentials have been set, the infrastructure can be started by executing
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>--build
+</span></code></pre></div></p>
+<h4 id="running-e2c-stream-component">Running E2C stream component</h4>
+<p>Currently, E2C stream component is to be started manually.</p>
+<p>To start the E2C streamer, switch into the <code>tedge-container</code> by running:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>tedge-container<span class="w"> </span>bash
+</span></code></pre></div>
+<p>Once inside the container, the E2C streamer can be started using the following command:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/venv/bin/python3<span class="w"> </span>/app/main.py<span class="w"> </span>--config<span class="w"> </span>config.json
+</span></code></pre></div>
+<p>The parameter <code>--config config.json</code> is optional and allows to pass an existing configuration file, while the streamer
+can be configured entirely using the E2C UI.</p>
+<p>Once the E2C streamer is running, it's configuration can be retrieved and updated by E2C UI.
+To start the UI, clone the UI Git repository and execute
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</span></code></pre></div></p>
+<p>E2C streamer is now ready to stream data to the configured cloud platform.</p>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
-<p>To Be Done</p>
+<p>To display the configuration UI, run
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>main.py
+</span></code></pre></div></p>
 <h2 id="other-information"><strong>Other Information</strong></h2>
 <p>No other information at the moment for E2C.</p>
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
@@ -1119,7 +1338,7 @@ Thin-edge.io is supporting any Linux distribution, in most cases even with the a
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>

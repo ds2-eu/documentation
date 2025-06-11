@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../DDT/">
+        <link rel="prev" href="../DINS/">
       
       
-        <link rel="next" href="../DMK/">
+        <link rel="next" href="../DRM/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Data Inspector (DINS) - Documentation DS2</title>
+        <title>Data Market Place (DMK) - Documentation DS2</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#data-inspector-dins" class="md-skip">
+        <a href="#data-market-place-dmk" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Data Inspector (DINS)
+              Data Market Place (DMK)
             
           </span>
         </div>
@@ -399,6 +399,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../DINS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Inspector (DINS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -416,7 +439,7 @@
   
   
   <span class="md-ellipsis">
-    Data Inspector (DINS)
+    Data Market Place (DMK)
     
   </span>
   
@@ -429,7 +452,7 @@
   
   
   <span class="md-ellipsis">
-    Data Inspector (DINS)
+    Data Market Place (DMK)
     
   </span>
   
@@ -596,29 +619,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../DMK/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Data Market Place (DMK)
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1113,7 +1113,7 @@
 
 
 
-<h1 id="data-inspector-dins">Data Inspector (DINS)</h1>
+<h1 id="data-market-place-dmk">Data Market Place (DMK)</h1>
 <table>
 <thead>
 <tr>
@@ -1122,42 +1122,39 @@
 </thead>
 <tbody>
 <tr>
-<td>Software GitHub Repository <a href="https://github.com/ds2-eu/dins_module.git">https://github.com/ds2-eu/dins_module.git</a></td>
+<td>Software GitHub Repository <a href="https://github.com/ds2-eu/dmk_module.git">https://github.com/ds2-eu/dmk_module.git</a></td>
 </tr>
 <tr>
-<td>Progress GitHub Project <a href="https://github.com/orgs/ds2-eu/projects/28">https://github.com/orgs/ds2-eu/projects/28</a></td>
+<td>Progress GitHub Project <a href="https://github.com/orgs/ds2-eu/projects/33">https://github.com/orgs/ds2-eu/projects/33</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="general-description"><strong>General Description</strong></h2>
-<p>The Data Inspection Module (DINS) facilitates the configuration and deployment of processes for real-time data analysis, ensuring data quality and compliance with thresholds set by the parties involved. It performs several key functions: generating notifications based on the values of the exchanged data, executing reactions such as sending requests and notifications to external tools, and integrating with models developed to enhance its capabilities. It is a complement to the Data Share Controller which focuses on control information with both modules using the Data Interceptor.</p>
-<p>The Data Inspection is responsible for analysing the data provided and/or consumed by participants, ensuring the quality of the data shared amongst them. For example, a consumer can use DINS to set up analysis jobs that define rules for data validation. This includes establishing thresholds for specific data values; when these thresholds are exceeded, issues are generated and recorded for monitoring. Additionally, the DINS module can trigger notifications to other modules and components when issues are detected. For instance, it can notify the Data Share Controller Module, which may respond by blocking data sharing if certain limits are reached.</p>
+<p>The Data Marketplace Module will provide a marketplace for data and data models. It will allow the registration of data from a catalog, record all transactions, and communicate transactions to any external system if required (e.g. Data Rights Management Module, Clearing House). Data will not be stored in the Data Marketplace Module. It will the capability to support not only datasets but also algorithms.</p>
+<p>The Data Marketplace Module allows the registration of data (datasets and APIs) and algorithms as products to be sold. The Data Marketplace will include an interface with a Catalog Module to facilitate Providers to register their products in the Data Marketplace. The Data Marketplace will store the metadata required to perform and control transactions but not the data themselves. Additionally, it will support the registration of data products not in the DS2 Catalogue as algorithms. Consumers will be able to browse available products and purchase those of interest. The Data Marketplace Module will register all transactions and allow external systems, such as the Policy Enforcement Module, to validate if a product has been purchased. For example, it can verify a data purchase before allowing data sharing. It will interface with the Portal Module marketplace to provide registration and payment functionality.</p>
 <h2 id="architecture"><strong>Architecture</strong></h2>
-<p>The figure below represents the module fit into the DS-DS environment.</p>
-<p><img alt="DS2 DINS Architecturefits" src="../images/DINS-big-picture.png" /></p>
-<p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.</p>
-<p><img alt="DS2 DINS Architecture" src="../images/DINS-architecture.png" /></p>
+<p>The figure below represents the module fit into the DS-DS environment.
+<img alt="DS2 IDT Architecturefits" src="../images/DMK-big-picture.png" /></p>
+<p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.
+<img alt="DS2 IDT Architecture" src="../images/DMK-architecture.png" /></p>
 <h2 id="component-definition"><strong>Component Definition</strong></h2>
-<p>This module has the following subcomponent and other functions:
-* Data Jobs IDE: This group of components is shared with the T4.1 Policy Enforcement Modules. Some of them will be developed based on existing technology, specifically the Dataflow component of the Onesait Platform open-source product. While T4.1 Policy Enforcement focuses on defining and executing data transformation jobs, the Data Inspection module will enhance the current capabilities of Dataflow to include data inspection, monitoring, and notifications. T6.2 will lead this component development, and T4.1 will be built on the improved version from T6.2. Therefore, T4.1 has a dependency on T6.2, but the opposite is not true.
-  * IDE UI: This graphical user interface allows users to define Data Inspection Jobs for monitoring data and triggering notifications and alerts. For example, it can evaluate values against specified thresholds. This component is based on the existing INDRA software, with updates needed to support new features for DS2.
-  * IDE Controller: This component manages Data Inspection Jobs during design time and oversees their deployment and monitoring at runtime. It is based on current INDRA software but requires significant upgrades to split the tool into the IDE component and the Runtime component (potentially several). 
-  * Job Definition Storage: This component stores definitions of Data Inspection Jobs, based on INDRA software, with extensions planned to improve version control of the definitions. The definitions are created through a graphical user interface, enabling users to design Data Inspection Jobs as data pipelines using a drag-and-drop approach. Each data pipeline will include, at a minimum, the configuration of data sources (e.g., data formats) and the rules for inspecting the data (e.g., detecting specific fields and value thresholds). In the end, each data pipeline definition is a JSON document and a set of parameters. They will be stored in a distributed persistence engine.
-  * Testing Framework: This component will include test definitions and the storage of small datasets for automatic testing. This component will enable users to define automated tests that are executed to validate Data Inspection Jobs before deployment.
-* Inspection Runtime: 
-  * Runtime Controller: This component will manage the execution of Data Inspection Jobs during runtime. It will define the interface for integrating job execution with external components and will handle the job lifecycle: deployment, upgrade, removal, start, and stop.
-  * Data Inspection Job: This component represents the runtime execution of a data inspection definition. Each type of data inspection supported will require a Data Inspection Job definition. One instance of this component will be created for each Data Inspection Job needed at runtime, even for the same definition. The creation of these instances will be managed by the Runtime Controller. The Data Inspection Job includes the definition of an SDK and interfaces that facilitate the extension of capabilities, such as supporting additional data formats.
-  * Job Logger: This component logs all relevant information about each job execution. Based on INDRA infrastructure, it will require minimal development to adapt to changes in other module components.
-  * Job States Storage: This component stores the states of job executions throughout their lifecycle, enabling job resumption in the event of failures during execution. Based on INDRA infrastructure, it will require minimal development.
-* Monitoring and Historic Data: This component will store historic metrics gathered by the analysis jobs. This set of elements will be based on the open-source stack of monitoring tools Grafana.
-  * Metrics/Alert Collector: This component will collect all the data from the Analysis Jobs.
-  * Alert Manager: It collects alerts, manages them by categorizing and prioritizing, and allows for the configuration of notification channels such as email and Teams. It also provides a centralized interface for tracking and managing active alerts.
-  * Inspector Dashboard: It allows the visual analysis of the data inspected.
-* Model Deployed: If a complex analysis is required for data inspection, the Data Inspection Jobs will have the capability to use data models deployed with the T4.2 Data Model Development Toolkit Module. For example, a field value could be used as input in a prediction model, and based on the result, a decision can be made whether an alert should be generated.
-* Data Share Controller: The Data Interception part of the Data Share Controller connects data in the data pipeline with the Data Inspection. If the Data Share Controller is not present, any other software that implements the Data Inspection API can provide the data. The Data Inspection will trigger notifications to the Data Share Controller Module (and other modules or components, if required) based on rules defined by the participants. For example, “stop data sharing”.
-* Other DS2 Modules / Other Participant’s Software: The Module can notify any software that needs to receive these notifications, provided that the software is compatible with the notification mechanisms implemented by DINS. This capability facilitates the integration of systems that can react to data shared between participants, such as the Data Share Controller.</p>
+<p>This module has the following subcomponent and other functions:</p>
+<ul>
+<li>Marketplace:</li>
+<li>Data Marketplace UI: This component provides the user interface where data suppliers and data shoppers can access the functionalities of the data marketplace.</li>
+<li>Product Registration: This feature allows suppliers to register data products for sale, including datasets, API access, and algorithms. It will include an interface for incorporating products already available in DS2 product catalogues to prevent duplication and ensure synchronization in product definitions.</li>
+<li>Product Repository: This component stores and provides the required information for each product offered. </li>
+<li>Order Management System: This subcomponent manages orders placed by providers, defines the purchasing process, records any changes in order status, and coordinates all components involved in the purchase. It manages the full life cycle of the orders. This component ensures that all steps in the purchase process are executed correctly and fulfil the required conditions.</li>
+<li>Order Repository: This subcomponent stores orders and their statuses. It is primarily used by the Order Management System to store and retrieve the state of orders. It also provides historical information about orders.</li>
+<li>Payment System: This subcomponent provides payment capabilities to the Order Management System, primarily acting as an intermediary with the payment system implemented in the Portal Module.</li>
+<li>Transaction Manager and Repository: The Transaction Manager will register actions in the Data Rights Management Module and maintain an additional transaction repository for detailed information.</li>
+<li>DS2 Portal: The DS2 Portal Module will be used to obtain and validate the identities of providers when they supply data assets to the Data Marketplace and consumers when they purchase data assets. It is also responsible of payment capabilities.</li>
+<li>Data Rights Management (DRM): The Data Marketplace may log all necessary information in the DRM for accountability in data provision and purchases.</li>
+<li>DS2 Catalog: The Data Marketplace can offer the datasets present in the DS2 Catalog Module to describe data offerings. </li>
+<li>Policy Agreement and Enforcement: The Data Marketplace will be queried by the Policy Enforcement module to obtain additional information if a policy requires a purchase to have been made to obtain data.</li>
+</ul>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
-<p><img alt="DS2 DINS Screenshots" src="../images/DINS-running.gif" /></p>
+<p><img alt="DS2 IDT Screenshots" src="../images/DMK-UI.png" /></p>
 <h2 id="commercial-information"><strong>Commercial Information</strong></h2>
 <table>
 <thead>
@@ -1177,15 +1174,15 @@
 </table>
 <h2 id="top-features"><strong>Top Features</strong></h2>
 <ul>
-<li>Connect with a large of data origins to obtain data.</li>
-<li>Definition of rules to analyze data transfer based on data values, data format, etc.</li>
-<li>Real time monitoring of the processes.</li>
-<li>Process template management.</li>
-<li>Integrated with EDC Connector.</li>
-<li>Capability to perform many data transformations: data format, enrich data with other sources, anonymization, masking, etc.</li>
+<li>DMK allows DS2 participants to create data offers from their data products in the DS2 catalog.</li>
+<li>Users can search for offers published by other users.</li>
+<li>Users can purchase access to both data and algorithms.</li>
+<li>Algorithms are provided as Docker images with APIs for execution. These are built by the MDT module.</li>
+<li>The Data Marketplace integrates with the PAE module to enable data providers to define policies that require a purchase before access.</li>
+<li>DMK stores all purchases in the DRM to support transaction auditing.</li>
 </ul>
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
-<p>TBC</p>
+<p>It is currently under development and cannot be installed yet. The first installable version will be available by M24.</p>
 <h3 id="requirements">Requirements</h3>
 <p>TBC</p>
 <h3 id="software">Software</h3>
@@ -1201,8 +1198,7 @@
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
 <p>TBC</p>
 <h2 id="additional-links"><strong>Additional Links</strong></h2>
-<p>Add in here relevant links for your module. In this section we will also add the link to the module video.</p>
-<p>Documentation <a href="https://dataflow-docs.onesaitplatform.com/">https://dataflow-docs.onesaitplatform.com/</a></p>
+<p>TBC</p>
 
 
 
