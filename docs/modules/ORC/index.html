@@ -793,6 +793,81 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How To Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process-designer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process Designer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#form-designer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Form Designer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service Directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task Manager
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#making-and-running-a-simple-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making and Running a Simple Process
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1068,6 +1143,81 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How To Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process-designer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process Designer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#form-designer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Form Designer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service Directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task Manager
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#making-and-running-a-simple-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making and Running a Simple Process
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1209,7 +1359,32 @@
 <p>Add the detailed steps of installation including screenshots or code snippets.</p>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
 <p>Add in here the steps to use the module from the perspective of your target user. Similar to how to install, add screenshots and code snippets.</p>
-<p><strong>To Be Done</strong></p>
+<h3 id="general-overview">General Overview</h3>
+<p>The Orchestration Module is made up of six sub comonents that all interact with each other in different ways. Together, they offer the full suite of features that the ORC tool offers independantly. </p>
+<h4 id="process-designer">Process Designer</h4>
+<p>The Process Designer is the largest single subcomponent of the ORC Module. It is a Camunda based BPMN Modeller that allows users to create workflows. </p>
+<p><img alt="Process Designer View" src="./images/how-to-use/ORC-Process-Designer-001.png" /></p>
+<h4 id="form-designer">Form Designer</h4>
+<p>The Form Designer is where the user can create forms for use with User Tasks. User Tasks are tasks dicated by the Process Designer. When triggered in an active workflow, the User Task requires a user interact with a form created via the Form Designer through the Task Manager. </p>
+<p><img alt="Form Designer View" src="./images/how-to-use/ORC-Form-Designer-001.png" /></p>
+<h4 id="service-directory">Service Directory</h4>
+<p>The Service Directory is a repository of APIs that can then be accessed through the Process Designer to pass data through a workflow or recieve data from a workflow. These services can also be accessed through the Service Directory API.</p>
+<p><img alt="Service Directory View" src="./images/how-to-use/ORC-Service-Directory-001.png" /></p>
+<h4 id="control-panel">Control Panel</h4>
+<p>The Control Panel shows all the active workflows; active processes can be found here, and each instance of a process can also be found. Each process instance also has visual view that allows users to view various elements of a workflow after it has been created.</p>
+<p><img alt="Control Panel Processes List" src="./images/how-to-use/ORC-Control-Panel-Processes-001.png" />
+<em>A Screenshot of the Control Panel - List of Processes</em></p>
+<p><img alt="Control Panel Process Instances List" src="./images/how-to-use/ORC-Control-Panel-Process-Instance-001.png" />
+<em>A Screenshot of the Control Panel - List of Process Instances</em></p>
+<p><img alt="Control Panel Process Instance View List" src="./images/how-to-use/ORC-Control-Panel-Process-Instance-View-001.png" />
+<em>A Screenshot of the Control Panel - List of Process Instance View</em></p>
+<h4 id="task-manager">Task Manager</h4>
+<p>The Task Manager is the component that handles the front of the User Tasks. When a User Task is triggered, the assigned user will be able to complete the User Task from this view. Administrators are also able to view all User Tasks.</p>
+<p><img alt="Task Manager Task View" src="./images/how-to-use/ORC-Task-Manager-001.png" />
+<em>A Screenshot of the Task Manager Task List View</em></p>
+<p><img alt="Task Manager Task View" src="./images/how-to-use/ORC-Task-Manager-002.png" />
+<em>A Screenshot of the Task Manager Task View</em></p>
+<h3 id="making-and-running-a-simple-process">Making and Running a Simple Process</h3>
 <h2 id="other-information"><strong>Other Information</strong></h2>
 <p>No other information at the moment for MODULE.</p>
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>

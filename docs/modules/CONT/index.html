@@ -1210,6 +1210,7 @@
 <li>Flux Helm Controller (Chart Controller + Installer)</li>
 <li>Flux Source Controller (Source Controller)</li>
 <li>Flux Notification Controller (default)</li>
+<li>Flux Kustomization Controller (default)</li>
 </ul>
 <p>To Be Implemented:
 * Chart Manager
@@ -1217,14 +1218,33 @@
 * Containerisation UI</p>
 <h3 id="summary-of-installation-steps">Summary of installation steps</h3>
 <ol>
-<li>Clone the repo</li>
-<li>Install the Containerisation module<ul>
-<li>Run the command installflux.sh </li>
-</ul>
+<li>
+<p>Clone the repo containerisation</p>
+</li>
+<li>
+<p>Install the Containerisation module by running the installfluxghorg.sh script   </p>
 </li>
 </ol>
 <h3 id="detailed-steps">Detailed steps</h3>
-<p>Installer is not yet fully ready: To Be Done</p>
+<ol>
+<li>
+<p>Clone the repo containerisation
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ds2-eu/containerisation
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Install the Containerisation module by running the installfluxghorg.sh script : So far the Kubernetes controllers are available, which will deploy a template helm chart from a helmrelease CRD
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./installfluxghorg.sh github_token github_organisation org
+</span></code></pre></div></p>
+<blockquote>
+<p>github_token: a GitHub user token</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>github_organisation: a GitHub organisation: this will be in a later stage  the organisation from the Marketplace ie. ds2-marketplace where modules are stored</p>
+<p>org: this is a repository in the GitHub organisation: this will be in a later stage a repository of the organisation id of the participant as registered in the Portal. The repository is created via the Marketplace and the acquired modules will be located in that GitHub repository -&gt; This is linked to the Marketplace purchase process</p>
+</blockquote>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
 <p>When first set of Helm Chart and HelmRelease Templates are ready: To Be Done</p>
 <h2 id="other-information"><strong>Other Information</strong></h2>
