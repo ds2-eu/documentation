@@ -1,4 +1,22 @@
-# IDT -> change this title to the module name
+# IDT - IDT Broker -> The title format is MODULE_ID - MODULE_NAME
+Some examples on how this title should be:
+
+ORC - Orchestration
+
+PAE - Policy Agreement and Enforcement
+
+CONT - Containerisation
+
+DSHARE - Data Share Controller
+
+...
+
+> Add the Powered by section with the partner logo from logos folder at <https://vttgroup.sharepoint.com/:f:/r/sites/DS2/Shared%20Documents/WP1/Communication%20%26%20Dissemination/7.%20Logos/2.%20Partners%20Logos?csf=1&web=1&e=gL6nQ5> -> Edit the image to be around 250 x 200 pixels. Add link to partner website)
+
+Powered by
+
+[![DS2 IDT IceLogo](./images/IDT-icelogosmall.jpg)](https://informationcatalyst.com) -> Use exactly this format in order to add the logo and link
+
 Use the table below as an example and replace with the links to the module's DS2 GitHub repository and GitHub project.  
 
 | Project Links |
@@ -37,11 +55,11 @@ Please delete it once you add your module reference.
 
 ## **Commercial Information**
 
-Table with the organisation, license nature (Open Source, Commercial ... ) and the license. Replace with the values of your module.
+Table with the organisation, license nature (Open Source, Commercial ... ) and the license. Replace with the values of your module. Add link to partner website in the partner name text
 
 | Organisation (s) | License Nature | License |
 | ---------------  | -------------- | ------- |
-| ICE | Open Source | Apache 2.0 |
+| [ICE](https://informationcatalyst.com) | Open Source | Apache 2.0 |
 
 ## **Top Features**
 
