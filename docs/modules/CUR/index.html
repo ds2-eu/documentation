@@ -1,0 +1,1300 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../CONT/">
+      
+      
+        <link rel="next" href="../DARC/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>CUR - DS2 Data Curation module - Documentation DS2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cur-ds2-data-curation-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Documentation DS2" class="md-header__button md-logo" aria-label="Documentation DS2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation DS2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CUR - DS2 Data Curation module
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Documentation DS2" class="md-nav__button md-logo" aria-label="Documentation DS2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentation DS2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The DS2 Software Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Modules
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CAT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CAT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WP05-CLM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CONT - Containerisation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    CUR - DS2 Data Curation module
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    CUR - DS2 Data Curation module
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Definition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screenshots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commercial-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commercial Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Install
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-the-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up the database
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-cur-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the CUR module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to use
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-dashbutton" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the dashbutton
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Links
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DARC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DARC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Detection and Transformation (DDT)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DINS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Inspector (DINS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DMK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Market Place (DMK)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DRM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DRM - Data Rights Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DSHARE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Datashare (DSHARE)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DVM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Visualisation Module (DVM)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E2C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Edge to Cloud Connector (E2C)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Identity Management Module (IDM)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IDT - IDT Broker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MCL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-cloud Module (MCL)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Development Toolkit (MDT)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ORC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ORC - Orchestration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PAE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Policy Agreement and Enforcement (PAE)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PORTAL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Portal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DS2 Data discovery and transformation module (RET)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SDS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sovereignty-Decision-Support-System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SEC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-cloud Module (MCL)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Definition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screenshots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commercial-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commercial Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Install
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-the-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up the database
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-cur-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the CUR module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to use
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-dashbutton" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the dashbutton
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Links
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cur-ds2-data-curation-module">CUR - DS2 Data Curation module</h1>
+<table>
+<thead>
+<tr>
+<th>Project Links</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Software GitHub Repository <a href="https://github.com/ds2-eu/cur.git">https://github.com/ds2-eu/cur.git</a></td>
+</tr>
+<tr>
+<td>Progress GitHub Project <a href="https://github.com/orgs/ds2-eu/projects/39">https://github.com/orgs/ds2-eu/projects/39</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="general-description"><strong>General Description</strong></h2>
+<p>Purpose: Data obtained from disparate sources runs the risk of remaining siloed unless it can be joined with similar data from other data sets. The process of joining data may require curation of data, such as the conversion of data formats or a matching of disparate column names.  Manual curation of datasets, however, can be a labour-intensive task, and not suited to DS2’s dynamic nature of federating dataspaces.  Additionally, filtering data based on a set of conditions from even a single data source is a task that typically will require programming skills and is both time-intensive and costly.</p>
+<p>Instead, the CUR module establishes automatic curatation and federation of data through machine learning, allowing users to query data through natural language, without having to understand how to connect or convert data obtained from different sources.</p>
+<h3 id="description">Description</h3>
+<p>In order to allow querying of data obtained from various sources, the Curation model harnesses the power of two different technologies, namely relational databases and machine learning Large Language Models (LLMs).  The module stores obtained data in a relational database, and then uses machine learning combined with a knowledge of the database schemas to convert user queries in natural language to database queries (i.e. SQL queries). Given the proper prompts, the LLM is able to automatically determine how to match columns in different tables, even when column names or data formats may differ.  This module uses several different techniques to increase the chances of correctly answering a user query, such as evaluating the results of the generated query before they are returned to the user, and RAG technology to seed LLM SQL generation with examples of similar user queries and their correctly generated SQL calls from previous history.</p>
+<p>There still will be cases where the generation of an SQL query corresponding to a user's question will fail.  For example, if the available data sources relate to weather conditions in Africa and the user asks a question about food prices in Europe, query formulation will naturally - and correctly - fail.  However, there will be other cases where a query which is appropriate for the data sets will not be properly generated due to reasons of complexity.  In this case, the execution chain of the module will detect the failure and request human-in-the-loop intervention.  At this point, the original query can either be abandoned, or the generated SQL query can be manually corrected and re-executed.  If the subsequent execution succeeds, the user query and corrected SQL will be stored in a vector store to seed future, similar user queries.  Of course it is not expected that the typical user will correct SQL queries, but rather that the CUR module will be trained by an expert in advance to cover anticipated user queries.</p>
+<h2 id="architecture"><strong>Architecture</strong></h2>
+<p>The figure below represents the module fit into the DS-DS environment.
+<img alt="DS2 CUR Architecturefits" src="../images/T4.3_in_overall_architecture.png" /></p>
+<p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.
+<img alt="DS2 CUR Architecture" src="../images/T4.3_Components_diagram.jpg" /></p>
+<h2 id="component-definition"><strong>Component Definition</strong></h2>
+<p>The CUR module consists of two main parts - a configuration component to set up the database tables from the data sources and the component which is given a reference to the stored database base and performs the pipeline required to allow a user to get information from the data sources using natural language queries.
+In particular, this latter component is composed of a number of stages which include:</p>
+<ul>
+<li>The creation of a GUI for user input</li>
+<li>The creation of an SQL query from a natural language query</li>
+<li>The execution of the generated SQL query</li>
+<li>Evaluation of results of the SQL query</li>
+<li>Human-in-the-loop injection of a corrected SQL query</li>
+<li>Reformulation of the query results to generate a more readable answer</li>
+</ul>
+<p>Within the above stages, there are a number of substages such as RAG retrieval, vector store population, prompt creation etc.</p>
+<h2 id="screenshots"><strong>Screenshots</strong></h2>
+<p>The following shows how a natural language query asking about pollution levels in the vicinity of the monitoring station, "MS Rakičan" can be executed.
+<img alt="DS2 CUR Screenshots" src="../images/screenshot_sequence.gif" /></p>
+<h2 id="commercial-information"><strong>Commercial Information</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Organisation (s)</th>
+<th>License Nature</th>
+<th>License</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IBM</td>
+<td>Consortium Confidential</td>
+<td>TBD</td>
+</tr>
+</tbody>
+</table>
+<h2 id="top-features"><strong>Top Features</strong></h2>
+<ul>
+<li>Extraction of data based on natural language queries</li>
+<li>Support for a wide variety of user languages</li>
+<li>Automatic federation of disparate data sources</li>
+<li>Human-in-the-loop intervention allows the LLM to self-learn</li>
+<li>RAG technology supporting hybrid retrieval with both semantic and keyword search</li>
+<li>Easy to add additional data sources</li>
+</ul>
+<h2 id="how-to-install"><strong>How To Install</strong></h2>
+<h3 id="setting-up-the-database">Setting up the database</h3>
+<p>Data obtained from the data sources will accessed from their URLs and stored into a database.  The recommended database is postgresql due to it support for geospatial queries.  The configuration of the database is as follows:</p>
+<ol>
+<li>Install postgresql.  See <a href="https://www.postgresql.org/download">https://www.postgresql.org/download</a></li>
+<li>After installing postgresql, it is recommended to add the environment variables, DS2_DB_USERNAME and DS2_DB_PASSWORD to your shell, with username and database password values which were used in installing postgresql in the previous step.</li>
+<li>Edit the file, "federation_config.json" as follows:<ul>
+<li>Change the value of the "database", "host" and "port" entries as required to match the values used installing the postgresql database.</li>
+<li>This configuration file is pre-configured with data sources for the DS2 Slovenian, Romanian and Greek use cases.  Other use cases or additional data sources can be added by following the same format.  Note that currently the "open_api" field is not used by the software.</li>
+<li>Any API tokens required by the REST call are shown within brackets, for example:'Authorization: Bearer <DADS_BEARER_TOKEN>'.  At runtime, the software will attempt to replace the bracketed value with an environment variable of the same name - for example the environment variable, "DADS_BEARER_TOKEN" in this example.  Therefore, configure these values in your environment.</li>
+</ul>
+</li>
+<li>To create the SQL database the first time, run <code>python create_database.py --prefix [name]</code>.  The value for [name] needs to correspond exactly to a URI entry name in the federation_config.json file (for example, "Slovenia", "Romania" or "Greece").  As an example, to build the database for the DS2 Slovenian use case, we would run: 
+<code>python create_database.py --prefix Slovenia</code>.</li>
+</ol>
+<h3 id="running-the-cur-module">Running the CUR module</h3>
+<p>In order to run the CUR module, the correct python environment needs to be created.  It is recommended that you create a virtual environment as follows:</p>
+<ul>
+<li><code>python -m venv [name]</code>  where "name" will be the name of the virtual environment, for example, "venv".</li>
+<li>Activate the virtual environment: On Mac or Linux this will be: <code>source [name]/bin/activate</code>, where the value of "name" is from the previous step.</li>
+<li>Install inside the virtual environment the required modules: <code>pip install requirements.txtx</code></li>
+</ul>
+<p>Once the environment is set up, the CUR module can be run.  Note that the CUR module requires access to an LLM. The access key for the LLM can be defined by configuring and environment variable, LLM_APIKEY, in your sheel.  If this is not configured, then at runtime the module will request the key value.</p>
+<p>The CUR module is invoked as follows:</p>
+<p><code>python ds2_federation_main.py --prefix [prefix] --url [url]</code></p>
+<p>where the value for "prefix" is the as described in the previous section for setting up the db, and the value for "url" is the base address of the LLM (i.e without the model name).  CUR uses llama-3-3-70b-instruct as its default model.  This can be overridden by using the --name and --id command line values (e.g. --name llama-3-3-70b-instruct --id meta-llama/llama-3-3-70b-instruct).  Note that the accuracy of the NL2SQL translation in the CUR module may depend on the model used.</p>
+<h3 id="requirements">Requirements</h3>
+<p>An external LLM is required.  No particular requirements for CPU, memory or storage have been identified.</p>
+<p>Using the dashbutton requires a configured keycloak server to be running.</p>
+<h3 id="how-to-use">How to use</h3>
+<p>The CUR GUI is web-based.  When CUR is started as described in the previous step, it will print out where it can be accessed, typically this will be at: <code>http://127.0.0.1:5000</code> for an installation on the local host.</p>
+<p>To search for data, enter in the <strong>What would you like to know?</strong> box your query and then click the <strong>Ask</strong> button.  Note that the query needs to relate to values in the data sets configured in the federation_config.json file.  If the query succeeds, the answer will appear in the <strong>Answer</strong> box.  If the query fails, then you will be instructed to either correct the generated SQL query, or enter "skip".  If you choose to correct the SQL, enter this in the <strong>Corrected SQL</strong> box and then click on <strong>Execute</strong>, otherwise click on the "Skip" button to move on to a new query.</p>
+<h2 id="using-the-dashbutton">Using the dashbutton</h2>
+<p>If the dashbutton is used, then a keycloak server needs to be configured.</p>
+<p>Reference: <code>https://github.com/ds2-eu/portal/tree/main/dash-button/web-component</code></p>
+<p>Run keycloak with:</p>
+<p><code>docker run -p 8080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:25.0.2 start-dev</code></p>
+<p>Go to the keycloak admin screen:</p>
+<p><code>http://localhost:8080/admin/master/console/</code></p>
+<p>Click on "Keycloak" in the upper left corner to get to "Create realm"
+<img alt="DS2 RET Screenshots" src="./images/create_realm.png" /></p>
+<p>Create a realm with name "demo".</p>
+<p>Click on "Clients" and then "Create Clients"</p>
+<h2 id="additional-links"><strong>Additional Links</strong></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

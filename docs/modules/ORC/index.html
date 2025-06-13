@@ -1,0 +1,1482 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../MDT/">
+      
+      
+        <link rel="next" href="../PAE/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>ORC - Orchestration - Documentation DS2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#orc-orchestration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Documentation DS2" class="md-header__button md-logo" aria-label="Documentation DS2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation DS2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ORC - Orchestration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Documentation DS2" class="md-nav__button md-logo" aria-label="Documentation DS2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentation DS2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The DS2 Software Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Modules
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CAT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CAT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WP05-CLM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CONT - Containerisation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CUR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CUR - DS2 Data Curation module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DARC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DARC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Detection and Transformation (DDT)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DINS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Inspector (DINS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DMK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Market Place (DMK)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DRM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DRM - Data Rights Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DSHARE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Datashare (DSHARE)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DVM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Visualisation Module (DVM)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E2C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Edge to Cloud Connector (E2C)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Identity Management Module (IDM)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IDT - IDT Broker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MCL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-cloud Module (MCL)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Development Toolkit (MDT)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    ORC - Orchestration
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    ORC - Orchestration
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Definition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screenshots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commercial-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commercial Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Install
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary of installation steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailed steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Use
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process-designer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process Designer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#form-designer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Form Designer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service Directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task Manager
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#making-and-running-a-simple-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making and Running a Simple Process
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapi-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenAPI Specification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Links
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PAE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Policy Agreement and Enforcement (PAE)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PORTAL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Portal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DS2 Data discovery and transformation module (RET)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SDS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sovereignty-Decision-Support-System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SEC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi-cloud Module (MCL)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Definition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screenshots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commercial-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commercial Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Install
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary of installation steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailed steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Use
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process-designer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process Designer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#form-designer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Form Designer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Service Directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task Manager
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#making-and-running-a-simple-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making and Running a Simple Process
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapi-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenAPI Specification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Links
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="orc-orchestration">ORC - Orchestration</h1>
+<p>Powered by</p>
+<p><a href="https://informationcatalyst.com"><img alt="DS2 ORC IceLogo" src="../images/ORC-icelogosmall.jpg" /></a></p>
+<table>
+<thead>
+<tr>
+<th>Project Links</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Software GitHub Repository <a href="https://github.com/ds2-eu/orchestration">https://github.com/ds2-eu/orchestration</a></td>
+</tr>
+<tr>
+<td>Progress GitHub Project <a href="https://github.com/orgs/ds2-eu/projects/9">https://github.com/orgs/ds2-eu/projects/9</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="general-description"><strong>General Description</strong></h2>
+<p>The Orchestration module is made to design and then orchestrate at runtime In-Dataspace, Inter-Dataspace, internal, and third-party services which facilitate common data-orientated operations such as transformation of data, checks on data, data updates etc. The orchestrator contains a flexible GUI to design workflows and decision points on these services, and run time component to implement the workflow</p>
+<p>Services are added to and then selected from a Service catalog from a participant’s local service catalog (In-Dataspace deployment), the DS2 service intermediary catalog (Inner-Dataspace), or other available catalog/service knowledge. These services can be graphically linked together to form a workflow and where decision pathways, decision points, and other operators can be deployed to determine the workflow. Error and exit points should be predetermined with defaults ensuring that failures and error conditions allow flows to be closed automatically. One class of operator is for user defined forms for human input but most often the flows contain backend services. In the context of DS2 the operators will, if necessary, be expanded based on novel usecase peculiarities as will the forms designer. Primarily the design interface is orientated around service interconnectivity, but this will be augmented with a data pre-viewer to help interconnect and understand the results of interconnecting data-orientated services. The orchestrator will be available as a module and for interparticipant service orchestration will extend the connectors.</p>
+<h2 id="architecture"><strong>Architecture</strong></h2>
+<p>The figure below represents the module fit into the DS-DS environment.
+<img alt="DS2 ORC Architecturefits" src="../images/ORC-Architecturefits.png" /></p>
+<p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.
+<img alt="DS2 IDT Architecture" src="../images/ORC-ds2architecture.png" /></p>
+<h2 id="component-definition"><strong>Component Definition</strong></h2>
+<p>This module has the following subcomponent and other functions:</p>
+<p><strong>Orchestration Module - Core</strong>
+- <strong>Orchestration Core</strong>: This is the runtime heart of orchestration which conducts a process (workflow) triggering other services and via a BPMN module from the Service Composition designer repository. For the tier 1 standard connections (Portal etc) it can be perceived as the entry point. If new orchestration design methods are needed it will use them. Runtime events are connected to the logging components and for inter-participant dataflows it will interface with the DS2 Cross Participant Orchestration subcomponent. This is currently ICE background and will see little development except for a DS2 compliant UI.</p>
+<ul>
+<li><strong>DS2 Service Registry</strong>: </li>
+<li><strong>In-participant</strong>: This is a local registry of all services which a participant may potentially use in a workflow, composed together in the designer, and executed in the runtime. Registration can be automatic in the case of IDT installed services. It will also expose services in the inter-participant DS2 registry. It exists now but will be rebuilt in the context of DS2 and IDT.</li>
+<li><strong>Between Participant</strong>: 95% the same functionality but can function similarly to a metadata broker to host services from multiple participants which can be shared in a controlled way to the In-participant registry to allow participant-participant service interactions</li>
+<li><strong>Service Composition Designer (DS2 Upgrade)</strong>: This is the main UI for the Orchestration Designer based on existing ICE background. It allows a user to select or drag various elements from a toolbox (services/APIs from the DS2 Service Registry, methods), which can be placed on a canvas where they can then begin to start designing their orchestration by dragging and connecting various elements together. The saved BPMN2.0 notation model will then be used by the runtime orchestration core. The DS2 upgrade will be mainly for UI and inclusion of New Data Previewer and Forms designer blocks.</li>
+<li><strong>Forms designer</strong>: Many orchestrations have a need for user input and whilst some might come from other systems this can be complex when only limited information. The forms designer will allow the easy inclusion of simple form in any Service composition and also ensure that it respect the data flow as well as service needs.</li>
+<li><strong>Data Previewer</strong>: This is also a new subcomponent which will be rendered via the Service composition designer. Currently services are connected but when designing it is useful to know at design time what might be the inputs and the expect result. In a data orientated project this is especially useful, and this utility will allow some rendering of data to help show flow operations between building blocks before they are deployed.</li>
+<li><strong>New Orchestration methods (from pilots)</strong>: Many methods – eg choice boxes, selections are already implemented in the orchestrator, but it is possible that the pilot might suggest further ones that could be interesting to implement – although at this stage of the analysis it seems there is not. The new methods will be exposed in the orchestrator runtime &amp; designer.</li>
+<li><strong>Orchestration track/log</strong>: Currently this is rudimentary and especially in the trustworthy context of dataspace an major overhaul is necessary to extract more granular logging information at runtime. </li>
+<li><strong>Services and API</strong>: These are the services that can be orchestrated, and the API block is the interface to each which includes other external (non DS2) modules/services, DS Service Intermediaries and Tier 2 in dataspace DS modules/services.</li>
+<li><strong>Tier 0 Support Service Stack</strong>: This includes the DRM and API: For further exploration, but if room to implement and a match of requirements to feature the blockchain part of the DRM module to enhance logging</li>
+<li><strong>DARC &amp; API</strong>: As with DRM but in this case to use DARC to help configuration</li>
+<li><strong>Culture and Language Module and API</strong>: As with DRM but in this case to use this modules ontology engine to help auto-link services
+•   <strong>Tier 1 Service Stack for Marketplace and deployment and API</strong>: The full stack will be implemented as generically described elsewhere in this document. Exceptions: The Platform will only be needed for inter-participant service orchestrations if used</li>
+</ul>
+<p><strong>Inter-Participant orientated</strong>:
+- <strong>DS2 Cross DS Orchestration</strong>: This is a new runtime module which will act as a bridge between the orchestration within each participant through interconnections to the Inter-Participant Service Registry and the Orchestration core at each participant
+- <strong>Tier 3 Trust Stack</strong> and API: For interparticipant service the module will use relevant parts of the DS2 trust stack – see diagram below</p>
+<h2 id="screenshots"><strong>Screenshots</strong></h2>
+<p><img alt="DS2 IDT Screenshots" src="../images/ORC-screenshots.gif" /></p>
+<h2 id="commercial-information"><strong>Commercial Information</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Organisation (s)</th>
+<th>License Nature</th>
+<th>License</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://informationcatalyst.com">ICE</a></td>
+<td>Open Source</td>
+<td>Apache 2.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="top-features"><strong>Top Features</strong></h2>
+<ol>
+<li>Process Designer: A custom Camunda BPMN Modeller </li>
+<li>API Repository: repository of API services</li>
+<li>Service API: an API that allows use of services in the API Repository externally</li>
+<li>User Tasks: a unique type of task that allows for workflows to request user input</li>
+<li>User Task Manager: a front end that allows for management of user tasks</li>
+<li>Control Panel: a web app that allows users to view, manage and interact with workflows </li>
+<li>Process View: a view that allows the user to monitor the status of workflows</li>
+<li>Single-Sign On: integration with the Dash Button that allows the ORC module to be linked to the Portal</li>
+</ol>
+<h2 id="how-to-install"><strong>How To Install</strong></h2>
+<h3 id="requirements">Requirements</h3>
+<p>N/A</p>
+<h3 id="software">Software</h3>
+<ul>
+<li>Git</li>
+<li>Docker</li>
+</ul>
+<h3 id="summary-of-installation-steps">Summary of installation steps</h3>
+<ol>
+<li>Clone the git repository</li>
+<li>In each of the subcomponents, run the <code>build.sh</code> script and select the local build</li>
+<li>In each of the subcomponents, run <code>docker pull xxx:latest</code> where <code>xxx</code> is the name of the subcomponent </li>
+<li>In each of the subcomponents, run <code>docker-compose up</code></li>
+<li>Navigate to <code>localhost:4200</code> </li>
+</ol>
+<h3 id="detailed-steps">Detailed steps</h3>
+<p>Each of the subcomponents contains a <code>build.sh</code> file that allows the creation of the docker images in such a way that you can change it depending on project, location or production.</p>
+<p>In addition, each of the subcomponents are individual, which means each subcomponent can be run on their and interacted with (although some features may be unavailable).</p>
+<p>The current list of ORC front end docker images includes:
+- <code>welcome:latest</code>
+- <code>process-designer:latest</code> 
+- <code>form-designer:latest</code> 
+- <code>control-panel:latest</code> 
+- <code>service-directory:latest</code>
+- <code>task-manager:latest</code> </p>
+<h2 id="how-to-use"><strong>How To Use</strong></h2>
+<h3 id="general-overview">General Overview</h3>
+<p>The Orchestration Module is made up of six sub comonents that all interact with each other in different ways. Together, they offer the full suite of features that the ORC tool offers independantly. </p>
+<h4 id="process-designer">Process Designer</h4>
+<p>The Process Designer is the largest single subcomponent of the ORC Module. It is a Camunda based BPMN Modeller that allows users to create workflows. </p>
+<p><img alt="Process Designer View" src="../images/ORC-Process-Designer-001.png" /></p>
+<p>Users can drag and drop elements from the panel on the right side in order to create workflows. When exported, the workflows, the processes, can be viewed in the Control Panel.</p>
+<h4 id="form-designer">Form Designer</h4>
+<p>The Form Designer is where the user can create forms for use with User Tasks. User Tasks are tasks dicated by the Process Designer. When triggered in an active workflow, the User Task requires a user interact with a form created via the Form Designer through the Task Manager. </p>
+<p><img alt="Form Designer View" src="../images/ORC-Form-Designer-001.png" /></p>
+<h4 id="service-directory">Service Directory</h4>
+<p>The Service Directory is a repository of APIs that can then be accessed through the Process Designer to pass data through a workflow or recieve data from a workflow. These services can also be accessed through the Service Directory API.</p>
+<p><img alt="Service Directory View" src="../images/ORC-Service-Directory-001.png" /></p>
+<h4 id="control-panel">Control Panel</h4>
+<p>The Control Panel shows all the active workflows; active processes can be found here, and each instance of a process can also be found. Each process instance also has visual view that allows users to view various elements of a workflow after it has been created.</p>
+<p><img alt="Control Panel Processes List" src="../images/ORC-Control-Panel-Processes-001.png" />
+<em>A Screenshot of the Control Panel - List of Processes</em></p>
+<p><img alt="Control Panel Process Instances List" src="../images/ORC-Control-Panel-Process-Instance-001.png" />
+<em>A Screenshot of the Control Panel - List of Process Instances</em></p>
+<p><img alt="Control Panel Process Instance View List" src="../images/ORC-Control-Panel-Process-Instance-View-001.png" />
+<em>A Screenshot of the Control Panel - List of Process Instance View</em></p>
+<h4 id="task-manager">Task Manager</h4>
+<p>The Task Manager is the component that handles the front of the User Tasks. When a User Task is triggered, the assigned user will be able to complete the User Task from this view. Administrators are also able to view all User Tasks.</p>
+<p><img alt="Task Manager Task View" src="../images/ORC-Task-Manager-001.png" />
+<em>A Screenshot of the Task Manager Task List View</em></p>
+<p><img alt="Task Manager Task View" src="../images/ORC-Task-Manager-002.png" />
+<em>A Screenshot of the Task Manager Task View</em></p>
+<h3 id="making-and-running-a-simple-process">Making and Running a Simple Process</h3>
+<h2 id="other-information"><strong>Other Information</strong></h2>
+<p>No other information at the moment for ORC module.</p>
+<h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
+<p>N/A</p>
+<h2 id="additional-links"><strong>Additional Links</strong></h2>
+<p>N/A</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
