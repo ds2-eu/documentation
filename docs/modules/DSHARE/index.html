@@ -20,7 +20,7 @@
     
     
       
-        <title>Datashare (DSHARE) - Documentation DS2</title>
+        <title>DSHARE - Data Share Controller - Documentation DS2</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#datashare-dshare" class="md-skip">
+        <a href="#dshare-data-share-controller" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Datashare (DSHARE)
+              DSHARE - Data Share Controller
             
           </span>
         </div>
@@ -292,7 +292,7 @@
   
   
   <span class="md-ellipsis">
-    WP05-CLM
+    POWERED-BY
     
   </span>
   
@@ -384,7 +384,7 @@
   
   
   <span class="md-ellipsis">
-    Data Detection and Transformation (DDT)
+    DDT - Data Detection and Transformation
     
   </span>
   
@@ -485,7 +485,7 @@
   
   
   <span class="md-ellipsis">
-    Datashare (DSHARE)
+    DSHARE - Data Share Controller
     
   </span>
   
@@ -498,7 +498,7 @@
   
   
   <span class="md-ellipsis">
-    Datashare (DSHARE)
+    DSHARE - Data Share Controller
     
   </span>
   
@@ -705,7 +705,7 @@
   
   
   <span class="md-ellipsis">
-    Edge to Cloud Connector (E2C)
+    E2C - Edge to Cloud Connector
     
   </span>
   
@@ -728,7 +728,7 @@
   
   
   <span class="md-ellipsis">
-    Identity Management Module (IDM)
+    IDM - Identity Manager
     
   </span>
   
@@ -866,7 +866,7 @@
   
   
   <span class="md-ellipsis">
-    Portal
+    PORTAL - Portal
     
   </span>
   
@@ -1136,7 +1136,9 @@
 
 
 
-<h1 id="datashare-dshare">Datashare (DSHARE)</h1>
+<h1 id="dshare-data-share-controller">DSHARE - Data Share Controller</h1>
+<p>Powered by</p>
+<p><a href="https://informationcatalyst.com"><img alt="DS2 DSHARE IceLogo" src="../images/IDT-icelogosmall.jpg" /></a></p>
 <table>
 <thead>
 <tr>
@@ -1145,10 +1147,10 @@
 </thead>
 <tbody>
 <tr>
-<td>Software GitHub Repository <a href="https://github.com/ds2-eu/dshare.git">https://github.com/ds2-eu/dshare.git</a></td>
+<td>Software GitHub Repository <a href="https://github.com/ds2-eu/datashare">https://github.com/ds2-eu/datashare</a></td>
 </tr>
 <tr>
-<td>Progress GitHub Project <a href="https://github.com/orgs/ds2-eu/projects/3">https://github.com/orgs/ds2-eu/projects/3</a></td>
+<td>Progress GitHub Project <a href="https://github.com/orgs/ds2-eu/projects/10">https://github.com/orgs/ds2-eu/projects/10</a></td>
 </tr>
 </tbody>
 </table>
@@ -1164,18 +1166,18 @@ The DS2 DSHARE is for it to access control data regarding an exchange via the co
 <img alt="DS2 DSHARE Architecture" src="../images/DSHARE-ds2architecture.png" /></p>
 <h2 id="component-definition"><strong>Component Definition</strong></h2>
 <p>This module has the following subcomponents and other functions (as detailed in Data Share.pdf, pages 3-4):
-* Data Share Controller
-    * Data Share Manager: The primary module that onboards control data (from Connector, Interceptor, Trust environment), stores it in the DSC DB, correlates it, and handles triggers for data actions (limit/block).
-    * Data Share UI: For configuration, visualization of exchange-related data, and control actions (limiting, blocking).
-    * DSC DB: Stores component data for use by the UI and Data Share Management.
-* Connector and API: Primarily the connector within IDT; other local connectors will be explored. APIs (existing or extensions) service data to the Data Share Manager.
-* Tier 1 Service Stack for Marketplace and deployment and API: Generic DS2 stack implementation (Platform not used by DSHARE).
-* Tier 2: Data Inspector Manager and API: DINS may trigger DSHARE if anomalies suggest blocking data transfers.
-* Tier 3: Trust Environment and API: Feeds static agreement information to the Data Share Manager for visualization and control decisions.
-* Data Share Interceptor and API
-    * Interceptor: Intercepts data/query streams between IDT/Connector and participant's Business Application/Datastores. Interfaces with DSHARE (DSC) and DINS. Capable of receiving block/limit commands. Research ongoing for interception techniques (man-in-the-middle vs. duplicator).
-    * Interceptor UI: For configuring the Interceptor (I/O).
-* Participant DB/Application: Represents business applications feeding data to/receiving queries from the connector.</p>
+* <strong>Data Share Controller</strong>
+    * <strong>Data Share Manager</strong>: The primary module that onboards control data (from Connector, Interceptor, Trust environment), stores it in the DSC DB, correlates it, and handles triggers for data actions (limit/block).
+    * <strong>Data Share UI</strong>: For configuration, visualization of exchange-related data, and control actions (limiting, blocking).
+    * <strong>DSC DB</strong>: Stores component data for use by the UI and Data Share Management.
+* <strong>Connector and API</strong>: Primarily the connector within IDT; other local connectors will be explored. APIs (existing or extensions) service data to the Data Share Manager.
+* <strong>Tier 1 Service Stack for Marketplace and deployment and API</strong>: Generic DS2 stack implementation (Platform not used by DSHARE).
+* <strong>Tier 2</strong>: Data Inspector Manager and API: DINS may trigger DSHARE if anomalies suggest blocking data transfers.
+* <strong>Tier 3</strong>: Trust Environment and API: Feeds static agreement information to the Data Share Manager for visualization and control decisions.
+* <strong>Data Share Interceptor and API</strong>
+    * <strong>Interceptor</strong>: Intercepts data/query streams between IDT/Connector and participant's Business Application/Datastores. Interfaces with DSHARE (DSC) and DINS. Capable of receiving block/limit commands. Research ongoing for interception techniques (man-in-the-middle vs. duplicator).
+    * <strong>Interceptor UI</strong>: For configuring the Interceptor (I/O).
+* <strong>Participant DB/Application</strong>: Represents business applications feeding data to/receiving queries from the connector.</p>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
 <p><img alt="DS2 DSHARE Screenshots" src="../images/DSHARE-screenshots.gif" /></p>
 <h2 id="commercial-information"><strong>Commercial Information</strong></h2>
@@ -1190,7 +1192,7 @@ The DS2 DSHARE is for it to access control data regarding an exchange via the co
 </thead>
 <tbody>
 <tr>
-<td>ICE</td>
+<td><a href="https://informationcatalyst.com">ICE</a></td>
 <td>Open Source</td>
 <td>Apache 2.0</td>
 </tr>
@@ -1198,14 +1200,14 @@ The DS2 DSHARE is for it to access control data regarding an exchange via the co
 </table>
 <h2 id="top-features"><strong>Top Features</strong></h2>
 <ul>
-<li>Consumer analytics: Comprehensive Data Exchange Monitoring, tracking Real-time of data exchanges between a provider and a consumer. The provider of the app can:<ul>
+<li><strong>Consumer analytics</strong>: Comprehensive Data Exchange Monitoring, tracking Real-time of data exchanges between a provider and a consumer. The provider of the app can:<ul>
 <li>Know active contracts of the consumer</li>
 <li>Know how much data has been exchanged associated to a given contract</li>
 <li>Granular Control: Ability to monitor, limit, or block data transfers based on defined policies or user intervention.</li>
 <li>Advanced Analytics: Features weekly data charts, consumption pattern monitoring, and a consumer ranking system.</li>
 </ul>
 </li>
-<li>Assets analytics: DSHARE provides a cockpit to identify most used assets offered by the provider, weekly and monthly consumption trends helpful for identifying inner problems</li>
+<li><strong>Assets analytics</strong>: DSHARE provides a cockpit to identify most used assets offered by the provider, weekly and monthly consumption trends helpful for identifying inner problems</li>
 <li>Alerting System: Notifies users or administrators about approaching or exceeded transfer limits. Alerts are also raisen when consumers have problems accessing an asset (insufficient credentials, etc)</li>
 </ul>
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
