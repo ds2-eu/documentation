@@ -1155,29 +1155,33 @@
 </tbody>
 </table>
 <h2 id="general-description"><strong>General Description</strong></h2>
-<p>Purpose:
-To provide a user-orientated view of control plane information related to a specific exchange of data to monitor its status and to potentially limit or block it. It will access data through a Data Interceptor component which it shares with the DS2 Data Inspection component (DINS) which operates more at the data level. It can be seen as an In-Dataspace enablement module. Its role is especially important in an Inter-DS environment to provide extra monitoring and control of the data exchanges when partners are less known.
-Description:
-The DS2 DSHARE is for it to access control data regarding an exchange via the common Data Interceptor component and an API to the used connector - either within IDT or a specific Dataspace one. It will then log and monitor this information and allow it to be presented in user-friendly form. For short duration one-shot type transactions, this is more of an after-the-event easy-viewer. However, for longer duration transactions (e.g., querying records over a period of time) then it allows the user themselves to monitor the flow and perform control-type actions such as limiting or blocking the transaction.</p>
+<p>To provide a user-orientated view of control plane information related to a specific exchange of data to monitor its status and to potentially limit or block it. It will access data through a Data Interceptor component which it shares with the DS2 Data Inspection component (DINS) which operates more at the data level. It can be seen as an In-Dataspace enablement module. Its role is especially important in an Inter-DS environment to provide extra monitoring and control of the data exchanges when partners are less known.</p>
+<p>The DS2 DSHARE is for it to access control data regarding an exchange via the common Data Interceptor component and an API to the used connector - either within IDT or a specific Dataspace one. It will then log and monitor this information and allow it to be presented in user-friendly form. For short duration one-shot type transactions, this is more of an after-the-event easy-viewer. However, for longer duration transactions (e.g., querying records over a period of time) then it allows the user themselves to monitor the flow and perform control-type actions such as limiting or blocking the transaction.</p>
 <h2 id="architecture"><strong>Architecture</strong></h2>
 <p>The figure below represents the module fit into the DS-DS environment.
 <img alt="DS2 DSHARE Architecturefits" src="../images/DSHARE-architecturefits.png" /></p>
 <p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.
 <img alt="DS2 DSHARE Architecture" src="../images/DSHARE-ds2architecture.png" /></p>
 <h2 id="component-definition"><strong>Component Definition</strong></h2>
-<p>This module has the following subcomponents and other functions (as detailed in Data Share.pdf, pages 3-4):
-* <strong>Data Share Controller</strong>
-    * <strong>Data Share Manager</strong>: The primary module that onboards control data (from Connector, Interceptor, Trust environment), stores it in the DSC DB, correlates it, and handles triggers for data actions (limit/block).
-    * <strong>Data Share UI</strong>: For configuration, visualization of exchange-related data, and control actions (limiting, blocking).
-    * <strong>DSC DB</strong>: Stores component data for use by the UI and Data Share Management.
-* <strong>Connector and API</strong>: Primarily the connector within IDT; other local connectors will be explored. APIs (existing or extensions) service data to the Data Share Manager.
-* <strong>Tier 1 Service Stack for Marketplace and deployment and API</strong>: Generic DS2 stack implementation (Platform not used by DSHARE).
-* <strong>Tier 2</strong>: Data Inspector Manager and API: DINS may trigger DSHARE if anomalies suggest blocking data transfers.
-* <strong>Tier 3</strong>: Trust Environment and API: Feeds static agreement information to the Data Share Manager for visualization and control decisions.
-* <strong>Data Share Interceptor and API</strong>
-    * <strong>Interceptor</strong>: Intercepts data/query streams between IDT/Connector and participant's Business Application/Datastores. Interfaces with DSHARE (DSC) and DINS. Capable of receiving block/limit commands. Research ongoing for interception techniques (man-in-the-middle vs. duplicator).
-    * <strong>Interceptor UI</strong>: For configuring the Interceptor (I/O).
-* <strong>Participant DB/Application</strong>: Represents business applications feeding data to/receiving queries from the connector.</p>
+<p>This module has the following subcomponents and other functions (as detailed in Data Share.pdf, pages 3-4):</p>
+<ul>
+<li><strong>Data Share Controller</strong><ul>
+<li><strong>Data Share Manager</strong>: The primary module that onboards control data (from Connector, Interceptor, Trust environment), stores it in the DSC DB, correlates it, and handles triggers for data actions (limit/block).</li>
+<li><strong>Data Share UI</strong>: For configuration, visualization of exchange-related data, and control actions (limiting, blocking).</li>
+<li><strong>DSC DB</strong>: Stores component data for use by the UI and Data Share Management.</li>
+</ul>
+</li>
+<li><strong>Connector and API</strong>: Primarily the connector within IDT; other local connectors will be explored. APIs (existing or extensions) service data to the Data Share Manager.</li>
+<li><strong>Tier 1 Service Stack for Marketplace and deployment and API</strong>: Generic DS2 stack implementation (Platform not used by DSHARE).</li>
+<li><strong>Tier 2</strong>: Data Inspector Manager and API: DINS may trigger DSHARE if anomalies suggest blocking data transfers.</li>
+<li><strong>Tier 3</strong>: Trust Environment and API: Feeds static agreement information to the Data Share Manager for visualization and control decisions.</li>
+<li><strong>Data Share Interceptor and API</strong><ul>
+<li><strong>Interceptor</strong>: Intercepts data/query streams between IDT/Connector and participant's Business Application/Datastores. Interfaces with DSHARE (DSC) and DINS. Capable of receiving block/limit commands. Research ongoing for interception techniques (man-in-the-middle vs. duplicator).</li>
+<li><strong>Interceptor UI</strong>: For configuring the Interceptor (I/O).</li>
+</ul>
+</li>
+<li><strong>Participant DB/Application</strong>: Represents business applications feeding data to/receiving queries from the connector.</li>
+</ul>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
 <p><img alt="DS2 DSHARE Screenshots" src="../images/DSHARE-screenshots.gif" /></p>
 <h2 id="commercial-information"><strong>Commercial Information</strong></h2>
@@ -1208,7 +1212,7 @@ The DS2 DSHARE is for it to access control data regarding an exchange via the co
 </ul>
 </li>
 <li><strong>Assets analytics</strong>: DSHARE provides a cockpit to identify most used assets offered by the provider, weekly and monthly consumption trends helpful for identifying inner problems</li>
-<li>Alerting System: Notifies users or administrators about approaching or exceeded transfer limits. Alerts are also raisen when consumers have problems accessing an asset (insufficient credentials, etc)</li>
+<li><strong>Alerting System</strong>: Notifies users or administrators about approaching or exceeded transfer limits. Alerts are also raisen when consumers have problems accessing an asset (insufficient credentials, etc)</li>
 </ul>
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
 <p>The module is installed as part of the IDT.</p>
@@ -1228,10 +1232,12 @@ The DS2 DSHARE is for it to access control data regarding an exchange via the co
 <p>Clone the code
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://git.icelab.cloud/ds2/dshare.git
 </span></code></pre></div>
-The module is composed of three parts:
-* MinimumViableProduct: The EDC connector extended with the DSHARE Interceptor.
-* The Datashare Frontend: a vue.js frontend application to access the DSHARE backend. 
-* The proxy server: for avoiding CORS issues. </p>
+The module is composed of three parts:</p>
+<ul>
+<li><strong>MinimumViableProduct</strong>: The EDC connector extended with the DSHARE Interceptor.</li>
+<li><strong>The Datashare Frontend</strong>: a vue.js frontend application to access the DSHARE backend. </li>
+<li><strong>The proxy server</strong>: for avoiding CORS issues. </li>
+</ul>
 <p>Run the command
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker compose up
 </span></code></pre></div></p>
