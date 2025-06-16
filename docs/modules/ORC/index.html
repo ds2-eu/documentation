@@ -1314,13 +1314,19 @@
 <img alt="DS2 IDT Architecture" src="../images/ORC-ds2architecture.png" /></p>
 <h2 id="component-definition"><strong>Component Definition</strong></h2>
 <p>This module has the following subcomponent and other functions:</p>
-<p><strong>Orchestration Module - Core</strong>
-- <strong>Orchestration Core</strong>: This is the runtime heart of orchestration which conducts a process (workflow) triggering other services and via a BPMN module from the Service Composition designer repository. For the tier 1 standard connections (Portal etc) it can be perceived as the entry point. If new orchestration design methods are needed it will use them. Runtime events are connected to the logging components and for inter-participant dataflows it will interface with the DS2 Cross Participant Orchestration subcomponent. This is currently ICE background and will see little development except for a DS2 compliant UI.</p>
+<p><strong>Orchestration Module - Core</strong></p>
 <ul>
-<li><strong>DS2 Service Registry</strong>: </li>
+<li><strong>Orchestration Core</strong>: This is the runtime heart of orchestration which conducts a process (workflow) triggering other services and via a BPMN module from the Service Composition designer repository. For the tier 1 standard connections (Portal etc) it can be perceived as the entry point. If new orchestration design methods are needed it will use them. Runtime events are connected to the logging components and for inter-participant dataflows it will interface with the DS2 Cross Participant Orchestration subcomponent. This is currently ICE background and will see little development except for a DS2 compliant UI.</li>
+</ul>
+<p><strong>DS2 Service Registry</strong>: </p>
+<ul>
 <li><strong>In-participant</strong>: This is a local registry of all services which a participant may potentially use in a workflow, composed together in the designer, and executed in the runtime. Registration can be automatic in the case of IDT installed services. It will also expose services in the inter-participant DS2 registry. It exists now but will be rebuilt in the context of DS2 and IDT.</li>
-<li><strong>Between Participant</strong>: 95% the same functionality but can function similarly to a metadata broker to host services from multiple participants which can be shared in a controlled way to the In-participant registry to allow participant-participant service interactions</li>
-<li><strong>Service Composition Designer (DS2 Upgrade)</strong>: This is the main UI for the Orchestration Designer based on existing ICE background. It allows a user to select or drag various elements from a toolbox (services/APIs from the DS2 Service Registry, methods), which can be placed on a canvas where they can then begin to start designing their orchestration by dragging and connecting various elements together. The saved BPMN2.0 notation model will then be used by the runtime orchestration core. The DS2 upgrade will be mainly for UI and inclusion of New Data Previewer and Forms designer blocks.</li>
+<li>
+<p><strong>Between Participant</strong>: 95% the same functionality but can function similarly to a metadata broker to host services from multiple participants which can be shared in a controlled way to the In-participant registry to allow participant-participant service interactions</p>
+</li>
+<li>
+<p><strong>Service Composition Designer (DS2 Upgrade)</strong>: This is the main UI for the Orchestration Designer based on existing ICE background. It allows a user to select or drag various elements from a toolbox (services/APIs from the DS2 Service Registry, methods), which can be placed on a canvas where they can then begin to start designing their orchestration by dragging and connecting various elements together. The saved BPMN2.0 notation model will then be used by the runtime orchestration core. The DS2 upgrade will be mainly for UI and inclusion of New Data Previewer and Forms designer blocks.</p>
+</li>
 <li><strong>Forms designer</strong>: Many orchestrations have a need for user input and whilst some might come from other systems this can be complex when only limited information. The forms designer will allow the easy inclusion of simple form in any Service composition and also ensure that it respect the data flow as well as service needs.</li>
 <li><strong>Data Previewer</strong>: This is also a new subcomponent which will be rendered via the Service composition designer. Currently services are connected but when designing it is useful to know at design time what might be the inputs and the expect result. In a data orientated project this is especially useful, and this utility will allow some rendering of data to help show flow operations between building blocks before they are deployed.</li>
 <li><strong>New Orchestration methods (from pilots)</strong>: Many methods – eg choice boxes, selections are already implemented in the orchestrator, but it is possible that the pilot might suggest further ones that could be interesting to implement – although at this stage of the analysis it seems there is not. The new methods will be exposed in the orchestrator runtime &amp; designer.</li>
@@ -1331,9 +1337,11 @@
 <li><strong>Culture and Language Module and API</strong>: As with DRM but in this case to use this modules ontology engine to help auto-link services
 •   <strong>Tier 1 Service Stack for Marketplace and deployment and API</strong>: The full stack will be implemented as generically described elsewhere in this document. Exceptions: The Platform will only be needed for inter-participant service orchestrations if used</li>
 </ul>
-<p><strong>Inter-Participant orientated</strong>:
-- <strong>DS2 Cross DS Orchestration</strong>: This is a new runtime module which will act as a bridge between the orchestration within each participant through interconnections to the Inter-Participant Service Registry and the Orchestration core at each participant
-- <strong>Tier 3 Trust Stack</strong> and API: For interparticipant service the module will use relevant parts of the DS2 trust stack – see diagram below</p>
+<p><strong>Inter-Participant orientated</strong>:</p>
+<ul>
+<li><strong>DS2 Cross DS Orchestration</strong>: This is a new runtime module which will act as a bridge between the orchestration within each participant through interconnections to the Inter-Participant Service Registry and the Orchestration core at each participant</li>
+<li><strong>Tier 3 Trust Stack and API</strong>: For interparticipant service the module will use relevant parts of the DS2 trust stack</li>
+</ul>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
 <p><img alt="DS2 IDT Screenshots" src="../images/ORC-screenshots.gif" /></p>
 <h2 id="commercial-information"><strong>Commercial Information</strong></h2>

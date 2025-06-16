@@ -470,6 +470,21 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to use
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to use">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#running-the-cur-module" class="md-nav__link">
     <span class="md-ellipsis">
@@ -488,24 +503,42 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#how-to-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to use
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-dashbutton" class="md-nav__link">
+  <a href="#idt-portal" class="md-nav__link">
     <span class="md-ellipsis">
-      Using the dashbutton
+      IDT Portal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connector-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connector UI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapispec" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenApiSpec
     </span>
   </a>
   
@@ -1064,6 +1097,21 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to use
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to use">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#running-the-cur-module" class="md-nav__link">
     <span class="md-ellipsis">
@@ -1082,24 +1130,42 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#how-to-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to use
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-dashbutton" class="md-nav__link">
+  <a href="#idt-portal" class="md-nav__link">
     <span class="md-ellipsis">
-      Using the dashbutton
+      IDT Portal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connector-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connector UI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapispec" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenApiSpec
     </span>
   </a>
   
@@ -1131,6 +1197,8 @@
 
 
 <h1 id="cur-ds2-data-curation-module">CUR - DS2 Data Curation module</h1>
+<p>Powered by</p>
+<p><img alt="DS2 CUR Architecturefits" src="../images/IBM_logo%C2%AE_pos_blue60_CMYK.jpg" /></p>
 <table>
 <thead>
 <tr>
@@ -1142,7 +1210,7 @@
 <td>Software GitHub Repository <a href="https://github.com/ds2-eu/cur.git">https://github.com/ds2-eu/cur.git</a></td>
 </tr>
 <tr>
-<td>Progress GitHub Project <a href="https://github.com/orgs/ds2-eu/projects/39">https://github.com/orgs/ds2-eu/projects/39</a></td>
+<td>Progress GitHub Project <a href="https://github.com/orgs/ds2-eu/projects/3">https://github.com/orgs/ds2-eu/projects/3</a></td>
 </tr>
 </tbody>
 </table>
@@ -1210,38 +1278,35 @@ In particular, this latter component is composed of a number of stages which inc
 <li>Any API tokens required by the REST call are shown within brackets, for example:'Authorization: Bearer <DADS_BEARER_TOKEN>'.  At runtime, the software will attempt to replace the bracketed value with an environment variable of the same name - for example the environment variable, "DADS_BEARER_TOKEN" in this example.  Therefore, configure these values in your environment.</li>
 </ul>
 </li>
-<li>To create the SQL database the first time, run <code>python create_database.py --prefix [name]</code>.  The value for [name] needs to correspond exactly to a URI entry name in the federation_config.json file (for example, "Slovenia", "Romania" or "Greece").  As an example, to build the database for the DS2 Slovenian use case, we would run: 
+<li>To create the SQL database the first time, run <code>python create_database.py --prefix [name]</code>.  The value for [name] needs to correspond exactly to a URI entry name in the federation_config.json file (for example, "Slovenia", "Romania" or "Greece").  As an example, to build the database for the DS2 Slovenian use case, we would run:
 <code>python create_database.py --prefix Slovenia</code>.</li>
 </ol>
+<h2 id="how-to-use">How to use</h2>
 <h3 id="running-the-cur-module">Running the CUR module</h3>
 <p>In order to run the CUR module, the correct python environment needs to be created.  It is recommended that you create a virtual environment as follows:</p>
 <ul>
-<li><code>python -m venv [name]</code>  where "name" will be the name of the virtual environment, for example, "venv".</li>
-<li>Activate the virtual environment: On Mac or Linux this will be: <code>source [name]/bin/activate</code>, where the value of "name" is from the previous step.</li>
+<li>python -m venv [name]  where "name" will be the name of the virtual environment, for example, "venv".</li>
+<li>Activate the virtual environment: On Mac or Linux this will be: <code>source &lt;name&gt;/bin/activate</code>, where the value of "name" is from the previous step.</li>
 <li>Install inside the virtual environment the required modules: <code>pip install requirements.txtx</code></li>
 </ul>
 <p>Once the environment is set up, the CUR module can be run.  Note that the CUR module requires access to an LLM. The access key for the LLM can be defined by configuring and environment variable, LLM_APIKEY, in your sheel.  If this is not configured, then at runtime the module will request the key value.</p>
 <p>The CUR module is invoked as follows:</p>
-<p><code>python ds2_federation_main.py --prefix [prefix] --url [url]</code></p>
+<p><code>python --prefix [prefix] --url [url]</code></p>
 <p>where the value for "prefix" is the as described in the previous section for setting up the db, and the value for "url" is the base address of the LLM (i.e without the model name).  CUR uses llama-3-3-70b-instruct as its default model.  This can be overridden by using the --name and --id command line values (e.g. --name llama-3-3-70b-instruct --id meta-llama/llama-3-3-70b-instruct).  Note that the accuracy of the NL2SQL translation in the CUR module may depend on the model used.</p>
-<h3 id="requirements">Requirements</h3>
-<p>An external LLM is required.  No particular requirements for CPU, memory or storage have been identified.</p>
-<p>Using the dashbutton requires a configured keycloak server to be running.</p>
-<h3 id="how-to-use">How to use</h3>
 <p>The CUR GUI is web-based.  When CUR is started as described in the previous step, it will print out where it can be accessed, typically this will be at: <code>http://127.0.0.1:5000</code> for an installation on the local host.</p>
 <p>To search for data, enter in the <strong>What would you like to know?</strong> box your query and then click the <strong>Ask</strong> button.  Note that the query needs to relate to values in the data sets configured in the federation_config.json file.  If the query succeeds, the answer will appear in the <strong>Answer</strong> box.  If the query fails, then you will be instructed to either correct the generated SQL query, or enter "skip".  If you choose to correct the SQL, enter this in the <strong>Corrected SQL</strong> box and then click on <strong>Execute</strong>, otherwise click on the "Skip" button to move on to a new query.</p>
-<h2 id="using-the-dashbutton">Using the dashbutton</h2>
-<p>If the dashbutton is used, then a keycloak server needs to be configured.</p>
-<p>Reference: <code>https://github.com/ds2-eu/portal/tree/main/dash-button/web-component</code></p>
-<p>Run keycloak with:</p>
-<p><code>docker run -p 8080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:25.0.2 start-dev</code></p>
-<p>Go to the keycloak admin screen:</p>
-<p><code>http://localhost:8080/admin/master/console/</code></p>
-<p>Click on "Keycloak" in the upper left corner to get to "Create realm"
-<img alt="DS2 RET Screenshots" src="./images/create_realm.png" /></p>
-<p>Create a realm with name "demo".</p>
-<p>Click on "Clients" and then "Create Clients"</p>
-<h2 id="additional-links"><strong>Additional Links</strong></h2>
+<h3 id="requirements">Requirements</h3>
+<p>An external LLM is required.  No particular requirements for CPU, memory or storage have been identified.</p>
+<h2 id="idt-portal">IDT Portal</h2>
+<p>TBD</p>
+<h2 id="connector-ui">Connector UI</h2>
+<p>TBD</p>
+<h2 id="other-information">Other Information</h2>
+<p>N/A</p>
+<h2 id="openapispec">OpenApiSpec</h2>
+<p>N/A</p>
+<h2 id="additional-links">Additional Links</h2>
+<p>N/A</p>
 
 
 
