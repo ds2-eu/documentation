@@ -361,7 +361,7 @@
   
   
   <span class="md-ellipsis">
-    DARC
+    DARC - Discovery Assessment Recommend Configure
     
   </span>
   
@@ -502,27 +502,27 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#software" class="md-nav__link">
+  <a href="#step-1-start-the-quality-module-with-docker-compose" class="md-nav__link">
     <span class="md-ellipsis">
-      Software
+      Step 1: Start the Quality Module with Docker Compose
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#summary-of-installation-steps" class="md-nav__link">
+  <a href="#step-2-start-the-thingsboard-docker-image" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary of installation steps
+      Step 2: Start the ThingsBoard Docker Image
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#detailed-steps" class="md-nav__link">
+  <a href="#step-3-run-the-thingsboard-adapter" class="md-nav__link">
     <span class="md-ellipsis">
-      Detailed steps
+      Step 3: Run the ThingsBoard Adapter
     </span>
   </a>
   
@@ -530,15 +530,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      How To Use
-    </span>
-  </a>
   
 </li>
       
@@ -774,7 +765,7 @@
   
   
   <span class="md-ellipsis">
-    Multi-cloud Module (MCL)
+    MCL - Multi-cloud
     
   </span>
   
@@ -935,7 +926,7 @@
   
   
   <span class="md-ellipsis">
-    Multi-cloud Module (MCL)
+    SEC - Edge-to-cloud Security
     
   </span>
   
@@ -1053,27 +1044,27 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#software" class="md-nav__link">
+  <a href="#step-1-start-the-quality-module-with-docker-compose" class="md-nav__link">
     <span class="md-ellipsis">
-      Software
+      Step 1: Start the Quality Module with Docker Compose
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#summary-of-installation-steps" class="md-nav__link">
+  <a href="#step-2-start-the-thingsboard-docker-image" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary of installation steps
+      Step 2: Start the ThingsBoard Docker Image
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#detailed-steps" class="md-nav__link">
+  <a href="#step-3-run-the-thingsboard-adapter" class="md-nav__link">
     <span class="md-ellipsis">
-      Detailed steps
+      Step 3: Run the ThingsBoard Adapter
     </span>
   </a>
   
@@ -1081,15 +1072,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      How To Use
-    </span>
-  </a>
   
 </li>
       
@@ -1268,22 +1250,80 @@ DDT can be configured to send alerts, i.e. to inform about encountered data qual
 To allow for an easy integration of edge data, DDT supports DS2 E2C module by importing E2C configuration files to 
 preconfigure attributes in the DDT UI.</p>
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
-<p>To Be Done</p>
+<p>This section explains how to install and launch the entire quality analysis system, including:</p>
+<ul>
+<li>the DDT quality module via Docker Compose</li>
+<li>the ThingsBoard IoT platform</li>
+<li>the ThingsBoard Adapter for integrating MQTT with the ThingsBoard dashboard</li>
+</ul>
 <h3 id="requirements">Requirements</h3>
-<p>To Be Done</p>
-<h3 id="software">Software</h3>
-<p>N/A</p>
-<h3 id="summary-of-installation-steps">Summary of installation steps</h3>
-<p>To Be Done</p>
-<h3 id="detailed-steps">Detailed steps</h3>
-<p>To Be Done</p>
-<h2 id="how-to-use"><strong>How To Use</strong></h2>
-<p>To Be Done</p>
-<h2 id="other-information"><strong>Other Information</strong></h2>
+<ul>
+<li>Docker</li>
+<li>Docker Compose</li>
+<li>Git</li>
+<li>Python 3.7+ (for running the ThingsBoard Adapter)</li>
+</ul>
+<hr />
+<h3 id="step-1-start-the-quality-module-with-docker-compose">Step 1: Start the Quality Module with Docker Compose</h3>
+<ol>
+<li><strong>Clone the repository</strong></li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/SoftwareAG-RES/ds2_quality_module.git
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>ds2_quality_module
+</span></code></pre></div>
+<ol>
+<li>
+<p><strong>Start all services</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker-compose<span class="w"> </span>up<span class="w"> </span>--build
+</span></code></pre></div>
+</li>
+<li>
+<p><strong>Verify services are running</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>ps
+</span></code></pre></div>
+</li>
+</ol>
+<h3 id="step-2-start-the-thingsboard-docker-image">Step 2: Start the ThingsBoard Docker Image</h3>
+<ol>
+<li>
+<p><strong>Run the ThingsBoard Docker container</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:9090<span class="w"> </span>--name<span class="w"> </span>thingsboard<span class="w"> </span>thingsboard/tb-postgres
+</span></code></pre></div>
+</li>
+<li>
+<p><strong>Access the ThingsBoard UI</strong></p>
+<p>Navigate to: http://localhost:8080</p>
+<p>Default login:</p>
+<ul>
+<li>
+<p><strong>Username</strong>: tenant@thingsboard.org</p>
+</li>
+<li>
+<p><strong>Password</strong>: tenant</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="step-3-run-the-thingsboard-adapter">Step 3: Run the ThingsBoard Adapter</h3>
+<ol>
+<li>
+<p><strong>Clone the adapter repository</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/y3120_sagemu/ThingsBoardAdapter.git
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">cd</span><span class="w"> </span>ThingsBoardAdapter
+</span></code></pre></div>
+</li>
+<li>
+<p><strong>Run the adapter</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python3<span class="w"> </span>main.py
+</span></code></pre></div>
+<p>Make sure ThingsBoard is running before executing the adapter. This component bridges the validated MQTT messages to the ThingsBoard platform.</p>
+</li>
+</ol>
+<h2 id="other-information">Other Information</h2>
 <p>No other information at the moment for DDT.</p>
-<h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
+<h2 id="openapi-specification">OpenAPI Specification</h2>
 <p>N/A</p>
-<h2 id="additional-links"><strong>Additional Links</strong></h2>
+<h2 id="additional-links">Additional Links</h2>
 <p>N/A</p>
 
 
