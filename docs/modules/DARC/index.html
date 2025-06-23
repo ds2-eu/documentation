@@ -292,7 +292,7 @@
   
   
   <span class="md-ellipsis">
-    POWERED-BY
+    CLM - Culture and Language
     
   </span>
   
@@ -876,6 +876,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../PCR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PCR - Policy Creation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../PORTAL/" class="md-nav__link">
         
   
@@ -1193,9 +1216,11 @@
 <p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.
 <img alt="DS2 DARC Architecture" src="../images/DARC-ds2architecture.png" /></p>
 <h2 id="component-definition"><strong>Component Definition</strong></h2>
-<p>The subcomponents of DARC are as follows:
-*   <strong>AI-driven Chat Bot UI</strong>: The User interface subcomponent through which end-users interact with DARC. It allows end-users to provide inputs and receive outputs, facilitating a smooth and intuitive interaction DARC. This subcomponent directly interfaces with end-users for dialogue exchange.</p>
+<p>The subcomponents of DARC are as follows:</p>
 <ul>
+<li>
+<p><strong>AI-driven Chat Bot UI</strong>: The User interface subcomponent through which end-users interact with DARC. It allows end-users to provide inputs and receive outputs, facilitating a smooth and intuitive interaction DARC. This subcomponent directly interfaces with end-users for dialogue exchange.</p>
+</li>
 <li>
 <p><strong>Prompt Handler</strong>: The Prompt Handler facilitates the exchange of dialogue between the Large Language Model and end-users. It performs initial checks, correcting grammar errors and verifying supported languages. If a language is not supported, the module engages the Ontology/Multilingual Processor for language disambiguation before forwarding the prompt to the LLM Core. This ensures that interactions are both clear and linguistically compatible.</p>
 </li>
@@ -1240,22 +1265,18 @@
 </li>
 <li>
 <p>Tier 0 Support Service Stack:</p>
-<ul>
-<li>
-<p>Sovereignty Decision Support Module Risk Knowledge Base: API will be driven by DARC to provide information about potential security risks involved during the configuration, assessment, and definition of a participant’s DLC.</p>
+<div class="language-text highlight"><pre><span></span><code>*   Sovereignty Decision Support Module Risk Knowledge Base: API will be driven by DARC to provide information about potential security risks involved during the configuration, assessment, and definition of a participant’s DLC.
+
+* Culture and Language Module. Ontology and Multi-language Facility Module API – will provide DARC with multilingual support and ontology disambiguation, enhancing DARC&#39;s ability to interpret and process diverse linguistic data accurately and effectively across different languages.
+</code></pre></div>
 </li>
 <li>
-<p>Culture and Language Module. Ontology and Multi-language Facility Module API – will provide DARC with multilingual support and ontology disambiguation, enhancing DARC's ability to interpret and process diverse linguistic data accurately and effectively across different languages.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Tier 1 Service Stack for Marketplace and deployment and API: The full stack will be implemented as generically described elsewhere in this document. Exceptions: The Platform will only be needed for inter-participant service orchestrations were used</p>
+<p>Tier 1 Service Stack for Marketplace and deployment and API: The full stack will be implemented as generically described elsewhere in this document. Exceptions: The Platform will only be needed for inter-participant service orchestrations were used.</p>
 </li>
 </ul>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
 <p><img alt="DS2 DARC Screenshots" src="../images/DARC-screenshots.gif" /></p>
-<p>[Changes on UI are still in progress to align with project's requirements.]</p>
+<p>Work on UI is still in progress to align with project's requirements.</p>
 <h2 id="commercial-information"><strong>Commercial Information</strong></h2>
 <table>
 <thead>
@@ -1358,8 +1379,10 @@ Offers a fully guided, conversational journey from assessment to configuration a
 <p>Make sure Conda is installed. Then run:
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
 </span></code></pre></div>
-where environment.yml include all the appropriate packages needed to run DARC module.
-2. <strong>Activate the Environment</strong>:</p>
+Where environment.yml include all the appropriate packages needed to run DARC module.</p>
+</li>
+<li>
+<p><strong>Activate the Environment</strong>:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>ds2
 </span></code></pre></div>
 </li>
@@ -1376,7 +1399,7 @@ where environment.yml include all the appropriate packages needed to run DARC mo
 <p>Open your browser and go to:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>http://localhost:8000
 </span></code></pre></div>
-<p>If running on a remote server, use your machine's IP address (e.g., http://192.168.x.x:8000)</p>
+<p>If running on a remote server, use your machine's IP address (e.g., http://192.168.x.x:8000).</p>
 </li>
 </ol>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
@@ -1389,7 +1412,7 @@ where environment.yml include all the appropriate packages needed to run DARC mo
 <p>"What modules are available in DS2?"
 →  This will list all current modules, tools, or components included in the DS2 system.</p>
 <h2 id="other-information"><strong>Other Information</strong></h2>
-<p>No other information at the moment for MODULE.</p>
+<p>No other information at the moment for DARC.</p>
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
 <p>To Be Done.</p>
 <h2 id="additional-links"><strong>Additional Links</strong></h2>
