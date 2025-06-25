@@ -960,6 +960,77 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_24" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_24" id="__nav_2_24_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Images
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_24_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_24">
+            <span class="md-nav__icon md-icon"></span>
+            Images
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../images/Readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Readme
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1161,35 +1232,45 @@
 </table>
 <h2 id="general-description"><strong>General Description</strong></h2>
 <p>The DS2 Identity Module (IDM) is a Foundation module that provides a practical framework for creating, managing, and validating participant and module identities for inter-Dataspace activities. It leverages Verifiable Credentials (VCs) and integrates with technologies like the EDC IdentityHub to ensure secure and trustworthy identity management. The IDM aims to reuse existing identities from different companies and provide robust mechanisms to verify their membership and participation in various dataspaces.</p>
-<p>The IDM facilitates the secure interaction between dataspaces by managing identities and access rights. Key development efforts have focused on:
-* <strong>Verifiable Credentials (VCs):</strong> Core to the IDM, VCs allow companies to prove their identity and attributes in a secure and verifiable manner.
-* <strong>Wallet Visualisation:</strong> Functionality enabling companies to view and manage their VCs.
-* <strong>Credential Issuer:</strong> DS2 has developed its own credential issuer capable of generating signed VCs for companies, based on dataspace agreements.
-* <strong>IDM Portal:</strong> A comprehensive web interface (backend and frontend) for managing dataspaces, collaboration agreements, and company registrations within DS2.
-* <strong>EDC IdentityHub Integration:</strong> Successful integration allows for the hosting and management of VCs.
-The module supports the registration of dataspaces, the establishment and management of collaboration agreements between them, and the registration of companies as DS2 members, all underpinned by a system of verifiable digital credentials.</p>
+<p>The IDM facilitates the secure interaction between dataspaces by managing identities and access rights. Key development efforts have focused on:</p>
+<ul>
+<li><strong>Verifiable Credentials (VCs):</strong> Core to the IDM, VCs allow companies to prove their identity and attributes in a secure and verifiable manner.</li>
+<li><strong>Wallet Visualisation:</strong> Functionality enabling companies to view and manage their VCs.</li>
+<li><strong>Credential Issuer:</strong> DS2 has developed its own credential issuer capable of generating signed VCs for companies, based on dataspace agreements.</li>
+<li><strong>IDM Portal:</strong> A comprehensive web interface (backend and frontend) for managing dataspaces, collaboration agreements, and company registrations within DS2.</li>
+<li><strong>EDC IdentityHub Integration:</strong> Successful integration allows for the hosting and management of VCs.</li>
+</ul>
+<p>The module supports the registration of dataspaces, the establishment and management of collaboration agreements between them, and the registration of companies as DS2 members, all underpinned by a system of verifiable digital credentials.</p>
 <h2 id="architecture"><strong>Architecture</strong></h2>
 <p>The figure below represents the module fit into the DS-DS environment.
 <img alt="DS2 IDM Architecturefits" src="../images/IDM-architecturefits.png" /></p>
 <p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.
 <img alt="DS2 IDM Architecture" src="../images/IDM-ds2architecture.png" /></p>
 <h2 id="component-definition"><strong>Component Definition</strong></h2>
-<p>the IDM comprises the following key components:
-IDM Portal:
-* <strong>Backend:</strong> Manages the business logic for dataspace registration, agreement workflows, company registration, and interactions with the credential issuer and wallet functionalities.
-* <strong>Frontend (UIs):</strong> Provides user interfaces for:
-    * Registration of dataspaces in DS2.
-    * Requesting collaboration and forming agreements between dataspaces.
-    * Searching for registered dataspaces.
-    * Accepting or rejecting collaboration agreements.
-    * Visualizing dataspace policies.
-    * Registering companies as members of DS2.
-* <strong>DS2 Credentials Issuer:</strong> An implemented service capable of generating cryptographically signed Verifiable Credentials.
-    * Issues credentials to companies based on established dataspace agreements and their DS2 membership.
-* <strong>Wallet Visualisation Functionality:</strong> A user-facing component allowing companies to view and manage their issued Verifiable Credentials.
-    * Integrated with the EDC IdentityHub for hosting credentials.
-* <strong>EDC IdentityHub Integration Layer:</strong> Manages the interaction with the EDC IdentityHub, enabling the storage and retrieval of Verifiable Credentials.
-* <strong>Core Identity Logic:</strong> Underlying mechanisms for verifying membership of companies in their respective dataspaces and managing the lifecycle of identities and credentials within the DS2 ecosystem.</p>
+<p>The IDM comprises the following key components:</p>
+<p>IDM Portal:</p>
+<ul>
+<li><strong>Backend:</strong> Manages the business logic for dataspace registration, agreement workflows, company registration, and interactions with the credential issuer and wallet functionalities.</li>
+<li><strong>Frontend (UIs):</strong> Provides user interfaces for:<ul>
+<li>Registration of dataspaces in DS2.</li>
+<li>Requesting collaboration and forming agreements between dataspaces.</li>
+<li>Searching for registered dataspaces.</li>
+<li>Accepting or rejecting collaboration agreements.</li>
+<li>Visualizing dataspace policies.</li>
+<li>Registering companies as members of DS2.</li>
+</ul>
+</li>
+<li><strong>DS2 Credentials Issuer:</strong> An implemented service capable of generating cryptographically signed Verifiable Credentials.<ul>
+<li>Issues credentials to companies based on established dataspace agreements and their DS2 membership.</li>
+</ul>
+</li>
+<li><strong>Wallet Visualisation Functionality:</strong> A user-facing component allowing companies to view and manage their issued Verifiable Credentials.<ul>
+<li>Integrated with the EDC IdentityHub for hosting credentials.</li>
+</ul>
+</li>
+<li><strong>EDC IdentityHub Integration Layer:</strong> Manages the interaction with the EDC IdentityHub, enabling the storage and retrieval of Verifiable Credentials.</li>
+<li><strong>Core Identity Logic:</strong> Underlying mechanisms for verifying membership of companies in their respective dataspaces and managing the lifecycle of identities and credentials within the DS2 ecosystem.</li>
+</ul>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
 <p><img alt="DS2 IDT Screenshots" src="../images/IDM-screenshots.gif" /></p>
 <h2 id="commercial-information"><strong>Commercial Information</strong></h2>
@@ -1240,31 +1321,42 @@ Recommended: 4 cpu cores, 8 GB RAM and 50 GB disk capacity.</p>
 <p>Clone the code
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://git.icelab.cloud/ds2/idm.git
 </span></code></pre></div>
-The module is composed of three parts:
-* IDM Portal: Fronend of the app providing functionality for creating dataspaces, establishing collaboration agreements, and requesting verifiable credentials.
-* IDM Backend: A REST API for the IDM Portal to interact with the EDC IdentityHub and the Verifiable Credentials Issuer. 
-* IDM database: A database for storing the IDM data. </p>
+The module is composed of three parts:</p>
+<ul>
+<li>IDM Portal: Fronend of the app providing functionality for creating dataspaces, establishing collaboration agreements, and requesting verifiable credentials.</li>
+<li>IDM Backend: A REST API for the IDM Portal to interact with the EDC IdentityHub and the Verifiable Credentials Issuer. </li>
+<li>IDM database: A database for storing the IDM data. </li>
+</ul>
 <p>Run the command
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./dev-rebuild.sh
 </span></code></pre></div></p>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
-<p>The IDM is primarily interacted with via the global portal. After the user logs in it provides two main functionality: Management of Dataspaces and Company Verifiable Credentials:
-* <strong>Dataspace Authorities:</strong>
-    * Use the IDM Portal to register their dataspace within the DS2 ecosystem.
-    <img alt="DS2 IDT Screenshots" src="../images/IDM-registerDS.gif" />
-    * Search for other registered dataspaces to explore potential collaborations.
-    * Initiate collaboration requests with other dataspaces.
-    <img alt="DS2 IDT Screenshots" src="../images/IDM-initiatecollaboration.gif" />
-    * Review and accept/reject incoming collaboration requests.
-    * View policies associated with registered dataspaces.
-    <img alt="DS2 IDT Screenshots" src="../images/IDM-viewpolicy.gif" />
-* <strong>Companies:</strong>
-    * Register their organization as a member of DS2 via the IDM Portal.
-    <img alt="DS2 IDT Screenshots" src="../images/IDM-registermembership.gif" />
-    * Once approved and relevant dataspace agreements are in place, the DS2 Credentials Issuer will generate Verifiable Credentials for the company.
-    * Access the Wallet Visualisation Functionality to view and manage their issued VCs. These VCs can then be used to prove their identity and membership in inter-dataspace interactions.
-* <strong>System Administrators:</strong>
-    * Manage the overall configuration and operation of the IDM components.</p>
+<p>The IDM is primarily interacted with via the global portal. After the user logs in it provides two main functionality: Management of Dataspaces and Company Verifiable Credentials:</p>
+<ul>
+<li><strong>Dataspace Authorities:</strong><ul>
+<li>Use the IDM Portal to register their dataspace within the DS2 ecosystem.
+<img alt="DS2 IDT Screenshots" src="../images/IDM-registerDS.gif" /></li>
+<li>Search for other registered dataspaces to explore potential collaborations.</li>
+<li>Initiate collaboration requests with other dataspaces.
+<img alt="DS2 IDT Screenshots" src="../images/IDM-initiatecollaboration.gif" /></li>
+<li>Review and accept/reject incoming collaboration requests.</li>
+<li>View policies associated with registered dataspaces.
+<img alt="DS2 IDT Screenshots" src="../images/IDM-viewpolicy.gif" /></li>
+</ul>
+</li>
+<li><strong>Companies:</strong><ul>
+<li>Register their organization as a member of DS2 via the IDM Portal.
+<img alt="DS2 IDT Screenshots" src="../images/IDM-registermembership.gif" /></li>
+<li>Once approved and relevant dataspace agreements are in place, the DS2 Credentials Issuer will generate Verifiable Credentials for the company.</li>
+<li>Access the Wallet Visualisation Functionality to view and manage their issued VCs.
+  These VCs can then be used to prove their identity and membership in  inter-dataspace interactions.</li>
+</ul>
+</li>
+<li><strong>System Administrators:</strong><ul>
+<li>Manage the overall configuration and operation of the IDM components.</li>
+</ul>
+</li>
+</ul>
 <h2 id="other-information"><strong>Other Information</strong></h2>
 <p>No other information at the moment for IDM</p>
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>

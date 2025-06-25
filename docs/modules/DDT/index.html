@@ -960,6 +960,77 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_24" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_24" id="__nav_2_24_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Images
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_24_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_24">
+            <span class="md-nav__icon md-icon"></span>
+            Images
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../images/Readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Readme
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1142,6 +1213,8 @@
 
 
 <h1 id="ddt-data-detection-and-transformation">DDT - Data Detection and Transformation</h1>
+<p>Powered by</p>
+<p><img alt="Software GmbH" src="./images/E2C-logo.png" width="250"/></p>
 <table>
 <thead>
 <tr>
@@ -1168,67 +1241,40 @@
 <h2 id="component-definition"><strong>Component Definition</strong></h2>
 <p>This module has the following subcomponent and other functions:</p>
 <ul>
-<li><strong>Core (Designtime)</strong></li>
 <li>
-<p>DDT provides a user interface by which</p>
-<ul>
-<li>the AI algorithms are developed, tested and deployed to the AI detection component</li>
-<li>the transformation algorithms are developed, tested and deployed to the transformation component.</li>
-</ul>
+<p><strong>Core (Designtime)</strong>: DDT provides a user interface by which the AI algorithms are developed, tested and deployed to the AI detection component, as well as the transformation algorithms are developed, tested and deployed to the transformation component.</p>
 </li>
 <li>
-<p><strong>Core (Runtime)</strong></p>
+<p><strong>Core (Runtime)</strong>: This is the heart of the Data Detection and Transformation Module. It is responsible for collecting the data input from the external source and pass it on to the AI detection and the transformation components. This uses either the HTTP or the MQTT APIs. In a similar fashion it also collects the information provided by the Cultural and Language module and passes it on to the other components. Once processed and used, the data and results of the data analysis will be sent out to the Information Consumer and the Data Consumer, also via the same HTTP or the MQTT APIs.</p>
 </li>
 <li>
-<p>This is the heart of the Data Detection and Transformation Module. It is responsible for collecting the data input from the external source and pass it on to the AI detection and the transformation components. This uses either the HTTP or the MQTT APIs. In a similar fashion it also collects the information provided by the Cultural and Language module and passes it on to the other components. Once processed and used, the data and results of the data analysis will be sent out to the Information Consumer and the Data Consumer, also via the same HTTP or the MQTT APIs.</p>
+<p><strong>AI Detection</strong>: This component supports the execution of AI models developed using Python or other programming languages supported by Apama. It operates on data and returns information on the data worked on like if an anomaly has occurred or if the data quality has decreased. Many models will be provided to the user and the model selection is done together with the T4.2 project partners INDRA and DIGI. It has the two subcomponents Data Inspection and Model Selection where based on the result of the Data Inspection, the appropriate AI model is selected.</p>
 </li>
 <li>
-<p><strong>AI Detection</strong></p>
-</li>
-<li>This component supports the execution of AI models developed using Python or other programming languages supported by Apama. It operates on data and returns information on the data worked on like if an anomaly has occurred or if the data quality has decreased. Many models will be provided to the user and the model selection is done together with the T4.2 project partners INDRA and DIGI.</li>
-<li>
-<p>It has the two subcomponents Data Inspection and Model Selection where based on the result of the Data Inspection, the appropriate AI model is selected.</p>
+<p><strong>AI Transformation</strong>: This component operates on the data passed on by the Core (Runtime) directly. It will detect schema changes and can transform the data into the correct format on the fly. It can also use the information provided by the DS2 Culture and Language module to define rules and limits what the data values should be and act accordingly, e.g. by eliminating out-of-range values. It has the three subcomponents Analyze Data, Select Transformation and Transform Data.</p>
 </li>
 <li>
-<p><strong>AI Transformation</strong></p>
+<p><strong>APIs: The Core runtime component has the following interfaces</strong>: HTTP Server: This module will provide a HTTP interface to send and receive data and information from the DS2 Culture and Language module. Different URLs will be specified to distinguish between input and output channels and if the AI Detection or Transformation component should be used. MQTT Broker: This is the de-facto standard for machine-to-machine communicate so an interface is provided to send and receive data from this module via publish and subscribe methods to certain topics. This can be used to specify the input and output channels of this module and also if the AI Detection or Transformation component should be used</p>
 </li>
-<li>This component operates on the data passed on by the Core (Runtime) directly. It will detect schema changes and can transform the data into the correct format on the fly. It can also use the information provided by the DS2 Culture and Language module to define rules and limits what the data values should be and act accordingly, e.g. by eliminating out-of-range values.</li>
-<li>
-<p>It has the three subcomponents Analyze Data, Select Transformation and Transform Data.</p>
-</li>
-<li>
-<p><strong>APIs: The Core runtime component has the following interfaces</strong></p>
-</li>
-<li>HTTP Server: This module will provide a HTTP interface to send and receive data and information from the DS2 Culture and Language module. Different URLs will be specified to distinguish between input and output channels and if the AI Detection or Transformation component should be used.</li>
-<li>MQTT Broker: This is the de-facto standard for machine-to-machine communicate so an interface is provided to send and receive data from this module via publish and subscribe methods to certain topics. This can be used to specify the input and output channels of this module and also if the AI Detection or Transformation component should be used</li>
 </ul>
 <p><strong>External Components Used</strong>
-* <strong>Data Source</strong>
-  * The data provider or data consumer, depending on where this module is deployed, configures and selects where the data to be analysed and transformed comes from</p>
+- <strong>Data Source</strong>: The data provider or data consumer, depending on where this module is deployed, configures and selects where the data to be analysed and transformed comes from</p>
 <ul>
-<li><strong>Tier 1 Service Stack for Marketplace and Development</strong></li>
 <li>
-<p>The module uses the portal to publish its configuration</p>
+<p><strong>Tier 1 Service Stack for Marketplace and Development</strong>: The module uses the portal to publish its configuration</p>
 </li>
 <li>
-<p><strong>Tier 0 DS2 Support</strong></p>
+<p><strong>Tier 0 DS2 Support</strong>: The information on the data like format and schema comes from the Cultural and Language module</p>
 </li>
 <li>
-<p>The information on the data like format and schema comes from the Cultural and Language module</p>
+<p><strong>Data Consumer</strong>: The data provider or data consumer, depending on where this module is deployed, configures where the transformed data is sent to.</p>
 </li>
 <li>
-<p><strong>Data Consumer</strong></p>
+<p><strong>Information Consumer</strong>: The data provider or data consumer, depending on where this module is deployed, configures where the information on anomalous behaviour, possible error conditions and the data quality is sent to.</p>
 </li>
-<li>
-<p>The data provider or data consumer, depending on where this module is deployed, configures where the transformed data is sent to.</p>
-</li>
-<li>
-<p><strong>Information Consumer</strong></p>
-</li>
-<li>The data provider or data consumer, depending on where this module is deployed, configures where the information on anomalous behaviour, possible error conditions and the data quality is sent to.</li>
 </ul>
 <p><strong>External Interaction</strong>
-  * <strong>User:</strong>
+  - <strong>User</strong>:
     The user uses the UI to develop, test and deploy the AI detection algorithms and the transformation algorithms to the corresponding components.</p>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
 <p><img alt="DS2 E2C Screenshots" src="../images/DDT-screenshots.gif" /></p>
