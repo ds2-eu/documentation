@@ -18,3 +18,15 @@ These are the instructions in order to create the on-line documentation for your
 * Once the document is ready, push your updated README.md and the images/ folder to your module DS2 GitHub repository inside the /docs folder
 
 * An automatic process will gather all the README.md from all modules GitHub repositories and compile them as a documentation site using material for mkdocs. The site is hosted at GitHub at <https://ds2-eu.github.io/documentation/>
+
+* Regarding adding list, make sure you leave a blank line between the header of the list and the list itself
+  ```
+  This is the list
+  * item1
+  ```
+  vs
+  ```
+  This is the list -> This is the GOOD one
+  
+  * item1
+  ```
