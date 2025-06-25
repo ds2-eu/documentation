@@ -20,7 +20,7 @@
     
     
       
-        <title>DS2 Data discovery and transformation module (RET) - Documentation DS2</title>
+        <title>RET - Data Retrieval - Documentation DS2</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ds2-data-discovery-and-transformation-module-ret" class="md-skip">
+        <a href="#ret-data-retrieval" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DS2 Data discovery and transformation module (RET)
+              RET - Data Retrieval
             
           </span>
         </div>
@@ -738,7 +738,7 @@
   
   
   <span class="md-ellipsis">
-    DS2 Data discovery and transformation module (RET)
+    RET - Data Retrieval
     
   </span>
   
@@ -751,7 +751,7 @@
   
   
   <span class="md-ellipsis">
-    DS2 Data discovery and transformation module (RET)
+    RET - Data Retrieval
     
   </span>
   
@@ -975,77 +975,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_24" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_24" id="__nav_2_24_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Images
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_24_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_24">
-            <span class="md-nav__icon md-icon"></span>
-            Images
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../images/Readme/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Readme
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1242,9 +1171,9 @@
 
 
 
-<h1 id="ds2-data-discovery-and-transformation-module-ret">DS2 Data discovery and transformation module (RET)</h1>
+<h1 id="ret-data-retrieval">RET - Data Retrieval</h1>
 <p>Powered by</p>
-<p><img alt="DS2 CUR Architecturefits" src="../images/IBM_logo%C2%AE_pos_blue60_CMYK.jpg" /></p>
+<p><img src="./images/IBM_logo®_pos_blue60_CMYK.jpg" alt="drawing" width="200"/></p>
 <table>
 <thead>
 <tr>
@@ -1274,7 +1203,11 @@
 <p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.
 <img alt="DS2 CUR Architecture" src="../images/T4.1_components.png" /></p>
 <h2 id="component-definition"><strong>Component Definition</strong></h2>
-<p>The Retrieval module is composed of two main components, a graphical interface based on the tkinter Python library, and backend which handles the program logic.</p>
+<p>The Retrieval module is composed of two main components, a graphical user interface (GUI) based on the tkinter Python library, and backend which handles the program logic.</p>
+<p>The GUI displays all data sources which are available for retrieval, and using their description from an OpenAPI spec, guides the user through the process of supplying all required input parameters.  Note however that formatting of the parameters, such as timestamps, is not required, as will be explained below.</p>
+<p>The backend requires an OpenAPI specification for each data source and uses a Large Language Model (LLM) for function calling - i.e. the proper composition of a REST call from parameters given the description of the REST call from the OpenAPI spec.</p>
+<p>Created REST calls are executed by the backend.  In the event that the REST call fails, the backend feeds back the generated REST call together with the execution error to the LLM and requests that a corrected REST call be generated.  This loop will happen up to three times, after which an error is returned to the user.  The generated REST call displayed in the GUI can be then modified by hand and reexecuted.</p>
+<p>The destination location for the retrieved data is selectable from the GUI - either data can be stored to a file or pipelined into an application chosen from a pre-defined list.  While storage to a Cloud store is currently not support, the code can be easily extended to handle this case.</p>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
 <p>The picture below represents how RET guides the user through the parameter input process:
 <img alt="DS2 RET Basic GUI" src="../images/screenshot_file.png" /></p>

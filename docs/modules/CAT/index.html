@@ -912,7 +912,7 @@
   
   
   <span class="md-ellipsis">
-    DS2 Data discovery and transformation module (RET)
+    RET - Data Retrieval
     
   </span>
   
@@ -964,77 +964,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_24" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_24" id="__nav_2_24_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Images
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_24_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_24">
-            <span class="md-nav__icon md-icon"></span>
-            Images
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../images/Readme/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Readme
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1353,16 +1282,18 @@
 <li>Clone CAT github project. CAT module can be started with Docker Compose UP command in main project directory, tailor the link to DKAN instance. </li>
 </ul>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
-<p>This guideline is prelimintary:
-* If you have already a connector
-  * Configure provider UI to use your own EDC connector. Select a Data Product, add extended metadata, and send to the catalogue.
-  * Check that your Product is available in the DKAN.
-* If you want to test with simulated connectors
-  * Use CAT dataspace simulation from CAT subdirectory. It is not part of docker compose yet. 
-  *   Configure a dataspace and set of connectors and data products in the subdirectory of connectors.
-  *   Run start script, it runs the connectors and registers to the DKAN
-  * Check you data products in the DKAN. They will be in Simulated Dataspace.
-  * Run stop script, it stops the connectors and unregisters them from DKAN </p>
+<p>This guideline is prelimintary:</p>
+<ul>
+<li>If you have already a connector</li>
+<li>Configure provider UI to use your own EDC connector. Select a Data Product, add extended metadata, and send to the catalogue.</li>
+<li>Check that your Product is available in the DKAN.</li>
+<li>If you want to test with simulated connectors</li>
+<li>Use CAT dataspace simulation from CAT subdirectory. It is not part of docker compose yet. </li>
+<li>Configure a dataspace and set of connectors and data products in the subdirectory of connectors.</li>
+<li>Run start script, it runs the connectors and registers to the DKAN</li>
+<li>Check you data products in the DKAN. They will be in Simulated Dataspace.</li>
+<li>Run stop script, it stops the connectors and unregisters them from DKAN </li>
+</ul>
 <h2 id="other-information"><strong>Other Information</strong></h2>
 <p>No other information at the moment for CAT.</p>
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>

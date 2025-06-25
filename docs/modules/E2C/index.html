@@ -936,7 +936,7 @@
   
   
   <span class="md-ellipsis">
-    DS2 Data discovery and transformation module (RET)
+    RET - Data Retrieval
     
   </span>
   
@@ -988,77 +988,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_24" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_24" id="__nav_2_24_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Images
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_24_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_24">
-            <span class="md-nav__icon md-icon"></span>
-            Images
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../images/Readme/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Readme
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1280,7 +1209,7 @@
 
 <h1 id="e2c-edge-to-cloud-connector">E2C - Edge to Cloud Connector</h1>
 <p>Powered by</p>
-<p><img alt="Software GmbH" src="./images/E2C-logo.png" width="250"/></p>
+<p><img alt="Software GmbH" src="../images/E2C-logo.png" /></p>
 <table>
 <thead>
 <tr>
@@ -1308,17 +1237,39 @@
 <p>In E2C, data is collected via a MQTT broker and can be sent to different cloud environments such as Cumulocity, Azure or AWS via adapters built on top of the open-source software thinedge-io.
 Thin-edge.io is supporting any Linux distribution, in most cases even with the appropriate package manager. In DS2, thin-edge.io will mainly be used to connect on-premises edge devices to cloud environments of the Data Providers.</p>
 <p>This module has the following subcomponent and other functions:</p>
-<p><strong>Edge-to-Cloud Connector Module – Core</strong>
-- <strong>MQTT Broker</strong>: This is the central message bus of the module, based on the open-source Mosquitto implementation.
-- <strong>Data Converter</strong>: Reads data which was published under a certain broker topic, and transforms it to the specific format for the configured cloud platform. The data converter can use a pipeline of custom routines for specific tasks before the transformed data is re-published to the MQTT broker under a different topic.
-- <strong>Data Quality Module</strong>: The data read by the Data Converter component is constantly analysed by the Analyze Data component of this module to check if the data quality goals are met. The information is collected and sent back to the MQTT broker via the Report Data Quality component.
-- <strong>Other Custom Routines</strong>: Users can write their own routines to perform tasks on their data published to the MQTT broker before it is sent to the cloud platform via the cloud connector. This could be e.g. calculate moving averages, many examples are available in the thin-edge.io plugins directory.
-- <strong>Cloud Connector</strong>: Message bus where data can be published under a topic and data consumer can subscribe to these topics.</p>
-<p><strong>External Components Used</strong>
-- <strong>Data Source</strong>: The data provider configures and selects where the data to be offered and shared comes from, most likely an edge device.
-- <strong>Tier 1 Service Stack for Marketplace and Development</strong>: The module uses the marketplace especially for the configuration of the desired cloud adapter.
-- <strong>Tier 3 Inter-Dataspace Sharing</strong>: The module uses the Discover and Trust components for the configuration of the desired cloud adapter.
-- <strong>Cumulocity, Azure, AWS, Custom</strong>: These components represent the possible cloud adapters that can be configured. Besides connecting to the commercial clouds Cumulocity, Azure and AWS, one can write a custom adapter for any IoT platform having a MQTT connector, e.g. the open-source ThingsBoards platform.</p>
+<p><strong>Edge-to-Cloud Connector Module – Core</strong></p>
+<ul>
+<li>
+<p><strong>MQTT Broker</strong>: This is the central message bus of the module, based on the open-source Mosquitto implementation.</p>
+</li>
+<li>
+<p><strong>Data Converter</strong>: Reads data which was published under a certain broker topic, and transforms it to the specific format for the configured cloud platform. The data converter can use a pipeline of custom routines for specific tasks before the transformed data is re-published to the MQTT broker under a different topic.</p>
+</li>
+<li>
+<p><strong>Data Quality Module</strong>: The data read by the Data Converter component is constantly analysed by the Analyze Data component of this module to check if the data quality goals are met. The information is collected and sent back to the MQTT broker via the Report Data Quality component.</p>
+</li>
+<li>
+<p><strong>Other Custom Routines</strong>: Users can write their own routines to perform tasks on their data published to the MQTT broker before it is sent to the cloud platform via the cloud connector. This could be e.g. calculate moving averages, many examples are available in the thin-edge.io plugins directory.</p>
+</li>
+<li>
+<p><strong>Cloud Connector</strong>: Message bus where data can be published under a topic and data consumer can subscribe to these topics.</p>
+</li>
+</ul>
+<p><strong>External Components Used</strong></p>
+<ul>
+<li>
+<p><strong>Data Source</strong>: The data provider configures and selects where the data to be offered and shared comes from, most likely an edge device.</p>
+</li>
+<li>
+<p><strong>Tier 1 Service Stack for Marketplace and Development</strong>: The module uses the marketplace especially for the configuration of the desired cloud adapter.</p>
+</li>
+<li>
+<p><strong>Tier 3 Inter-Dataspace Sharing</strong>: The module uses the Discover and Trust components for the configuration of the desired cloud adapter.</p>
+</li>
+<li>
+<p><strong>Cumulocity, Azure, AWS, Custom</strong>: These components represent the possible cloud adapters that can be configured. Besides connecting to the commercial clouds Cumulocity, Azure and AWS, one can write a custom adapter for any IoT platform having a MQTT connector, e.g. the open-source ThingsBoards platform.</p>
+</li>
+</ul>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
 <p><img alt="DS2 E2C Screenshots" src="../images/E2C-screenshots.gif" /></p>
 <h2 id="commercial-information"><strong>Commercial Information</strong></h2>
@@ -1353,9 +1304,15 @@ Thin-edge.io is supporting any Linux distribution, in most cases even with the a
 to the endpoints that are to be streamed as well as network access to the cloud platform that data is to be streamed to.</p>
 <h3 id="software">Software</h3>
 <ul>
-<li>Docker runtime</li>
-<li>Python3, pip</li>
-<li>Git</li>
+<li>
+<p>Docker runtime</p>
+</li>
+<li>
+<p>Python3, pip</p>
+</li>
+<li>
+<p>Git</p>
+</li>
 </ul>
 <h3 id="summary-of-installation-steps">Summary of installation steps</h3>
 <ol>
@@ -1394,10 +1351,10 @@ To start the UI, clone the UI Git repository and execute
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>main.py
 </span></code></pre></div>
 In the configuration UI, you can upload an Open API specification by clicking on the button"Load OpenAPI Spec from...":</p>
-<p><img src="./images/E2C-htu1.png" style="width:50%" /></p>
+<p><img alt="DS2 E2C HTU1" src="../images/E2C-htu1.png" /></p>
 <p>Select the specification "itc-dataspace-provider-iot.yaml" in the "resources" directory.
 The dialog will change to the attribute selection screen:</p>
-<p><img src="./images/E2C-htu2.png" style="width:50%" /></p>
+<p><img alt="DS2 E2C HTU2" src="../images/E2C-htu2.png" /></p>
 <p>Select the data endpoints that are to be streamed to a cloud platform.
 Activate the "Get IoT data" endpoint. The endpoint requires organizational units as parameters. Here, a subquery can be carried out.
 In the Query Parameters section, click on "Stream from..." and select the endpoint "/organizations" and select the matching attribute "uuid".
@@ -1412,7 +1369,7 @@ the target platform. Select "sensorDisplayname" to obtain a readable device name
 "dateCreated".</p>
 <p>The endpoint configuration is now complete. Click on "Next" in the lower right corner. 
 In the next step, the target cloud environment is configured:</p>
-<p><img src="./images/E2C-htu3.png" style="width:50%" /></p>
+<p><img alt="DS2 E2C HTU3" src="../images/E2C-htu3.png" /></p>
 <p>This allows to define technical information required to stream the data to the desired cloud environment.
 Once the information is entered, click on "Publish Configuration" to configure the E2C streaming component.</p>
 <p>The data is now being streamed to the configured cloud.</p>

@@ -987,7 +987,7 @@
   
   
   <span class="md-ellipsis">
-    DS2 Data discovery and transformation module (RET)
+    RET - Data Retrieval
     
   </span>
   
@@ -1039,77 +1039,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_24" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_24" id="__nav_2_24_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Images
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_24_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_24">
-            <span class="md-nav__icon md-icon"></span>
-            Images
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../images/Readme/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Readme
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1428,8 +1357,8 @@
 <li><strong>Services and API</strong>: These are the services that can be orchestrated, and the API block is the interface to each which includes other external (non DS2) modules/services, DS Service Intermediaries and Tier 2 in dataspace DS modules/services.</li>
 <li><strong>Tier 0 Support Service Stack</strong>: This includes the DRM and API: For further exploration, but if room to implement and a match of requirements to feature the blockchain part of the DRM module to enhance logging</li>
 <li><strong>DARC &amp; API</strong>: As with DRM but in this case to use DARC to help configuration</li>
-<li><strong>Culture and Language Module and API</strong>: As with DRM but in this case to use this modules ontology engine to help auto-link services
-•   <strong>Tier 1 Service Stack for Marketplace and deployment and API</strong>: The full stack will be implemented as generically described elsewhere in this document. Exceptions: The Platform will only be needed for inter-participant service orchestrations if used</li>
+<li><strong>Culture and Language Module and API</strong>: As with DRM but in this case to use this modules ontology engine to help auto-link services</li>
+<li><strong>Tier 1 Service Stack for Marketplace and deployment and API</strong>: The full stack will be implemented as generically described elsewhere in this document. Exceptions: The Platform will only be needed for inter-participant service orchestrations if used</li>
 </ul>
 <p><strong>Inter-Participant orientated</strong>:</p>
 <ul>
@@ -1485,13 +1414,15 @@
 <h3 id="detailed-steps">Detailed steps</h3>
 <p>Each of the subcomponents contains a <code>build.sh</code> file that allows the creation of the docker images in such a way that you can change it depending on project, location or production.</p>
 <p>In addition, each of the subcomponents are individual, which means each subcomponent can be run on their and interacted with (although some features may be unavailable).</p>
-<p>The current list of ORC front end docker images includes:
-- <code>welcome:latest</code>
-- <code>process-designer:latest</code> 
-- <code>form-designer:latest</code> 
-- <code>control-panel:latest</code> 
-- <code>service-directory:latest</code>
-- <code>task-manager:latest</code> </p>
+<p>The current list of ORC front end docker images includes:</p>
+<ul>
+<li><code>welcome:latest</code></li>
+<li><code>process-designer:latest</code> </li>
+<li><code>form-designer:latest</code> </li>
+<li><code>control-panel:latest</code> </li>
+<li><code>service-directory:latest</code></li>
+<li><code>task-manager:latest</code> </li>
+</ul>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
 <h3 id="general-overview">General Overview</h3>
 <p>The Orchestration Module is made up of six sub comonents that all interact with each other in different ways. Together, they offer the full suite of features that the ORC tool offers independantly. </p>
