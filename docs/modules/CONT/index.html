@@ -12,11 +12,11 @@
         <link rel="prev" href="../CLM/">
       
       
-        <link rel="next" href="../CUR/">
+        <link rel="next" href="../DARC/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -465,15 +465,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      How To Use
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#other-information" class="md-nav__link">
     <span class="md-ellipsis">
       Other Information
@@ -504,29 +495,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../CUR/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    CUR - DS2 Data Curation module
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -590,7 +558,7 @@
   
   
   <span class="md-ellipsis">
-    Data Inspector (DINS)
+    DINS - Data Inspector
     
   </span>
   
@@ -613,7 +581,7 @@
   
   
   <span class="md-ellipsis">
-    Data Market Place (DMK)
+    DMK - Data Marketplace
     
   </span>
   
@@ -797,7 +765,7 @@
   
   
   <span class="md-ellipsis">
-    Model Development Toolkit (MDT)
+    MDT - Model Development Toolkit
     
   </span>
   
@@ -843,7 +811,7 @@
   
   
   <span class="md-ellipsis">
-    Policy Agreement and Enforcement (PAE)
+    PAE - Policy Agreement and Enforcement
     
   </span>
   
@@ -890,29 +858,6 @@
   
   <span class="md-ellipsis">
     PORTAL - Portal
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../RET/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    RET - Data Retrieval
     
   </span>
   
@@ -1108,15 +1053,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      How To Use
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#other-information" class="md-nav__link">
     <span class="md-ellipsis">
       Other Information
@@ -1250,7 +1186,8 @@
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
 <p>The Containerisation module will be part of the IDT installation, but a standalone installer is so far provided in order to be able to work with it, which installs Flux Helm and Source Controllers in order to create the Helm Chart from the HelmRelease and Chart templates. </p>
 <h3 id="requirements">Requirements</h3>
-<p>The IDT or a Kubernetes cluster is required.</p>
+<p>The IDT or a Kubernetes cluster is required. This component can't be installed without a Kubernetes cluster, in fact, the goal of the component is to 
+deploy the modules on the Kubernetes cluster.</p>
 <p>Resources:</p>
 <h3 id="software">Software</h3>
 <p>Containerisation module so far installs these software utilities and specific tested compatible versions:</p>
@@ -1287,31 +1224,38 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./installfluxghorg.sh github_token github_organisation org
 </span></code></pre></div></p>
 <blockquote>
-<p>github_token: a GitHub user token</p>
+<p>github_token: a GitHub user token. This is a personal access token that has access permissions to the org repository</p>
 </blockquote>
 </li>
 </ol>
 <blockquote>
 <p>github_organisation: a GitHub organisation: this will be in a later stage  the organisation from the Marketplace ie. ds2-marketplace where modules are stored</p>
-<p>org: this is a repository in the GitHub organisation: this will be in a later stage a repository of the organisation id of the participant as registered in the Portal. The repository is created via the Marketplace and the acquired modules will be located in that GitHub repository -&gt; This is linked to the Marketplace purchase process</p>
+<p>org: this is a repository in the GitHub organisation: this will be in a later stage a repository of the organisation id of the participant as registered in the Portal. The repository is created via the Marketplace and the acquired modules will be located in that GitHub repository -&gt; This is linked to the Marketplace purchase process
+An example of running the script
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./installfluxghorg.sh ghp_qRoTB9z1w1xa3ki4hzrl5Vw9bQPd82pkaxU4 ds2-eu containerisation
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>## **How To Use**
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>The Containerisation UI is not available at the moment of writing this documentation and the templates for Module Helm Charts and Base Helm Charts are being 
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>developed. Still some guidelines on how to use the module standalone can be provided.
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>Once the controllers have been deployed we need to create a source resource to pull the module template charts from a GitRepository. 
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>The template charts will be used to create later the real module helm charts. Those template helm charts will be provided by the Portal and Marketplace.
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>This is an example located in the Containerisation repository at &lt;https://github.com/ds2-eu/containerisation.git&gt; of a GitRepository.
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>```yaml
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>apiVersion: source.toolkit.fluxcd.io/v1
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>kind: GitRepository
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>metadata:
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>  name: ds2catalog
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>  namespace: ds2
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>spec:
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>  interval: 1m
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>  url: https://github.com/icentomAs/fluxhelm.git # git repo url-so far public repository, at a later stage configuration for private repositories will be provided
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>  ref:
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>    branch: main
+</span></code></pre></div></p>
 </blockquote>
-<h2 id="how-to-use"><strong>How To Use</strong></h2>
-<p>The Containerisation UI is not available at the moment of writing this documentation and the templates for Module Helm Charts and Base Helm Charts are being 
-developed. Still some guidelines on how to use the module standalone can be provided.</p>
-<p>Once the controllers have been deployed we need to create a source resource to pull the module template charts from a GitRepository. 
-The template charts will be used to create later the real module helm charts. Those template helm charts will be provided by the Portal and Marketplace.
-This is an example located in the Containerisation repository at <a href="https://github.com/ds2-eu/containerisation.git">https://github.com/ds2-eu/containerisation.git</a> of a GitRepository.</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source.toolkit.fluxcd.io/v1</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitRepository</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">metadata</span><span class="p">:</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2catalog</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nt">spec</span><span class="p">:</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1m</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="c1"># Add here the url of a git repo - so far public repository, at a later stage configuration for private repositories will be provided</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nt">ref</span><span class="p">:</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
-</span></code></pre></div>
 <p>To create the GitRepository resource copy the example into gitrepository.yaml or pull the file from the repository and run
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>gitrepository.yaml
 </span></code></pre></div></p>
@@ -1342,9 +1286,9 @@ First, the template Helm Charts which should be stored in the GitRepository repo
 </span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">        </span><span class="nt">privateRegistry</span><span class="p">:</span>
 </span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">          </span><span class="nt">registryPasswd</span><span class="p">:</span><span class="w"> </span>
 </span></code></pre></div></p>
-<p>The HelmRelease resource is simple way to refer to a Helm Chart with a single yaml file, being able to override the values defined in the Helm Chart.</p>
+<p>The HelmRelease resource is a simple way to refer to a Helm Chart with a single yaml file, being able to override the values defined in the Helm Chart.</p>
 <p>In this case, the example refers to a chart named nginxapp3 located in the GitRepository created in the previous step, and is overiding the values for welcome_message, module1.image.privateRegistry and module1.image.registryPasswd.</p>
-<p>To deploy the nginxapp3 Helm Chart using the HelmRelease resource, run
+<p>To deploy the nginxapp3 Helm Chart using the HelmRelease resource, add a valid registry password in the helmrelease.yaml at resitryPasswd field, i.e. your GitHub user token that may have read access to the ds2-eu organisation, then run
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>helmrelease.yaml
 </span></code></pre></div></p>
 <h2 id="other-information"><strong>Other Information</strong></h2>
@@ -1403,10 +1347,10 @@ First, the template Helm Charts which should be stored in the GitRepository repo
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

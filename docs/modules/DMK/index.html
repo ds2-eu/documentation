@@ -16,15 +16,15 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>Data Market Place (DMK) - Documentation DS2</title>
+        <title>DMK - Data Marketplace - Documentation DS2</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#data-market-place-dmk" class="md-skip">
+        <a href="#dmk-data-marketplace" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Data Market Place (DMK)
+              DMK - Data Marketplace
             
           </span>
         </div>
@@ -333,29 +333,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../CUR/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    CUR - DS2 Data Curation module
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../DARC/" class="md-nav__link">
         
   
@@ -407,7 +384,7 @@
   
   
   <span class="md-ellipsis">
-    Data Inspector (DINS)
+    DINS - Data Inspector
     
   </span>
   
@@ -439,7 +416,7 @@
   
   
   <span class="md-ellipsis">
-    Data Market Place (DMK)
+    DMK - Data Marketplace
     
   </span>
   
@@ -452,7 +429,7 @@
   
   
   <span class="md-ellipsis">
-    Data Market Place (DMK)
+    DMK - Data Marketplace
     
   </span>
   
@@ -797,7 +774,7 @@
   
   
   <span class="md-ellipsis">
-    Model Development Toolkit (MDT)
+    MDT - Model Development Toolkit
     
   </span>
   
@@ -843,7 +820,7 @@
   
   
   <span class="md-ellipsis">
-    Policy Agreement and Enforcement (PAE)
+    PAE - Policy Agreement and Enforcement
     
   </span>
   
@@ -890,29 +867,6 @@
   
   <span class="md-ellipsis">
     PORTAL - Portal
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../RET/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    RET - Data Retrieval
     
   </span>
   
@@ -1159,7 +1113,9 @@
 
 
 
-<h1 id="data-market-place-dmk">Data Market Place (DMK)</h1>
+<h1 id="dmk-data-marketplace">DMK - Data Marketplace</h1>
+<p>Powered by</p>
+<p><img alt="Indra Group" src="../images/Indra-Group-Logo.png" /> <img alt="Minsait" src="../images/Minsait-Logo.png" /></p>
 <table>
 <thead>
 <tr>
@@ -1186,18 +1142,39 @@
 <h2 id="component-definition"><strong>Component Definition</strong></h2>
 <p>This module has the following subcomponent and other functions:</p>
 <ul>
-<li>Marketplace:</li>
-<li>Data Marketplace UI: This component provides the user interface where data suppliers and data shoppers can access the functionalities of the data marketplace.</li>
-<li>Product Registration: This feature allows suppliers to register data products for sale, including datasets, API access, and algorithms. It will include an interface for incorporating products already available in DS2 product catalogues to prevent duplication and ensure synchronization in product definitions.</li>
-<li>Product Repository: This component stores and provides the required information for each product offered. </li>
-<li>Order Management System: This subcomponent manages orders placed by providers, defines the purchasing process, records any changes in order status, and coordinates all components involved in the purchase. It manages the full life cycle of the orders. This component ensures that all steps in the purchase process are executed correctly and fulfil the required conditions.</li>
-<li>Order Repository: This subcomponent stores orders and their statuses. It is primarily used by the Order Management System to store and retrieve the state of orders. It also provides historical information about orders.</li>
-<li>Payment System: This subcomponent provides payment capabilities to the Order Management System, primarily acting as an intermediary with the payment system implemented in the Portal Module.</li>
-<li>Transaction Manager and Repository: The Transaction Manager will register actions in the Data Rights Management Module and maintain an additional transaction repository for detailed information.</li>
-<li>DS2 Portal: The DS2 Portal Module will be used to obtain and validate the identities of providers when they supply data assets to the Data Marketplace and consumers when they purchase data assets. It is also responsible of payment capabilities.</li>
-<li>Data Rights Management (DRM): The Data Marketplace may log all necessary information in the DRM for accountability in data provision and purchases.</li>
-<li>DS2 Catalog: The Data Marketplace can offer the datasets present in the DS2 Catalog Module to describe data offerings. </li>
-<li>Policy Agreement and Enforcement: The Data Marketplace will be queried by the Policy Enforcement module to obtain additional information if a policy requires a purchase to have been made to obtain data.</li>
+<li>
+<p>Data Marketplace UI: This component provides the user interface where data suppliers and data shoppers can access the functionalities of the data marketplace.</p>
+</li>
+<li>
+<p>Product Registration: This feature allows suppliers to register data products for sale, including datasets, API access, and algorithms. It will include an interface for incorporating products already available in DS2 product catalogues to prevent duplication and ensure synchronization in product definitions.</p>
+</li>
+<li>
+<p>Product Repository: This component stores and provides the required information for each product offered.</p>
+</li>
+<li>
+<p>Order Management System: This subcomponent manages orders placed by providers, defines the purchasing process, records any changes in order status, and coordinates all components involved in the purchase. It manages the full life cycle of the orders. This component ensures that all steps in the purchase process are executed correctly and fulfil the required conditions.</p>
+</li>
+<li>
+<p>Order Repository: This subcomponent stores orders and their statuses. It is primarily used by the Order Management System to store and retrieve the state of orders. It also provides historical information about orders.</p>
+</li>
+<li>
+<p>Payment System: This subcomponent provides payment capabilities to the Order Management System, primarily acting as an intermediary with the payment system implemented in the Portal Module.</p>
+</li>
+<li>
+<p>Transaction Manager and Repository: The Transaction Manager will register actions in the Data Rights Management Module and maintain an additional transaction repository for detailed information.</p>
+</li>
+<li>
+<p>DS2 Portal: The DS2 Portal Module will be used to obtain and validate the identities of providers when they supply data assets to the Data Marketplace and consumers when they purchase data assets. It is also responsible of payment capabilities.</p>
+</li>
+<li>
+<p>Data Rights Management (DRM): The Data Marketplace may log all necessary information in the DRM for accountability in data provision and purchases.</p>
+</li>
+<li>
+<p>DS2 Catalog: The Data Marketplace can offer the datasets present in the DS2 Catalog Module to describe data offerings.</p>
+</li>
+<li>
+<p>Policy Agreement and Enforcement: The Data Marketplace will be queried by the Policy Enforcement module to obtain additional information if a policy requires a purchase to have been made to obtain data.</p>
+</li>
 </ul>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
 <p><img alt="DS2 IDT Screenshots" src="../images/DMK-UI.png" /></p>
@@ -1212,7 +1189,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Indra</td>
+<td><a href="https://www.minsait.com/en">Indra</a></td>
 <td>Open Source</td>
 <td>Apache 2.0</td>
 </tr>
@@ -1230,21 +1207,21 @@
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
 <p>It is currently under development and cannot be installed yet. The first installable version will be available by M24.</p>
 <h3 id="requirements">Requirements</h3>
-<p>TBC</p>
+<p>The requirements will be specified in the first release.</p>
 <h3 id="software">Software</h3>
-<p>TBC</p>
+<p>Data Marketplace is being developed as a <a href="https://onesaitplatform.com/space/DOCT/2221608570/WebApps+Manager">WebApp developed with Onesait Platform</a>.</p>
 <h3 id="summary-of-installation-steps">Summary of installation steps</h3>
-<p>TBC</p>
+<p>The installation steps will be specified in the first release.</p>
 <h3 id="detailed-steps">Detailed steps</h3>
-<p>TBC</p>
+<p>The installation steps will be specified in the first release.</p>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
-<p>TBC</p>
+<p>The user guide will be specified in the first release.</p>
 <h2 id="other-information"><strong>Other Information</strong></h2>
-<p>TBC</p>
+<p>For now, there is not any additional information.</p>
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
-<p>TBC</p>
+<p>The API documentation will be specified in the first release.</p>
 <h2 id="additional-links"><strong>Additional Links</strong></h2>
-<p>TBC</p>
+<p>Onesait Platform GitHub <a href="https://github.com/onesaitplatform/onesaitplatform-cloud">https://github.com/onesaitplatform/onesaitplatform-cloud</a></p>
 
 
 
@@ -1293,10 +1270,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

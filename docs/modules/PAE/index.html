@@ -16,15 +16,15 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>Policy Agreement and Enforcement (PAE) - Documentation DS2</title>
+        <title>PAE - Policy Agreement and Enforcement - Documentation DS2</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#policy-agreement-and-enforcement-pae" class="md-skip">
+        <a href="#pae-policy-agreement-and-enforcement" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Policy Agreement and Enforcement (PAE)
+              PAE - Policy Agreement and Enforcement
             
           </span>
         </div>
@@ -333,29 +333,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../CUR/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    CUR - DS2 Data Curation module
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../DARC/" class="md-nav__link">
         
   
@@ -407,7 +384,7 @@
   
   
   <span class="md-ellipsis">
-    Data Inspector (DINS)
+    DINS - Data Inspector
     
   </span>
   
@@ -430,7 +407,7 @@
   
   
   <span class="md-ellipsis">
-    Data Market Place (DMK)
+    DMK - Data Marketplace
     
   </span>
   
@@ -614,7 +591,7 @@
   
   
   <span class="md-ellipsis">
-    Model Development Toolkit (MDT)
+    MDT - Model Development Toolkit
     
   </span>
   
@@ -669,7 +646,7 @@
   
   
   <span class="md-ellipsis">
-    Policy Agreement and Enforcement (PAE)
+    PAE - Policy Agreement and Enforcement
     
   </span>
   
@@ -682,7 +659,7 @@
   
   
   <span class="md-ellipsis">
-    Policy Agreement and Enforcement (PAE)
+    PAE - Policy Agreement and Enforcement
     
   </span>
   
@@ -890,29 +867,6 @@
   
   <span class="md-ellipsis">
     PORTAL - Portal
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../RET/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    RET - Data Retrieval
     
   </span>
   
@@ -1159,8 +1113,9 @@
 
 
 
-<h1 id="policy-agreement-and-enforcement-pae">Policy Agreement and Enforcement (PAE)</h1>
-<p>Use the table below as an example and replace with the links to the module's DS2 GitHub repository and GitHub project.  </p>
+<h1 id="pae-policy-agreement-and-enforcement">PAE - Policy Agreement and Enforcement</h1>
+<p>Powered by</p>
+<p><img alt="Indra Group" src="../images/Indra-Group-Logo.png" /> <img alt="Minsait" src="../images/Minsait-Logo.png" /></p>
 <table>
 <thead>
 <tr>
@@ -1201,40 +1156,90 @@ Note that the large green box represents a connector. It is depicted this way to
 <p><strong>Policy and Agreement Enforcement Module</strong>:</p>
 </li>
 <li>
-<p><strong>Policy Extension (PDP)</strong>: This extension will be integrated into the Policy Enforcement Point of the Connector. It will oversee the coordination of all policies supported by DS2. </p>
+<p><strong>Policy Extension (PDP)</strong>: This extension will be integrated into the Policy Enforcement Point of the Connector. It will oversee the coordination of all policies supported by DS2.</p>
 </li>
-<li><strong>PAE Metadata Translator</strong>: This optional extension will translate metadata to ensure compatibility with rule enforcement across different dataspaces with varying participant and service descriptors. As of this document's edition, it is to be decided if this will be handled by the Connector itself, through the CLM Module, or through the Catalog Module therefore, it will be implemented as needed. </li>
-<li><strong>Sovereignty Transformation Interceptor</strong>: This extension will enable policy-oriented data transformations during data exchange - for example anonymising data. It serves as the implementation of a Policy Execution Point. Note that the Data Transformation feature of DDT module is not used to do this since it is more generic</li>
-<li><strong>Sovereignty Transformation Policy - Runtime</strong>: This component provides an example of Usage Control rule enforcement. It is expanded and described in detail later in this section.</li>
-<li><strong>Policy Execution Point (PXP)</strong>: This component interfaces with the execution of additional actions required when a policy is enforced and after policy evaluation. An example is the Sovereignty Transformation Interceptor, which will be used to enforce certain usage control rules.</li>
-<li><strong>Policy Information Point (PIP)</strong>: This component is responsible for implementing interfaces with all relevant modules and external software (e.g., retrieving participant information from a CRM application) from which additional context data is needed for policy evaluation. A mandatory interface is with the Data Marketplace module to validate asset purchases. </li>
-<li><strong>Policy Logger</strong>: This component will handle all logging related to policy enforcement. In addition to internal logging, policy decisions can be recorded in the Data Rights Management module. </li>
-<li><strong>Policy Management Point (PMP)</strong>: This component stores all the policies that must be enforced for each share of data. Specifically, it will store the contract offers, including the reference to the data offered and the associated policies.</li>
-<li><strong>Rule Implementation</strong>: Each rule within a policy must have a corresponding software component that supports its evaluation. A Rule Implementation component may support several rules and might rely on an existing rule engine or be implemented from scratch, depending on the rules it needs to support. Access Control rules will be enforced based on these implementations. ODRL will be used by T3.2 for defining the types of rules allowed. Within PAE an example of Usage Control rules will be implemented using the Sovereignty Transformation Policy. In these cases, the Rule Implementation will evaluate the rule, but the needed actions to enforce the rule are delegated, in the mentioned example to the Sovereignty Transformation Policy. The responsibility of PAE is to notify to the required component. If there is not such a component to automatically handle rule actions, the evaluation will be logged with the Policy Logger, but any further verification or action is out of the scope of this module.</li>
-<li><strong>Policy Administration Point (PAP)</strong>: This is a UI that allows for the definition of policies to be used in data sharing. Policy definitions are stored in the PMP. Policies will be defined using templates developed based on the types of rules identified in WP3. The tool will assist users in easily defining rules and will generate machine-readable policies.</li>
-<li><strong>Sovereignty Transformation Policy</strong>: </li>
-<li><strong>Sovereignty Transformation Policy - IDE</strong>: This group of components is shared with the T6.2 Data Inspector. Some of them will be developed based on existing technology, specifically the Dataflow component of the Onesait Platform open-source product. While T4.1 Policy Enforcement focuses on defining and executing transformation jobs for policy enforcement, the Data Inspector will enhance the current capabilities of Dataflow to include data inspection, monitoring, and notifications. T6.2 will lead this component development, and T4.1 will be built on the improved version from T6.2. Therefore, T4.1 has a dependency on T6.2, but the opposite is not true.<ul>
-<li><strong>Sovereignty Transformation IDE UI</strong>: This graphical user interface allows users to define Sovereignty Transformation Jobs for enforcing policy rules that require data modifications. Examples include field removal and data anonymization. A Sovereignty Transformation Job definition is a data pipeline with an input, an output, and a set of transformation stages in between. This component is based on existing INDRA software, with updates needed to support new features for DS2. </li>
-<li><strong>Sovereignty Transformation IDE Controller</strong>: This component manages Sovereignty Transformation Jobs during design time and oversees their deployment and monitoring at runtime. It is based on current INDRA software but requires significant upgrades to split the tool into the IDE component and the Runtime component (potentially several). </li>
-<li><strong>Testing and Validation</strong>: This component will encompass test definitions and include the storage of small datasets specifically for automatic testing purposes as well as providing validation functionality. The automated tests will be designed to thoroughly validate the accuracy and correctness of the sovereignty transformation jobs. This validation process is essential to ensure that the jobs meet the required standards and perform as expected before they are deployed. By conducting these tests beforehand, potential issues can be identified and addressed, ensuring a smooth and reliable deployment of the sovereignty transformation jobs.</li>
-<li><strong>Job Definition Storage</strong>: This component stores definitions of Sovereignty Transformation Jobs, based on INDRA software, with extensions planned to improve version control of the definitions. </li>
-</ul>
+<li>
+<p><strong>PAE Metadata Translator</strong>: This optional extension will translate metadata to ensure compatibility with rule enforcement across different dataspaces with varying participant and service descriptors. As of this document's edition, it is to be decided if this will be handled by the Connector itself, through the CLM Module, or through the Catalog Module therefore, it will be implemented as needed.</p>
 </li>
-<li><strong>Sovereignty Transformation Policy - Runtime</strong>:<ul>
-<li><strong>Runtime Controller</strong>: This component will manage the execution of Sovereignty Transformation Jobs during runtime. It will define the interface for integrating job execution with the Sovereignty Transformation Interceptor and will handle the job lifecycle: deployment, upgrade, removal, start, and stop.</li>
-<li><strong>Sovereignty Transformation Job</strong>: This component represents the runtime execution of a data pipeline definition. Each transformation supported will require a Sovereignty Transformation Job definition. One instance of this component will be created for each Sovereignty Transformation Job needed at runtime, even for the same definition. The creation of these instances will be managed by the Runtime Controller. </li>
-<li><strong>Job Logger</strong>: This component logs all relevant information about each job execution. Based on INDRA software, it will require minimal development to adapt to changes in other module components. </li>
-<li><strong>Job State Storage</strong>: This component stores the states of job executions throughout their lifecycle, enabling job resumption in the event of failures during execution. Based on INDRA software, it will require minimal development.</li>
-</ul>
+<li>
+<p><strong>Sovereignty Transformation Interceptor</strong>: This extension will enable policy-oriented data transformations during data exchange - for example anonymising data. It serves as the implementation of a Policy Execution Point. Note that the Data Transformation feature of DDT module is not used to do this since it is more generic</p>
 </li>
-</ul>
-<p>Interfaces with other modules:</p>
+<li>
+<p><strong>Sovereignty Transformation Policy - Runtime</strong>: This component provides an example of Usage Control rule enforcement. It is expanded and described in detail later in this section.</p>
+</li>
+<li>
+<p><strong>Policy Execution Point (PXP)</strong>: This component interfaces with the execution of additional actions required when a policy is enforced and after policy evaluation. An example is the Sovereignty Transformation Interceptor, which will be used to enforce certain usage control rules.</p>
+</li>
+<li>
+<p><strong>Policy Information Point (PIP)</strong>: This component is responsible for implementing interfaces with all relevant modules and external software (e.g., retrieving participant information from a CRM application) from which additional context data is needed for policy evaluation. A mandatory interface is with the Data Marketplace module to validate asset purchases.</p>
+</li>
+<li>
+<p><strong>Policy Logger</strong>: This component will handle all logging related to policy enforcement. In addition to internal logging, policy decisions can be recorded in the Data Rights Management module.</p>
+</li>
+<li>
+<p><strong>Policy Management Point (PMP)</strong>: This component stores all the policies that must be enforced for each share of data. Specifically, it will store the contract offers, including the reference to the data offered and the associated policies.</p>
+</li>
+<li>
+<p><strong>Rule Implementation</strong>: Each rule within a policy must have a corresponding software component that supports its evaluation. A Rule Implementation component may support several rules and might rely on an existing rule engine or be implemented from scratch, depending on the rules it needs to support. Access Control rules will be enforced based on these implementations. ODRL will be used by T3.2 for defining the types of rules allowed. Within PAE an example of Usage Control rules will be implemented using the Sovereignty Transformation Policy. In these cases, the Rule Implementation will evaluate the rule, but the needed actions to enforce the rule are delegated, in the mentioned example to the Sovereignty Transformation Policy. The responsibility of PAE is to notify to the required component. If there is not such a component to automatically handle rule actions, the evaluation will be logged with the Policy Logger, but any further verification or action is out of the scope of this module.</p>
+</li>
+<li>
+<p><strong>Policy Administration Point (PAP)</strong>: This is a UI that allows for the definition of policies to be used in data sharing. Policy definitions are stored in the PMP. Policies will be defined using templates developed based on the types of rules identified in WP3. The tool will assist users in easily defining rules and will generate machine-readable policies.</p>
+</li>
+<li>
+<p><strong>Sovereignty Transformation Policy</strong>:</p>
+</li>
+<li>
+<p><strong>Sovereignty Transformation Policy - IDE</strong>: This group of components is shared with the T6.2 Data Inspector. Some of them will be developed based on existing technology, specifically the Dataflow component of the Onesait Platform open-source product. While T4.1 Policy Enforcement focuses on defining and executing transformation jobs for policy enforcement, the Data Inspector will enhance the current capabilities of Dataflow to include data inspection, monitoring, and notifications. T6.2 will lead this component development, and T4.1 will be built on the improved version from T6.2. Therefore, T4.1 has a dependency on T6.2, but the opposite is not true.</p>
 <ul>
-<li><strong>T3.2 Types of rules allowed (ODRL)</strong>: This will define the types of rules that might be used in policy definition. The types of rules will be defined using the ORDL standard, which has been selected by IDSA for policy enforcement in dataspaces. Once these rules are defined, the Policy and Agreement Enforcement module will be responsible for providing software support to enforce all rules that can be evaluated without human intervention.</li>
-<li><strong>Data Right Management (DRM)</strong>: DRM will be used by the Policy and Agreement Enforcement to log the decisions about policy.</li>
-<li><strong>Data Marketplace (DMK)</strong>: The Data Marketplace will be queried by the Policy and Agreement Enforcement module to obtain additional information if a policy requires a purchase to obtain data.</li>
-<li><strong>Culture and Language Module (CLM)</strong>: Integration with the T5.1 Knowledge Base will be implemented to translate metadata, ensuring compatibility across different dataspaces. If it is determined later in the project that the Culture and Language Module is unsuitable for this task, simple mappings using the metadata from the project's use cases will be employed to prevent blocking the implementation.</li>
-<li><strong>Other Software / Other DS2 Modules</strong>: The PAE module defines APIs to obtain additional information needed for the policy enforcement process, such as metadata about participants or services that may not be accessible via the connector. In such cases, PAE will acquire the necessary data. Additionally, if any rules require actions to be executed by other software or DS2 modules, PAE will notify the requirement when evaluating the rules.</li>
+<li>
+<p><strong>Sovereignty Transformation IDE UI</strong>: This graphical user interface allows users to define Sovereignty Transformation Jobs for enforcing policy rules that require data modifications. Examples include field removal and data anonymization. A Sovereignty Transformation Job definition is a data pipeline with an input, an output, and a set of transformation stages in between. This component is based on existing INDRA software, with updates needed to support new features for DS2.</p>
+</li>
+<li>
+<p><strong>Sovereignty Transformation IDE Controller</strong>: This component manages Sovereignty Transformation Jobs during design time and oversees their deployment and monitoring at runtime. It is based on current INDRA software but requires significant upgrades to split the tool into the IDE component and the Runtime component (potentially several).</p>
+</li>
+<li>
+<p><strong>Testing and Validation</strong>: This component will encompass test definitions and include the storage of small datasets specifically for automatic testing purposes as well as providing validation functionality. The automated tests will be designed to thoroughly validate the accuracy and correctness of the sovereignty transformation jobs. This validation process is essential to ensure that the jobs meet the required standards and perform as expected before they are deployed. By conducting these tests beforehand, potential issues can be identified and addressed, ensuring a smooth and reliable deployment of the sovereignty transformation jobs.</p>
+</li>
+<li>
+<p><strong>Job Definition Storage</strong>: This component stores definitions of Sovereignty Transformation Jobs, based on INDRA software, with extensions planned to improve version control of the definitions.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Sovereignty Transformation Policy - Runtime</strong>:</p>
+<ul>
+<li>
+<p><strong>Runtime Controller</strong>: This component will manage the execution of Sovereignty Transformation Jobs during runtime. It will define the interface for integrating job execution with the Sovereignty Transformation Interceptor and will handle the job lifecycle: deployment, upgrade, removal, start, and stop.</p>
+</li>
+<li>
+<p><strong>Sovereignty Transformation Job</strong>: This component represents the runtime execution of a data pipeline definition. Each transformation supported will require a Sovereignty Transformation Job definition. One instance of this component will be created for each Sovereignty Transformation Job needed at runtime, even for the same definition. The creation of these instances will be managed by the Runtime Controller.</p>
+</li>
+<li>
+<p><strong>Job Logger</strong>: This component logs all relevant information about each job execution. Based on INDRA software, it will require minimal development to adapt to changes in other module components.</p>
+</li>
+<li>
+<p><strong>Job State Storage</strong>: This component stores the states of job executions throughout their lifecycle, enabling job resumption in the event of failures during execution. Based on INDRA software, it will require minimal development.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Interfaces with other modules:</p>
+</li>
+<li>
+<p><strong>T3.2 Types of rules allowed (ODRL)</strong>: This will define the types of rules that might be used in policy definition. The types of rules will be defined using the ORDL standard, which has been selected by IDSA for policy enforcement in dataspaces. Once these rules are defined, the Policy and Agreement Enforcement module will be responsible for providing software support to enforce all rules that can be evaluated without human intervention.</p>
+</li>
+<li>
+<p><strong>Data Right Management (DRM)</strong>: DRM will be used by the Policy and Agreement Enforcement to log the decisions about policy.</p>
+</li>
+<li>
+<p><strong>Data Marketplace (DMK)</strong>: The Data Marketplace will be queried by the Policy and Agreement Enforcement module to obtain additional information if a policy requires a purchase to obtain data.</p>
+</li>
+<li>
+<p><strong>Culture and Language Module (CLM)</strong>: Integration with the T5.1 Knowledge Base will be implemented to translate metadata, ensuring compatibility across different dataspaces. If it is determined later in the project that the Culture and Language Module is unsuitable for this task, simple mappings using the metadata from the project's use cases will be employed to prevent blocking the implementation.</p>
+</li>
+<li>
+<p><strong>Other Software / Other DS2 Modules</strong>: The PAE module defines APIs to obtain additional information needed for the policy enforcement process, such as metadata about participants or services that may not be accessible via the connector. In such cases, PAE will acquire the necessary data. Additionally, if any rules require actions to be executed by other software or DS2 modules, PAE will notify the requirement when evaluating the rules.</p>
+</li>
 </ul>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
 <p>N/A</p>
@@ -1249,7 +1254,7 @@ Note that the large green box represents a connector. It is depicted this way to
 </thead>
 <tbody>
 <tr>
-<td>Indra</td>
+<td><a href="https://www.minsait.com/en">Indra</a></td>
 <td>Open Source</td>
 <td>Apache 2.0</td>
 </tr>
@@ -1264,28 +1269,66 @@ Note that the large green box represents a connector. It is depicted this way to
 </ul>
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
 <p>The <strong>Policy and Agreement Enforcement Module</strong> is provider together with the DS2 Connector.</p>
-<p>The software for <strong>Sovereignty Transformation Policy</strong> ...</p>
-<p>TBC</p>
 <h3 id="requirements">Requirements</h3>
 <p>The same that for DS2 Connector.</p>
-<p>The software for <strong>Sovereignty Transformation Policy</strong> is highly dependent on the volume of data to process. It is based on DINS module. </p>
+<p>The software for <strong>Sovereignty Transformation Policy</strong> is highly dependent on the volume of data to process. It is based on DINS module to apply some types of policies.</p>
 <h3 id="software">Software</h3>
 <ul>
 <li>DS2 Connector</li>
 <li>DINS module for <strong>Sovereignty Transformation Policy</strong></li>
 </ul>
 <h3 id="summary-of-installation-steps">Summary of installation steps</h3>
-<p>TBC</p>
+<p>As mentioned before, PAE module is installed together with the DS2 Connector. It is not necessary to do any additional configuration. In the case you want to use the module in your own EDC Connector configuration follow the next steps:</p>
+<ol>
+<li>Clone the repository.</li>
+<li>Using Java 17 and Maven, build the project.</li>
+<li>Add the PAE extensions as dependencies in the dependency descriptor of your EDC Connector and build it.</li>
+</ol>
 <h3 id="detailed-steps">Detailed steps</h3>
-<p>TBC</p>
+<ol>
+<li>Clone the repository.</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>https://github.com/ds2-eu/pae_module.git
+</span></code></pre></div>
+<ol>
+<li>Using Java 17 and Maven, build the project.</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>install
+</span></code></pre></div>
+<ol>
+<li>Add the PAE extensions as dependencies in the dependency descriptor of your EDC Connector and build it.</li>
+</ol>
+<p>These are the current extensions:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">  </span><span class="cm">&lt;!-- Policy functions implementation --&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">            </span><span class="nt">&lt;groupId&gt;</span>com.minsait.onesait.platform.edc.extensions<span class="nt">&lt;/groupId&gt;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>ds2-policy-functions<span class="nt">&lt;/artifactId&gt;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">            </span><span class="nt">&lt;version&gt;</span>0.0.1-0.12.0<span class="nt">&lt;/version&gt;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="cm">&lt;!-- Datasource to use DINS module --&gt;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">            </span><span class="nt">&lt;groupId&gt;</span>com.minsait.onesait.platform.edc.extensions<span class="nt">&lt;/groupId&gt;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>op-dataflow-data-plane<span class="nt">&lt;/artifactId&gt;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">            </span><span class="nt">&lt;version&gt;</span>0.0.1-0.12.0<span class="nt">&lt;/version&gt;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="cm">&lt;!-- DS2 custom contract definitions --&gt;</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">            </span><span class="nt">&lt;groupId&gt;</span>com.minsait.onesait.platform.edc.extensions<span class="nt">&lt;/groupId&gt;</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>ds2-policy-definition-storage<span class="nt">&lt;/artifactId&gt;</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">            </span><span class="nt">&lt;version&gt;</span>0.0.1-0.12.0<span class="nt">&lt;/version&gt;</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+</span></code></pre></div>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
-<p>TBC</p>
+<p>The PAE moudule use the standard EDC Connector APIs.</p>
 <h2 id="other-information"><strong>Other Information</strong></h2>
-<p>TBC</p>
+<p>At the moment the set of policies to be supported in DS2 are under development. When they are defined they will be explained within this documentation.</p>
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
-<p>TBC</p>
+<p>PAE module does not define any custom API at the moment.</p>
 <h2 id="additional-links"><strong>Additional Links</strong></h2>
-<p>TBC</p>
+<p>EDC Connector <a href="https://eclipse-edc.github.io/">https://eclipse-edc.github.io/</a></p>
+<p>DINS Module <a href="https://github.com/ds2-eu/dins_module">https://github.com/ds2-eu/dins_module</a></p>
 
 
 
@@ -1334,10 +1377,10 @@ Note that the large green box represents a connector. It is depicted this way to
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

@@ -16,15 +16,15 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>Model Development Toolkit (MDT) - Documentation DS2</title>
+        <title>MDT - Model Development Toolkit - Documentation DS2</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#model-development-toolkit-mdt" class="md-skip">
+        <a href="#mdt-model-development-toolkit" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Model Development Toolkit (MDT)
+              MDT - Model Development Toolkit
             
           </span>
         </div>
@@ -333,29 +333,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../CUR/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    CUR - DS2 Data Curation module
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../DARC/" class="md-nav__link">
         
   
@@ -407,7 +384,7 @@
   
   
   <span class="md-ellipsis">
-    Data Inspector (DINS)
+    DINS - Data Inspector
     
   </span>
   
@@ -430,7 +407,7 @@
   
   
   <span class="md-ellipsis">
-    Data Market Place (DMK)
+    DMK - Data Marketplace
     
   </span>
   
@@ -623,7 +600,7 @@
   
   
   <span class="md-ellipsis">
-    Model Development Toolkit (MDT)
+    MDT - Model Development Toolkit
     
   </span>
   
@@ -636,7 +613,7 @@
   
   
   <span class="md-ellipsis">
-    Model Development Toolkit (MDT)
+    MDT - Model Development Toolkit
     
   </span>
   
@@ -843,7 +820,7 @@
   
   
   <span class="md-ellipsis">
-    Policy Agreement and Enforcement (PAE)
+    PAE - Policy Agreement and Enforcement
     
   </span>
   
@@ -890,29 +867,6 @@
   
   <span class="md-ellipsis">
     PORTAL - Portal
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../RET/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    RET - Data Retrieval
     
   </span>
   
@@ -1159,7 +1113,9 @@
 
 
 
-<h1 id="model-development-toolkit-mdt">Model Development Toolkit (MDT)</h1>
+<h1 id="mdt-model-development-toolkit">MDT - Model Development Toolkit</h1>
+<p>Powered by</p>
+<p><img alt="Indra Group" src="../images/Indra-Group-Logo.png" /> <img alt="Minsait" src="../images/Minsait-Logo.png" /></p>
 <table>
 <thead>
 <tr>
@@ -1185,23 +1141,57 @@
 <img alt="DS2 IDT Architecture" src="../images/MDT-architecture.png" /></p>
 <h2 id="component-definition"><strong>Component Definition</strong></h2>
 <ul>
-<li>Module IDE: This set of components provides all the functionality needed to develop data models and algorithms during design time.</li>
-<li>Exploration &amp; Validation: This component allows visual exploration and profiling of data by analysts. It incorporates aspects of the Onesait Platform’s profiling and dashboard engine components, which will be extended to enhance profiling and tagging of input data. It supports structured data in various formats (CSV, JSON, XML, etc.) as well as non-structured data such as text, images, and video. This module read data from the repositories directly. It supports the most used technologies as SQL database, MongoDB, S3, FTP, etc. This component temporally stores the data in a staging area. This component together with Wrangling component help to create datasets for training.</li>
-<li>Wrangling: This component enables the definition and execution of rules to clean data of malformed or undesirable values. It leverages an existing component from the Onesait Platform, based on the Open Refiner open-source project, which is useful for structured data. Additional development will be required to handle non-structured data. The Wrangling component can process data in the staging area of the Exploration &amp; Validation module. Both modules collaborate to define datasets for training. Once the cleaning and formatting process is complete, the resulting dataset is stored in the Minio Storage component.</li>
-<li>Monitoring, Logging, &amp; Alerts: Provides real-time monitoring and data visualization, including functionality for creating dashboards to track request flows and performance issues in model execution. It also defines alerts for detecting anomalous behaviour during model execution and is based on the Grafana software stack. Key tasks include creating monitoring dashboards, defining alerts, and integrating with the Unified User Interface. </li>
-<li>MinIO Storage: Datasets used for training and testing models will be stored in MinIO object storage. Minimal integration work is needed. The Wrangling component stores the datasets, and MinIO Storage provides them to the components that train and test the models. Any component that requires datasets can request them from MinIO Storage. For example, the Model Evaluation component will request data for validating models.</li>
-<li>Model Engineering: This is used to define and create models, based on two open-source projects. The first is Apache Zeppelin, a web-based notebook to perform interactive data analytics and visualization, supporting multiple programming languages such as Scala, Python, SQL, and more. The second is a tool for defining simple models using SQL language. Some minor enhancements will be necessary for better integration and pre-installed libraries, with additional tools required for picture and video analysis during the project execution. </li>
-<li>Model Evaluation: This component handles the training-evaluation cycle and is based on MLflow, an open-source platform for managing the end-to-end machine learning lifecycle. MLflow enables tracking experiments, packaging code into reproducible runs, and sharing and deploying models across different environments. The main task is to integrate MLflow with the Model Engineering and Model Packaging components. </li>
-<li>Model Packaging: Once a model is ready for production deployment, it will be packaged into a model container with clear interfaces for integration with other systems. This component is responsible for creating such deployable and executable modules. </li>
-<li>Model Repository: Stores model definitions, including versions and metadata about model development, such as historical information about datasets and tests performed in the training process. It also stores the necessary data for building the model, such as libraries and their versions, additional parameters, and more. </li>
-<li>Code Repository: Stores the code required to build the model as a deployable component, based on GitLab software, which provides Git repositories. Only configuration and integration tasks with the Unified User Interface are needed. </li>
-<li>Build &amp; Integration Testing: Defines and executes the construction of models as deployable software. It uses the code provided by the Code Repository together with the Model Repository data to build a software that can be deployed and executed.</li>
-<li>Model Deployed: As well as the containerised model, relevant code, each runtime-deployed model will include the following components: </li>
-<li>Model Controller: Manages the lifecycle of the module at runtime and provides an interface for external applications to use the module. </li>
-<li>Model: Executes the model definition, including all required software dependencies, runtime engines, and libraries for normal module execution. </li>
-<li>Unified User Interface: By interfacing with the other components of the module, this component enables the development of data models and algorithms during design time, as well as the visualization of alerts and monitoring data during runtime. Facilitates the usage and management of all integrated tools, providing single sign-on access to all module components. It is based on the existent Control Panel component of Onesait Platform that will be extended to support all the new capabilities introduced by this module and described in this section.</li>
-<li>Data Inspector: The analysis jobs executed by the T6.2 Data Inspector Module will have the capability to use models created and deployed with MDT. For more details, refer to the T6.2 Data Inspector description.</li>
-<li>Additional Libraries: As part of the execution of T4.2, DIGI will analyse and identify additional libraries to be included and supported for the MDT.</li>
+<li>
+<p>Module IDE: This set of components provides all the functionality needed to develop data models and algorithms during design time.</p>
+</li>
+<li>
+<p>Exploration &amp; Validation: This component allows visual exploration and profiling of data by analysts. It incorporates aspects of the Onesait Platform’s profiling and dashboard engine components, which will be extended to enhance profiling and tagging of input data. It supports structured data in various formats (CSV, JSON, XML, etc.) as well as non-structured data such as text, images, and video. This module read data from the repositories directly. It supports the most used technologies as SQL database, MongoDB, S3, FTP, etc. This component temporally stores the data in a staging area. This component together with Wrangling component help to create datasets for training.</p>
+</li>
+<li>
+<p>Wrangling: This component enables the definition and execution of rules to clean data of malformed or undesirable values. It leverages an existing component from the Onesait Platform, based on the Open Refiner open-source project, which is useful for structured data. Additional development will be required to handle non-structured data. The Wrangling component can process data in the staging area of the Exploration &amp; Validation module. Both modules collaborate to define datasets for training. Once the cleaning and formatting process is complete, the resulting dataset is stored in the Minio Storage component.</p>
+</li>
+<li>
+<p>Monitoring, Logging, &amp; Alerts: Provides real-time monitoring and data visualization, including functionality for creating dashboards to track request flows and performance issues in model execution. It also defines alerts for detecting anomalous behaviour during model execution and is based on the Grafana software stack. Key tasks include creating monitoring dashboards, defining alerts, and integrating with the Unified User Interface.</p>
+</li>
+<li>
+<p>MinIO Storage: Datasets used for training and testing models will be stored in MinIO object storage. Minimal integration work is needed. The Wrangling component stores the datasets, and MinIO Storage provides them to the components that train and test the models. Any component that requires datasets can request them from MinIO Storage. For example, the Model Evaluation component will request data for validating models.</p>
+</li>
+<li>
+<p>Model Engineering: This is used to define and create models, based on two open-source projects. The first is Apache Zeppelin, a web-based notebook to perform interactive data analytics and visualization, supporting multiple programming languages such as Scala, Python, SQL, and more. The second is a tool for defining simple models using SQL language. Some minor enhancements will be necessary for better integration and pre-installed libraries, with additional tools required for picture and video analysis during the project execution.</p>
+</li>
+<li>
+<p>Model Evaluation: This component handles the training-evaluation cycle and is based on MLflow, an open-source platform for managing the end-to-end machine learning lifecycle. MLflow enables tracking experiments, packaging code into reproducible runs, and sharing and deploying models across different environments. The main task is to integrate MLflow with the Model Engineering and Model Packaging components.</p>
+</li>
+<li>
+<p>Model Packaging: Once a model is ready for production deployment, it will be packaged into a model container with clear interfaces for integration with other systems. This component is responsible for creating such deployable and executable modules.</p>
+</li>
+<li>
+<p>Model Repository: Stores model definitions, including versions and metadata about model development, such as historical information about datasets and tests performed in the training process. It also stores the necessary data for building the model, such as libraries and their versions, additional parameters, and more.</p>
+</li>
+<li>
+<p>Code Repository: Stores the code required to build the model as a deployable component, based on GitLab software, which provides Git repositories. Only configuration and integration tasks with the Unified User Interface are needed.</p>
+</li>
+<li>
+<p>Build &amp; Integration Testing: Defines and executes the construction of models as deployable software. It uses the code provided by the Code Repository together with the Model Repository data to build a software that can be deployed and executed.</p>
+</li>
+<li>
+<p>Model Deployed: As well as the containerised model, relevant code, each runtime-deployed model will include the following components:</p>
+</li>
+<li>
+<p>Model Controller: Manages the lifecycle of the module at runtime and provides an interface for external applications to use the module.</p>
+</li>
+<li>
+<p>Model: Executes the model definition, including all required software dependencies, runtime engines, and libraries for normal module execution.</p>
+</li>
+<li>
+<p>Unified User Interface: By interfacing with the other components of the module, this component enables the development of data models and algorithms during design time, as well as the visualization of alerts and monitoring data during runtime. Facilitates the usage and management of all integrated tools, providing single sign-on access to all module components. It is based on the existent Control Panel component of Onesait Platform that will be extended to support all the new capabilities introduced by this module and described in this section.</p>
+</li>
+<li>
+<p>Data Inspector: The analysis jobs executed by the T6.2 Data Inspector Module will have the capability to use models created and deployed with MDT. For more details, refer to the T6.2 Data Inspector description.</p>
+</li>
+<li>
+<p>Additional Libraries: As part of the execution of T4.2, DIGI will analyse and identify additional libraries to be included and supported for the MDT.</p>
+</li>
 </ul>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
 <p><img alt="DS2 MDT Data Refiner Screenshots" src="../images/data-refiner.gif" /></p>
@@ -1219,7 +1209,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Indra</td>
+<td><a href="https://www.minsait.com/en">Indra</a></td>
 <td>Open Source</td>
 <td>Apache 2.0</td>
 </tr>
@@ -1234,23 +1224,58 @@
 <li><strong>Monitoring and Validation</strong>: Track metrics such as accuracy, latency, and throughput to detect when retraining is needed.</li>
 </ul>
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
-<p>TBC</p>
+<p>Model Development Toolkit consists of a set of tools integrated within Onesait Platform. To deploy and use these tools you will need to deploy some components of Onesait Platform.</p>
+<p>You can find detailed instruction in the <a href="https://onesaitplatform.com/space/DOCT/2220810976/How+to+install+Onesait+Platform%3F">Oensait Platform Documentation Installation Guide</a>.</p>
 <h3 id="requirements">Requirements</h3>
-<p>TBC</p>
+<p>The Model Development Toolkit is used for data analytics and is, in some ways, a resource-intensive module.</p>
+<p>The minimum recomended hardware is a Kubernetes node with 4 cpu cores, 8 GB RAM and 256 GB disk capacity.</p>
+<p>Inevitably, the amount of resources needed depends on the size and nature of the data models being developed.</p>
 <h3 id="software">Software</h3>
-<p>TBC</p>
+<p>MDT installs the next software and tools:</p>
+<ul>
+<li>MinIO</li>
+<li>Data Refiner</li>
+<li>Apache Zeppelin</li>
+<li>MLFlow</li>
+<li>GitLab</li>
+<li>Jenkins</li>
+<li>PostgreSQL</li>
+</ul>
 <h3 id="summary-of-installation-steps">Summary of installation steps</h3>
-<p>TBC</p>
+<p>The development of <strong>MDT</strong> is enhancing the integration of tools to increase the overall capabilities of the <strong>Onesait Platform</strong> for developing data models.<br />
+At the end of the <strong>MDT</strong> development, specific deployment artifacts for MDT will be available. For now, only the generic artifacts of the Onesait Platform are provided.
+The recommended way to set up <strong>MDT</strong> is to deploy the <strong>Onesait Platform</strong>, including the list of tools enumerated in the previous section.
+Additionally, you will need to install the Onesait Platform modules <strong>ControlPanel</strong> and <strong>CachéServer</strong>.<br />
+Detailed installation steps are described in the <a href="https://onesaitplatform.com/space/DOCT/2220810976/How+to+install+Onesait+Platform%3F">Onesait Platform Documentation Installation Guide</a>.</p>
 <h3 id="detailed-steps">Detailed steps</h3>
-<p>TBC</p>
+<p>Detailed installation steps are described in the <a href="https://onesaitplatform.com/space/DOCT/2220810976/How+to+install+Onesait+Platform%3F">Onesait Platform Documentation Installation Guide</a>.</p>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
-<p>TBC</p>
+<p>MDT is a complex set of tools, and therefore each tool has its own user manual.</p>
+<ul>
+<li><a href="https://onesaitplatform.com/space/DOCT/2221607089/File+Repository+(Object+Storage)">MinIO</a></li>
+<li><a href="https://onesaitplatform.com/space/DOCT/2220793715/Data+Refiner">Open Refine</a></li>
+<li><a href="https://onesaitplatform.com/space/DOCT/2220804146/Notebooks">Apache Zeppelin</a></li>
+<li><a href="https://onesaitplatform.com/space/DOCT/2220195886/MLOps+on+MLFlow">MLflow</a></li>
+</ul>
+<p>As the tool versions have been upgraded for <strong>MDT</strong> development, some parts of the documentation may not yet be fully updated.<br />
+You can refer to the official documentation of the respective tools for further insights.</p>
+<p><strong>GitLab</strong>, <strong>Jenkins</strong>, and <strong>PostgreSQL</strong> are used in the background, so users do not need to access them directly.</p>
+<p>To illustrate the use of the tools within a comprehensive workflow, see the following <a href="https://onesaitplatform.com/space/DOCT/5050073089/Serve+Models+from+MLFlows+as+microservice+Python">example</a>.</p>
 <h2 id="other-information"><strong>Other Information</strong></h2>
-<p>TBC</p>
+<p>For now, there is not any additional information.</p>
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
-<p>TBC</p>
+<p>Notebooks API:</p>
+<p><img alt="Notebooks API 1" src="../images/notebook-openapi-1.png" /></p>
+<p><img alt="Notebooks API 2" src="../images/notebook-openapi-2.png" /></p>
+<p><img alt="Notebooks API 3" src="../images/notebook-openapi-3.png" /></p>
+<p>More API descriptions for other tools will be added in the future.</p>
 <h2 id="additional-links"><strong>Additional Links</strong></h2>
 <p>Onesait Platform GitHub <a href="https://github.com/onesaitplatform/onesaitplatform-cloud">https://github.com/onesaitplatform/onesaitplatform-cloud</a></p>
+<p>Onesait Platoform main site <a href="https://onesaitplatform.com">https://onesaitplatform.com</a></p>
+<p>MinIO <a href="https://min.io/">https://min.io/</a></p>
+<p>Open Refine <a href="https://openrefine.org/">https://openrefine.org/</a></p>
+<p>Apache Zeppelin <a href="https://zeppelin.apache.org/">https://zeppelin.apache.org/</a></p>
+<p>MLfLow <a href="https://mlflow.org/">https://mlflow.org/</a></p>
 
 
 
@@ -1299,10 +1324,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

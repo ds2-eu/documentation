@@ -16,15 +16,15 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>Data Inspector (DINS) - Documentation DS2</title>
+        <title>DINS - Data Inspector - Documentation DS2</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#data-inspector-dins" class="md-skip">
+        <a href="#dins-data-inspector" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Data Inspector (DINS)
+              DINS - Data Inspector
             
           </span>
         </div>
@@ -333,29 +333,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../CUR/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    CUR - DS2 Data Curation module
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../DARC/" class="md-nav__link">
         
   
@@ -416,7 +393,7 @@
   
   
   <span class="md-ellipsis">
-    Data Inspector (DINS)
+    DINS - Data Inspector
     
   </span>
   
@@ -429,7 +406,7 @@
   
   
   <span class="md-ellipsis">
-    Data Inspector (DINS)
+    DINS - Data Inspector
     
   </span>
   
@@ -613,7 +590,7 @@
   
   
   <span class="md-ellipsis">
-    Data Market Place (DMK)
+    DMK - Data Marketplace
     
   </span>
   
@@ -797,7 +774,7 @@
   
   
   <span class="md-ellipsis">
-    Model Development Toolkit (MDT)
+    MDT - Model Development Toolkit
     
   </span>
   
@@ -843,7 +820,7 @@
   
   
   <span class="md-ellipsis">
-    Policy Agreement and Enforcement (PAE)
+    PAE - Policy Agreement and Enforcement
     
   </span>
   
@@ -890,29 +867,6 @@
   
   <span class="md-ellipsis">
     PORTAL - Portal
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../RET/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    RET - Data Retrieval
     
   </span>
   
@@ -1159,7 +1113,9 @@
 
 
 
-<h1 id="data-inspector-dins">Data Inspector (DINS)</h1>
+<h1 id="dins-data-inspector">DINS - Data Inspector</h1>
+<p>Powered by</p>
+<p><img alt="Indra Group" src="../images/Indra-Group-Logo.png" /> <img alt="Minsait" src="../images/Minsait-Logo.png" /></p>
 <table>
 <thead>
 <tr>
@@ -1184,24 +1140,60 @@
 <p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.</p>
 <p><img alt="DS2 DINS Architecture" src="../images/DINS-architecture.png" /></p>
 <h2 id="component-definition"><strong>Component Definition</strong></h2>
-<p>This module has the following subcomponent and other functions:
-* Data Jobs IDE: This group of components is shared with the T4.1 Policy Enforcement Modules. Some of them will be developed based on existing technology, specifically the Dataflow component of the Onesait Platform open-source product. While T4.1 Policy Enforcement focuses on defining and executing data transformation jobs, the Data Inspection module will enhance the current capabilities of Dataflow to include data inspection, monitoring, and notifications. T6.2 will lead this component development, and T4.1 will be built on the improved version from T6.2. Therefore, T4.1 has a dependency on T6.2, but the opposite is not true.
-  * IDE UI: This graphical user interface allows users to define Data Inspection Jobs for monitoring data and triggering notifications and alerts. For example, it can evaluate values against specified thresholds. This component is based on the existing INDRA software, with updates needed to support new features for DS2.
-  * IDE Controller: This component manages Data Inspection Jobs during design time and oversees their deployment and monitoring at runtime. It is based on current INDRA software but requires significant upgrades to split the tool into the IDE component and the Runtime component (potentially several). 
-  * Job Definition Storage: This component stores definitions of Data Inspection Jobs, based on INDRA software, with extensions planned to improve version control of the definitions. The definitions are created through a graphical user interface, enabling users to design Data Inspection Jobs as data pipelines using a drag-and-drop approach. Each data pipeline will include, at a minimum, the configuration of data sources (e.g., data formats) and the rules for inspecting the data (e.g., detecting specific fields and value thresholds). In the end, each data pipeline definition is a JSON document and a set of parameters. They will be stored in a distributed persistence engine.
-  * Testing Framework: This component will include test definitions and the storage of small datasets for automatic testing. This component will enable users to define automated tests that are executed to validate Data Inspection Jobs before deployment.
-* Inspection Runtime: 
-  * Runtime Controller: This component will manage the execution of Data Inspection Jobs during runtime. It will define the interface for integrating job execution with external components and will handle the job lifecycle: deployment, upgrade, removal, start, and stop.
-  * Data Inspection Job: This component represents the runtime execution of a data inspection definition. Each type of data inspection supported will require a Data Inspection Job definition. One instance of this component will be created for each Data Inspection Job needed at runtime, even for the same definition. The creation of these instances will be managed by the Runtime Controller. The Data Inspection Job includes the definition of an SDK and interfaces that facilitate the extension of capabilities, such as supporting additional data formats.
-  * Job Logger: This component logs all relevant information about each job execution. Based on INDRA infrastructure, it will require minimal development to adapt to changes in other module components.
-  * Job States Storage: This component stores the states of job executions throughout their lifecycle, enabling job resumption in the event of failures during execution. Based on INDRA infrastructure, it will require minimal development.
-* Monitoring and Historic Data: This component will store historic metrics gathered by the analysis jobs. This set of elements will be based on the open-source stack of monitoring tools Grafana.
-  * Metrics/Alert Collector: This component will collect all the data from the Analysis Jobs.
-  * Alert Manager: It collects alerts, manages them by categorizing and prioritizing, and allows for the configuration of notification channels such as email and Teams. It also provides a centralized interface for tracking and managing active alerts.
-  * Inspector Dashboard: It allows the visual analysis of the data inspected.
-* Model Deployed: If a complex analysis is required for data inspection, the Data Inspection Jobs will have the capability to use data models deployed with the T4.2 Data Model Development Toolkit Module. For example, a field value could be used as input in a prediction model, and based on the result, a decision can be made whether an alert should be generated.
-* Data Share Controller: The Data Interception part of the Data Share Controller connects data in the data pipeline with the Data Inspection. If the Data Share Controller is not present, any other software that implements the Data Inspection API can provide the data. The Data Inspection will trigger notifications to the Data Share Controller Module (and other modules or components, if required) based on rules defined by the participants. For example, “stop data sharing”.
-* Other DS2 Modules / Other Participant’s Software: The Module can notify any software that needs to receive these notifications, provided that the software is compatible with the notification mechanisms implemented by DINS. This capability facilitates the integration of systems that can react to data shared between participants, such as the Data Share Controller.</p>
+<p>This module has the following subcomponent and other functions:</p>
+<ul>
+<li>
+<p><strong>Data Jobs IDE</strong>: This group of components is shared with the T4.1 Policy Enforcement Modules. Some of them will be developed based on existing technology, specifically the Dataflow component of the Onesait Platform open-source product. While T4.1 Policy Enforcement focuses on defining and executing data transformation jobs, the Data Inspection module will enhance the current capabilities of Dataflow to include data inspection, monitoring, and notifications. T6.2 will lead this component development, and T4.1 will be built on the improved version from T6.2. Therefore, T4.1 has a dependency on T6.2, but the opposite is not true.</p>
+</li>
+<li>
+<p><strong>IDE UI</strong>: This graphical user interface allows users to define Data Inspection Jobs for monitoring data and triggering notifications and alerts. For example, it can evaluate values against specified thresholds. This component is based on the existing INDRA software, with updates needed to support new features for DS2.</p>
+</li>
+<li>
+<p><strong>IDE Controller</strong>: This component manages Data Inspection Jobs during design time and oversees their deployment and monitoring at runtime. It is based on current INDRA software but requires significant upgrades to split the tool into the IDE component and the Runtime component (potentially several).</p>
+</li>
+<li>
+<p><strong>Job Definition Storage</strong>: This component stores definitions of Data Inspection Jobs, based on INDRA software, with extensions planned to improve version control of the definitions. The definitions are created through a graphical user interface, enabling users to design Data Inspection Jobs as data pipelines using a drag-and-drop approach. Each data pipeline will include, at a minimum, the configuration of data sources (e.g., data formats) and the rules for inspecting the data (e.g., detecting specific fields and value thresholds). In the end, each data pipeline definition is a JSON document and a set of parameters. They will be stored in a distributed persistence engine.</p>
+</li>
+<li>
+<p><strong>Testing Framework</strong>: This component will include test definitions and the storage of small datasets for automatic testing. This component will enable users to define automated tests that are executed to validate Data Inspection Jobs before deployment.</p>
+</li>
+<li>
+<p><strong>Inspection Runtime</strong>:</p>
+</li>
+<li>
+<p><strong>Runtime Controller</strong>: This component will manage the execution of Data Inspection Jobs during runtime. It will define the interface for integrating job execution with external components and will handle the job lifecycle: deployment, upgrade, removal, start, and stop.</p>
+</li>
+<li>
+<p><strong>Data Inspection Job</strong>: This component represents the runtime execution of a data inspection definition. Each type of data inspection supported will require a Data Inspection Job definition. One instance of this component will be created for each Data Inspection Job needed at runtime, even for the same definition. The creation of these instances will be managed by the Runtime Controller. The Data Inspection Job includes the definition of an SDK and interfaces that facilitate the extension of capabilities, such as supporting additional data formats.</p>
+</li>
+<li>
+<p><strong>Job Logger</strong>: This component logs all relevant information about each job execution. Based on INDRA infrastructure, it will require minimal development to adapt to changes in other module components.</p>
+</li>
+<li>
+<p><strong>Job States Storage</strong>: This component stores the states of job executions throughout their lifecycle, enabling job resumption in the event of failures during execution. Based on INDRA infrastructure, it will require minimal development.</p>
+</li>
+<li>
+<p><strong>Monitoring and Historic Data</strong>: This component will store historic metrics gathered by the analysis jobs. This set of elements will be based on the open-source stack of monitoring tools Grafana.</p>
+</li>
+<li>
+<p><strong>Metrics/Alert Collector</strong>: This component will collect all the data from the Analysis Jobs.</p>
+</li>
+<li>
+<p><strong>Alert Manager</strong>: It collects alerts, manages them by categorizing and prioritizing, and allows for the configuration of notification channels such as email and Teams. It also provides a centralized interface for tracking and managing active alerts.</p>
+</li>
+<li>
+<p><strong>Inspector Dashboard</strong>: It allows the visual analysis of the data inspected.</p>
+</li>
+<li>
+<p><strong>Model Deployed</strong>: If a complex analysis is required for data inspection, the Data Inspection Jobs will have the capability to use data models deployed with the T4.2 Data Model Development Toolkit Module. For example, a field value could be used as input in a prediction model, and based on the result, a decision can be made whether an alert should be generated.</p>
+</li>
+<li>
+<p><strong>Data Share Controller</strong>: The Data Interception part of the Data Share Controller connects data in the data pipeline with the Data Inspection. If the Data Share Controller is not present, any other software that implements the Data Inspection API can provide the data. The Data Inspection will trigger notifications to the Data Share Controller Module (and other modules or components, if required) based on rules defined by the participants. For example, “stop data sharing”.</p>
+</li>
+<li>
+<p><strong>Other DS2 Modules / Other Participant’s Software</strong>: The Module can notify any software that needs to receive these notifications, provided that the software is compatible with the notification mechanisms implemented by DINS. This capability facilitates the integration of systems that can react to data shared between participants, such as the Data Share Controller.</p>
+</li>
+</ul>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
 <p><img alt="DS2 DINS Screenshots" src="../images/DINS-running.gif" /></p>
 <h2 id="commercial-information"><strong>Commercial Information</strong></h2>
@@ -1215,7 +1207,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Indra</td>
+<td><a href="https://www.minsait.com/en">Indra</a></td>
 <td>Open Source</td>
 <td>Apache 2.0</td>
 </tr>
@@ -1231,24 +1223,32 @@
 <li>Capability to perform many data transformations: data format, enrich data with other sources, anonymization, masking, etc.</li>
 </ul>
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
-<p>TBC</p>
+<p><strong>Data Inspector</strong> consists of a set of tools integrated within Onesait Platform. To deploy and use these tools you will need to deploy some components of Onesait Platform.</p>
+<p>You can find detailed instruction in the <a href="https://onesaitplatform.com/space/DOCT/2220810976/How+to+install+Onesait+Platform%3F">Oensait Platform Documentation Installation Guide</a>.</p>
 <h3 id="requirements">Requirements</h3>
-<p>TBC</p>
+<p><strong>DINS</strong> requires a minimum of 6 GB of RAM and 4 CPUs for basic data pipeline executions. The amount of resources must be adapted to the volume of data to be processed.</p>
 <h3 id="software">Software</h3>
-<p>TBC</p>
+<p><strong>DINS</strong> is based on the Controlpanel and Dataflow from Onesait Platform.</p>
 <h3 id="summary-of-installation-steps">Summary of installation steps</h3>
-<p>TBC</p>
+<p>The development of <strong>DINS</strong> is enhancing the integration of tools to increase the overall capabilities of the <strong>Onesait Platform</strong> for developing data pipelines.<br />
+At the end of the <strong>DINS</strong> development, specific deployment artifacts for <strong>DINS</strong> will be available. For now, only the generic artifacts of the Onesait Platform are provided.
+The recommended way to set up <strong>DINS</strong> is to deploy the <strong>Onesait Platform</strong>, including the Controlpanel and Dataflow componenets that are used for <strong>DINS</strong> module. 
+Detailed installation steps are described in the <a href="https://onesaitplatform.com/space/DOCT/2220810976/How+to+install+Onesait+Platform%3F">Onesait Platform Documentation Installation Guide</a>.</p>
 <h3 id="detailed-steps">Detailed steps</h3>
-<p>TBC</p>
+<p>Detailed installation steps are described in the <a href="https://onesaitplatform.com/space/DOCT/2220810976/How+to+install+Onesait+Platform%3F">Onesait Platform Documentation Installation Guide</a>.</p>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
-<p>TBC</p>
+<p><strong>DINS</strong> is largely based on the Onesait Platform Dataflow module. As part of its development, new capabilities are being added to the Dataflow module. The main documentation on how to use it is available at <a href="https://onesaitplatform.com/space/DOCT/2220820644/DataFlow">Dataflow guidelines</a>, which explain how to use Dataflow—and by extension, DINS—within other tools of the Onesait Platform. In addition, there is a <a href="https://dataflow-docs.onesaitplatform.com/">comprehensive user manual</a> focused on developing data pipelines.</p>
+<p>Please note that, since new capabilities are still being added during the development of <strong>DINS</strong>, some parts of the documentation may not yet be fully up to date.</p>
 <h2 id="other-information"><strong>Other Information</strong></h2>
-<p>TBC</p>
+<p>For now, there is not any additional information.</p>
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
-<p>TBC</p>
+<p>DINS API:</p>
+<p><img alt="DINS API" src="../images/dataflow-openapi-1.png" /></p>
 <h2 id="additional-links"><strong>Additional Links</strong></h2>
 <p>Add in here relevant links for your module. In this section we will also add the link to the module video.</p>
-<p>Documentation <a href="https://dataflow-docs.onesaitplatform.com/">https://dataflow-docs.onesaitplatform.com/</a></p>
+<p>Onesait Platform GitHub <a href="https://github.com/onesaitplatform/onesaitplatform-cloud">https://github.com/onesaitplatform/onesaitplatform-cloud</a></p>
+<p>Dataflow guidelines <a href="https://onesaitplatform.com/space/DOCT/2220820644/DataFlow">https://onesaitplatform.com/space/DOCT/2220820644/DataFlow</a></p>
+<p>Dataflow user manual <a href="https://dataflow-docs.onesaitplatform.com/">https://dataflow-docs.onesaitplatform.com/</a></p>
 
 
 
@@ -1297,10 +1297,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
