@@ -12,7 +12,7 @@
         <link rel="prev" href="../CLM/">
       
       
-        <link rel="next" href="../DARC/">
+        <link rel="next" href="../CUR/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -516,6 +516,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../CUR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CUR - DS2 Data Curation module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DARC/" class="md-nav__link">
         
   
@@ -884,6 +907,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../RET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DS2 Data discovery and transformation module (RET)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../SDS/" class="md-nav__link">
         
   
@@ -1204,7 +1250,7 @@
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
 <p>The Containerisation module will be part of the IDT installation, but a standalone installer is so far provided in order to be able to work with it, which installs Flux Helm and Source Controllers in order to create the Helm Chart from the HelmRelease and Chart templates. </p>
 <h3 id="requirements">Requirements</h3>
-<p>The IDT or a Kubernetes cluster is required. This component can't be installed without a Kubernetes cluster, in fact, the goal of the component is to 
+<p>The IDT or a Kubernetes cluster and Helm is required. This component can't be installed without a Kubernetes cluster, in fact, the goal of the component is to 
 deploy the modules on the Kubernetes cluster.</p>
 <p>Resources:</p>
 <h3 id="software">Software</h3>
@@ -1227,7 +1273,10 @@ deploy the modules on the Kubernetes cluster.</p>
 <p>Clone the repo containerisation</p>
 </li>
 <li>
-<p>Install the Containerisation module by running the installfluxghorg.sh script   </p>
+<p>Install the Containerisation module by running the installfluxghorg.sh script</p>
+</li>
+<li>
+<p>Create the platform side configuration </p>
 </li>
 </ol>
 <h3 id="detailed-steps">Detailed steps</h3>
@@ -1239,70 +1288,116 @@ deploy the modules on the Kubernetes cluster.</p>
 </li>
 <li>
 <p>Install the Containerisation module by running the installfluxghorg.sh script : So far the Kubernetes controllers are available, which will deploy a template helm chart from a helmrelease CRD
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./installfluxghorg.sh github_token github_organisation org
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./installfluxghorg.sh github_token github_organisation github_repository
 </span></code></pre></div></p>
 <blockquote>
 <p>github_token: a GitHub user token. This is a personal access token that has access permissions to the org repository</p>
 <p>github_organisation: a GitHub organisation: this will be in a later stage  the organisation from the Marketplace ie. ds2-marketplace where modules are stored</p>
-<p>org: this is a repository in the GitHub organisation: this will be in a later stage a repository of the organisation id of the participant as registered in the Portal. The repository is created via the Marketplace and the acquired modules will be located in that GitHub repository -&gt; This is linked to the Marketplace purchase process
-An example of running the script
+<p>github_repository: this is the name of a repository in the GitHub organisation. This will be in a later stage a repository of the organisation id of the participant as registered in the Portal. The repository is created via the Marketplace and the acquired modules will be located in that GitHub repository. This is linked to the Marketplace purchase process</p>
+<p>An example of running the script
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./installfluxghorg.sh ghp_qRoTB9z1w1xa3ki4hzrl5Vw9bQPd82pkaxU4 ds2-eu containerisation
 </span></code></pre></div></p>
+</blockquote>
+</li>
+<li>
+<p>Create the platform configuration by running the kubernetes_configuration.sh script. The Helm templates to be used by the Containerisation module rely on a platform configmap and secret that are created in this step and contain platform configuration
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./kubernetes_configuration.sh imagepath organisationadminuser organiationadmintoken organisationdomain namespace
+</span></code></pre></div></p>
+<blockquote>
+<p>imagepath: The registry path where the docker images are stored ie. in ghcr.io/ds2-eu/ds2charts/image the imagepath would be ds2eu/ds2charts</p>
+<p>organisationadminuser: The admin user for the customer organisation registered in the DS2 Portal</p>
+<p>organiationadmintoken: The admin user token retrieved from the DS2 Portal</p>
+<p>organisationdomain: The customer organisation domain for the modules urls ie. customer.domain.com</p>
+<p>namespace: The namespace where to create the configmap and secret ie. icekube</p>
+<p>An example of running the script
+<code>./kubernetes_configuration.sh ds2-eu/ds2charts user ghp_qRoTB9z1w1xa3ki4hzrl5Vw9bQPd82pkaxU4 192-168-50-5.idt.ds2.sslip.io icekube</code></p>
 </blockquote>
 </li>
 </ol>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
 <p>The Containerisation UI is not available at the moment of writing this documentation and the templates for Module Helm Charts and Base Helm Charts are being 
-developed. Still some guidelines on how to use the module standalone can be provided.</p>
+developed. Still some guidelines on how to use the module standalone and manually install a module can be provided. This manual installation requires the IDT to be installed given the Helm template is configured to use the components of the IDT and some default platform configuration </p>
 <p>Once the controllers have been deployed we need to create a source resource to pull the module template charts from a GitRepository. 
 The template charts will be used to create later the real module helm charts. Those template helm charts will be provided by the Portal and Marketplace.
 This is an example located in the Containerisation repository at <a href="https://github.com/ds2-eu/containerisation.git">https://github.com/ds2-eu/containerisation.git</a> of a GitRepository.</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source.toolkit.fluxcd.io/v1</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitRepository</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">metadata</span><span class="p">:</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2catalog</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nt">spec</span><span class="p">:</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1m</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/icentomAs/fluxhelm.git</span><span class="w"> </span><span class="c1"># git repo url-so far public repository, at a later stage configuration for private repositories will be provided</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="nt">ref</span><span class="p">:</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source.toolkit.fluxcd.io/v1</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitRepository</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2catalog</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nt">spec</span><span class="p">:</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1m</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/ds2-eu/helmtemplates.git</span><span class="w"> </span><span class="c1"># git repo url-so far public repository, at a later stage configuration for private repositories will be provided</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="nt">ref</span><span class="p">:</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
 </span></code></pre></div>
-<p>To create the GitRepository resource copy the example into gitrepository.yaml or pull the file from the repository and run
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>gitrepository.yaml
+<p>Assuming that you have the IDT or a Kubernetes cluster running, to create the GitRepository resource copy the example into gitrepository.yaml or pull the file from the repository and run
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>gitrepository.yaml
 </span></code></pre></div></p>
 <p>With the GitRepository created, two more resources are needed.
-First, the template Helm Charts which should be stored in the GitRepository repository.</p>
-<p>The template Helm Chart is still not available at the moment.</p>
-<p>Second, the base Helm Charts which are based on HelmRelease CRDs from flux. This is a simple way of refering to a Helm Chart and deploying it into a Kubernetes cluster. The template base Helm Chart is still not available at the moment. An example of a HelmRelease can be found at the containerisation repository
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">helm.toolkit.fluxcd.io/v2</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HelmRelease</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">metadata</span><span class="p">:</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2module</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nt">spec</span><span class="p">:</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="nt">chart</span><span class="p">:</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">      </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./nginxapp3</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">      </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;1.0.0&#39;</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">      </span><span class="nt">sourceRef</span><span class="p">:</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">        </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitRepository</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2catalog</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">        </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">  </span><span class="nt">values</span><span class="p">:</span>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="nt">welcome_message</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;This</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">zdzw</span><span class="nv"> </span><span class="s">nginxmessage</span><span class="nv"> </span><span class="s">helm</span><span class="nv"> </span><span class="s">chart</span><span class="nv"> </span><span class="s">Welcome</span><span class="nv"> </span><span class="s">Message&quot;</span><span class="w"> </span>
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">    </span><span class="nt">module1</span><span class="p">:</span>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span>
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">        </span><span class="nt">privateRegistry</span><span class="p">:</span>
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">          </span><span class="nt">registryPasswd</span><span class="p">:</span><span class="w"> </span>
+First, the template Helm Charts which are stored in the GitRepository that has been created.</p>
+<p>Second, the base Helm Release Charts which are based on HelmRelease CRD (Custom Resource Definition) from flux. This is a simple way of refering to a Helm Chart and deploying it into a Kubernetes cluster. 
+This is an example of a HelmRelease
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">helm.toolkit.fluxcd.io/v2</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HelmRelease</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2module</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nt">spec</span><span class="p">:</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="nt">chart</span><span class="p">:</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">      </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./nginxapp3</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">      </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;1.0.0&#39;</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">      </span><span class="nt">sourceRef</span><span class="p">:</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">        </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitRepository</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2catalog</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">        </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">  </span><span class="nt">values</span><span class="p">:</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">    </span><span class="nt">welcome_message</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;This</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">ds2</span><span class="nv"> </span><span class="s">nginxmessage</span><span class="nv"> </span><span class="s">helm</span><span class="nv"> </span><span class="s">chart</span><span class="nv"> </span><span class="s">Welcome</span><span class="nv"> </span><span class="s">Message&quot;</span><span class="w"> </span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">    </span><span class="nt">module1</span><span class="p">:</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">        </span><span class="nt">privateRegistry</span><span class="p">:</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">          </span><span class="nt">registryPasswd</span><span class="p">:</span><span class="w"> </span>
 </span></code></pre></div></p>
 <p>The HelmRelease resource is a simple way to refer to a Helm Chart with a single yaml file, being able to override the values defined in the Helm Chart.</p>
 <p>In this case, the example refers to a chart named nginxapp3 located in the GitRepository created in the previous step, and is overiding the values for welcome_message, module1.image.privateRegistry and module1.image.registryPasswd.</p>
-<p>To deploy the nginxapp3 Helm Chart using the HelmRelease resource, add a valid registry password in the helmrelease.yaml at resitryPasswd field, i.e. your GitHub user token that may have read access to the ds2-eu organisation, then run
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>helmrelease.yaml
+<p>The template base Helm Release Chart is available at the Containerisation repository at ds2modulerelease folder. Clone the repository and copy this ds2modulerelease folder into a local directory. The ds2modulerelease represents a Helm Chart using a HelmRelease resource that refers to the baes Helm Chart template. Deploying the ds2modulerelease will deploy the ds2modulebase.</p>
+<p>The ds2modulerelease is by default configured to deploy and example nginxapp that allows for customizing the welcome message. These are the values of the chart
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>vals:
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  app:
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    name: ds2module
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    port: 80
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    env: true
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>  image:
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>          #registryUrl: ghcr.io
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>          #repository: /ds2-eu/ds2charts/
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    name: nginxmessage
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    tag: &quot;1.0.0&quot;
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>  service:
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    port: 8080
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>  config:
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    WELCOME_MESSAGE: &quot;The flux containerisation helm chart nginx message&quot;
 </span></code></pre></div></p>
+<p>Everything is configured to point to the location of the nginxmessage app. Users only need to customize the WELCOME_MESSAGE variable for this example.
+To install the ds2modulerelease use helm
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>helm install release_name chart_path --set WELCOME_MESSAGE=&quot;My Message&quot;
+</span></code></pre></div></p>
+<blockquote>
+<p>release_name: any name representing the application i.e myapp</p>
+<p>chart_path: the path to the ds2modulerelease folder ie. ds2modulerelease/</p>
+<p>--set WELCOME_MESSAGE="My Message" overrides the welcome message to "My Message"</p>
+</blockquote>
+<p>Once installed, you should be able to see the Helm Chart for the nginxmessage
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>helm ls
+</span></code></pre></div></p>
+<p>You should be able to access the URL of the nginxmessage app
+Get the url
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>kubectl get ing -n namespace
+</span></code></pre></div></p>
+<p>Test access to the nginxmessage app
+curl -k https://url</p>
 <h2 id="other-information"><strong>Other Information</strong></h2>
 <p>No other information at the moment for Containerisation</p>
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>

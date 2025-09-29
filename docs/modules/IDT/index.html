@@ -333,6 +333,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../CUR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CUR - DS2 Data Curation module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../DARC/" class="md-nav__link">
         
   
@@ -917,6 +940,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../RET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DS2 Data discovery and transformation module (RET)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../SDS/" class="md-nav__link">
         
   
@@ -1339,14 +1385,22 @@ Resources:</p>
 </li>
 <li>
 <p>Navigate to idt folder
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>idt
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>idt/idt3.0/minids23.0
 </span></code></pre></div></p>
 </li>
 <li>
 <p>Run idt
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./idt.sh<span class="w"> </span>ip<span class="w"> </span>iface
-</span></code></pre></div>
-where ip is the ip of the vm where k3s will be installed and iface is the network interface of the nodeip for instance ./idt.sh 192.168.50.5 enp0s8</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./minids23.0.sh<span class="w"> </span>ip<span class="w"> </span>iface<span class="w"> </span><span class="o">[</span>idt_domain<span class="o">]</span><span class="w"> </span><span class="o">[</span>rancher_domain<span class="o">]</span>
+</span></code></pre></div></p>
+<blockquote>
+<p>ip: the ip of the vm where k3s will be installed</p>
+<p>iface: the network interface of the nodeip</p>
+<p>idt_domain: optional parameter to configure the domain of the idt and modules that will later be deployed to organisation domain. This domain will usually be public. If not set, the domain defaults to "$ip.idt.ds2.sslip.io" where $ip is the ip configured but using '-' between the numbers ie. 192-168-50-10</p>
+<p>rancher_domain: optional parameter to configure the Rancer domain to a different domain that the one from the organisation. This domain will usually be private since it has access to the IDT Kubernetes cluster. If not set, the domain defaults to "$ip.ds2.sslip.io" where ip is same as the idt_domain example.</p>
+<p>An example of use setting all four parameters
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./minids23.0.sh<span class="w"> </span><span class="m">192</span>.168.50.5<span class="w"> </span>enp0s8<span class="w"> </span>myorg.mydomain.com<span class="w"> </span>myorg.myinternaldomain.com
+</span></code></pre></div></p>
+</blockquote>
 </li>
 </ul>
 <p>The script will install the software utilities in this order:</p>
@@ -1370,7 +1424,7 @@ where ip is the ip of the vm where k3s will be installed and iface is the networ
 <p>DS2 IDT is now ready.</p>
 </li>
 </ul>
-<p><img alt="IDT-SH" src="../images/IDT-sh.JPG" /></p>
+<p><img alt="IDT-SH" src="../images/IDT-sh3.JPG" /></p>
 <ul>
 <li>Access Rancher by accessing the Rancher url in the browser (https://rancher.$nodeip.ds2.sslip.io)</li>
 <li>Once in the Rancher UI, the admin password is set</li>

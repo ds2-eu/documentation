@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../DDT/">
+        <link rel="prev" href="../CONT/">
       
       
-        <link rel="next" href="../DMK/">
+        <link rel="next" href="../DARC/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>DINS - Data Inspector - Documentation DS2</title>
+        <title>CUR - DS2 Data Curation module - Documentation DS2</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dins-data-inspector" class="md-skip">
+        <a href="#cur-ds2-data-curation-module" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DINS - Data Inspector
+              CUR - DS2 Data Curation module
             
           </span>
         </div>
@@ -330,75 +330,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../CUR/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    CUR - DS2 Data Curation module
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../DARC/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    DARC - Discovery Assessment Recommend Configure
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../DDT/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    DDT - Data Detection and Transformation
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -416,7 +347,7 @@
   
   
   <span class="md-ellipsis">
-    DINS - Data Inspector
+    CUR - DS2 Data Curation module
     
   </span>
   
@@ -429,7 +360,7 @@
   
   
   <span class="md-ellipsis">
-    DINS - Data Inspector
+    CUR - DS2 Data Curation module
     
   </span>
   
@@ -457,6 +388,21 @@
       General Description
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="General Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -516,6 +462,33 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#setting-up-the-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up the database
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-cur-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the CUR module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-with-ollama" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running with ollama
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
       Requirements
@@ -525,27 +498,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#software" class="md-nav__link">
+  <a href="#how-to-use" class="md-nav__link">
     <span class="md-ellipsis">
-      Software
+      How to use
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#summary-of-installation-steps" class="md-nav__link">
+  <a href="#creating-and-running-a-docker-image" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary of installation steps
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#detailed-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Detailed steps
+      Creating and running a Docker image
     </span>
   </a>
   
@@ -553,33 +517,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      How To Use
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#other-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Other Information
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#openapi-specification" class="md-nav__link">
-    <span class="md-ellipsis">
-      OpenAPI Specification
-    </span>
-  </a>
   
 </li>
       
@@ -596,6 +533,75 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DARC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DARC - Discovery Assessment Recommend Configure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DDT - Data Detection and Transformation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DINS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DINS - Data Inspector
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1009,6 +1015,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="General Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1067,6 +1088,33 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#setting-up-the-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up the database
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-cur-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running the CUR module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-with-ollama" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running with ollama
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
       Requirements
@@ -1076,27 +1124,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#software" class="md-nav__link">
+  <a href="#how-to-use" class="md-nav__link">
     <span class="md-ellipsis">
-      Software
+      How to use
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#summary-of-installation-steps" class="md-nav__link">
+  <a href="#creating-and-running-a-docker-image" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary of installation steps
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#detailed-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Detailed steps
+      Creating and running a Docker image
     </span>
   </a>
   
@@ -1104,33 +1143,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      How To Use
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#other-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Other Information
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#openapi-specification" class="md-nav__link">
-    <span class="md-ellipsis">
-      OpenAPI Specification
-    </span>
-  </a>
   
 </li>
       
@@ -1159,9 +1171,7 @@
 
 
 
-<h1 id="dins-data-inspector">DINS - Data Inspector</h1>
-<p>Powered by</p>
-<p><img alt="Indra Group" src="../images/Indra-Group-Logo.png" /> <img alt="Minsait" src="../images/Minsait-Logo.png" /></p>
+<h1 id="cur-ds2-data-curation-module">CUR - DS2 Data Curation module</h1>
 <table>
 <thead>
 <tr>
@@ -1170,78 +1180,39 @@
 </thead>
 <tbody>
 <tr>
-<td>Software GitHub Repository <a href="https://github.com/ds2-eu/dins_module.git">https://github.com/ds2-eu/dins_module.git</a></td>
+<td>Software GitHub Repository <a href="https://github.com/ds2-eu/cur.git">https://github.com/ds2-eu/cur.git</a></td>
 </tr>
 <tr>
-<td>Progress GitHub Project <a href="https://github.com/orgs/ds2-eu/projects/28">https://github.com/orgs/ds2-eu/projects/28</a></td>
+<td>Progress GitHub Project <a href="https://github.com/orgs/ds2-eu/projects/3">https://github.com/orgs/ds2-eu/projects/3</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="general-description"><strong>General Description</strong></h2>
-<p>The Data Inspection Module (DINS) facilitates the configuration and deployment of processes for real-time data analysis, ensuring data quality and compliance with thresholds set by the parties involved. It performs several key functions: generating notifications based on the values of the exchanged data, executing reactions such as sending requests and notifications to external tools, and integrating with models developed to enhance its capabilities. It is a complement to the Data Share Controller which focuses on control information with both modules using the Data Interceptor.</p>
-<p>The Data Inspection is responsible for analysing the data provided and/or consumed by participants, ensuring the quality of the data shared amongst them. For example, a consumer can use DINS to set up analysis jobs that define rules for data validation. This includes establishing thresholds for specific data values; when these thresholds are exceeded, issues are generated and recorded for monitoring. Additionally, the DINS module can trigger notifications to other modules and components when issues are detected. For instance, it can notify the Data Share Controller Module, which may respond by blocking data sharing if certain limits are reached.</p>
+<p>Purpose: Data obtained from disparate sources runs the risk of remaining siloed unless it can be joined with similar data from other data sets. The process of joining data may require curation of data, such as the conversion of data formats or a matching of disparate column names.  Manual curation of datasets, however, can be a labour-intensive task, and not suited to DS2’s dynamic nature of federating dataspaces.  Additionally, filtering data based on a set of conditions from even a single data source is a task that typically will require programming skills and is both time-intensive and costly.</p>
+<p>Instead, the CUR module establishes automatic curatation and federation of data through machine learning, allowing users to query data through natural language, without having to understand how to connect or convert data obtained from different sources.</p>
+<h3 id="description">Description</h3>
+<p>In order to allow querying of data obtained from various sources, the Curation model harnesses the power of two different technologies, namely relational databases and machine learning Large Language Models (LLMs).  The module stores obtained data in a relational database, and then uses machine learning combined with a knowledge of the database schemas to convert user queries in natural language to database queries (i.e. SQL queries). Given the proper prompts, the LLM is able to automatically determine how to match columns in different tables, even when column names or data formats may differ.  This module uses several different techniques to increase the chances of correctly answering a user query, such as evaluating the results of the generated query before they are returned to the user, and RAG technology to seed LLM SQL generation with examples of similar user queries and their correctly generated SQL calls from previous history.</p>
+<p>There still will be cases where the generation of an SQL query corresponding to a user's question will fail.  For example, if the available data sources relate to weather conditions in Africa and the user asks a question about food prices in Europe, query formulation will naturally - and correctly - fail.  However, there will be other cases where a query which is appropriate for the data sets will not be properly generated due to reasons of complexity.  In this case, the execution chain of the module will detect the failure and request human-in-the-loop intervention.  At this point, the original query can either be abandoned, or the generated SQL query can be manually corrected and re-executed.  If the subsequent execution succeeds, the user query and corrected SQL will be stored in a vector store to seed future, similar user queries.  Of course it is not expected that the typical user will correct SQL queries, but rather that the CUR module will be trained by an expert in advance to cover anticipated user queries.</p>
 <h2 id="architecture"><strong>Architecture</strong></h2>
-<p>The figure below represents the module fit into the DS-DS environment.</p>
-<p><img alt="DS2 DINS Architecturefits" src="../images/DINS-big-picture.png" /></p>
-<p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.</p>
-<p><img alt="DS2 DINS Architecture" src="../images/DINS-architecture.png" /></p>
+<p>The figure below represents the module fit into the DS-DS environment.
+<img alt="DS2 CUR Architecturefits" src="../images/T4.3_in_overall_architecture.png" /></p>
+<p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.
+<img alt="DS2 CUR Architecture" src="../images/T4.3_Components_diagram.jpg" /></p>
 <h2 id="component-definition"><strong>Component Definition</strong></h2>
-<p>This module has the following subcomponent and other functions:</p>
+<p>The CUR module consists of two main parts - a configuration component to set up the database tables from the data sources and the component which is given a reference to the stored database base and performs the pipeline required to allow a user to get information from the data sources using natural language queries.
+In particular, this latter component is composed of a number of stages which include:</p>
 <ul>
-<li>
-<p><strong>Data Jobs IDE</strong>: This group of components is shared with the T4.1 Policy Enforcement Modules. Some of them will be developed based on existing technology, specifically the Dataflow component of the Onesait Platform open-source product. While T4.1 Policy Enforcement focuses on defining and executing data transformation jobs, the Data Inspection module will enhance the current capabilities of Dataflow to include data inspection, monitoring, and notifications. T6.2 will lead this component development, and T4.1 will be built on the improved version from T6.2. Therefore, T4.1 has a dependency on T6.2, but the opposite is not true.</p>
-</li>
-<li>
-<p><strong>IDE UI</strong>: This graphical user interface allows users to define Data Inspection Jobs for monitoring data and triggering notifications and alerts. For example, it can evaluate values against specified thresholds. This component is based on the existing INDRA software, with updates needed to support new features for DS2.</p>
-</li>
-<li>
-<p><strong>IDE Controller</strong>: This component manages Data Inspection Jobs during design time and oversees their deployment and monitoring at runtime. It is based on current INDRA software but requires significant upgrades to split the tool into the IDE component and the Runtime component (potentially several).</p>
-</li>
-<li>
-<p><strong>Job Definition Storage</strong>: This component stores definitions of Data Inspection Jobs, based on INDRA software, with extensions planned to improve version control of the definitions. The definitions are created through a graphical user interface, enabling users to design Data Inspection Jobs as data pipelines using a drag-and-drop approach. Each data pipeline will include, at a minimum, the configuration of data sources (e.g., data formats) and the rules for inspecting the data (e.g., detecting specific fields and value thresholds). In the end, each data pipeline definition is a JSON document and a set of parameters. They will be stored in a distributed persistence engine.</p>
-</li>
-<li>
-<p><strong>Testing Framework</strong>: This component will include test definitions and the storage of small datasets for automatic testing. This component will enable users to define automated tests that are executed to validate Data Inspection Jobs before deployment.</p>
-</li>
-<li>
-<p><strong>Inspection Runtime</strong>:</p>
-</li>
-<li>
-<p><strong>Runtime Controller</strong>: This component will manage the execution of Data Inspection Jobs during runtime. It will define the interface for integrating job execution with external components and will handle the job lifecycle: deployment, upgrade, removal, start, and stop.</p>
-</li>
-<li>
-<p><strong>Data Inspection Job</strong>: This component represents the runtime execution of a data inspection definition. Each type of data inspection supported will require a Data Inspection Job definition. One instance of this component will be created for each Data Inspection Job needed at runtime, even for the same definition. The creation of these instances will be managed by the Runtime Controller. The Data Inspection Job includes the definition of an SDK and interfaces that facilitate the extension of capabilities, such as supporting additional data formats.</p>
-</li>
-<li>
-<p><strong>Job Logger</strong>: This component logs all relevant information about each job execution. Based on INDRA infrastructure, it will require minimal development to adapt to changes in other module components.</p>
-</li>
-<li>
-<p><strong>Job States Storage</strong>: This component stores the states of job executions throughout their lifecycle, enabling job resumption in the event of failures during execution. Based on INDRA infrastructure, it will require minimal development.</p>
-</li>
-<li>
-<p><strong>Monitoring and Historic Data</strong>: This component will store historic metrics gathered by the analysis jobs. This set of elements will be based on the open-source stack of monitoring tools Grafana.</p>
-</li>
-<li>
-<p><strong>Metrics/Alert Collector</strong>: This component will collect all the data from the Analysis Jobs.</p>
-</li>
-<li>
-<p><strong>Alert Manager</strong>: It collects alerts, manages them by categorizing and prioritizing, and allows for the configuration of notification channels such as email and Teams. It also provides a centralized interface for tracking and managing active alerts.</p>
-</li>
-<li>
-<p><strong>Inspector Dashboard</strong>: It allows the visual analysis of the data inspected.</p>
-</li>
-<li>
-<p><strong>Model Deployed</strong>: If a complex analysis is required for data inspection, the Data Inspection Jobs will have the capability to use data models deployed with the T4.2 Data Model Development Toolkit Module. For example, a field value could be used as input in a prediction model, and based on the result, a decision can be made whether an alert should be generated.</p>
-</li>
-<li>
-<p><strong>Data Share Controller</strong>: The Data Interception part of the Data Share Controller connects data in the data pipeline with the Data Inspection. If the Data Share Controller is not present, any other software that implements the Data Inspection API can provide the data. The Data Inspection will trigger notifications to the Data Share Controller Module (and other modules or components, if required) based on rules defined by the participants. For example, “stop data sharing”.</p>
-</li>
-<li>
-<p><strong>Other DS2 Modules / Other Participant’s Software</strong>: The Module can notify any software that needs to receive these notifications, provided that the software is compatible with the notification mechanisms implemented by DINS. This capability facilitates the integration of systems that can react to data shared between participants, such as the Data Share Controller.</p>
-</li>
+<li>The creation of a GUI for user input</li>
+<li>The creation of an SQL query from a natural language query</li>
+<li>The execution of the generated SQL query</li>
+<li>Evaluation of results of the SQL query</li>
+<li>Human-in-the-loop injection of a corrected SQL query</li>
+<li>Reformulation of the query results to generate a more readable answer</li>
 </ul>
+<p>Within the above stages, there are a number of substages such as RAG retrieval, vector store population, prompt creation etc.</p>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
-<p><img alt="DS2 DINS Screenshots" src="../images/DINS-running.gif" /></p>
+<p>The following shows how a natural language query asking about pollution levels in the vicinity of the monitoring station, "MS Rakičan" can be executed.
+<img alt="DS2 CUR Screenshots" src="../images/screenshot_sequence.gif" /></p>
 <h2 id="commercial-information"><strong>Commercial Information</strong></h2>
 <table>
 <thead>
@@ -1253,48 +1224,81 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="https://www.minsait.com/en">Indra</a></td>
-<td>Open Source</td>
-<td>Apache 2.0</td>
+<td>IBM</td>
+<td>Consortium Confidential</td>
+<td>TBD</td>
 </tr>
 </tbody>
 </table>
 <h2 id="top-features"><strong>Top Features</strong></h2>
 <ul>
-<li>Connect with a large of data origins to obtain data.</li>
-<li>Definition of rules to analyze data transfer based on data values, data format, etc.</li>
-<li>Real time monitoring of the processes.</li>
-<li>Process template management.</li>
-<li>Integrated with EDC Connector.</li>
-<li>Capability to perform many data transformations: data format, enrich data with other sources, anonymization, masking, etc.</li>
+<li>Extraction of data based on natural language queries</li>
+<li>Support for a wide variety of user languages</li>
+<li>Automatic federation of disparate data sources</li>
+<li>Human-in-the-loop intervention allows the LLM to self-learn</li>
+<li>RAG technology supporting hybrid retrieval with both semantic and keyword search</li>
+<li>Easy to add additional data sources</li>
 </ul>
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
-<p><strong>Data Inspector</strong> consists of a set of tools integrated within Onesait Platform. To deploy and use these tools you will need to deploy some components of Onesait Platform.</p>
-<p>You can find detailed instruction in the <a href="https://onesaitplatform.com/space/DOCT/2220810976/How+to+install+Onesait+Platform%3F">Oensait Platform Documentation Installation Guide</a>.</p>
+<h3 id="setting-up-the-database">Setting up the database</h3>
+<p>Data obtained from the data sources will accessed from their URLs and stored into a database.  The recommended database is postgresql due to it support for geospatial queries.  The configuration of the database is as follows:</p>
+<ol>
+<li>Install postgresql.  See <a href="https://www.postgresql.org/download">https://www.postgresql.org/download</a></li>
+<li>After installing postgresql, it is recommended to add the environment variables, DS2_DB_USERNAME and DS2_DB_PASSWORD to your shell, with username and database password values which were used in installing postgresql in the previous step.</li>
+<li>Edit the file, "federation_config.json" as follows:<ul>
+<li>Change the value of the "database", "host" and "port" entries as required to match the values used installing the postgresql database.</li>
+<li>This configuration file is pre-configured with data sources for the DS2 Slovenian, Romanian and Greek use cases.  Other use cases or additional data sources can be added by following the same format.  Note that currently the "open_api" field is not used by the software.</li>
+<li>Any API tokens required by the REST call are shown within brackets, for example:'Authorization: Bearer <DADS_BEARER_TOKEN>'.  At runtime, the software will attempt to replace the bracketed value with an environment variable of the same name - for example the environment variable, "DADS_BEARER_TOKEN" in this example.  Therefore, configure these values in your environment.</li>
+</ul>
+</li>
+<li>To create the SQL database the first time, run <code>python create_database.py --prefix [name]</code>.  The value for [name] needs to correspond exactly to a URI entry name in the federation_config.json file (for example, "Slovenia", "Romania" or "Greece").  As an example, to build the database for the DS2 Slovenian use case, we would run: 
+<code>python create_database.py --prefix Slovenia</code>.</li>
+</ol>
+<h3 id="running-the-cur-module">Running the CUR module</h3>
+<p>In order to run the CUR module, the correct python environment needs to be created.  It is recommended that you create a virtual environment as follows:</p>
+<ul>
+<li>python -m venv [name]  where "name" will be the name of the virtual environment, for example, "venv".</li>
+<li>Activate the virtual environment: On Mac or Linux this will be: <code>source &lt;name&gt;/bin/activate</code>, where the value of "name" is from the previous step.</li>
+<li>Install inside the virtual environment the required modules: <code>pip install requirements.txtx</code></li>
+</ul>
+<p>Once the environment is set up, the CUR module can be run.  Note that the CUR module requires access to an LLM. The access key for the LLM can be defined by configuring and environment variable, LLM_APIKEY, in your sheel.  If this is not configured, then at runtime the module will request the key value.</p>
+<p>The CUR module is invoked as follows:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python ds2_federation_main.py \
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>--prefix {Slovenia, Romania, Greece} \
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>--name llama-3-3-70b-instruct \
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>--id meta-llama/llama-3-3-70b-instruct \
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>--url https://{url}/\{model_name\}/v1
+</span></code></pre></div>
+<p>where the value for "prefix" is the as described in the previous section for setting up the db, and the value for "url" is the base address of the LLM (i.e without the model name).  CUR uses llama-3-3-70b-instruct as its default model.  This can be overridden by using the --name and --id command line values (e.g. --name llama-3-3-70b-instruct --id meta-llama/llama-3-3-70b-instruct).  Note that the accuracy of the NL2SQL translation in the CUR module may depend on the model used.</p>
+<h3 id="running-with-ollama">Running with ollama</h3>
+<p>To run on ollama, use a model id (--id) of "ollama" and model name (--name), for example, of llama3.1 or llama3.3.  Make sure that the ollama server is running (e.g. ollama run llama3.3:70b) and that you have pulled (ollama pull ....) the correct model name.</p>
 <h3 id="requirements">Requirements</h3>
-<p><strong>DINS</strong> requires a minimum of 6 GB of RAM and 4 CPUs for basic data pipeline executions. The amount of resources must be adapted to the volume of data to be processed.</p>
-<h3 id="software">Software</h3>
-<p><strong>DINS</strong> is based on the Controlpanel and Dataflow from Onesait Platform.</p>
-<h3 id="summary-of-installation-steps">Summary of installation steps</h3>
-<p>The development of <strong>DINS</strong> is enhancing the integration of tools to increase the overall capabilities of the <strong>Onesait Platform</strong> for developing data pipelines.<br />
-At the end of the <strong>DINS</strong> development, specific deployment artifacts for <strong>DINS</strong> will be available. For now, only the generic artifacts of the Onesait Platform are provided.
-The recommended way to set up <strong>DINS</strong> is to deploy the <strong>Onesait Platform</strong>, including the Controlpanel and Dataflow componenets that are used for <strong>DINS</strong> module. 
-Detailed installation steps are described in the <a href="https://onesaitplatform.com/space/DOCT/2220810976/How+to+install+Onesait+Platform%3F">Onesait Platform Documentation Installation Guide</a>.</p>
-<h3 id="detailed-steps">Detailed steps</h3>
-<p>Detailed installation steps are described in the <a href="https://onesaitplatform.com/space/DOCT/2220810976/How+to+install+Onesait+Platform%3F">Onesait Platform Documentation Installation Guide</a>.</p>
-<h2 id="how-to-use"><strong>How To Use</strong></h2>
-<p><strong>DINS</strong> is largely based on the Onesait Platform Dataflow module. As part of its development, new capabilities are being added to the Dataflow module. The main documentation on how to use it is available at <a href="https://onesaitplatform.com/space/DOCT/2220820644/DataFlow">Dataflow guidelines</a>, which explain how to use Dataflow—and by extension, DINS—within other tools of the Onesait Platform. In addition, there is a <a href="https://dataflow-docs.onesaitplatform.com/">comprehensive user manual</a> focused on developing data pipelines.</p>
-<p>Please note that, since new capabilities are still being added during the development of <strong>DINS</strong>, some parts of the documentation may not yet be fully up to date.</p>
-<h2 id="other-information"><strong>Other Information</strong></h2>
-<p>For now, there is not any additional information.</p>
-<h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
-<p>DINS API:</p>
-<p><img alt="DINS API" src="../images/dataflow-openapi-1.png" /></p>
+<p>An external LLM is required.  No particular requirements for CPU, memory or storage have been identified.</p>
+<h3 id="how-to-use">How to use</h3>
+<p>The CUR GUI is web-based.  When CUR is started as described in the previous step, it will print out where it can be accessed, typically this will be at: <code>http://127.0.0.1:5000</code> for an installation on the local host.</p>
+<p>To search for data, enter in the <strong>What would you like to know?</strong> box your query and then click the <strong>Ask</strong> button.  Note that the query needs to relate to values in the data sets configured in the federation_config.json file.  If the query succeeds, the answer will appear in the <strong>Answer</strong> box.  If the query fails, then you will be instructed to either correct the generated SQL query, or enter "skip".  If you choose to correct the SQL, enter this in the <strong>Corrected SQL</strong> box and then click on <strong>Execute</strong>, otherwise click on the "Skip" button to move on to a new query.</p>
+<h3 id="creating-and-running-a-docker-image">Creating and running a Docker image</h3>
+<ol>
+<li>Build the docker image:</li>
+</ol>
+<p><code>docker build -t federation:latest -f Dockerfile_federation .</code></p>
+<ol>
+<li>Run the docker image:</li>
+</ol>
+<p><code>docker run --rm \
+-e LLM_APIKEY="${LLM_APIKEY}" \
+-e DS2_DB_USERNAME="${DS2_DB_USERNAME}" \
+-e DS2_DB_PASSWORD="${DS2_DB_PASSWORD}" \
+  federation \
+  --prefix Slovenia \
+  --name llama-3-3-70b-instruct \
+  --id meta-llama/llama-3-3-70b-instruct \
+  --url https://inference-3scale-apicast-production.apps.rits.fmaas.res.ibm.com/\{model_name\}/v1 \
+  --loglevel ERROR \
+  --dbhost host.docker.internal</code></p>
+<p>Note: On Linux add:
+<code>--network="host"</code> to allow for reachablity to the local host</p>
 <h2 id="additional-links"><strong>Additional Links</strong></h2>
-<p>Add in here relevant links for your module. In this section we will also add the link to the module video.</p>
-<p>Onesait Platform GitHub <a href="https://github.com/onesaitplatform/onesaitplatform-cloud">https://github.com/onesaitplatform/onesaitplatform-cloud</a></p>
-<p>Dataflow guidelines <a href="https://onesaitplatform.com/space/DOCT/2220820644/DataFlow">https://onesaitplatform.com/space/DOCT/2220820644/DataFlow</a></p>
-<p>Dataflow user manual <a href="https://dataflow-docs.onesaitplatform.com/">https://dataflow-docs.onesaitplatform.com/</a></p>
 
 
 
