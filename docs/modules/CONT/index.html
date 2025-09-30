@@ -1332,7 +1332,8 @@ This is an example located in the Containerisation repository at <a href="https:
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
 </span></code></pre></div>
 <p>Assuming that you have the IDT or a Kubernetes cluster running, to create the GitRepository resource copy the example into gitrepository.yaml or pull the file from the repository and run
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>gitrepository.yaml
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>ds2
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>gitrepository.yaml
 </span></code></pre></div></p>
 <p>With the GitRepository created, two more resources are needed.
 First, the template Helm Charts which are stored in the GitRepository that has been created.</p>
@@ -1356,10 +1357,6 @@ This is an example of a HelmRelease
 </span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span>
 </span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">  </span><span class="nt">values</span><span class="p">:</span>
 </span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">    </span><span class="nt">welcome_message</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;This</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">ds2</span><span class="nv"> </span><span class="s">nginxmessage</span><span class="nv"> </span><span class="s">helm</span><span class="nv"> </span><span class="s">chart</span><span class="nv"> </span><span class="s">Welcome</span><span class="nv"> </span><span class="s">Message&quot;</span><span class="w"> </span>
-</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">    </span><span class="nt">module1</span><span class="p">:</span>
-</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span>
-</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">        </span><span class="nt">privateRegistry</span><span class="p">:</span>
-</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">          </span><span class="nt">registryPasswd</span><span class="p">:</span><span class="w"> </span>
 </span></code></pre></div></p>
 <p>The HelmRelease resource is a simple way to refer to a Helm Chart with a single yaml file, being able to override the values defined in the Helm Chart.</p>
 <p>In this case, the example refers to a chart named nginxapp3 located in the GitRepository created in the previous step, and is overiding the values for welcome_message, module1.image.privateRegistry and module1.image.registryPasswd.</p>
@@ -1389,15 +1386,24 @@ To install the ds2modulerelease use helm
 <p>chart_path: the path to the ds2modulerelease folder ie. ds2modulerelease/</p>
 <p>--set WELCOME_MESSAGE="My Message" overrides the welcome message to "My Message"</p>
 </blockquote>
-<p>Once installed, you should be able to see the Helm Chart for the nginxmessage
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>helm ls
+<p>For instance run this command from the folder where the ds2modulerelease is located
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>helm install myds2module ds2modulerelease/ -n ds2
 </span></code></pre></div></p>
+<p>Once installed, you should be able to see the Helm Chart for the nginxmessage
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>helm ls -n ds2
+</span></code></pre></div>
+<img alt="DS2 CONT helminstalled" src="../images/CONT-helminstalled.JPG" /></p>
+<p>There are two charts created, myds2module corresponds to the helmrelease itself, and myds2module-frontend corresponds to the expanded module chart from the helmrelease.</p>
 <p>You should be able to access the URL of the nginxmessage app
 Get the url
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>kubectl get ing -n namespace
-</span></code></pre></div></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>kubectl get ing -n ds2
+</span></code></pre></div>
+<img alt="DS2 CONT helmingress" src="../images/CONT-helmingress.JPG" /></p>
 <p>Test access to the nginxmessage app
-curl -k https://url</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>curl -k https://ds2module-frontend.192-168-50-5.idt.ds2.sslip.io
+</span></code></pre></div>
+<img alt="DS2 CONT helmnginx" src="../images/CONT-helmnginx.JPG" /></p>
+<p>In your case the ip will be different, use the output from the kubectl get ing command.</p>
 <h2 id="other-information"><strong>Other Information</strong></h2>
 <p>No other information at the moment for Containerisation</p>
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
