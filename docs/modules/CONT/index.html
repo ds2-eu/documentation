@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -470,6 +470,30 @@
       How To Use
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="How To Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#developer-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Developer Guide
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Guide
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1114,6 +1138,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How To Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#developer-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Developer Guide
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Guide
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1250,8 +1298,7 @@
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
 <p>The Containerisation module will be part of the IDT installation, but a standalone installer is so far provided in order to be able to work with it, which installs Flux Helm and Source Controllers in order to create the Helm Chart from the HelmRelease and Chart templates. </p>
 <h3 id="requirements">Requirements</h3>
-<p>The IDT or a Kubernetes cluster and Helm is required. This component can't be installed without a Kubernetes cluster, in fact, the goal of the component is to 
-deploy the modules on the Kubernetes cluster.</p>
+<p>The IDT or a Kubernetes cluster and Helm is required. This component can't be installed without a Kubernetes cluster, in fact, the goal of the component is to deploy the modules on the Kubernetes cluster.</p>
 <p>Resources:</p>
 <h3 id="software">Software</h3>
 <p>Containerisation module so far installs these software utilities and specific tested compatible versions:</p>
@@ -1273,10 +1320,10 @@ deploy the modules on the Kubernetes cluster.</p>
 <p>Clone the repo containerisation</p>
 </li>
 <li>
-<p>Install the Containerisation module by running the installfluxghorg.sh script</p>
+<p>Create the platform side configuration </p>
 </li>
 <li>
-<p>Create the platform side configuration </p>
+<p>Install the Containerisation module by running the installfluxghorg.sh script </p>
 </li>
 </ol>
 <h3 id="detailed-steps">Detailed steps</h3>
@@ -1287,21 +1334,8 @@ deploy the modules on the Kubernetes cluster.</p>
 </span></code></pre></div></p>
 </li>
 <li>
-<p>Install the Containerisation module by running the installfluxghorg.sh script : So far the Kubernetes controllers are available, which will deploy a template helm chart from a helmrelease CRD
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./installfluxghorg.sh github_token github_organisation github_repository
-</span></code></pre></div></p>
-<blockquote>
-<p>github_token: a GitHub user token. This is a personal access token that has access permissions to the org repository</p>
-<p>github_organisation: a GitHub organisation: this will be in a later stage  the organisation from the Marketplace ie. ds2-marketplace where modules are stored</p>
-<p>github_repository: this is the name of a repository in the GitHub organisation. This will be in a later stage a repository of the organisation id of the participant as registered in the Portal. The repository is created via the Marketplace and the acquired modules will be located in that GitHub repository. This is linked to the Marketplace purchase process</p>
-<p>An example of running the script
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./installfluxghorg.sh ghp_qRoTB9z1w1xa3ki4hzrl5Vw9bQPd82pkaxU4 ds2-eu containerisation
-</span></code></pre></div></p>
-</blockquote>
-</li>
-<li>
 <p>Create the platform configuration by running the kubernetes_configuration.sh script. The Helm templates to be used by the Containerisation module rely on a platform configmap and secret that are created in this step and contain platform configuration
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./kubernetes_configuration.sh imagepath organisationadminuser organiationadmintoken organisationdomain namespace
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./kubernetes_configuration.sh imagepath organisationadminuser organiationadmintoken organisationdomain namespace
 </span></code></pre></div></p>
 <blockquote>
 <p>imagepath: The registry path where the docker images are stored ie. in ghcr.io/ds2-eu/ds2charts/image the imagepath would be ds2eu/ds2charts</p>
@@ -1313,97 +1347,274 @@ deploy the modules on the Kubernetes cluster.</p>
 <code>./kubernetes_configuration.sh ds2-eu/ds2charts user ghp_qRoTB9z1w1xa3ki4hzrl5Vw9bQPd82pkaxU4 192-168-50-5.idt.ds2.sslip.io icekube</code></p>
 </blockquote>
 </li>
+<li>
+<p>Install the Containerisation module by running the installfluxghorg.sh script : So far the Kubernetes controllers are available, which will deploy a template helm chart from a helmrelease CRD
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./installfluxghorg.sh github_token github_organisation github_repository
+</span></code></pre></div></p>
+<blockquote>
+<p>github_token: a GitHub user token. This is a personal access token that has access permissions to the org repository</p>
+<p>github_organisation: a GitHub organisation: this will be in a later stage  the organisation from the Marketplace ie. ds2-marketplace where modules are stored</p>
+<p>github_repository: this is the name of a repository in the GitHub organisation. This will be in a later stage a repository of the organisation id of the participant as registered in the Portal. The repository is created via the Marketplace and the acquired modules will be located in that GitHub repository. This is linked to the Marketplace purchase process</p>
+<p>An example of running the script
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./installfluxghorg.sh ghp_qRoTB9z1w1xa3ki4hzrl5Vw9bQPd82pkaxU4 ds2-eu containerisation
+</span></code></pre></div></p>
+</blockquote>
+</li>
 </ol>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
 <p>The Containerisation UI is not available at the moment of writing this documentation and the templates for Module Helm Charts and Base Helm Charts are being 
 developed. Still some guidelines on how to use the module standalone and manually install a module can be provided. This manual installation requires the IDT to be installed given the Helm template is configured to use the components of the IDT and some default platform configuration </p>
-<p>Once the controllers have been deployed we need to create a source resource to pull the module template charts from a GitRepository. 
-The template charts will be used to create later the real module helm charts. Those template helm charts will be provided by the Portal and Marketplace.
-This is an example located in the Containerisation repository at <a href="https://github.com/ds2-eu/containerisation.git">https://github.com/ds2-eu/containerisation.git</a> of a GitRepository.</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source.toolkit.fluxcd.io/v1</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitRepository</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">metadata</span><span class="p">:</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2catalog</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nt">spec</span><span class="p">:</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1m</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/ds2-eu/helmtemplates.git</span><span class="w"> </span><span class="c1"># git repo url-so far public repository, at a later stage configuration for private repositories will be provided</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="nt">ref</span><span class="p">:</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
-</span></code></pre></div>
-<p>Assuming that you have the IDT or a Kubernetes cluster running, to create the GitRepository resource copy the example into gitrepository.yaml or pull the file from the repository and run
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>ds2
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>gitrepository.yaml
+<h3 id="developer-guide"><strong>Developer Guide</strong></h3>
+<p>To prepare the module to be deployed using the containerisation module first create the HelmRelease chart from the template in the containerisation repository at ds2modulerelease/.</p>
+<ol>
+<li>Copy the folder to another folder named after the module name ie. portal. This will be the module chart.
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cp -r ds2modulerelease/ portal
+</span></code></pre></div></li>
+<li>
+<p>Change the name and the version in the Chart.yaml file with the module name and version. You can edit the file or use sed
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sed -i &#39;s/ds2modulerelease/portal/g&#39; portal/Chart.yaml
 </span></code></pre></div></p>
-<p>With the GitRepository created, two more resources are needed.
-First, the template Helm Charts which are stored in the GitRepository that has been created.</p>
-<p>Second, the base Helm Release Charts which are based on HelmRelease CRD (Custom Resource Definition) from flux. This is a simple way of refering to a Helm Chart and deploying it into a Kubernetes cluster. 
-This is an example of a HelmRelease
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">helm.toolkit.fluxcd.io/v2</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HelmRelease</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">metadata</span><span class="p">:</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2module</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nt">spec</span><span class="p">:</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="nt">chart</span><span class="p">:</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">      </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./nginxapp3</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">      </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;1.0.0&#39;</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">      </span><span class="nt">sourceRef</span><span class="p">:</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">        </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitRepository</span>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2catalog</span>
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">        </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2</span>
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span>
-</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">  </span><span class="nt">values</span><span class="p">:</span>
-</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">    </span><span class="nt">welcome_message</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;This</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">ds2</span><span class="nv"> </span><span class="s">nginxmessage</span><span class="nv"> </span><span class="s">helm</span><span class="nv"> </span><span class="s">chart</span><span class="nv"> </span><span class="s">Welcome</span><span class="nv"> </span><span class="s">Message&quot;</span><span class="w"> </span>
+</li>
+<li>
+<p>Navigate to the templates folder of the module chart
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>cd portal/templates
 </span></code></pre></div></p>
-<p>The HelmRelease resource is a simple way to refer to a Helm Chart with a single yaml file, being able to override the values defined in the Helm Chart.</p>
-<p>In this case, the example refers to a chart named nginxapp3 located in the GitRepository created in the previous step, and is overiding the values for welcome_message, module1.image.privateRegistry and module1.image.registryPasswd.</p>
-<p>The template base Helm Release Chart is available at the Containerisation repository at ds2modulerelease folder. Clone the repository and copy this ds2modulerelease folder into a local directory. The ds2modulerelease represents a Helm Chart using a HelmRelease resource that refers to the baes Helm Chart template. Deploying the ds2modulerelease will deploy the ds2modulebase.</p>
-<p>The ds2modulerelease is by default configured to deploy and example nginxapp that allows for customizing the welcome message. These are the values of the chart
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>vals:
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  app:
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    name: ds2module
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    port: 80
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    env: true
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>  image:
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>          #registryUrl: ghcr.io
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>          #repository: /ds2-eu/ds2charts/
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    name: nginxmessage
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    tag: &quot;1.0.0&quot;
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>  service:
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    port: 8080
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>  config:
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    WELCOME_MESSAGE: &quot;The flux containerisation helm chart nginx message&quot;
+</li>
+<li>
+<p>Duplicate the helmrelease.yaml file as per the number of components in your module and delete the original helmrelease.yaml. This means, if your module includes a backend and a frontend, you need two helmreleases, if there is also a database, three helmreleases and so on. Name the files with the name of the module and component ie. portalbackend, portalfrontend ... Don't use '-' or similar characters.
+You can see an example of a two components module in the containerisation repo at ds2modulerelease2 folder with a backend and frontend componnts.
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cp ds2modulereleasecomponent.yaml portalbackend.yaml
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>cp ds2modulereleasecomponent.yaml portalfrontend.yaml
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>rm ds2modulereleasecomponent.yaml
 </span></code></pre></div></p>
-<p>Everything is configured to point to the location of the nginxmessage app. Users only need to customize the WELCOME_MESSAGE variable for this example.
-To install the ds2modulerelease use helm
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>helm install release_name chart_path --set WELCOME_MESSAGE=&quot;My Message&quot;
+</li>
+<li>
+<p>Edit the components helmrelease files in order to use the component name. An example of the backend where the name and values.app.name are changed. Repeat this step with every component.
+  <div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HelmRelease</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Name</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">-portalbackend    -&gt; Changed this with suffix portalbackend</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Namespace</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"> </span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nt">spec</span><span class="p">:</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="nt">chart</span><span class="p">:</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">      </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./charts/ds2modulebase</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">      </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;1.0.0&#39;</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">      </span><span class="nt">sourceRef</span><span class="p">:</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">        </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitRepository</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2charts</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">        </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">  </span><span class="nt">values</span><span class="p">:</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">    </span><span class="nt">app</span><span class="p">:</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">portalbackend -&gt; Changed this to portalbackend</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80 -&gt; Change this to the container port</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">      </span><span class="nt">env</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginxmessage -&gt; Change this to the docker image name of the component</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Change this to the docker image tag of the component</span>
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">    </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080 -&gt; Change this only if you want to expose the cluster ip through another port</span>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="w">    </span><span class="p p-Indicator">{{</span><span class="nv">- toYaml .Values.portalbackend | nindent 4</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Change to .Values.portalbackend</span>
 </span></code></pre></div></p>
-<blockquote>
-<p>release_name: any name representing the application i.e myapp</p>
-<p>chart_path: the path to the ds2modulerelease folder ie. ds2modulerelease/</p>
-<p>--set WELCOME_MESSAGE="My Message" overrides the welcome message to "My Message"</p>
-</blockquote>
-<p>For instance run this command from the folder where the ds2modulerelease is located
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>helm install myds2module ds2modulerelease/ -n ds2
+</li>
+<li>
+<p>Navigate back to the main chart folder (cd ..) and edit the values if you are using configuration for the module ie. env variables. In the example we add configuration to two components in the module, with the same variable name WELCOME_MESSAGE.
+  <div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">portalbackend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Change this to the module component</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">config</span><span class="p p-Indicator">:</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nt">WELCOME_MESSAGE</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;The</span><span class="nv"> </span><span class="s">flux</span><span class="nv"> </span><span class="s">containerisation</span><span class="nv"> </span><span class="s">helm</span><span class="nv"> </span><span class="s">chart</span><span class="nv"> </span><span class="s">nginx</span><span class="nv"> </span><span class="s">message</span><span class="nv"> </span><span class="s">backend&quot;</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Add here as many variables as you may have as a key value pair</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nt">portalfrontend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Chnage this to another module component</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">config</span><span class="p p-Indicator">:</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="nt">WELCOME_MESSAGE</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;The</span><span class="nv"> </span><span class="s">flux</span><span class="nv"> </span><span class="s">containerisation</span><span class="nv"> </span><span class="s">helm</span><span class="nv"> </span><span class="s">chart</span><span class="nv"> </span><span class="s">nginx</span><span class="nv"> </span><span class="s">message</span><span class="nv"> </span><span class="s">frontend&quot;</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Add here as many variables as you may have as a key value pair</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="l l-Scalar l-Scalar-Plain">-&gt; Add more components to the module</span>
 </span></code></pre></div></p>
-<p>Once installed, you should be able to see the Helm Chart for the nginxmessage
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>helm ls -n ds2
-</span></code></pre></div>
-<img alt="DS2 CONT helminstalled" src="../images/CONT-helminstalled.JPG" /></p>
-<p>There are two charts created, myds2module corresponds to the helmrelease itself, and myds2module-frontend corresponds to the expanded module chart from the helmrelease.</p>
-<p>You should be able to access the URL of the nginxmessage app
-Get the url
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>kubectl get ing -n ds2
-</span></code></pre></div>
-<img alt="DS2 CONT helmingress" src="../images/CONT-helmingress.JPG" /></p>
-<p>Test access to the nginxmessage app
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>curl -k https://ds2module-frontend.192-168-50-5.idt.ds2.sslip.io
-</span></code></pre></div>
-<img alt="DS2 CONT helmnginx" src="../images/CONT-helmnginx.JPG" /></p>
-<p>In your case the ip will be different, use the output from the kubectl get ing command.</p>
+</li>
+</ol>
+<p>With this, the  module is ready. Push the chart to your ds2 module repository at /charts folder , i.e the portal. Watch out if the repository has the same name that the chart, in that case move first the chart to a charts folder then clone the repository
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mkdir charts
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>cp -r portal/ charts/
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>rm -rf portal/
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>git clone https://github.com/ds2-eu/portal.git
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>cd  portal
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>cp -r ../charts/portal/ charts/
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>git push (git add, git commit, git push ...)
+</span></code></pre></div></p>
+<h3 id="user-guide"><strong>User Guide</strong></h3>
+<p>Once the controllers have been deployed Containerisation needs the following resources to deploy a module:</p>
+<ol>
+<li>
+<p>A GitRepository source resource to pull the template Helm Chart</p>
+</li>
+<li>
+<p>The template Helm Charts which are stored in the GitRepository that has been created. This template is provided by the Portal and Marketplace, and ultimately by a Kubernetes administrator, so users don't need to create this resource.</p>
+</li>
+<li>
+<p>The Helm Release Chart which are based on HelmRelease CRD (Custom Resource Definition) from flux. This is a simple way of refering to a Helm Chart and deploying it into a Kubernetes cluster. This Helm Release Chart is the chart representing the module and will be provided by the module developers.
+This is an example of a HelmRelease</p>
+</li>
+<li>
+<p>The Containerisation HelmRelease Yaml File which is the HelmRelease representing the Module Helm Release Chart. This file will be generated by Containerisation to deploy a module using the Containerisation UI.</p>
+</li>
+</ol>
+<p>There are two module deployment methods, using the UI or manual deployment.</p>
+<div class="language-text highlight"><pre><span></span><code>#### UI Module Installation
+At the time of writing the UI is being developed and not yet available to the users.
+
+#### Manual Module Deployment
+
+To manually install a module, assuming IDT is already running and Containerisation has been installed following the instructions above, users can create their own Containerisation HelmRelease Yaml File and push it to the repository where the containerisation controllers have been configured during installation. In the next example the organisation fluxtest is used as an example of an organisation using Containerisation to deploy a demo module. **Replace fluxtest with your organisation**.
+
+1. Create the &lt;fluxtest&gt; repository in GitHub and create a personal access token with permissons to read/write the repository
+&gt; Replace &lt;fluxtest&gt; with your organisation
+
+2. IDT has been installed
+
+3. Platform configuration has been created for the &lt;fluxtest&gt; organisation
+```
+./kubernetes_configuration.sh ds2-eu/ds2charts &lt;demouser&gt; &lt;token&gt; &lt;domain&gt; icekube
+```
+&gt; Replace the &lt;demouser&gt;, &lt;token&gt; and &lt;domain&gt; variables with the GitHub user, personal access token from GitHub and the domain configured during IDT installation
+
+4. Containerisation has been installed
+```
+./installfluxghorg.sh &lt;token&gt; ds2-eu &lt;fluxtest&gt;
+```
+&gt; Replace &lt;token&gt; and &lt;fluxtest&gt; with the personal access token from GitHub and the created GitHub repository (the name of the organisation)
+
+5. Once everything is installed, containerisation is configured to monitor changes in the &lt;fluxtest&gt; repository, and the folders /cluster/my-cluster/flux-system are created. In the flux-system folders there are already some yaml files which are the components from Containerisation flux itself, **This can&#39;t be modified**
+
+6. Now users need to create a flux GitRepository resource that will monitor the Helm templates folder at helmtemplates repository in ds2 and a namespace resource where this GitRepository will be created.
+
+Clone the &lt;fluxtest&gt; repository
+```
+git clone &lt;fluxtest&gt;
+```
+
+Create a gitrepository.yaml file
+```yaml
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: ds2charts
+  namespace: ds2
+spec:
+  interval: 1m
+  url: https://github.com/ds2-eu/helmtemplates.git 
+  ref:
+    branch: main
+```
+
+Create a namespace.yaml file
+```
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ds2
+```
+
+Create a kustomization file kustomization.yaml
+```
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- namespace.yaml
+- gitrepository.yaml
+```
+
+Navigate to the local cloned &lt;fluxtest&gt; repository, create a ds2 folder in the clusters/my-cluster/ folder and copy the gitrepository.yaml, namespace.yaml and kustomization.yaml files. Then push the repository. The resources should be created in the cluster after some seconds
+```
+kubectl get gitrepository -n ds2
+```
+![DS2 CONT gitrepository](./images/CONT-gitrepository.JPG)
+
+7. Push the demo module chart to the &lt;fluxtest&gt; repository to simulate what would happen when a module is purchased from the Marketplace, and copied to the organisation repository
+
+Clone the helmreleases repository
+```
+git clone https://github.com/ds2-eu/containerisation.git
+```
+
+Copy the demomodule chart to the &lt;fluxtest&gt; repository and push it to the &lt;fluxtest&gt; repository in the charts folder. If the charts folder does not exist yet, create it. The module won&#39;t be deployed yet.
+```
+mkdir fluxtest/charts
+cp -r helmreleases/charts/demomodule/ fluxtest/charts/
+```
+
+8. Create the Containerisation Helm Release Yaml file, the namespace file and the kustomization file
+
+Create the helmrelease-demomodule.yaml
+```
+kind: HelmRelease
+metadata:
+  name: demomodule    --&gt; Change this to the name of the module
+  namespace: demomodule --&gt; Change this to the name of the module
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: ./charts/demomodule --&gt; Change this to ./charts/name of the module
+      version: &#39;1.0.0&#39; --&gt; Change this to the version of the module as per the version in the Chart.yaml file of the module chart
+      sourceRef:
+        kind: GitRepository
+        name: flux-system
+        namespace: flux-system
+      interval: 10m
+  values:
+    demomodulecomponent1: --&gt; Change this to a module component
+      config:
+        WELCOME_MESSAGE: &quot;COMPONENT1&quot; --&gt; Change this according to the variables of values.yaml file of the module chart. You can change the value.
+```
+You can copy the helmrelease-demomodule.yaml from the helmreleases repository in the releases/demomodule/ folder.
+
+Create the namespace-demomodule.yaml
+```
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: demomodule --&gt; Change this to the name of the module
+```
+You can copy the namespace-demomodule.yaml from the helmreleases repository in the releases/demomodule/ folder.
+
+Create the kustomization file
+```
+kind: Kustomization
+resources:
+- namespace-demomodule.yaml --&gt; Change this to namespace-nameofthemodule.yaml
+- helmrelease-demomodule.yaml --&gt; Change this to helmrelease-nameofthemodule.yaml
+```
+You can copy the kustomization.yaml from the helmreleases repository in the releases/demomodule/ folder.
+
+Copy the yaml files to the fluxtest/cluster/my-cluster/releases/demomodule/ folder and push the repository. If the releases and demomodule folders do not exist yet, create them. The module will be deployed after some seconds automatically by Containerisation Flux component. 
+Run the following command to check the helmreleases are installed
+```
+helm ls -n demomodule
+``` 
+![DS2 CONT helmcharts](./images/CONT-helmcharts.JPG)
+
+You can see there are two charts created, the demomodule helmchart which corresponds to the Containerisation HelmRelease and the demomodule-demomodulecomponent1 which is triggered by the first one and expanded to a full chart using the templates from the modulebase chart.
+
+Run the following command to check the pod is running
+```
+kubectl get pods -n demomodule
+```
+![DS2 CONT pods](./images/CONT-pods.JPG)
+
+The modulebase chart also creates an ingress to access the module. Run the following command to retrieve the ingress url
+```
+kubectl get ing -n demomodule
+```
+![DS2 CONT ingress](./images/CONT-ingress.JPG)
+
+Run the following command to test access to the module
+```
+curl -k https://demomodulecomponent1.192-168-50-5.idt.ds2.sslip.io
+```
+![DS2 CONT curl](./images/CONT-curl.JPG)
+
+Your ip will be different depending on the domain congfigured during installation when the platform_configuration was created.
+
+If you want to deploy another module, using the same templates but with a different name, just for testing purposes, repeat the previous steps but replacing demomodule by the new module name. Place the module chart in the charts/ folder, the release in the releases folder, and the module will automatically be deployed by Containerisation Flux.
+</code></pre></div>
 <h2 id="other-information"><strong>Other Information</strong></h2>
 <p>No other information at the moment for Containerisation</p>
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
