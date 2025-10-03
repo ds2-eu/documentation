@@ -490,6 +490,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="User Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ui-module-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      UI Module Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-module-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Module Deployment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1157,6 +1181,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="User Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ui-module-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      UI Module Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-module-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Module Deployment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1457,164 +1505,144 @@ This is an example of a HelmRelease</p>
 </li>
 </ol>
 <p>There are two module deployment methods, using the UI or manual deployment.</p>
-<div class="language-text highlight"><pre><span></span><code>#### UI Module Installation
-At the time of writing the UI is being developed and not yet available to the users.
-
-#### Manual Module Deployment
-
-To manually install a module, assuming IDT is already running and Containerisation has been installed following the instructions above, users can create their own Containerisation HelmRelease Yaml File and push it to the repository where the containerisation controllers have been configured during installation. In the next example the organisation fluxtest is used as an example of an organisation using Containerisation to deploy a demo module. **Replace fluxtest with your organisation**.
-
-1. Create the &lt;fluxtest&gt; repository in GitHub and create a personal access token with permissons to read/write the repository
-&gt; Replace &lt;fluxtest&gt; with your organisation
-
-2. IDT has been installed
-
-3. Platform configuration has been created for the &lt;fluxtest&gt; organisation
-```
-./kubernetes_configuration.sh ds2-eu/ds2charts &lt;demouser&gt; &lt;token&gt; &lt;domain&gt; icekube
-```
-&gt; Replace the &lt;demouser&gt;, &lt;token&gt; and &lt;domain&gt; variables with the GitHub user, personal access token from GitHub and the domain configured during IDT installation
-
-4. Containerisation has been installed
-```
-./installfluxghorg.sh &lt;token&gt; ds2-eu &lt;fluxtest&gt;
-```
-&gt; Replace &lt;token&gt; and &lt;fluxtest&gt; with the personal access token from GitHub and the created GitHub repository (the name of the organisation)
-
-5. Once everything is installed, containerisation is configured to monitor changes in the &lt;fluxtest&gt; repository, and the folders /cluster/my-cluster/flux-system are created. In the flux-system folders there are already some yaml files which are the components from Containerisation flux itself, **This can&#39;t be modified**
-
-6. Now users need to create a flux GitRepository resource that will monitor the Helm templates folder at helmtemplates repository in ds2 and a namespace resource where this GitRepository will be created.
-
-Clone the &lt;fluxtest&gt; repository
-```
-git clone &lt;fluxtest&gt;
-```
-
-Create a gitrepository.yaml file
-```yaml
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: GitRepository
-metadata:
-  name: ds2charts
-  namespace: ds2
-spec:
-  interval: 1m
-  url: https://github.com/ds2-eu/helmtemplates.git 
-  ref:
-    branch: main
-```
-
-Create a namespace.yaml file
-```
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: ds2
-```
-
-Create a kustomization file kustomization.yaml
-```
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-- namespace.yaml
-- gitrepository.yaml
-```
-
-Navigate to the local cloned &lt;fluxtest&gt; repository, create a ds2 folder in the clusters/my-cluster/ folder and copy the gitrepository.yaml, namespace.yaml and kustomization.yaml files. Then push the repository. The resources should be created in the cluster after some seconds
-```
-kubectl get gitrepository -n ds2
-```
-![DS2 CONT gitrepository](./images/CONT-gitrepository.JPG)
-
-7. Push the demo module chart to the &lt;fluxtest&gt; repository to simulate what would happen when a module is purchased from the Marketplace, and copied to the organisation repository
-
-Clone the helmreleases repository
-```
-git clone https://github.com/ds2-eu/containerisation.git
-```
-
-Copy the demomodule chart to the &lt;fluxtest&gt; repository and push it to the &lt;fluxtest&gt; repository in the charts folder. If the charts folder does not exist yet, create it. The module won&#39;t be deployed yet.
-```
-mkdir fluxtest/charts
-cp -r helmreleases/charts/demomodule/ fluxtest/charts/
-```
-
-8. Create the Containerisation Helm Release Yaml file, the namespace file and the kustomization file
-
-Create the helmrelease-demomodule.yaml
-```
-kind: HelmRelease
-metadata:
-  name: demomodule    --&gt; Change this to the name of the module
-  namespace: demomodule --&gt; Change this to the name of the module
-spec:
-  interval: 10m
-  chart:
-    spec:
-      chart: ./charts/demomodule --&gt; Change this to ./charts/name of the module
-      version: &#39;1.0.0&#39; --&gt; Change this to the version of the module as per the version in the Chart.yaml file of the module chart
-      sourceRef:
-        kind: GitRepository
-        name: flux-system
-        namespace: flux-system
-      interval: 10m
-  values:
-    demomodulecomponent1: --&gt; Change this to a module component
-      config:
-        WELCOME_MESSAGE: &quot;COMPONENT1&quot; --&gt; Change this according to the variables of values.yaml file of the module chart. You can change the value.
-```
-You can copy the helmrelease-demomodule.yaml from the helmreleases repository in the releases/demomodule/ folder.
-
-Create the namespace-demomodule.yaml
-```
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: demomodule --&gt; Change this to the name of the module
-```
-You can copy the namespace-demomodule.yaml from the helmreleases repository in the releases/demomodule/ folder.
-
-Create the kustomization file
-```
-kind: Kustomization
-resources:
-- namespace-demomodule.yaml --&gt; Change this to namespace-nameofthemodule.yaml
-- helmrelease-demomodule.yaml --&gt; Change this to helmrelease-nameofthemodule.yaml
-```
-You can copy the kustomization.yaml from the helmreleases repository in the releases/demomodule/ folder.
-
-Copy the yaml files to the fluxtest/cluster/my-cluster/releases/demomodule/ folder and push the repository. If the releases and demomodule folders do not exist yet, create them. The module will be deployed after some seconds automatically by Containerisation Flux component. 
+<h4 id="ui-module-installation">UI Module Installation</h4>
+<p>At the time of writing the UI is being developed and not yet available to the users.</p>
+<h4 id="manual-module-deployment">Manual Module Deployment</h4>
+<p>To manually install a module, assuming IDT is already running and Containerisation has been installed following the instructions above, users can create their own Containerisation HelmRelease Yaml File and push it to the repository where the containerisation controllers have been configured during installation. In the next example the organisation fluxtest is used as an example of an organisation using Containerisation to deploy a demo module. <strong>Replace fluxtest with your organisation</strong>.</p>
+<ol>
+<li>
+<p>Create the <fluxtest> repository in GitHub and create a personal access token with permissons to read/write the repository</p>
+<blockquote>
+<p>Replace <fluxtest> with your organisation</p>
+</blockquote>
+</li>
+<li>
+<p>IDT has been installed</p>
+</li>
+<li>
+<p>Platform configuration has been created for the <fluxtest> organisation
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>./kubernetes_configuration.sh ds2-eu/ds2charts &lt;demouser&gt; &lt;token&gt; &lt;domain&gt; icekube
+</span></code></pre></div></p>
+<blockquote>
+<p>Replace the <demouser>, <token> and <domain> variables with the GitHub user, personal access token from GitHub and the domain configured during IDT installation</p>
+</blockquote>
+</li>
+<li>
+<p>Containerisation has been installed
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>./installfluxghorg.sh &lt;token&gt; ds2-eu &lt;fluxtest&gt;
+</span></code></pre></div></p>
+<blockquote>
+<p>Replace <token> and <fluxtest> with the personal access token from GitHub and the created GitHub repository (the name of the organisation)</p>
+</blockquote>
+</li>
+<li>
+<p>Once everything is installed, containerisation is configured to monitor changes in the <fluxtest> repository, and the folders /cluster/my-cluster/flux-system are created. In the flux-system folders there are already some yaml files which are the components from Containerisation flux itself, <strong>This can't be modified</strong></p>
+</li>
+<li>
+<p>Now users need to create a flux GitRepository resource that will monitor the Helm templates folder at helmtemplates repository in ds2 and a namespace resource where this GitRepository will be created.</p>
+</li>
+</ol>
+<p>Clone the <fluxtest> repository
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>git clone &lt;fluxtest&gt;
+</span></code></pre></div></p>
+<p>Create a gitrepository.yaml file
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source.toolkit.fluxcd.io/v1</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitRepository</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2charts</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="nt">spec</span><span class="p">:</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1m</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/ds2-eu/helmtemplates.git</span><span class="w"> </span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">  </span><span class="nt">ref</span><span class="p">:</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">    </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+</span></code></pre></div></p>
+<p>Create a namespace.yaml file
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>apiVersion: v1
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>kind: Namespace
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>metadata:
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>  name: ds2
+</span></code></pre></div></p>
+<p>Create a kustomization file kustomization.yaml
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>apiVersion: kustomize.config.k8s.io/v1beta1
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>kind: Kustomization
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>resources:
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>- namespace.yaml
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>- gitrepository.yaml
+</span></code></pre></div></p>
+<p>Navigate to the local cloned <fluxtest> repository, create a ds2 folder in the clusters/my-cluster/ folder and copy the gitrepository.yaml, namespace.yaml and kustomization.yaml files. Then push the repository. The resources should be created in the cluster after some seconds
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>kubectl get gitrepository -n ds2
+</span></code></pre></div>
+<img alt="DS2 CONT gitrepository" src="../images/CONT-gitrepository.JPG" /></p>
+<ol>
+<li>Push the demo module chart to the <fluxtest> repository to simulate what would happen when a module is purchased from the Marketplace, and copied to the organisation repository</li>
+</ol>
+<p>Clone the helmreleases repository
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>git clone https://github.com/ds2-eu/containerisation.git
+</span></code></pre></div></p>
+<p>Copy the demomodule chart to the <fluxtest> repository and push it to the <fluxtest> repository in the charts folder. If the charts folder does not exist yet, create it. The module won't be deployed yet.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>mkdir fluxtest/charts
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>cp -r helmreleases/charts/demomodule/ fluxtest/charts/
+</span></code></pre></div></p>
+<ol>
+<li>Create the Containerisation Helm Release Yaml file, the namespace file and the kustomization file</li>
+</ol>
+<p>Create the helmrelease-demomodule.yaml
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>kind: HelmRelease
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>metadata:
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>  name: demomodule    --&gt; Change this to the name of the module
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>  namespace: demomodule --&gt; Change this to the name of the module
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>spec:
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>  interval: 10m
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>  chart:
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>    spec:
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>      chart: ./charts/demomodule --&gt; Change this to ./charts/name of the module
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>      version: &#39;1.0.0&#39; --&gt; Change this to the version of the module as per the version in the Chart.yaml file of the module chart
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>      sourceRef:
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>        kind: GitRepository
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>        name: flux-system
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>        namespace: flux-system
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>      interval: 10m
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>  values:
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>    demomodulecomponent1: --&gt; Change this to a module component
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>      config:
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>        WELCOME_MESSAGE: &quot;COMPONENT1&quot; --&gt; Change this according to the variables of values.yaml file of the module chart. You can change the value.
+</span></code></pre></div>
+You can copy the helmrelease-demomodule.yaml from the helmreleases repository in the releases/demomodule/ folder.</p>
+<p>Create the namespace-demomodule.yaml
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>apiVersion: v1
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>kind: Namespace
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>metadata:
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>  name: demomodule --&gt; Change this to the name of the module
+</span></code></pre></div>
+You can copy the namespace-demomodule.yaml from the helmreleases repository in the releases/demomodule/ folder.</p>
+<p>Create the kustomization file
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>kind: Kustomization
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>resources:
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>- namespace-demomodule.yaml --&gt; Change this to namespace-nameofthemodule.yaml
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>- helmrelease-demomodule.yaml --&gt; Change this to helmrelease-nameofthemodule.yaml
+</span></code></pre></div>
+You can copy the kustomization.yaml from the helmreleases repository in the releases/demomodule/ folder.</p>
+<p>Copy the yaml files to the fluxtest/cluster/my-cluster/releases/demomodule/ folder and push the repository. If the releases and demomodule folders do not exist yet, create them. The module will be deployed after some seconds automatically by Containerisation Flux component. 
 Run the following command to check the helmreleases are installed
-```
-helm ls -n demomodule
-``` 
-![DS2 CONT helmcharts](./images/CONT-helmcharts.JPG)
-
-You can see there are two charts created, the demomodule helmchart which corresponds to the Containerisation HelmRelease and the demomodule-demomodulecomponent1 which is triggered by the first one and expanded to a full chart using the templates from the modulebase chart.
-
-Run the following command to check the pod is running
-```
-kubectl get pods -n demomodule
-```
-![DS2 CONT pods](./images/CONT-pods.JPG)
-
-The modulebase chart also creates an ingress to access the module. Run the following command to retrieve the ingress url
-```
-kubectl get ing -n demomodule
-```
-![DS2 CONT ingress](./images/CONT-ingress.JPG)
-
-Run the following command to test access to the module
-```
-curl -k https://demomodulecomponent1.192-168-50-5.idt.ds2.sslip.io
-```
-![DS2 CONT curl](./images/CONT-curl.JPG)
-
-Your ip will be different depending on the domain congfigured during installation when the platform_configuration was created.
-
-If you want to deploy another module, using the same templates but with a different name, just for testing purposes, repeat the previous steps but replacing demomodule by the new module name. Place the module chart in the charts/ folder, the release in the releases folder, and the module will automatically be deployed by Containerisation Flux.
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>helm ls -n demomodule
+</span></code></pre></div>
+<img alt="DS2 CONT helmcharts" src="../images/CONT-helmcharts.JPG" /></p>
+<p>You can see there are two charts created, the demomodule helmchart which corresponds to the Containerisation HelmRelease and the demomodule-demomodulecomponent1 which is triggered by the first one and expanded to a full chart using the templates from the modulebase chart.</p>
+<p>Run the following command to check the pod is running
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>kubectl get pods -n demomodule
+</span></code></pre></div>
+<img alt="DS2 CONT pods" src="../images/CONT-pods.JPG" /></p>
+<p>The modulebase chart also creates an ingress to access the module. Run the following command to retrieve the ingress url
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>kubectl get ing -n demomodule
+</span></code></pre></div>
+<img alt="DS2 CONT ingress" src="../images/CONT-ingress.JPG" /></p>
+<p>Run the following command to test access to the module
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>curl -k https://demomodulecomponent1.192-168-50-5.idt.ds2.sslip.io
+</span></code></pre></div>
+<img alt="DS2 CONT curl" src="../images/CONT-curl.JPG" /></p>
+<p>Your ip will be different depending on the domain congfigured during installation when the platform_configuration was created.</p>
+<p>If you want to deploy another module, using the same templates but with a different name, just for testing purposes, repeat the previous steps but replacing demomodule by the new module name. Place the module chart in the charts/ folder, the release in the releases folder, and the module will automatically be deployed by Containerisation Flux.</p>
 <h2 id="other-information"><strong>Other Information</strong></h2>
 <p>No other information at the moment for Containerisation</p>
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
