@@ -503,6 +503,75 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Detailed steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-clone-backend-bitbucket" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Clone Backend (BitBucket)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-clone-frontend-bitbucket" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Clone Frontend (BitBucket)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-copy-move-the-content-of-the-cloned-darc-user-interface-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Copy &amp; Move the content of the cloned 'darc-user-interface' repository
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-create-a-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Create a virtual environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-activate-the-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Activate the virtual environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-install-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Install dependencies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-docker-usage-under-root-folder-darc-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Docker usage (under root folder ././darc-v2)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -697,7 +766,7 @@
   
   
   <span class="md-ellipsis">
-    Data Visualisation Module (DVM)
+    DVM - Data Visualisation Module
     
   </span>
   
@@ -1115,6 +1184,75 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Detailed steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-clone-backend-bitbucket" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Clone Backend (BitBucket)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-clone-frontend-bitbucket" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Clone Frontend (BitBucket)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-copy-move-the-content-of-the-cloned-darc-user-interface-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Copy &amp; Move the content of the cloned 'darc-user-interface' repository
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-create-a-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Create a virtual environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-activate-the-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Activate the virtual environment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-install-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Install dependencies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-docker-usage-under-root-folder-darc-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Docker usage (under root folder ././darc-v2)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1276,7 +1414,6 @@
 </ul>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
 <p><img alt="DS2 DARC Screenshots" src="../images/DARC-screenshots.gif" /></p>
-<p>Work on UI is still in progress to align with project's requirements.</p>
 <h2 id="commercial-information"><strong>Commercial Information</strong></h2>
 <table>
 <thead>
@@ -1338,7 +1475,7 @@ Offers a fully guided, conversational journey from assessment to configuration a
 </li>
 </ol>
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
-<p>To install and run the DARC Assistant locally, first make sure you have the app (the docker image/code) and create the Conda environment provided in environment.yml. Once the environment is activated, start the Weaviate vector store using Docker Compose. After Weaviate is up and running, launch the conversational interface with our custom UI using Chainlit python package. Finally, open your browser and navigate to http://localhost:8000 (or the VMs IP if your are using a cloud provider for the Virtual Machine) to start using the DARC Assistant. </p>
+<p>To install and run the DARC Assistant locally, first make sure you have the app (the docker image/code) and create the Conda environment. Once the environment is activated, start the docker images for the Frontend/Backend using Docker Compose. Finally, open your browser and navigate to http://localhost:5173 (or the VMs IP if your are using a cloud provider for the Virtual Machine) to start using the DARC Assistant. </p>
 <h3 id="requirements">Requirements</h3>
 <table>
 <thead>
@@ -1371,37 +1508,42 @@ Offers a fully guided, conversational journey from assessment to configuration a
 <li>Modern web browser (Chrome, Firefox, etc.)</li>
 </ul>
 <h3 id="summary-of-installation-steps">Summary of installation steps</h3>
-<p>Install/Download the app (docker image), create and activate the Conda environment, start Weaviate with Docker, run the UI, and access the platform via http://localhost:8000 in your browser.</p>
+<p>Install/Download the app (docker image), create and activate the .venv environment, run the UI, and access the platform in your browser.</p>
 <h3 id="detailed-steps">Detailed steps</h3>
-<ol>
-<li>
-<p><strong>Create the Conda Environment</strong>:</p>
-<p>Make sure Conda is installed. Then run:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
+<h4 id="1-clone-backend-bitbucket">1. Clone Backend (BitBucket)</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://user-name@bitbucket.org/atc-code/darc-v2.git
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>/path_to_cloned_repository/darc-v2
 </span></code></pre></div>
-Where environment.yml include all the appropriate packages needed to run DARC module.</p>
-</li>
-<li>
-<p><strong>Activate the Environment</strong>:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>ds2
+<h4 id="2-clone-frontend-bitbucket">2. Clone Frontend (BitBucket)</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://user-name@bitbucket.org/atc-code/darc-user-interface.git
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">cd</span><span class="w"> </span>/path_to_cloned_repository/darc-user-interface
 </span></code></pre></div>
-</li>
-<li>
-<p><strong>Start Weaviate via Docker</strong>:</p>
-<p>Make sure Docker is running, then:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker-compose<span class="w"> </span>-f<span class="w"> </span>docker-compose-weaviate.yml<span class="w"> </span>up<span class="w"> </span>-d
+<h4 id="3-copy-move-the-content-of-the-cloned-darc-user-interface-repository">3. Copy &amp; Move the content of the cloned 'darc-user-interface' repository</h4>
+<p>Under the folder <code>/path_to_working_dir/darc-v2/src/</code>: 
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>/path_to_working_dir/darc-v2/src/
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>mkdir<span class="w"> </span>frontend
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>cp<span class="w"> </span>-r<span class="w"> </span>/path/to/source/*<span class="w"> </span>/path/to/destination/
+</span></code></pre></div></p>
+<h4 id="4-create-a-virtual-environment">4. Create a virtual environment</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
 </span></code></pre></div>
-4. <strong>Run UI</strong>:</p>
-<p>From the root of the repo:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>chainlit<span class="w"> </span>run<span class="w"> </span>main.py<span class="w"> </span>-w
+<h4 id="5-activate-the-virtual-environment">5. Activate the virtual environment</h4>
+<p>On Linux/macOS:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 </span></code></pre></div>
-5. <strong>Access the Web Interface</strong>:</p>
-<p>Open your browser and go to:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>http://localhost:8000
+On Windows (PowerShell):
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>.venv<span class="se">\S</span>cripts<span class="se">\A</span>ctivate.ps1
+</span></code></pre></div></p>
+<h4 id="6-install-dependencies">6. Install dependencies</h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </span></code></pre></div>
-<p>If running on a remote server, use your machine's IP address (e.g., http://192.168.x.x:8000).</p>
-</li>
-</ol>
+<h4 id="7-docker-usage-under-root-folder-darc-v2">7. Docker usage (under root folder ././darc-v2)</h4>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker-compose<span class="w"> </span>up<span class="w"> </span>--build
+</span></code></pre></div>
+if any change take place in the backend just restart the backend container with:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker-compose<span class="w"> </span>restart<span class="w"> </span>backend
+</span></code></pre></div>
+If running on a remote server, use your machine's IP address (e.g., http://192.168.x.x:5173).</p>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
 <p>As long as you have access to the Web Interface, you can type your questions in Natural Language (English) to ask about anything related to the DS2 project.</p>
 <p>You don’t need to use technical commands or specific syntax—just ask your questions like you would ask a person.</p>

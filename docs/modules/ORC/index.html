@@ -499,7 +499,7 @@
   
   
   <span class="md-ellipsis">
-    Data Visualisation Module (DVM)
+    DVM - Data Visualisation Module
     
   </span>
   
@@ -764,6 +764,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#summary-of-installation-steps" class="md-nav__link">
     <span class="md-ellipsis">
       Summary of installation steps
@@ -892,6 +901,15 @@
   <a href="#additional-links" class="md-nav__link">
     <span class="md-ellipsis">
       Additional Links
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ
     </span>
   </a>
   
@@ -1160,6 +1178,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#summary-of-installation-steps" class="md-nav__link">
     <span class="md-ellipsis">
       Summary of installation steps
@@ -1293,6 +1320,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1328,7 +1364,7 @@
 </tbody>
 </table>
 <h2 id="general-description"><strong>General Description</strong></h2>
-<p>The Orchestration module is made to design and then orchestrate at runtime In-Dataspace, Inter-Dataspace, internal, and third-party services which facilitate common data-orientated operations such as transformation of data, checks on data, data updates etc. The orchestrator contains a flexible GUI to design workflows and decision points on these services, and run time component to implement the workflow</p>
+<p>The Orchestration module is made to design and then orchestrate at runtime In-Dataspace, Inter-Dataspace, internal, and third-party services which facilitate common data-orientated operations such as transformation of data, checks on data, data updates etc. The orchestrator contains a flexible GUI to design workflows and decision points on these services, and run time component to implement the workflow.</p>
 <p>Services are added to and then selected from a Service catalog from a participant’s local service catalog (In-Dataspace deployment), the DS2 service intermediary catalog (Inner-Dataspace), or other available catalog/service knowledge. These services can be graphically linked together to form a workflow and where decision pathways, decision points, and other operators can be deployed to determine the workflow. Error and exit points should be predetermined with defaults ensuring that failures and error conditions allow flows to be closed automatically. One class of operator is for user defined forms for human input but most often the flows contain backend services. In the context of DS2 the operators will, if necessary, be expanded based on novel usecase peculiarities as will the forms designer. Primarily the design interface is orientated around service interconnectivity, but this will be augmented with a data pre-viewer to help interconnect and understand the results of interconnecting data-orientated services. The orchestrator will be available as a module and for interparticipant service orchestration will extend the connectors.</p>
 <h2 id="architecture"><strong>Architecture</strong></h2>
 <p>The figure below represents the module fit into the DS-DS environment.
@@ -1397,10 +1433,17 @@
 </ol>
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
 <h3 id="requirements">Requirements</h3>
-<p>N/A</p>
+<ul>
+<li>Docker</li>
+<li>Keycloak</li>
+</ul>
 <h3 id="software">Software</h3>
 <ul>
 <li>Git</li>
+<li>Docker</li>
+</ul>
+<h3 id="hardware">Hardware</h3>
+<ul>
 <li>Docker</li>
 </ul>
 <h3 id="summary-of-installation-steps">Summary of installation steps</h3>
@@ -1412,6 +1455,20 @@
 <li>Navigate to <code>localhost:4200</code> </li>
 </ol>
 <h3 id="detailed-steps">Detailed steps</h3>
+<p>The ORC module is broken down into subcomponents that are as followed:</p>
+<p>The front end subcomponents contain the webpages that are shown when the ORC module is running.
+- Welcome
+- Process Designer 
+- Control Panel
+- Service Directory 
+- Form Designer 
+- Task Manager 
+- Portal Header</p>
+<p>The API components contain the API services that provide backend support for the ORC module.
+- Process Engine API
+- Designer API
+- Service Directory API 
+- API Gateway</p>
 <p>Each of the subcomponents contains a <code>build.sh</code> file that allows the creation of the docker images in such a way that you can change it depending on project, location or production.</p>
 <p>In addition, each of the subcomponents are individual, which means each subcomponent can be run on their and interacted with (although some features may be unavailable).</p>
 <p>The current list of ORC front end docker images includes:</p>
@@ -1425,16 +1482,16 @@
 </ul>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
 <h3 id="general-overview">General Overview</h3>
-<p>The Orchestration Module is made up of six sub comonents that all interact with each other in different ways. Together, they offer the full suite of features that the ORC tool offers independantly. </p>
+<p>The Orchestration Module is made up of six subcomponents that all interact with each other in different ways. Together, they offer the full suite of features that the ORC tool offers independently. </p>
 <h4 id="process-designer">Process Designer</h4>
 <p>The Process Designer is the largest single subcomponent of the ORC Module. It is a Camunda based BPMN Modeller that allows users to create workflows. </p>
 <p><img alt="Process Designer View" src="../images/ORC-Process-Designer-001.png" /></p>
 <p>Users can drag and drop elements from the panel on the right side in order to create workflows. When exported, the workflows, the processes, can be viewed in the Control Panel.</p>
 <h4 id="form-designer">Form Designer</h4>
-<p>The Form Designer is where the user can create forms for use with User Tasks. User Tasks are tasks dicated by the Process Designer. When triggered in an active workflow, the User Task requires a user interact with a form created via the Form Designer through the Task Manager. </p>
+<p>The Form Designer is where the user can create forms for use with User Tasks. User Tasks are tasks dictated by the Process Designer. When triggered in an active workflow, the User Task requires a user interact with a form created via the Form Designer through the Task Manager. </p>
 <p><img alt="Form Designer View" src="../images/ORC-Form-Designer-001.png" /></p>
 <h4 id="service-directory">Service Directory</h4>
-<p>The Service Directory is a repository of APIs that can then be accessed through the Process Designer to pass data through a workflow or recieve data from a workflow. These services can also be accessed through the Service Directory API.</p>
+<p>The Service Directory is a repository of APIs that can then be accessed through the Process Designer to pass data through a workflow or receive data from a workflow. These services can also be accessed through the Service Directory API.</p>
 <p><img alt="Service Directory View" src="../images/ORC-Service-Directory-001.png" /></p>
 <h4 id="control-panel">Control Panel</h4>
 <p>The Control Panel shows all the active workflows; active processes can be found here, and each instance of a process can also be found. Each process instance also has visual view that allows users to view various elements of a workflow after it has been created.</p>
@@ -1457,6 +1514,8 @@
 <p>N/A</p>
 <h2 id="additional-links"><strong>Additional Links</strong></h2>
 <p>N/A</p>
+<h2 id="faq">FAQ</h2>
+<p>To do</p>
 
 
 

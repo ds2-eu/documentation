@@ -20,7 +20,7 @@
     
     
       
-        <title>Data Visualisation Module (DVM) - Documentation DS2</title>
+        <title>DVM - Data Visualisation Module - Documentation DS2</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#data-visualisation-module-dvm" class="md-skip">
+        <a href="#dvm-data-visualisation-module" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Data Visualisation Module (DVM)
+              DVM - Data Visualisation Module
             
           </span>
         </div>
@@ -508,7 +508,7 @@
   
   
   <span class="md-ellipsis">
-    Data Visualisation Module (DVM)
+    DVM - Data Visualisation Module
     
   </span>
   
@@ -521,7 +521,7 @@
   
   
   <span class="md-ellipsis">
-    Data Visualisation Module (DVM)
+    DVM - Data Visualisation Module
     
   </span>
   
@@ -634,15 +634,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#detailed-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Detailed steps
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -661,15 +652,6 @@
   <a href="#other-information" class="md-nav__link">
     <span class="md-ellipsis">
       Other Information
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#openapi-specification" class="md-nav__link">
-    <span class="md-ellipsis">
-      OpenAPI Specification
     </span>
   </a>
   
@@ -1093,15 +1075,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#detailed-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Detailed steps
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1120,15 +1093,6 @@
   <a href="#other-information" class="md-nav__link">
     <span class="md-ellipsis">
       Other Information
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#openapi-specification" class="md-nav__link">
-    <span class="md-ellipsis">
-      OpenAPI Specification
     </span>
   </a>
   
@@ -1159,9 +1123,9 @@
 
 
 
-<h1 id="data-visualisation-module-dvm">Data Visualisation Module (DVM)</h1>
+<h1 id="dvm-data-visualisation-module">DVM - Data Visualisation Module</h1>
 <p>Powered by</p>
-<p><img alt="BlueBridgeSolutions" src="../images/DVM-logo.png" /> (Amendment pending)</p>
+<p><img alt="BlueBridgeSolutions" src="../images/DVM-logo.png" /></p>
 <table>
 <thead>
 <tr>
@@ -1178,7 +1142,6 @@
 </tbody>
 </table>
 <h2 id="general-description"><strong>General Description</strong></h2>
-<p><em><strong>NOTE</strong>: DVM is a new module and pending an Amendment, hence this document is preliminary and will be subject to change once development starts.</em></p>
 <p><strong>Purpose</strong>:
 DVM provides visualisation functionalities in order to enhance the
 presentation and communication capabilities and
@@ -1223,9 +1186,9 @@ analysis.</p>
 </thead>
 <tbody>
 <tr>
-<td>bluebridgesolutions UG (pending Amendment)</td>
+<td>bluebridgesolutions UG (haftungsbeschränkt)</td>
 <td>Open Source</td>
-<td>Apache 2.0 (pending)</td>
+<td>Apache 2.0</td>
 </tr>
 </tbody>
 </table>
@@ -1240,21 +1203,28 @@ Visualisation simplifies the analysis of data, trends and outlier detection for 
 Modules like DDT produce data such as smoothing of sensor data. DVM is an easy way of
 visualizing such results.</p>
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
-<p>Recently added module. TBD</p>
+<p>DVM is distributed as a docker image. To run a DVM container, first make sure that you have Docker installed on your machine.</p>
+<p>Then run the following command:
+<div class="language-console highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="go">docker run -p 3000:3000 docker.bluebridgesolutions.de/dvm</span>
+</span></code></pre></div>
+This will download the image from BBS's docker repository and run the container exposing port 3000.</p>
+<p>This concludes the installation. Once the container has started, you can access DVM's user interface by following the link <a href="http://localhost:3000/login">http://localhost:3000/login</a>.</p>
 <h3 id="requirements">Requirements</h3>
-<p>Recently added module. TBD</p>
+<p>No specific requirements.</p>
 <h3 id="software">Software</h3>
-<p>Recently added module. TBD</p>
+<p>A current Docker installation is required.</p>
 <h3 id="summary-of-installation-steps">Summary of installation steps</h3>
-<p>Recently added module. TBD</p>
-<h3 id="detailed-steps">Detailed steps</h3>
-<p>Recently added module. TBD</p>
+<ol>
+<li>Setup Docker if not yet installed</li>
+<li>Run DVM container</li>
+</ol>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
-<p>Recently added module. TBD</p>
+<p>Open the user interface by following the link <a href="http://localhost:3000/login">http://localhost:3000/login</a>. 
+Default credentials are username "admin" and password "admin". You will be prompted to set a new password which is recommended.</p>
+<p>There, you can setup data sources as well as create and view dashboards as required.</p>
+<p>For a further reference on how to create dashboards, please also refer to <a href="https://grafana.com/docs/grafana/v12.0/">this documentation</a>.</p>
 <h2 id="other-information"><strong>Other Information</strong></h2>
-<p>No other information at the moment for DVM.</p>
-<h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
-<p>Recently added module. TBD</p>
+<p>No other information for DVM.</p>
 <h2 id="additional-links"><strong>Additional Links</strong></h2>
 <p>N/A</p>
 

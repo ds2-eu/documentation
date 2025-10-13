@@ -730,7 +730,7 @@
   
   
   <span class="md-ellipsis">
-    Data Visualisation Module (DVM)
+    DVM - Data Visualisation Module
     
   </span>
   
@@ -1378,7 +1378,7 @@
 <ol>
 <li>
 <p>Clone the repo containerisation
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ds2-eu/containerisation
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ds2-eu/containerisation
 </span></code></pre></div></p>
 </li>
 <li>
@@ -1413,34 +1413,35 @@
 <p>The Containerisation UI is not available at the moment of writing this documentation and the templates for Module Helm Charts and Base Helm Charts are being 
 developed. Still some guidelines on how to use the module standalone and manually install a module can be provided. This manual installation requires the IDT to be installed given the Helm template is configured to use the components of the IDT and some default platform configuration </p>
 <h3 id="developer-guide"><strong>Developer Guide</strong></h3>
-<p>To prepare the module to be deployed using the containerisation module first create the HelmRelease chart from the template in the containerisation repository at ds2modulerelease/.</p>
+<p>To prepare the module to be deployed using the containerisation module first create the HelmRelease chart from the demomodule template in the helmreleases repository at demomodule/.</p>
 <ol>
-<li>Copy the folder to another folder named after the module name ie. portal. This will be the module chart.
-  <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>cp -r ds2modulerelease/ portal
+<li>Clone the repository and copy the folder to another folder named after the module name ie. mymodule. This will be the module chart.
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git clone https://github.com/ds2-eu/helmreleases.git
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>cp -r helmreleases/demomodule/ mymodule
 </span></code></pre></div></li>
 <li>
 <p>Change the name and the version in the Chart.yaml file with the module name and version. You can edit the file or use sed
-  <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sed -i &#39;s/ds2modulerelease/portal/g&#39; portal/Chart.yaml
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sed -i &#39;s/demomodule/mymodule/g&#39; mymodule/Chart.yaml
 </span></code></pre></div></p>
 </li>
 <li>
 <p>Navigate to the templates folder of the module chart
-  <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>cd portal/templates
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>cd mymodule/templates
 </span></code></pre></div></p>
 </li>
 <li>
-<p>Duplicate the helmrelease.yaml file as per the number of components in your module and delete the original helmrelease.yaml. This means, if your module includes a backend and a frontend, you need two helmreleases, if there is also a database, three helmreleases and so on. Name the files with the name of the module and component ie. portalbackend, portalfrontend ... Don't use '-' or similar characters.
-You can see an example of a two components module in the containerisation repo at ds2modulerelease2 folder with a backend and frontend componnts.
-  <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cp ds2modulereleasecomponent.yaml portalbackend.yaml
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>cp ds2modulereleasecomponent.yaml portalfrontend.yaml
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>rm ds2modulereleasecomponent.yaml
+<p>Duplicate the helmrelease.yaml file as per the number of components in your module and delete the original helmrelease.yaml. This means, if your module includes a backend and a frontend, you need two helmreleases, if there is also a database, three helmreleases and so on. Name the files with the name of the module and component ie. mymodulebackend, mymodulefrontend ... Don't use '-' or similar characters.
+You can see an example of a two components module in the helmreleases repository at demomodule2 folder with a backend and frontend components.
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cp demomodulecomponent1.yaml mymodulebackend.yaml
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>cp demomodulecomponent1.yaml mymodulefrontend.yaml
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>rm demomodulecomponent1.yaml
 </span></code></pre></div></p>
 </li>
 <li>
 <p>Edit the components helmrelease files in order to use the component name. An example of the backend where the name and values.app.name are changed. Repeat this step with every component.
   <div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HelmRelease</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nt">metadata</span><span class="p">:</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Name</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">-portalbackend    -&gt; Changed this with suffix portalbackend</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Name</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">-mymodulebackend    -&gt; Changed this with suffix mymodulebackend</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Namespace</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"> </span>
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nt">spec</span><span class="p">:</span>
 </span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span>
@@ -1455,38 +1456,48 @@ You can see an example of a two components module in the containerisation repo a
 </span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span>
 </span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">  </span><span class="nt">values</span><span class="p">:</span>
 </span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">    </span><span class="nt">app</span><span class="p">:</span>
-</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">portalbackend -&gt; Changed this to portalbackend</span>
-</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80 -&gt; Change this to the container port</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mymodulebackend -&gt; Changed this to mymodulebackend</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80 -&gt; Change this to the docker container port of the component. This is the port you use to expose the component in the docker image.</span>
 </span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">      </span><span class="nt">env</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
 </span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginxmessage -&gt; Change this to the docker image name of the component</span>
 </span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Change this to the docker image tag of the component</span>
 </span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">    </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span>
-</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080 -&gt; Change this only if you want to expose the cluster ip through another port</span>
-</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="w">    </span><span class="p p-Indicator">{{</span><span class="nv">- toYaml .Values.portalbackend | nindent 4</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Change to .Values.portalbackend</span>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080 -&gt; Change this port only if you want to expose the Kubernetes cluster ip through another port.</span><span class="w"> </span>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="w">    </span><span class="p p-Indicator">{{</span><span class="nv">- toYaml .Values.mymodulebackend | nindent 4</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Change to .Values.mymodulebackend or if your module does not have extra configuration, REMOVE THIS</span>
 </span></code></pre></div></p>
 </li>
 <li>
-<p>Navigate back to the main chart folder (cd ..) and edit the values if you are using configuration for the module ie. env variables. In the example we add configuration to two components in the module, with the same variable name WELCOME_MESSAGE.
-  <div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">portalbackend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Change this to the module component</span>
+<p>Navigate back to the main chart folder (cd ..) and edit the values if you are using configuration for the module ie. env variables. In the example we add configuration to two components in the module, with the same variable name WELCOME_MESSAGE. <strong>If a variable is a bool with values true or false, double or single quote the value</strong> <strong><em>ie. myvariable: "true"</em></strong>
+  <div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">mymodulebackend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Change this to the module component</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">config</span><span class="p p-Indicator">:</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nt">WELCOME_MESSAGE</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;The</span><span class="nv"> </span><span class="s">flux</span><span class="nv"> </span><span class="s">containerisation</span><span class="nv"> </span><span class="s">helm</span><span class="nv"> </span><span class="s">chart</span><span class="nv"> </span><span class="s">nginx</span><span class="nv"> </span><span class="s">message</span><span class="nv"> </span><span class="s">backend&quot;</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Add here as many variables as you may have as a key value pair</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nt">portalfrontend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Chnage this to another module component</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nt">mymodulefrontend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Chnage this to another module component</span>
 </span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">config</span><span class="p p-Indicator">:</span>
 </span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="nt">WELCOME_MESSAGE</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;The</span><span class="nv"> </span><span class="s">flux</span><span class="nv"> </span><span class="s">containerisation</span><span class="nv"> </span><span class="s">helm</span><span class="nv"> </span><span class="s">chart</span><span class="nv"> </span><span class="s">nginx</span><span class="nv"> </span><span class="s">message</span><span class="nv"> </span><span class="s">frontend&quot;</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Add here as many variables as you may have as a key value pair</span>
 </span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="l l-Scalar l-Scalar-Plain">-&gt; Add more components to the module</span>
 </span></code></pre></div></p>
 </li>
 </ol>
-<p>With this, the  module is ready. Push the chart to your ds2 module repository at /charts folder , i.e the portal. Watch out if the repository has the same name that the chart, in that case move first the chart to a charts folder then clone the repository
+<p>With this, the  module is ready. Push the chart to your ds2 module repository at /charts folder , i.e mymodule. Watch out if the repository has the same name that the chart, in that case move first the chart to a charts folder then clone the repository
 <div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mkdir charts
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>cp -r portal/ charts/
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>rm -rf portal/
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>git clone https://github.com/ds2-eu/portal.git
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>cd  portal
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>cp -r ../charts/portal/ charts/
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>cp -r mymodule/ charts/
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>rm -rf mymodule/
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>git clone https://github.com/ds2-eu/mymodule.git
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>cd  mymodule
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>cp -r ../charts/mymodule/ charts/
 </span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>git push (git add, git commit, git push ...)
 </span></code></pre></div></p>
+<ol>
+<li>For DS2, the docker images for the modules need to be pushed to github in using ds2charts image path. An example of an image in the ds2charts image path
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker push ghcr.io/ds2-eu/ds2charts/nginxmessage:1.0.0
+</span></code></pre></div><blockquote>
+<p>ghcr.io is the registry
+ds2-eu/ds2charts is the path
+nginxmessage:1.0.0 the image name and version</p>
+</blockquote>
+</li>
+</ol>
 <h3 id="user-guide"><strong>User Guide</strong></h3>
 <p>Once the controllers have been deployed Containerisation needs the following resources to deploy a module:</p>
 <ol>
@@ -1521,7 +1532,7 @@ This is an example of a HelmRelease</p>
 </li>
 <li>
 <p>Platform configuration has been created for the <fluxtest> organisation
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>./kubernetes_configuration.sh ds2-eu/ds2charts &lt;demouser&gt; &lt;token&gt; &lt;domain&gt; icekube
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>./kubernetes_configuration.sh ds2-eu/ds2charts &lt;demouser&gt; &lt;token&gt; &lt;domain&gt; icekube
 </span></code></pre></div></p>
 <blockquote>
 <p>Replace the <demouser>, <token> and <domain> variables with the GitHub user, personal access token from GitHub and the domain configured during IDT installation</p>
@@ -1529,7 +1540,7 @@ This is an example of a HelmRelease</p>
 </li>
 <li>
 <p>Containerisation has been installed
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>./installfluxghorg.sh &lt;token&gt; ds2-eu &lt;fluxtest&gt;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>./installfluxghorg.sh &lt;token&gt; ds2-eu &lt;fluxtest&gt;
 </span></code></pre></div></p>
 <blockquote>
 <p>Replace <token> and <fluxtest> with the personal access token from GitHub and the created GitHub repository (the name of the organisation)</p>
@@ -1541,102 +1552,102 @@ This is an example of a HelmRelease</p>
 <li>
 <p>Now users need to create a flux GitRepository resource that will monitor the Helm templates folder at helmtemplates repository in ds2 and a namespace resource where this GitRepository will be created.  <br />
 Clone the <fluxtest> repository
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>git clone &lt;fluxtest&gt;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>git clone &lt;fluxtest&gt;
 </span></code></pre></div>
 Create a gitrepository.yaml file
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source.toolkit.fluxcd.io/v1</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitRepository</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nt">metadata</span><span class="p">:</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2charts</span>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2</span>
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="nt">spec</span><span class="p">:</span>
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1m</span>
-</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/ds2-eu/helmtemplates.git</span><span class="w"> </span>
-</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">  </span><span class="nt">ref</span><span class="p">:</span>
-</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">    </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source.toolkit.fluxcd.io/v1</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitRepository</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2charts</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="nt">spec</span><span class="p">:</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1m</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/ds2-eu/helmtemplates.git</span><span class="w"> </span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">  </span><span class="nt">ref</span><span class="p">:</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
 </span></code></pre></div>
 Create a namespace.yaml file
-<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>apiVersion: v1
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>kind: Namespace
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>metadata:
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>  name: ds2
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>apiVersion: v1
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>kind: Namespace
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>metadata:
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>  name: ds2
 </span></code></pre></div>
 Create a kustomization file kustomization.yaml
-<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>apiVersion: kustomize.config.k8s.io/v1beta1
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>kind: Kustomization
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>resources:
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>- namespace.yaml
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>- gitrepository.yaml
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>apiVersion: kustomize.config.k8s.io/v1beta1
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>kind: Kustomization
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>resources:
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>- namespace.yaml
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>- gitrepository.yaml
 </span></code></pre></div>
 Navigate to the local cloned <fluxtest> repository, create a ds2 folder in the clusters/my-cluster/ folder and copy the gitrepository.yaml, namespace.yaml and kustomization.yaml files. Then push the repository. The resources should be created in the cluster after some seconds
-<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>kubectl get gitrepository -n ds2
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>kubectl get gitrepository -n ds2
 </span></code></pre></div>
 <img alt="DS2 CONT gitrepository" src="../images/CONT-gitrepository.JPG" /></p>
 </li>
 <li>
 <p>Push the demo module chart to the <fluxtest> repository to simulate what would happen when a module is purchased from the Marketplace, and copied to the organisation repository  <br />
 Clone the helmreleases repository
-<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>git clone https://github.com/ds2-eu/containerisation.git
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>git clone https://github.com/ds2-eu/containerisation.git
 </span></code></pre></div>
 Copy the demomodule chart to the <fluxtest> repository and push it to the <fluxtest> repository in the charts folder. If the charts folder does not exist yet, create it. The module won't be deployed yet.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>mkdir fluxtest/charts
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>cp -r helmreleases/charts/demomodule/ fluxtest/charts/
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>mkdir fluxtest/charts
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>cp -r helmreleases/charts/demomodule/ fluxtest/charts/
 </span></code></pre></div></p>
 </li>
 <li>
 <p>Create the Containerisation Helm Release Yaml file, the namespace file and the kustomization file
-Create the helmrelease-demomodule.yaml
-<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>kind: HelmRelease
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>metadata:
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>  name: demomodule    --&gt; Change this to the name of the module
-</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>  namespace: demomodule --&gt; Change this to the name of the module
-</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>spec:
-</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>  interval: 10m
-</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>  chart:
-</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>    spec:
-</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>      chart: ./charts/demomodule --&gt; Change this to ./charts/name of the module
-</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>      version: &#39;1.0.0&#39; --&gt; Change this to the version of the module as per the version in the Chart.yaml file of the module chart
-</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>      sourceRef:
-</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>        kind: GitRepository
-</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>        name: flux-system
-</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>        namespace: flux-system
-</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>      interval: 10m
-</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>  values:
-</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>    demomodulecomponent1: --&gt; Change this to a module component
-</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>      config:
-</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>        WELCOME_MESSAGE: &quot;COMPONENT1&quot; --&gt; Change this according to the variables of values.yaml file of the module chart. You can change the value.
+Create the helmrelease-demomodule.yaml with the values overriding any variable that needs to be configured. These variables are the ones in the values.yaml file of the module chart. <strong>If a variable is a bool with values true or false, double or single quote the value</strong> <strong><em>ie. myvariable: "true"</em></strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>kind: HelmRelease
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>metadata:
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>  name: demomodule    --&gt; Change this to the name of the module
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>  namespace: demomodule --&gt; Change this to the name of the module
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>spec:
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>  interval: 10m
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>  chart:
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>    spec:
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>      chart: ./charts/demomodule --&gt; Change this to ./charts/name of the module
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>      version: &#39;1.0.0&#39; --&gt; Change this to the version of the module as per the version in the Chart.yaml file of the module chart
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>      sourceRef:
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>        kind: GitRepository
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>        name: flux-system
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>        namespace: flux-system
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>      interval: 10m
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>  values:
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>    demomodulecomponent1: --&gt; Change this to a module component
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>      config:
+</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>        WELCOME_MESSAGE: &quot;COMPONENT1&quot; --&gt; Change this according to the variables of values.yaml file of the module chart. You can change the value.
 </span></code></pre></div>
 You can copy the helmrelease-demomodule.yaml from the helmreleases repository in the releases/demomodule/ folder. <br />
 Create the namespace-demomodule.yaml
-<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>apiVersion: v1
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>kind: Namespace
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>metadata:
-</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>  name: demomodule --&gt; Change this to the name of the module
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>apiVersion: v1
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>kind: Namespace
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>metadata:
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>  name: demomodule --&gt; Change this to the name of the module
 </span></code></pre></div>
 You can copy the namespace-demomodule.yaml from the helmreleases repository in the releases/demomodule/ folder.
 Create the kustomization file
-<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>kind: Kustomization
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>resources:
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>- namespace-demomodule.yaml --&gt; Change this to namespace-nameofthemodule.yaml
-</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>- helmrelease-demomodule.yaml --&gt; Change this to helmrelease-nameofthemodule.yaml
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>kind: Kustomization
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>resources:
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>- namespace-demomodule.yaml --&gt; Change this to namespace-nameofthemodule.yaml
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>- helmrelease-demomodule.yaml --&gt; Change this to helmrelease-nameofthemodule.yaml
 </span></code></pre></div>
 You can copy the kustomization.yaml from the helmreleases repository in the releases/demomodule/ folder.
 Copy the yaml files to the fluxtest/cluster/my-cluster/releases/demomodule/ folder and push the repository. If the releases and demomodule folders do not exist yet, create them. The module will be deployed after some seconds automatically by Containerisation Flux component. 
 Run the following command to check the helmreleases are installed
-<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>helm ls -n demomodule
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>helm ls -n demomodule
 </span></code></pre></div>
 <img alt="DS2 CONT helmcharts" src="../images/CONT-helmcharts.JPG" />
 You can see there are two charts created, the demomodule helmchart which corresponds to the Containerisation HelmRelease and the demomodule-demomodulecomponent1 which is triggered by the first one and expanded to a full chart using the templates from the modulebase chart.
 Run the following command to check the pod is running
-<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>kubectl get pods -n demomodule
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>kubectl get pods -n demomodule
 </span></code></pre></div>
 <img alt="DS2 CONT pods" src="../images/CONT-pods.JPG" />
 The modulebase chart also creates an ingress to access the module. Run the following command to retrieve the ingress url
-<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>kubectl get ing -n demomodule
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>kubectl get ing -n demomodule
 </span></code></pre></div>
 <img alt="DS2 CONT ingress" src="../images/CONT-ingress.JPG" />
 Run the following command to test access to the module
-<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>curl -k https://demomodulecomponent1.192-168-50-5.idt.ds2.sslip.io
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>curl -k https://demomodulecomponent1.192-168-50-5.idt.ds2.sslip.io
 </span></code></pre></div>
 <img alt="DS2 CONT curl" src="../images/CONT-curl.JPG" />
 Your ip will be different depending on the domain congfigured during installation when the platform_configuration was created.</p>
