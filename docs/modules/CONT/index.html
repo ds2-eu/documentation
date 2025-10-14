@@ -1444,12 +1444,12 @@
 <ol>
 <li>
 <p>Clone the repo containerisation
-    <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ds2-eu/containerisation
+  <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ds2-eu/containerisation
 </span></code></pre></div></p>
 </li>
 <li>
 <p>Create the platform configuration by running the kubernetes_configuration.sh script. The Helm templates to be used by the Containerisation module rely on a platform configmap and secret that are created in this step and contain platform configuration
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./kubernetes_configuration.sh imagepath organisationadminuser organiationadmintoken organisationdomain namespace
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./kubernetes_configuration.sh imagepath organisationadminuser organiationadmintoken organisationdomain namespace
 </span></code></pre></div></p>
 <blockquote>
 <p>imagepath: The registry path where the docker images are stored ie. in ghcr.io/ds2-eu/ds2charts/image the imagepath would be ds2eu/ds2charts</p>
@@ -1463,7 +1463,7 @@
 </li>
 <li>
 <p>Install the Containerisation module by running the installfluxghorg.sh script : So far the Kubernetes controllers are available, which will deploy a template helm chart from a helmrelease CRD
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./installfluxghorg.sh github_token github_organisation github_repository
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./installfluxghorg.sh github_token github_organisation github_repository
 </span></code></pre></div></p>
 <blockquote>
 <p>github_token: a GitHub user token. This is a personal access token that has access permissions to the org repository</p>
@@ -1538,7 +1538,7 @@ You can see an example of a two components module in the helmreleases repository
 </li>
 <li>
 <p>Navigate back to the main chart folder (cd ..) and edit the values if you are using configuration for the module ie. env variables. In the example we add configuration to two components in the module, with the same variable name WELCOME_MESSAGE. <strong>If a variable is a bool with values true or false, double or single quote the value</strong> <strong><em>ie. myvariable: "true"</em></strong>
-  <div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">mymodulebackend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Change this to the module component</span>
+    <div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">mymodulebackend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Change this to the module component</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">config</span><span class="p p-Indicator">:</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nt">WELCOME_MESSAGE</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;The</span><span class="nv"> </span><span class="s">flux</span><span class="nv"> </span><span class="s">containerisation</span><span class="nv"> </span><span class="s">helm</span><span class="nv"> </span><span class="s">chart</span><span class="nv"> </span><span class="s">nginx</span><span class="nv"> </span><span class="s">message</span><span class="nv"> </span><span class="s">backend&quot;</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Add here as many variables as you may have as a key value pair</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nt">mymodulefrontend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Chnage this to another module component</span>
@@ -1547,31 +1547,33 @@ You can see an example of a two components module in the helmreleases repository
 </span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="l l-Scalar l-Scalar-Plain">-&gt; Add more components to the module</span>
 </span></code></pre></div></p>
 </li>
-</ol>
+<li>
 <p>With this, the  module is ready. Push the chart to your ds2 module repository at /charts folder , i.e mymodule. Watch out if the repository has the same name that the chart, in that case move first the chart to a charts folder then clone the repository
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mkdir charts
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>cp -r mymodule/ charts/
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>rm -rf mymodule/
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>git clone https://github.com/ds2-eu/mymodule.git
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>cd  mymodule
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>cp -r ../charts/mymodule/ charts/
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>git push (git add, git commit, git push ...)
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mkdir<span class="w"> </span>charts
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>cp<span class="w"> </span>-r<span class="w"> </span>mymodule/<span class="w"> </span>charts/
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>rm<span class="w"> </span>-rf<span class="w"> </span>mymodule/
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ds2-eu/mymodule.git
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nb">cd</span><span class="w">  </span>mymodule
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>cp<span class="w"> </span>-r<span class="w"> </span>../charts/mymodule/<span class="w"> </span>charts/
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>git<span class="w"> </span>push<span class="w"> </span><span class="o">(</span>git<span class="w"> </span>add,<span class="w"> </span>git<span class="w"> </span>commit,<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>...<span class="o">)</span>
 </span></code></pre></div></p>
-<ol>
-<li>For DS2, the docker images for the modules need to be pushed to github using ds2charts image path. An example of an image in the ds2charts image path
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker push ghcr.io/ds2-eu/ds2charts/nginxmessage:1.0.0
-</span></code></pre></div><blockquote>
-<p>ghcr.io is the registry</p>
-<p>ds2-eu/ds2charts is the path</p>
-<p>nginxmessage:1.0.0 the image name and version</p>
-</blockquote>
+</li>
+<li>
+<p>For DS2, the docker images for the modules need to be pushed to github using ds2charts image path. An example of an image in the ds2charts image path
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker<span class="w"> </span>push<span class="w"> </span>ghcr.io/ds2-eu/ds2charts/nginxmessage:1.0.0
+</span></code></pre></div>
+    &gt; ghcr.io is the registry
+    &gt; 
+    &gt; ds2-eu/ds2charts is the path
+    &gt; 
+    &gt; nginxmessage:1.0.0 the image name and version</p>
 </li>
 </ol>
 <h4 id="tips-for-best-containerisation-integration"><strong>Tips For Best Containerisation Integration</strong></h4>
 <ul>
 <li><strong>Building your images</strong>: The images will run on top of the IDT, and the IDT runs a Kubernetes cluster on Linux, typically Ubuntu server, so you need to build your images for Linux/amd platform. That is mainly for those developing usin MacOS. The better option is to build the images on a Linux server.</li>
 <li><strong>Backend URL</strong>: A typical issue is to generate the backend URL from the frontend. Since modules will be deployed on top of the IDT, and the IDT will be deployed on-premise for different customer organisations, thus using different domains for the module URLs, the Helm Chart templates are configured to use a platform configuration that contains the organisation domain. This platform configuration is stored in Kubernetes and is created during Containerisation installation. The Helm Chart templates are also configured to create by default an ingress that will expose an https URL for the different components ie. frontend, backend. The component URL is automatically created by joining the component name with the domain, so for instance, if a component is called mymodulefrontend, and the domain for the organisation is myorg.com, the ingress URL of that component is https://mymodulefrontend.myorg.com. So to generate the backend URL dynamically from the frontend, the recommended approach is from the frontend to obtain the domain using the frontend URL and then use the component name which is static, and what you configured as name for the component in the chart. An example of how to do this for dhsare:
-    <div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>let host = window.location.host;
+    <div class="language-vue highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>let host = window.location.host;
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>let hostname = window.location.hostname;
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>host = hostname.replace(/^dsharefrontend\./, &quot;&quot;); --&gt; where dsharefrontend is the name of the dshare frontend component
 </span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>app.config.globalProperties.$apiBase = `${protocol}//dsharebackend.${host}`; --&gt; where dhsarebackend is the name of the dshare backend component
