@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1480,22 +1480,41 @@ Offers a fully guided, conversational journey from assessment to configuration a
 <table>
 <thead>
 <tr>
-<th>Azure VM</th>
-<th>NC8as T4 v3</th>
+<th>Requirement</th>
+<th>Minimum</th>
+<th>Recommended</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>CPU</td>
-<td>8</td>
+<td>Operating System</td>
+<td>Windows 10/11, macOS 10.15+, Linux (Ubuntu 20.04+)</td>
+<td>Same as minimum</td>
 </tr>
 <tr>
 <td>RAM</td>
-<td>56 GiB</td>
+<td>16 GB</td>
+<td>32 GB</td>
 </tr>
 <tr>
-<td>GPU</td>
-<td>1xT4</td>
+<td>Storage</td>
+<td>100 GB available (SSD recommended)</td>
+<td>SSD recommended</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>4+ cores</td>
+<td>8+ threads</td>
+</tr>
+<tr>
+<td>Internet</td>
+<td>Stable connection for API calls</td>
+<td>Same as minimum</td>
+</tr>
+<tr>
+<td>API</td>
+<td>Groq or OpenAI (free tier available for some requests per day)</td>
+<td>Same as minimum</td>
 </tr>
 </tbody>
 </table>
@@ -1506,6 +1525,7 @@ Offers a fully guided, conversational journey from assessment to configuration a
 <li>OS: Linux (as indicated by your environment path)</li>
 <li>Docker &amp; Docker Compose</li>
 <li>Modern web browser (Chrome, Firefox, etc.)</li>
+<li>Git (for cloning repository)</li>
 </ul>
 <h3 id="summary-of-installation-steps">Summary of installation steps</h3>
 <p>Install/Download the app (docker image), create and activate the .venv environment, run the UI, and access the platform in your browser.</p>
@@ -1607,7 +1627,7 @@ If running on a remote server, use your machine's IP address (e.g., http://192.1
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>

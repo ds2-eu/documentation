@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1269,21 +1269,24 @@
 <li>Capability to perform many data transformations: data format, enrich data with other sources, anonymization, masking, etc.</li>
 </ul>
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
-<p><strong>Data Inspector</strong> consists of a set of tools integrated within Onesait Platform. To deploy and use these tools you will need to deploy some components of Onesait Platform.</p>
-<p>You can find detailed instruction in the <a href="https://onesaitplatform.com/space/DOCT/2220810976/How+to+install+Onesait+Platform%3F">Oensait Platform Documentation Installation Guide</a>.</p>
+<p><strong>Data Inspector</strong> can be executed using docker compose. You can download the docker-compose.yml file from <code>docker/v1</code> in the dins repository.</p>
+<p>To run it, execute <code>docker compose up</code> in same directory where you save <code>docker/v1/docker-compose.yml</code> file.</p>
 <h3 id="requirements">Requirements</h3>
-<p><strong>DINS</strong> requires a minimum of 6 GB of RAM and 4 CPUs for basic data pipeline executions. The amount of resources must be adapted to the volume of data to be processed.</p>
+<p><strong>DINS</strong> requires a minimum of 2 GB of RAM and 4 CPUs for basic data pipeline executions. The amount of resources must be adapted to the volume of data to be processed.</p>
 <h3 id="software">Software</h3>
 <p><strong>DINS</strong> is based on the Controlpanel and Dataflow from Onesait Platform.</p>
 <h3 id="summary-of-installation-steps">Summary of installation steps</h3>
 <p>The development of <strong>DINS</strong> is enhancing the integration of tools to increase the overall capabilities of the <strong>Onesait Platform</strong> for developing data pipelines.<br />
 At the end of the <strong>DINS</strong> development, specific deployment artifacts for <strong>DINS</strong> will be available. For now, only the generic artifacts of the Onesait Platform are provided.
-The recommended way to set up <strong>DINS</strong> is to deploy the <strong>Onesait Platform</strong>, including the Controlpanel and Dataflow componenets that are used for <strong>DINS</strong> module. 
-Detailed installation steps are described in the <a href="https://onesaitplatform.com/space/DOCT/2220810976/How+to+install+Onesait+Platform%3F">Onesait Platform Documentation Installation Guide</a>.</p>
+The recommended way to set up <strong>DINS</strong> is to deploy the <strong>Onesait Platform</strong>, including the Controlpanel and Dataflow componenets that are used for <strong>DINS</strong> module. </p>
+<p>However at this moment, the available setup does not include the integration with Onesait Platform.</p>
 <h3 id="detailed-steps">Detailed steps</h3>
-<p>Detailed installation steps are described in the <a href="https://onesaitplatform.com/space/DOCT/2220810976/How+to+install+Onesait+Platform%3F">Onesait Platform Documentation Installation Guide</a>.</p>
+<ul>
+<li>Download the docker-compose.yml file from <code>docker/v1</code> in the DINS repository.</li>
+<li>To run it, execute <code>docker compose up</code> in same directory where you save <code>docker/v1/docker-compose.yml</code> file.</li>
+</ul>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
-<p><strong>DINS</strong> is largely based on the Onesait Platform Dataflow module. As part of its development, new capabilities are being added to the Dataflow module. The main documentation on how to use it is available at <a href="https://onesaitplatform.com/space/DOCT/2220820644/DataFlow">Dataflow guidelines</a>, which explain how to use Dataflow—and by extension, DINS—within other tools of the Onesait Platform. In addition, there is a <a href="https://dataflow-docs.onesaitplatform.com/">comprehensive user manual</a> focused on developing data pipelines.</p>
+<p><strong>DINS</strong> is largely based on the Onesait Platform Dataflow module. As part of its development, new capabilities are being added to the Dataflow module. There is a <a href="https://dataflow-docs.onesaitplatform.com/">comprehensive user manual</a> focused on developing data pipelines.</p>
 <p>Please note that, since new capabilities are still being added during the development of <strong>DINS</strong>, some parts of the documentation may not yet be fully up to date.</p>
 <h2 id="other-information"><strong>Other Information</strong></h2>
 <p>For now, there is not any additional information.</p>
@@ -1343,7 +1346,7 @@ Detailed installation steps are described in the <a href="https://onesaitplatfor
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
