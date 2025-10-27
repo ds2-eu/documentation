@@ -1249,28 +1249,27 @@ preconfigure attributes in the DDT UI.</p>
 <hr />
 <h3 id="installation">Installation</h3>
 <ol>
-<li>Clone the repository:
-    <div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/SoftwareAG-RES/ds2_quality_module.git
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>ds2_quality_module
-</span></code></pre></div></li>
 <li>
-<p>Checkout the release version:
-    <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git checkout v1.0.0
+<p>Clone the repository:
+    <div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/schimmj/ds2-ddt.git<span class="w"> </span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>ds2-ddt
 </span></code></pre></div></p>
 </li>
 <li>
 <p>Build &amp; run
-    ```
-    docker-compose up --build</p>
+    <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker-compose up --build -d
+</span></code></pre></div></p>
 </li>
 </ol>
 <h2 id="usage">Usage</h2>
 <ol>
 <li>
-<p>To test the modules mqtt pipeline, use the <code>data_sender.py</code> script to publish sample measurements to the MQTT broker.
+<p>Example: To test the modules MQTT pipeline, use the <code>data_sender.py</code> script to publish sample measurements to the MQTT broker.
     <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker exec -it data-quality bash
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>python3 data_sender.py air-quality -f demo_data/ARSO_air_quality_hourly_outliers.json
-</span></code></pre></div></p>
+</span></code></pre></div>
+    To see the results, subscribe to the MQTT topic "te/device/air_quality/measurements".
+     <img alt="DS2 DDT Result" src="../images/ddt_result.png" /></p>
 </li>
 <li>
 <p>Use Postman or curl to call the API endpoints. Refer to <a href="http://localhost:8000/docs">API Docs</a> for the exact paths and schemas.</p>
