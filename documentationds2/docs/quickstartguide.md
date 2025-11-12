@@ -47,4 +47,6 @@ Copy the releases/ folder from the Containerisation repository to the demoorg re
 
 This copy steps will install the Containerisation UI and backend to install other modules. This will also install the DS2 Connector and some IDT core components.
 
-4. Deploy the demomodule example using Containerisation UI. 
+## Deploy a module usin Containerisation UI
+
+1. To deploy the demomodule example using Containerisation UI ... 
