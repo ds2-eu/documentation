@@ -11,7 +11,7 @@ For the example, we use the demoorg organisation, use cases just need to replace
 
 2. Once registered, the Portal will create a GitHub repository for the organisation. This step is so far manual, so create a new GitHub repository with the same name of the organisation at the ds2-eu GitHub. 
 
-In addition, create a GitHub personal access token (classic) for the user you used to create the organisation repository and grant read, write acces to the repository and read packages. Follow GitHub documentation <https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens>.
+    In addition, create a GitHub personal access token (classic) for the user you used to create the organisation repository and grant read, write acces to the repository and read packages. Follow GitHub documentation <https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens>.
 
 ## Register Dataspace
 At some point you either need to register a Dataspace or link the organisation to a Dataspace. This will be detailed in a late stage where the DS2 Connector is integrated with the DS2 IDM.
@@ -45,8 +45,8 @@ If the folder does not exist in the demoorg repository, you can create it.
 Copy the ds2/ folder from the Containerisation repository to the demoorg repository at /clusters/my-cluster/.
 Copy the releases/ folder from the Containerisation repository to the demoorg repository at /clusters/my-cluster.
 
-This copy steps will install the Containerisation UI and backend to install other modules. This will also install the DS2 Connector and some IDT core components.
+  This copy steps will install the Containerisation UI and backend to install other modules. This will also install the DS2 Connector and some IDT core components.
 
-## Deploy a module usin Containerisation UI
+## Deploy a module using Containerisation UI
 
 1. To deploy the demomodule example using Containerisation UI ... 
