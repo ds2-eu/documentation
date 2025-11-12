@@ -45,7 +45,7 @@ If the folder does not exist in the demoorg repository, you can create it.
 Copy the ds2/ folder from the Containerisation repository to the demoorg repository at /clusters/my-cluster/.
 Copy the releases/ folder from the Containerisation repository to the demoorg repository at /clusters/my-cluster.
 
-  This copy steps will install the Containerisation UI and backend to install other modules. This will also install the DS2 Connector and some IDT core components.
+    This copy steps will install the Containerisation UI and backend to install other modules. This will also install the DS2 Connector and some IDT core components.
 
 ## Deploy a module using Containerisation UI
 
