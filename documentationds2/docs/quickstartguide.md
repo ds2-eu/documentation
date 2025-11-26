@@ -40,6 +40,7 @@ At some point you either need to register a Dataspace or link the organisation t
 2. Once the IDT is installed the next step is to install the Containerisation module. This step will be automatic at a later stage.
 Follow installation instructions at [Containerisation](modules/containerisation.md) documentation. An example on how to install CONT for demoorg.
 
+First create the platform configuration
 ```
 ./kubernetes_configuration.sh ds2-eu/ds2charts <user> <token> ds2.demoorg.com icekube
 ```
@@ -51,6 +52,7 @@ Follow installation instructions at [Containerisation](modules/containerisation.
 >
 > icekube is static so far
 
+Then install the controllers
 ```
 ./installfluxghorg.sh <token> ds2-eu demoorg
 ```
@@ -67,12 +69,13 @@ copy_charts.sh ds2-eu demoorg
 > ds2-eu is static so far
 >
 > Replace demoorg with the name the created repository ie. the name of the organisation
+
 Copy the deployment/charts/ folder from the Containerisation repository to the demoorg repository at the root /charts/ folder. 
 If the folder does not exist in the demoorg repository, you can create it. 
 Copy the ds2/ folder from the Containerisation repository to the demoorg repository at /clusters/my-cluster/.
 Copy the releases/ folder from the Containerisation repository to the demoorg repository at /clusters/my-cluster.
 
-    This copy step will automatically install the Containerisation UI and backend to install other modules. This will also install the DS2 Connector at a later stage.
+This copy step will automatically install the Containerisation UI and backend to install other modules. This will also install the DS2 Connector at a later stage.
 
 ## Deploy a module using Containerisation UI
 
