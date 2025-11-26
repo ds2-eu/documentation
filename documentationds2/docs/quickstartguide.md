@@ -21,10 +21,21 @@ At some point you either need to register a Dataspace or link the organisation t
 1. Follow installation instructions at [IDT](modules/idt.md) documentation. An example on how to install IDT for demoorg:
 
 ```
-./minids23.0.sh 192.168.50.5 enp0s8 ds2.demoorg.com
+./minids23.1.sh
 ```
-> In this example, the IDT is installed on a virtual machine with internal ip 192.168.50.5 and the network interface for that ip is enp0s8. The domain used for the IDT installation is ds2.demoorg.com, which means, later all modules will have a URL like modulename.ds2.demoorg.com. The rancher domain is not set via parameter which means it will take the internal ip to build its URL rancher.192-168-50-5.sslip.io.
->
+> With example minids2.yaml file configured as
+> ```
+> nodeip: 192.168.50.5
+> iface: enp0s8
+> idt_domain: ds2.demoorg.com
+> ```
+> In this example, the IDT is installed on a virtual machine with internal ip 192.168.50.5 and the network interface for that ip is enp0s8.
+> 
+> The domain used for the IDT installation is ds2.demoorg.com, which means, later all modules will have a URL like modulename.ds2.demoorg.com.
+> 
+> The rancher domain is not set via  which means it will take the internal ip to build its URL rancher.192-168-50-5.sslip.io.
+> 
+> The ssl_certificate parameter is not set in the file which defaults to 0 which means a self-signed certificate is created.
 
 2. Once the IDT is installed the next step is to install the Containerisation module. This step will be automatic at a later stage.
 Follow installation instructions at [Containerisation](modules/containerisation.md) documentation. An example on how to install CONT for demoorg.
@@ -32,20 +43,36 @@ Follow installation instructions at [Containerisation](modules/containerisation.
 ```
 ./kubernetes_configuration.sh ds2-eu/ds2charts <user> <token> ds2.demoorg.com icekube
 ```
-> Replace user with the GitHub user used to create the repository
+> Replace user with the GitHub user used that created the organisation repository
+> 
 > Replace token with the GitHub personal access token for the user
+>
+> Replace ds2.demoorg.com with your domain for the modules
+>
+> icekube is static so far
 
 ```
 ./installfluxghorg.sh <token> ds2-eu demoorg
 ```
 > Replace token with the GitHub personal access token for the user
+>
+> ds2-eu is static so far
+>
+> Replace demoorg with the name the created repository ie. the name of the organisation
 
-3. Copy the deployment/charts/ folder from the Containerisation repository to the demoorg repository at the root /charts/ folder. 
+3. Run the copy of core charts and releases from the containerisation repository to the organisation repository
+```bash
+copy_charts.sh ds2-eu demoorg
+```
+> ds2-eu is static so far
+>
+> Replace demoorg with the name the created repository ie. the name of the organisation
+Copy the deployment/charts/ folder from the Containerisation repository to the demoorg repository at the root /charts/ folder. 
 If the folder does not exist in the demoorg repository, you can create it. 
 Copy the ds2/ folder from the Containerisation repository to the demoorg repository at /clusters/my-cluster/.
 Copy the releases/ folder from the Containerisation repository to the demoorg repository at /clusters/my-cluster.
 
-    This copy steps will install the Containerisation UI and backend to install other modules. This will also install the DS2 Connector and some IDT core components.
+    This copy step will automatically install the Containerisation UI and backend to install other modules. This will also install the DS2 Connector at a later stage.
 
 ## Deploy a module using Containerisation UI
 
