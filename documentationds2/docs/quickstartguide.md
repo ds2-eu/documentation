@@ -64,7 +64,7 @@ Then install the controllers
 
 Then run the copy of core charts and releases from the containerisation repository to the organisation repository
 ```bash
-copy_charts.sh <user> <token> ds2-eu demoorg ds2.demoorg.com
+./copy_charts.sh <user> <token> ds2-eu demoorg ds2.demoorg.com
 ```
 > Replace user with the GitHub user used that created the organisation repository
 >
