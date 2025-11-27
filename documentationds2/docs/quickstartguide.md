@@ -9,7 +9,7 @@ For the example, we use the demoorg organisation, use cases just need to replace
 
 1. The first step is to register the organisation in the Portal at <https://portal.ds2.icelab.cloud/> using the name of the oganisation demoorg. Follow the [Portal](modules/Portal.md) for more details on how to use it.
 
-2. Once registered, the Portal will create a GitHub repository for the organisation. This step is so far manual, so create a new GitHub repository with the same name of the organisation at the ds2-eu GitHub. 
+2. Once registered, the Portal will create a GitHub repository for the organisation. This step is so far manual, so create a new GitHub repository with the same name of the organisation at the ds2-eu GitHub. Select to create a README when creating the repository so that the main branch is "main" vs "master".
 
     In addition, create a GitHub personal access token (classic) for the user you used to create the organisation repository and grant read, write acces to the repository and read packages. Follow GitHub documentation <https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens>.
 
