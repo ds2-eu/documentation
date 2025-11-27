@@ -62,20 +62,24 @@ Then install the controllers
 >
 > Replace demoorg with the name the created repository ie. the name of the organisation
 
-3. Run the copy of core charts and releases from the containerisation repository to the organisation repository
+Then run the copy of core charts and releases from the containerisation repository to the organisation repository
 ```bash
-copy_charts.sh ds2-eu demoorg
+copy_charts.sh <user> <token> ds2-eu demoorg ds2.demoorg.com
 ```
+> Replace user with the GitHub user used that created the organisation repository
+>
+> Replace token with the GitHub personal access token for the user
+> 
 > ds2-eu is static so far
 >
 > Replace demoorg with the name the created repository ie. the name of the organisation
-
-Copy the deployment/charts/ folder from the Containerisation repository to the demoorg repository at the root /charts/ folder. 
-If the folder does not exist in the demoorg repository, you can create it. 
-Copy the ds2/ folder from the Containerisation repository to the demoorg repository at /clusters/my-cluster/.
-Copy the releases/ folder from the Containerisation repository to the demoorg repository at /clusters/my-cluster.
+>
+> Replace ds2.demoorg.com with your domain for the modules
 
 This copy step will automatically install the Containerisation UI and backend to install other modules. This will also install the DS2 Connector at a later stage.
+
+Containerisation is ready to be used and can be accessed at <https://containerisationfrontend.ds2.demoorg.com>
+> Replace demoorg with the name the created repository ie. the name of the organisation
 
 ## Deploy a module using Containerisation UI
 
