@@ -7,7 +7,7 @@ For the example, we use the demoorg organisation, use cases just need to replace
 
 ## Register Organisation
 
-1. The first step is to register the organisation in the Portal at <https://portal.ds2.icelab.cloud/> using the name of the oganisation demoorg. Follow the [Portal](modules/Portal.md) for more details on how to use it.
+1. The first step is to register the organisation in the Portal at <https://portal.ds2.icelab.cloud/> using the name of the oganisation demoorg. Follow the [Portal](modules/PORTAL.md) for more details on how to use it.
 
 2. Once registered, the Portal will create a GitHub repository for the organisation. This step is so far manual, so create a new GitHub repository with the same name of the organisation at the ds2-eu GitHub. Select to create a README when creating the repository so that the main branch is "main" vs "master".
 
@@ -18,7 +18,7 @@ At some point you either need to register a Dataspace or link the organisation t
 
 ## Install IDT
 
-1. Follow installation instructions at [IDT](modules/idt.md) documentation. An example on how to install IDT for demoorg:
+1. Follow installation instructions at [IDT](modules/IDT.md) documentation. An example on how to install IDT for demoorg:
 
 ```
 ./minids23.1.sh
@@ -38,7 +38,7 @@ At some point you either need to register a Dataspace or link the organisation t
 > The ssl_certificate parameter is not set in the file which defaults to 0 which means a self-signed certificate is created.
 
 2. Once the IDT is installed the next step is to install the Containerisation module. This step will be automatic at a later stage.
-Follow installation instructions at [Containerisation](modules/containerisation.md) documentation. An example on how to install CONT for demoorg.
+Follow installation instructions at [Containerisation](modules/CONT.md) documentation. An example on how to install CONT for demoorg.
 
 First create the platform configuration
 ```
