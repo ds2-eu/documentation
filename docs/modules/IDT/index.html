@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1148,7 +1148,7 @@
   <span class="md-ellipsis">
     
   
-    DS2 Data discovery and transformation module (RET)
+    DS2 Data retrieval module (RET)
   
 
     
@@ -1771,22 +1771,26 @@ If needed, in order to create a new repository, navigate to the cluster, apps, r
 <h3 id="connector-and-ui">Connector and UI</h3>
 <p>Once the IDT and Containerisation are installed, the DS2 Connector is deployed automatically and exposed at the URL based on the domain : https://connector.$domain where $domain is the domain seleted when installing the IDT and creating the kubernetes_configuration when installing containerisation.</p>
 <h4 id="connector-scripts">Connector Scripts</h4>
-<p>There are several test scripts to test the use of a connector. The current version of the connector and its API is not secured, so no need to use any token, or user/pass to call teh API. <strong>In all cases, the scripts need to be edited to change the URL of the connector</strong>.
-* Create an asset as a provider: run the script create_asset.sh in order to create an asset in the connector local catalog. You can edit the create-asset.json to change some of the properties. 
-* Create a policy as a provider: same as the asset, you can create a new policy on the connector. You can edit the create-policy.json to change some of the policy or use it as it is. Then run the create_policy.sh script.
-* Create a contract definition as a provider: the contract definition is applied to a policy and an asset or group of assets. You can adapt the create-contract-definition.json to your needs, or if you changed the id of the policy. If not, the contract definition will be applied to all assets using the previous policy. Run the sript create_contract.sh.
-* Fetch the provider catalog as a consumer: In this case, you need to use another IDT with another connector as a consumer. You should have at least two IDTs that may represent two dataspaces and can exchange data. Edit the fetch-catalog.json and add the provider connector URL ie. the other IDTs connector URL. Then run the script fetch_catalog.sh with the consumer connector URL. This script retrieves the catalog with the assets that were created at the provider.
-* Negotiate a contract: to initiate the negotation of a contract on an asset run the script negotiate_contract.sh with the contract_offer_id as main parameter:
+<p>There are several test scripts to test the use of a connector. The current version of the connector and its API is not secured, so no need to use any token, or user/pass to call teh API. <strong>In all cases, the scripts need to be edited to change the URL of the connector</strong>.</p>
+<ul>
+<li>Create an asset as a provider: run the script create_asset.sh in order to create an asset in the connector local catalog. You can edit the create-asset.json to change some of the properties.</li>
+<li>Create a policy as a provider: same as the asset, you can create a new policy on the connector. You can edit the create-policy.json to change some of the policy or use it as it is. Then run the create_policy.sh script.</li>
+<li>Create a contract definition as a provider: the contract definition is applied to a policy and an asset or group of assets. You can adapt the create-contract-definition.json to your needs, or if you changed the id of the policy. If not, the contract definition will be applied to all assets using the previous policy. Run the sript create_contract.sh.</li>
+<li>Fetch the provider catalog as a consumer: In this case, you need to use another IDT with another connector as a consumer. You should have at least two IDTs that may represent two dataspaces and can exchange data. Edit the fetch-catalog.json and add the provider connector URL ie. the other IDTs connector URL. Then run the script fetch_catalog.sh with the consumer connector URL. This script retrieves the catalog with the assets that were created at the provider.</li>
+<li>Negotiate a contract: to initiate the negotation of a contract on an asset run the script negotiate_contract.sh with the contract_offer_id as main parameter:
   <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>./negotiate_contract.sh $contract_offer_id
-</span></code></pre></div></p>
-<blockquote>
-<p>where contract_offer_id is obtained from the previous output of the fetch catalog, at the path dcat:dataset.odrl:hasPolicy.@id
-* Getting the contract agreement id: the previous call returns the id of the on-going contract negotiation. To check the status of the negotiation, run the script get_contract.sh with parameter contract_id:
+</span></code></pre></div><blockquote>
+<p>where contract_offer_id is obtained from the previous output of the fetch catalog, at the path dcat:dataset.odrl:hasPolicy.@id</p>
+</blockquote>
+</li>
+<li>Getting the contract agreement id: the previous call returns the id of the on-going contract negotiation. To check the status of the negotiation, run the script get_contract.sh with parameter contract_id:
   <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>get_contract.sh $contract_id
-</span></code></pre></div>
-where contract_id is obtained from the id of output of the previous script.</p>
+</span></code></pre></div><blockquote>
+<p>where contract_id is obtained from the id of output of the previous script.</p>
 <p>The state of the output of get_contract should be FINALIZED if the contract negotiation is successful</p>
 </blockquote>
+</li>
+</ul>
 <p>These scripts and steps have been developed following the steps at the EDC Transfer Samples with all the details at <a href="https://github.com/eclipse-edc/Samples/blob/main/transfer/transfer-01-negotiation/README.md">https://github.com/eclipse-edc/Samples/blob/main/transfer/transfer-01-negotiation/README.md</a></p>
 <p>Now a transfer can be started. Since the sample transfer is using a Provider Push, there are some prerequisites such as running an http server etc. For this, please follow steps at <a href="https://github.com/eclipse-edc/Samples/blob/main/transfer/transfer-02-provider-push/README.md">https://github.com/eclipse-edc/Samples/blob/main/transfer/transfer-02-provider-push/README.md</a>. There are some scripts that have been developed for this in the IDT: start_transfer.sh, start-transfer.json.template, check_transfer.sh .</p>
 <p>As a quick summary:
@@ -1866,10 +1870,10 @@ where transfer_id is obtained as output from start_transfer.sh script</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
