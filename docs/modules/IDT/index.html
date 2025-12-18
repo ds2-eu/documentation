@@ -1793,18 +1793,22 @@ If needed, in order to create a new repository, navigate to the cluster, apps, r
 </ul>
 <p>These scripts and steps have been developed following the steps at the EDC Transfer Samples with all the details at <a href="https://github.com/eclipse-edc/Samples/blob/main/transfer/transfer-01-negotiation/README.md">https://github.com/eclipse-edc/Samples/blob/main/transfer/transfer-01-negotiation/README.md</a></p>
 <p>Now a transfer can be started. Since the sample transfer is using a Provider Push, there are some prerequisites such as running an http server etc. For this, please follow steps at <a href="https://github.com/eclipse-edc/Samples/blob/main/transfer/transfer-02-provider-push/README.md">https://github.com/eclipse-edc/Samples/blob/main/transfer/transfer-02-provider-push/README.md</a>. There are some scripts that have been developed for this in the IDT: start_transfer.sh, start-transfer.json.template, check_transfer.sh .</p>
-<p>As a quick summary:
-* Build and run an http server from the EDC Samples repository
-* Run the start_transfer.sh script at the IDT repository using the contract_agreement_id from the previous step
+<p>As a quick summary:</p>
+<ul>
+<li>Build and run an http server from the EDC Samples repository</li>
+<li>Run the start_transfer.sh script at the IDT repository using the contract_agreement_id from the previous step
   <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>start_transfer.sh $contract_agreement_id
-</span></code></pre></div></p>
-<blockquote>
-<p>where contract_agreement_id is obtained as output from the get_contract.sh script
-* Check the status of the transfer with check_transfer.sh and parameter transfer_id from the output of the start_transfer step
-  <div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>check_transfer.sh $transfer_id
-</span></code></pre></div>
-where transfer_id is obtained as output from start_transfer.sh script</p>
+</span></code></pre></div><blockquote>
+<p>where contract_agreement_id is obtained as output from the get_contract.sh script</p>
 </blockquote>
+</li>
+<li>Check the status of the transfer with check_transfer.sh and parameter transfer_id from the output of the start_transfer step
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>check_transfer.sh $transfer_id
+</span></code></pre></div><blockquote>
+<p>where transfer_id is obtained as output from start_transfer.sh script</p>
+</blockquote>
+</li>
+</ul>
 <p>The DS2 Connector API can be used to perform custom integrations and transfers.</p>
 <p>TBD: the Connector swagger API.</p>
 <h4 id="connector-ui">Connector UI</h4>
