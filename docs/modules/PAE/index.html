@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -978,6 +978,62 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How To Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Policies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supported Policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#non-enforceable-contract-agreement-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-enforceable (contract agreement / audit)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforceable-connector-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enforceable (connector evaluation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1120,7 +1176,7 @@
   <span class="md-ellipsis">
     
   
-    Sovereignty-Decision-Support-System
+    SDS - Sovereignty-Decision-Support-System
   
 
     
@@ -1331,6 +1387,62 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How To Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Policies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supported Policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#non-enforceable-contract-agreement-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-enforceable (contract agreement / audit)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enforceable-connector-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enforceable (connector evaluation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1531,12 +1643,14 @@ Note that the large green box represents a connector. It is depicted this way to
 </tbody>
 </table>
 <h2 id="top-features"><strong>Top Features</strong></h2>
-<ul>
-<li>Integrated with EDC Connector</li>
-<li>Enforcement of policies defined in DS2</li>
-<li>Use of contextual information about participants obtained from other DS2 modules.</li>
-<li>Capabilities to enforce not only access rules but also some usage rules.</li>
-</ul>
+<ol>
+<li><strong>Integrated with the EDC Connector</strong>: PAE is a set of extensions for the EDC Connector.</li>
+<li><strong>DS2 Policy Vocabulary v6</strong>: Full support for the nine policies defined in the DS2 Policy Vocabulary v6, implemented as connector policy functions.</li>
+<li><strong>Configurable DS2 general policy</strong>: A general DS2 policy can be fetched dynamically from an external REST endpoint and merged into policy evaluation when configured.</li>
+<li><strong>Enforceable vs non-enforceable policies</strong>: Clear separation between policies that are only recorded on the contract agreement for external audit and policies that are actively evaluated by the connector.</li>
+<li><strong>Use of contextual information</strong>: PAE obtains contextual information about participants to evaluate policy rules.</li>
+<li><strong>Capabilities to enforce not only access rules but also usage rules</strong>: PAE can trigger requests to external systems to enforce or react to usage rules.</li>
+</ol>
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
 <p>The <strong>Policy and Agreement Enforcement Module</strong> is provider together with the DS2 Connector.</p>
 <h3 id="requirements">Requirements</h3>
@@ -1551,7 +1665,7 @@ Note that the large green box represents a connector. It is depicted this way to
 <p>As mentioned before, PAE module is installed together with the DS2 Connector. It is not necessary to do any additional configuration. In the case you want to use the module in your own EDC Connector configuration follow the next steps:</p>
 <ol>
 <li>Clone the repository.</li>
-<li>Using Java 17 and Maven, build the project.</li>
+<li>Using Java 21 and Maven, build the project.</li>
 <li>Add the PAE extensions as dependencies in the dependency descriptor of your EDC Connector and build it.</li>
 </ol>
 <h3 id="detailed-steps">Detailed steps</h3>
@@ -1573,27 +1687,149 @@ Note that the large green box represents a connector. It is depicted this way to
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">            </span><span class="nt">&lt;groupId&gt;</span>com.minsait.onesait.platform.edc.extensions<span class="nt">&lt;/groupId&gt;</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>ds2-policy-functions<span class="nt">&lt;/artifactId&gt;</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">            </span><span class="nt">&lt;version&gt;</span>0.0.1-0.12.0<span class="nt">&lt;/version&gt;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">            </span><span class="nt">&lt;version&gt;</span>0.0.6-0.14.1<span class="nt">&lt;/version&gt;</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="cm">&lt;!-- Datasource to use DINS module --&gt;</span>
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">            </span><span class="nt">&lt;groupId&gt;</span>com.minsait.onesait.platform.edc.extensions<span class="nt">&lt;/groupId&gt;</span>
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>op-dataflow-data-plane<span class="nt">&lt;/artifactId&gt;</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">            </span><span class="nt">&lt;version&gt;</span>0.0.1-0.12.0<span class="nt">&lt;/version&gt;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">            </span><span class="nt">&lt;version&gt;</span>0.0.6-0.14.1<span class="nt">&lt;/version&gt;</span>
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
 </span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="cm">&lt;!-- DS2 custom contract definitions --&gt;</span>
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
 </span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">            </span><span class="nt">&lt;groupId&gt;</span>com.minsait.onesait.platform.edc.extensions<span class="nt">&lt;/groupId&gt;</span>
 </span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>ds2-policy-definition-storage<span class="nt">&lt;/artifactId&gt;</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">            </span><span class="nt">&lt;version&gt;</span>0.0.1-0.12.0<span class="nt">&lt;/version&gt;</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">            </span><span class="nt">&lt;version&gt;</span>0.0.6-0.14.1<span class="nt">&lt;/version&gt;</span>
 </span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
 </span></code></pre></div>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
-<p>The PAE moudule use the standard EDC Connector APIs.</p>
+<p>The PAE module uses the standard EDC Connector APIs.</p>
+<h3 id="configuration">Configuration</h3>
+<p>The <strong>ds2-policy-definition-storage</strong> extension provides the <strong>DS2 General Policy Service</strong>. The following settings can be used in the connector configuration (for example, in <code>*.properties</code> files loaded by the runtime):</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Required</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ds2.general.policy.endpoint</code></td>
+<td>URL of the external REST endpoint that returns the general DS2 policy as JSON-LD (<code>PolicyDefinition</code>).</td>
+<td>No</td>
+<td>— (if unset, no general policy is applied)</td>
+</tr>
+<tr>
+<td><code>ds2.general.policy.request.timeout.seconds</code></td>
+<td>Timeout in seconds for the HTTP call to that endpoint.</td>
+<td>No</td>
+<td><code>30</code></td>
+</tr>
+<tr>
+<td><code>ds2.general.policy.auth.bearer.token</code></td>
+<td>Bearer token sent as <code>Authorization: Bearer …</code> when calling the endpoint.</td>
+<td>No</td>
+<td>— (no authentication if unset)</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="language-properties highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="na">ds2.general.policy.endpoint</span><span class="o">=</span><span class="s">https://my-policy-service/api/ds2/general-policy</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">ds2.general.policy.request.timeout.seconds</span><span class="o">=</span><span class="s">10</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="na">ds2.general.policy.auth.bearer.token</span><span class="o">=</span><span class="s">my-secret-token</span>
+</span></code></pre></div>
+<p>If <code>ds2.general.policy.endpoint</code> is not configured, the connector starts with a warning in the logs and does not apply any general policy. If the call to the endpoint fails at runtime (timeout, HTTP error, invalid JSON), the error is logged and evaluation continues without the general policy; the connector is not blocked.</p>
+<h2 id="supported-policies"><strong>Supported Policies</strong></h2>
+<p>Policies follow the grouping in the <strong>DS2 Policy Vocabulary v6</strong>; the vocabulary is published as <code>docs/DS2_Policy_Vocabulary-v6.docx</code> in this repository.</p>
+<p><strong>Non-enforceable</strong> policies are captured in the contract agreement for external audit. Their constraint functions always evaluate to satisfied (<code>true</code>) and record the requirement on the agreement; they are not actively enforced by automated logic in the connector.</p>
+<p><strong>Enforceable</strong> policies are actively evaluated by the connector using real evaluation logic.</p>
+<h3 id="non-enforceable-contract-agreement-audit">Non-enforceable (contract agreement / audit)</h3>
+<table>
+<thead>
+<tr>
+<th>Policy</th>
+<th>Java class</th>
+<th>Rule type</th>
+<th>leftOperand</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attribution</td>
+<td><code>AttributionConstraintFunction</code></td>
+<td>Duty</td>
+<td><code>attributedParty</code></td>
+</tr>
+<tr>
+<td>Share Alike</td>
+<td><code>ShareAlikeConstraintFunction</code></td>
+<td>Duty</td>
+<td><code>shareAlikeLicense</code></td>
+</tr>
+<tr>
+<td>Commercial Use</td>
+<td><code>CommercialUseConstraintFunction</code></td>
+<td>Permission</td>
+<td><code>commercialUse</code></td>
+</tr>
+<tr>
+<td>Purpose</td>
+<td><code>PurposeConstraintFunction</code></td>
+<td>Permission</td>
+<td><code>http://www.w3.org/ns/odrl/2/purpose</code></td>
+</tr>
+<tr>
+<td>Geospatial Named Area</td>
+<td><code>GeospatialConstraintFunction</code></td>
+<td>Permission</td>
+<td><code>http://www.w3.org/ns/odrl/2/spatial</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="enforceable-connector-evaluation">Enforceable (connector evaluation)</h3>
+<table>
+<thead>
+<tr>
+<th>Policy</th>
+<th>Java class</th>
+<th>Rule type</th>
+<th>leftOperand</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Duration</td>
+<td><code>DurationConstraintFunction</code></td>
+<td>Permission</td>
+<td><code>dateTime</code></td>
+</tr>
+<tr>
+<td>Access Permission (Known)</td>
+<td><code>AccessPermissionConstraintFunction</code></td>
+<td>Permission</td>
+<td><code>assignee</code></td>
+</tr>
+<tr>
+<td>Data Modification in Transit</td>
+<td><code>DataModificationConstraintFunction</code></td>
+<td>Permission</td>
+<td><code>purpose</code> (transform / aggregate / delete)</td>
+</tr>
+<tr>
+<td>Compensate</td>
+<td><code>CompensateConstraintFunction</code></td>
+<td>Duty</td>
+<td><code>compensationRequired</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="other-information"><strong>Other Information</strong></h2>
-<p>At the moment the set of policies to be supported in DS2 are under development. When they are defined they will be explained within this documentation.</p>
+<p>For the full definitions and semantics of the policies above, see the <strong>DS2 Policy Vocabulary v6</strong> document (<code>docs/DS2_Policy_Vocabulary-v6.docx</code> in this repository) and the <a href="#supported-policies">Supported Policies</a> section of this README.</p>
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
 <p>PAE module does not define any custom API at the moment.</p>
 <h2 id="additional-links"><strong>Additional Links</strong></h2>

@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -1050,10 +1050,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#creating-the-configuration-files" class="md-nav__link">
+  <a href="#creating-the-configuration-files-local-gui-only" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Creating the configuration files
+        Creating the configuration files (local GUI only)
       
     </span>
   </a>
@@ -1154,7 +1154,7 @@
   <span class="md-ellipsis">
     
   
-    Sovereignty-Decision-Support-System
+    SDS - Sovereignty-Decision-Support-System
   
 
     
@@ -1353,10 +1353,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#creating-the-configuration-files" class="md-nav__link">
+  <a href="#creating-the-configuration-files-local-gui-only" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Creating the configuration files
+        Creating the configuration files (local GUI only)
       
     </span>
   </a>
@@ -1483,7 +1483,7 @@
 <p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.
 <img alt="DS2 CUR Architecture" src="../images/T4.1_components.png" /></p>
 <h2 id="component-definition"><strong>Component Definition</strong></h2>
-<p>The Retrieval module is composed of two main components, a graphical user interface (GUI) based on the tkinter Python library, and backend which handles the program logic.</p>
+<p>The Retrieval module is composed of two main components, a graphical user interface (GUI) and a backend which handles the program logic.  There are two versions of the GUI, a web based version and a local graphical version.</p>
 <p>The GUI displays all data sources which are available for retrieval, and using their description from an OpenAPI spec, guides the user through the process of supplying all required input parameters.  Note however that formatting of the parameters, such as timestamps, is not required, as will be explained below.</p>
 <p>The backend requires an OpenAPI specification for each data source and uses a Large Language Model (LLM) for function calling - i.e. the proper composition of a REST call from parameters given the description of the REST call from the OpenAPI spec.</p>
 <p>Created REST calls are executed by the backend.  In the event that the REST call fails, the backend feeds back the generated REST call together with the execution error to the LLM and requests that a corrected REST call be generated.  This loop will happen up to three times, after which an error is returned to the user.  The generated REST call displayed in the GUI can be then modified by hand and reexecuted.</p>
@@ -1537,7 +1537,8 @@
 <li>Install inside the virtual environment the required modules: <code>pip install -r requirements.txt</code></li>
 </ul>
 <h3 id="running-the-module">Running the module</h3>
-<p>Run the RET module as: <code>python data_discovery_main.py</code> with the command line options described in the following table:</p>
+<p>To run the local GUI version:</p>
+<p>Run the RET module as: <code>python local_gui/code/data_discovery_main.py</code> with the command line options described in the following table:</p>
 <table>
 <thead>
 <tr>
@@ -1594,27 +1595,75 @@
 </tr>
 </tbody>
 </table>
+<p>To run the web based version:</p>
+<p>Run the RET module from the web_based/code directory as <code>python code/web_gui_data_discovery_main.py</code> with the command line options as described in the following table:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Explanation</th>
+<th>Required or Optional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--llmurl</td>
+<td>The base URL for the LLM. (E.g. "https://api.groq.com/openai/v1")</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>--llmname</td>
+<td>The model name for the LLN.  It is recommended not to change the default value.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>--llmid</td>
+<td>The model id for the LLM.  It is recommended not to change the default value.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>--llmkey</td>
+<td>The API key for the LLM.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>--token</td>
+<td>The API token to be passed to the data source server.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>--output_fname</td>
+<td>The starting directory in the directory selection box when export to a file is requested.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
 <h2 id="how-to-use">How to use</h2>
 <p>The current version of RET requires an OpenAPI specification for the source data.  OpenAPI specifications have become the industrial standard for describing RESTful APIs and provide information on the parameters supplied to the REST call as well as the expected format (schema) for the data to be returned.  However, while OpenAPI specifications are designed to be human-readable, it is not always easy to understand what is required for input (e.g. the format of a timestamp).  </p>
 <p>The RET module is configurable to point to a list of OpenAPI specifications, and the user is able to select one or more specifications in the application GUI.  Selecting an OpenAPI spec will display a list of all the REST endpoints (functions) contained within that specification.  Selecting a function will display the text description of the function from the OpenAPI file, as well as list of all possible parameters for that function in "Associated Parameters" listbox.  The user can then select a parameter and enter a parameter value.  If the OpenAPI spec contains a description of the parameter, this will be displayed too.</p>
 <p>The destination for the output for the data source is selectable in the GUI.  Picking the "File" radio button in the "Data to:" box will bring up a directory selector for output file.  After selecting an output directory, the user should then complete the displayed path with the name of the desired output file.</p>
 <p>The RET module also allows data obtained from a data source to be transformed before storing to a file, based on the requirements of a target application.</p>
 <p>When all desired parameters have been entered, the user can press the "Create request for data" button which will take all the input values and use an LLM to properly format them and construct a REST call and obtain the data. The code will check if the generated REST call succeeded or failed, and if failed, it will supply the LLM with the originally composed REST call and the error and prompt it to correct the REST call.  This loop of REST generation, execution and validation will occur up to three times before an error is announced and human intervention is requested to correct the generated REST call displayed in the GUI.</p>
-<p>The retrieved data will then either be written to a file or piplined to an application, as explained above.</p>
-<h3 id="creating-the-configuration-files">Creating the configuration files</h3>
+<p>The retrieved data will then either be written to a file or piplined to an application (local GUI version only), as explained above.</p>
+<h3 id="creating-the-configuration-files-local-gui-only">Creating the configuration files (local GUI only)</h3>
 <p>The "schemas" directory holds two files, "application_schema.json" and "mappings.json".</p>
 <p>The "application_schema.json" file describes the user applications which can be selected from the RET GUI to become part of the data download, transform and application execution pipeline.  This file emulates the format used by the OpenAPI specification to describe data sources. The name of this file is specified on the command line with "--transform" option.</p>
 <p>The "mappings.json" file defines the mapping between a field in the source data schema and the target data schema, as well as the transformation required, where the transmation needs to be defined in the "transformations.py" file in the code directory.  Note that in the future this file may be automatically generated by RET, however currently it must be manually created.</p>
 <h3 id="running-in-docker">Running in Docker</h3>
 <ol>
 <li>Create ther docker image:
-<code>docker build -t &lt;username&gt;/discovery:latest -f Dockerfile_discovery .</code></li>
+(For the local based GUI) <code>docker build -t &lt;username&gt;/discovery:latest -f local_gui/Dockerfile_discovery .</code>
+(For the web-based GUI) <code>docker build -t &lt;username&gt;/discovery:latest -f web_based/Dockerfile_retrieval .</code></li>
+</ol>
+<p>If running the local based GUI, do the following three steps:</p>
+<ol>
 <li>Start XQuartz:
 <code>open -a XQuartz</code></li>
 <li>From XQuartz, open an xterm window.  Do the rest of the operations from the xterm.</li>
 <li>xhost + 127.0.0.1</li>
 </ol>
 <p>Run the docker container:</p>
+<p>For the local GUI version (Replace '<url>' with the actual LLM url):</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker run -it --rm \
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  --name discovery \
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  -e DISPLAY=host.docker.internal:0 \
@@ -1624,14 +1673,28 @@
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  &lt;user_name&gt;/discovery python data_discovery_main.py \
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  --llmname llama-3-3-70b-instruct \
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  --llmid meta-llama/llama-3-3-70b-instruct \
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  --llmurl https://inference-3scale-apicast-production.apps.rits.fmaas.res.ibm.com/\{model_name\}/v1 \
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  --token $ARSO_APIKEY \
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  --llmurl https://&lt;url&gt;/\{model_name\}/v1 \
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  --token $&lt;APIKEY_BACKEND&gt; \
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  --llmkey $LLM_APIKEY \
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  --outdir /app/mounted_outdir \
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>  --appconfig /app/mounted_schemas \
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>  --dir /app/mounted_spec \
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>  --transform /app/schemas/mappings.json 
 </span></code></pre></div>
+<p>For the web-based version (Replace '<url>' with the actual LLM url):
+<code>docker run -it --rm \
+  --name gui-discovery \
+  -p 5002:5002 \
+  -v &lt;full path name to where the output files should be written&gt;:/mounted_outdir \
+  -v &lt;full path name to where the openAPI specs reside&gt;:/mounted_specs \
+  ghcr.io/ds2-eu/ds2charts/discovery:1.0.0 \
+  python web_gui_data_discovery_main.py \
+  --llmname llama-3-3-70b-instruct \
+  --llmid meta-llama/llama-3-3-70b-instruct \
+  --llmurl https://&lt;url&gt;/\{model_name\}/v1\
+  --token "$&lt;APIKEY_BACKEND&gt;" \
+  --llmkey "$LLM_APIKEY" \
+  --output_fname /app/mounted_outdir</code></p>
 <p>Notes:
 If using Rancher Desktop, the mounted file system on the local host must be under the user
 home directory</p>

@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -900,7 +900,7 @@
   <span class="md-ellipsis">
     
   
-    Sovereignty-Decision-Support-System
+    SDS - Sovereignty-Decision-Support-System
   
 
     
@@ -1839,7 +1839,7 @@
 </ul>
 </li>
 <li>
-<p><strong>Audit logging</strong>: Every authentication request and subsequent (successful and unsuccessful) authentication access are logged. Audit logs are monitored to detect and respond to block unauthorised access attempts. The log information is stored in the Blockchain of DS2 DRM module.</p>
+<p><strong>Audit logging</strong>: Every authentication request and subsequent (successful and unsuccessful) authentication access are logged. Audit logs are monitored to detect and respond to block unauthorised access attempts. The log information is stored in the Blockchain of DS2 DRM module. SEC sub-modules send logs via a blockchain logs proxy: <strong>unique</strong> <code>0x</code> id per entry; DRM shape <strong><code>componentLog.type</code> "SEC"</strong> and <strong><code>payload</code></strong> with submodule <strong>componentName</strong> (oauth, oidc, tokenisation, …), <strong>message</strong>, <strong>timestamp</strong>; see <code>docs/BLOCKCHAIN_SEC_LOG_CHANGES.md</code> and root <code>README.md</code>.</p>
 </li>
 <li>
 <p><strong>Secure storage</strong>: This stores authentication tokens with access control information. Data stored in the storage is encrypted. Note it does not store sensor data. </p>
@@ -1945,11 +1945,15 @@
 <li><code>OIDC_CLIENT_SECRET</code></li>
 </ol>
 <h3 id="deployment-details">Deployment details</h3>
-<p>The SEC module consists of four main services (as of now):
-1. OAuth2 Server (Port 443)
-2. OpenID Connect Server (Port 442)
-3. Tokenization Service (Port 444)
-4. MongoDB Database (Internal)</p>
+<p>The SEC module runs behind a single Nginx reverse proxy (port 443). Main services:
+1. OAuth2 Server (internal port 8001, routed via <code>/oauth/</code>)
+2. OpenID Connect Server (internal port 8002, routed via <code>/oidc/</code>)
+3. Tokenization Service (internal port 8003, routed via <code>/tokenization/</code>)
+4. ARXaaS (internal port 8080, routed via <code>/arxaas/</code>)
+5. Blockchain logs proxy (internal port 3000, <strong>exposed via Nginx at <code>/blockchain-logs/</code></strong>) — forwards logs to DRM (<code>componentLog.type</code> SEC, unique <code>0x</code> id, <code>payload</code> with submodule <code>componentName</code>)
+6. Portal (port 8084, serves <code>/</code>)
+7. MongoDB Database (internal)</p>
+<p>See the root <strong>README.md</strong> for current architecture, Docker Compose, and environment variables (e.g. <code>BLOCKCHAIN_LOGS_URL</code>).</p>
 <h3 id="step-by-step-setup-and-usage">Step-by-Step Setup and Usage</h3>
 <h4 id="1-initial-setup">1. Initial Setup</h4>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Clone the repository </span>

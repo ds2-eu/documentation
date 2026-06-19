@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -893,6 +893,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#updating-to-v21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating to v21
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-the-ds2connectorv21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing the Ds2connectorv21
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#connector-scripts" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -900,6 +922,67 @@
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connector-scripts-v21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connector Scripts v21
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connector Scripts v21">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-asset-policies-and-contract-definitions-as-a-consumer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create the asset, policies and contract definitions as a consumer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetch-the-catalog-and-negotiate-the-contract-as-a-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fetch the Catalog and Negotiate the Contract as a provider
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-pull-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run the Pull Transfer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-push-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run the Push Transfer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1176,7 +1259,7 @@
   <span class="md-ellipsis">
     
   
-    Sovereignty-Decision-Support-System
+    SDS - Sovereignty-Decision-Support-System
   
 
     
@@ -1414,6 +1497,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#updating-to-v21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating to v21
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-the-ds2connectorv21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing the Ds2connectorv21
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#connector-scripts" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1421,6 +1526,67 @@
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connector-scripts-v21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connector Scripts v21
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connector Scripts v21">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-asset-policies-and-contract-definitions-as-a-consumer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create the asset, policies and contract definitions as a consumer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetch-the-catalog-and-negotiate-the-contract-as-a-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fetch the Catalog and Negotiate the Contract as a provider
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-pull-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run the Pull Transfer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-push-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run the Push Transfer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1769,7 +1935,37 @@ If needed, in order to create a new repository, navigate to the cluster, apps, r
 </li>
 </ul>
 <h3 id="connector-and-ui">Connector and UI</h3>
-<p>Once the IDT and Containerisation are installed, the DS2 Connector is deployed automatically and exposed at the URL based on the domain : https://connector.$domain where $domain is the domain seleted when installing the IDT and creating the kubernetes_configuration when installing containerisation.</p>
+<p>Once the IDT and Containerisation are installed, the DS2 Connector is deployed automatically and exposed at the URL based on the domain : https://connector.$domain where $domain is the domain selected when installing the IDT and creating the kubernetes_configuration when installing containerisation.</p>
+<h4 id="updating-to-v21">Updating to v21</h4>
+<p>The next release is v2.1 and includes the following updates:
+* Deployed as separate modules: controlplane, dataplane, identity hub (wallet), postgres (persistence) and vault (secrets)
+* Integration with credentials from the DS2 IDM: DS2 Membership Credential supported
+* Secured APIs
+* Use of https and idt domains
+* Support for http pull and push transfer mechanisms</p>
+<p>The urls are now the following where $domain is the domain selected when installing the IDT. There is no public url for postgres and vault.
+* Control Plane: https://ds2controlplane.$domain
+* Data Plane: https://ds2dataplane.$domain
+* Identity Hub: https://ds2identityhub.$domain</p>
+<h4 id="installing-the-ds2connectorv21">Installing the Ds2connectorv21</h4>
+<p>To install the new connector:
+* Clone containerisation reposistory at https://github.com/ds2-eu/containerisation.git
+* Clone your organisations repositories, the ones you used to install IDT, in our example demoorg
+* From the containerisation repository, copy the charts/ds2connectorv21 folder to your repository chart/ folder
+* Push the changes of your organisation repositories
+* Navigate to the containerisationfrontend url (you should know yours 😃)
+* Refresh the repository
+  <img alt="Connectorv21_Refresh" src="./images/IDT-connectorv21refresh.JPG" />
+* You should see the new Ds2connectorv21 in the available modules
+  <img alt="Connectorv21_AvailableModules" src="./images/IDT-connectorv21availablemodules.JPG" />
+* Delete the old connector from the installed modules
+  <img alt="Connectorv21_DeleteConnectorv1" src="./images/IDT-connectorv21deleteconnectorv1.JPG" />
+* Navigate to the available modules 
+* Click on Ds2connectorv21 and click install and follow the steps. At the configuration step before installing it, you need to configure the apporganisationId,  which by default is ice, to your organisation name, the IDT one from the repository ie. demoorg
+  <img alt="Connectorv21_Install" src="./images/IDT-connectorv21install.JPG" />
+  <img alt="Connectorv21_Configuration" src="./images/IDT-connectorv21configuration.JPG" />
+* After some minutes, you should be able to navigate to the node where IDT is installed, run the command “kubectl get pods -n ds2connectorv21” and get the components up and running
+  <img alt="Connectorv21_kubectl" src="./images/IDT-connectorv21kubectl.JPG" /></p>
 <h4 id="connector-scripts">Connector Scripts</h4>
 <p>There are several test scripts to test the use of a connector. The current version of the connector and its API is not secured, so no need to use any token, or user/pass to call teh API. <strong>In all cases, the scripts need to be edited to change the URL of the connector</strong>.</p>
 <ul>
@@ -1811,6 +2007,232 @@ If needed, in order to create a new repository, navigate to the cluster, apps, r
 </ul>
 <p>The DS2 Connector API can be used to perform custom integrations and transfers.</p>
 <p>TBD: the Connector swagger API.</p>
+<h4 id="connector-scripts-v21">Connector Scripts v21</h4>
+<p>With the release of ds2connectorv21, scripts from previous version have been updated to support the new connector and apis.
+The scripts can be found in the IDT repository at https://github.com/ds2-eu/idt.git in the /ds2connectorv21scripts folder.</p>
+<p>The steps are still the same as in the previous version with additional transfer processes:
+* Create an asset as a provider
+* Create a policy as a provider
+* Create a contract definition (data offer) as a provider
+* Fetch the catalog as a consumer
+* Negotiate a contract as a consumer
+* Start data transfer pull or push as a consumer</p>
+<p>The scripts used some input parameters to create the different payloads needed for the request, but users can customize the payloads and run the requests standalone without the scripts ie. using curl or postman or integrating the calls in an application.</p>
+<h5 id="create-the-asset-policies-and-contract-definitions-as-a-consumer">Create the asset, policies and contract definitions as a consumer</h5>
+<ul>
+<li>Create an asset: Run the create_asset.sh with $mydomain as parameter where $mydomain is the domain used when installing IDT.
+  You can edit the assetId and the baseUrl of the asset in the create-asset.json file
+  <div class="language-json highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">&quot;@vocab&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://w3id.org/edc/v0.0.1/ns/&quot;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">},</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nt">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;assetId&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Edi</span><span class="kc">t</span><span class="w"> </span><span class="kc">t</span><span class="err">his</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;product description&quot;</span><span class="p">,</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">  </span><span class="nt">&quot;contenttype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="p">},</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="nt">&quot;dataAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HttpData&quot;</span><span class="p">,</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Test asset&quot;</span><span class="p">,</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">  </span><span class="nt">&quot;baseUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://jsonplaceholder.typicode.com/users&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Edi</span><span class="kc">t</span><span class="w"> </span><span class="kc">t</span><span class="err">his</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">  </span><span class="nt">&quot;proxyPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;true&quot;</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="p">}</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="p">}</span>
+</span></code></pre></div>
+  Run the script:
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>./create_asset.sh idtb.ds2.icelab.cloud
+</span></code></pre></div>
+  Sample output:
+  <div class="language-json highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IdResponse&quot;</span><span class="p">,</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nt">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;assetId&quot;</span><span class="p">,</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="nt">&quot;createdAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1773227328096</span><span class="p">,</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span><span class="nt">&quot;@vocab&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://w3id.org/edc/v0.0.1/ns/&quot;</span><span class="p">,</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">  </span><span class="nt">&quot;edc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://w3id.org/edc/v0.0.1/ns/&quot;</span><span class="p">,</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">  </span><span class="nt">&quot;odrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.w3.org/ns/odrl/2/&quot;</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="p">}</span>
+</span></code></pre></div></li>
+<li>Create a policy: You can edit the policy id in the create-policy.json file.
+  The permission, prohibition and obligation can also be edited to enhance the policy.
+  Examples of this will be provided in a later release where connector will be integrated with PAE and other credentials.
+  <div class="language-json highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="nt">&quot;@vocab&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://w3id.org/edc/v0.0.1/ns/&quot;</span><span class="p">,</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="nt">&quot;odrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.w3.org/ns/odrl/2/&quot;</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="p">},</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="nt">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aPolicy&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Edi</span><span class="kc">t</span><span class="w"> </span><span class="kc">t</span><span class="err">his</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="nt">&quot;policy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">  </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.w3.org/ns/odrl.jsonld&quot;</span><span class="p">,</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">  </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Set&quot;</span><span class="p">,</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">  </span><span class="nt">&quot;permission&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">  </span><span class="nt">&quot;prohibition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">  </span><span class="nt">&quot;obligation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="p">}</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="p">}</span>
+</span></code></pre></div>
+  Run the script:<br />
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>./create_policy.sh $mydomain
+</span></code></pre></div>
+  Sample output:
+  <div class="language-json highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IdResponse&quot;</span><span class="p">,</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span><span class="nt">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aPolicy&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Edi</span><span class="kc">t</span><span class="w"> </span><span class="kc">t</span><span class="err">his</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">  </span><span class="nt">&quot;createdAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1773227339744</span><span class="p">,</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">  </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="nt">&quot;@vocab&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://w3id.org/edc/v0.0.1/ns/&quot;</span><span class="p">,</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">    </span><span class="nt">&quot;edc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://w3id.org/edc/v0.0.1/ns/&quot;</span><span class="p">,</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="nt">&quot;odrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.w3.org/ns/odrl/2/&quot;</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="p">}</span>
+</span></code></pre></div></li>
+<li>Create a contract definition (data offer). You can edit the create-contract-definition.json file to change the contract definition id,
+  asset selector and the policy.
+  In this example the asset selector will select all assets created and the policy used is the policy created in the previous command aPolicy.
+  <div class="language-json highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span><span class="nt">&quot;@vocab&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://w3id.org/edc/v0.0.1/ns/&quot;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="p">},</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="nt">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Edi</span><span class="kc">t</span><span class="w"> </span><span class="kc">t</span><span class="err">his</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="nt">&quot;accessPolicyId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aPolicy&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Edi</span><span class="kc">t</span><span class="w"> </span><span class="kc">t</span><span class="err">his</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="nt">&quot;contractPolicyId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aPolicy&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Edi</span><span class="kc">t</span><span class="w"> </span><span class="kc">t</span><span class="err">his</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="nt">&quot;assetsSelector&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="mi">--</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Edi</span><span class="kc">t</span><span class="w"> </span><span class="kc">t</span><span class="err">his</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="p">}</span>
+</span></code></pre></div></li>
+</ul>
+<p>Run the script:
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>./create_contract_definition.sh $mydomain
+</span></code></pre></div>
+  Sample output:
+  <div class="language-json highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p">{</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IdResponse&quot;</span><span class="p">,</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="nt">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="nt">&quot;createdAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1773227372361</span><span class="p">,</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">  </span><span class="nt">&quot;@vocab&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://w3id.org/edc/v0.0.1/ns/&quot;</span><span class="p">,</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">  </span><span class="nt">&quot;edc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://w3id.org/edc/v0.0.1/ns/&quot;</span><span class="p">,</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">  </span><span class="nt">&quot;odrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.w3.org/ns/odrl/2/&quot;</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="p">}</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<h5 id="fetch-the-catalog-and-negotiate-the-contract-as-a-provider">Fetch the Catalog and Negotiate the Contract as a provider</h5>
+<ul>
+<li>Fetch the Catalog: to fetch the catalog as a consumer you need to query your control plane agains the provider control plane.
+  Run the script:
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>./fetch_catalog.sh $providerdomain $mydomain
+</span></code></pre></div><blockquote>
+<p>where $providerdomain is the provider connector domain and mydomain is my connector domain
+if we want to query the catalog from ds2controlplane.domainA.com and our connector is ds2controlplane.domainB.com, you need to run
+./fetch_catalog.sh domainA.com domainB.com</p>
+</blockquote>
+</li>
+</ul>
+<p>Sample output:</p>
+<p><div class="language-json highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">{</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nt">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;86d784cf-bbf4-44ec-b7be-c3e5a68510d0&quot;</span><span class="p">,</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dcat:Catalog&quot;</span><span class="p">,</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="nt">&quot;dcat:dataset&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">  </span><span class="nt">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;assetId&quot;</span><span class="p">,</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">  </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dcat:Dataset&quot;</span><span class="p">,</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">  </span><span class="nt">&quot;odrl:hasPolicy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">    </span><span class="nt">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MQ==:YXNzZXRJZA==:ZDQ2NzdjZDYtYzExOS00YjE4LTkwYzUtZTU1MzllYjY1YjRk&quot;</span><span class="p">,</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">    </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;odrl:Offer&quot;</span><span class="p">,</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">    </span><span class="nt">&quot;odrl:permission&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">    </span><span class="nt">&quot;odrl:prohibition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">    </span><span class="nt">&quot;odrl:obligation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">  </span><span class="nt">&quot;dcat:distribution&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="w">      </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dcat:Distribution&quot;</span><span class="p">,</span>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="w">      </span><span class="nt">&quot;dct:format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="w">        </span><span class="nt">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HttpData-PULL&quot;</span>
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="w">      </span><span class="p">},</span>
+</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a><span class="w">      </span><span class="nt">&quot;dcat:accessService&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-21"><a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a><span class="w">        </span><span class="nt">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ba6c43bf-ce54-42d3-9273-9e2b27e89fac&quot;</span><span class="p">,</span>
+</span><span id="__span-20-22"><a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a><span class="w">        </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dcat:DataService&quot;</span><span class="p">,</span>
+</span><span id="__span-20-23"><a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a><span class="w">        </span><span class="nt">&quot;dcat:endpointDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dspace:connector&quot;</span><span class="p">,</span>
+</span><span id="__span-20-24"><a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a><span class="w">        </span><span class="nt">&quot;dcat:endpointURL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://ds2controlplane.idtb.ds2.icelab.cloud/api/dsp&quot;</span>
+</span><span id="__span-20-25"><a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-20-26"><a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-20-27"><a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-20-28"><a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a><span class="w">      </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dcat:Distribution&quot;</span><span class="p">,</span>
+</span><span id="__span-20-29"><a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a><span class="w">      </span><span class="nt">&quot;dct:format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-30"><a id="__codelineno-20-30" name="__codelineno-20-30" href="#__codelineno-20-30"></a><span class="w">        </span><span class="nt">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HttpData-PUSH&quot;</span>
+</span><span id="__span-20-31"><a id="__codelineno-20-31" name="__codelineno-20-31" href="#__codelineno-20-31"></a><span class="w">      </span><span class="p">},</span>
+</span><span id="__span-20-32"><a id="__codelineno-20-32" name="__codelineno-20-32" href="#__codelineno-20-32"></a><span class="w">      </span><span class="nt">&quot;dcat:accessService&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-33"><a id="__codelineno-20-33" name="__codelineno-20-33" href="#__codelineno-20-33"></a><span class="w">        </span><span class="nt">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ba6c43bf-ce54-42d3-9273-9e2b27e89fac&quot;</span><span class="p">,</span>
+</span><span id="__span-20-34"><a id="__codelineno-20-34" name="__codelineno-20-34" href="#__codelineno-20-34"></a><span class="w">        </span><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dcat:DataService&quot;</span><span class="p">,</span>
+</span><span id="__span-20-35"><a id="__codelineno-20-35" name="__codelineno-20-35" href="#__codelineno-20-35"></a><span class="w">        </span><span class="nt">&quot;dcat:endpointDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dspace:connector&quot;</span><span class="p">,</span>
+</span><span id="__span-20-36"><a id="__codelineno-20-36" name="__codelineno-20-36" href="#__codelineno-20-36"></a><span class="w">        </span><span class="nt">&quot;dcat:endpointURL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://ds2controlplane.idtb.ds2.icelab.cloud/api/dsp&quot;</span>
+</span><span id="__span-20-37"><a id="__codelineno-20-37" name="__codelineno-20-37" href="#__codelineno-20-37"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-20-38"><a id="__codelineno-20-38" name="__codelineno-20-38" href="#__codelineno-20-38"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-20-39"><a id="__codelineno-20-39" name="__codelineno-20-39" href="#__codelineno-20-39"></a><span class="w">  </span><span class="p">],</span>
+</span><span id="__span-20-40"><a id="__codelineno-20-40" name="__codelineno-20-40" href="#__codelineno-20-40"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;product description&quot;</span><span class="p">,</span>
+</span><span id="__span-20-41"><a id="__codelineno-20-41" name="__codelineno-20-41" href="#__codelineno-20-41"></a><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;assetId&quot;</span><span class="p">,</span>
+</span><span id="__span-20-42"><a id="__codelineno-20-42" name="__codelineno-20-42" href="#__codelineno-20-42"></a><span class="w">  </span><span class="nt">&quot;contenttype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span>
+</span><span id="__span-20-43"><a id="__codelineno-20-43" name="__codelineno-20-43" href="#__codelineno-20-43"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-20-44"><a id="__codelineno-20-44" name="__codelineno-20-44" href="#__codelineno-20-44"></a><span class="w">  </span><span class="err">...</span>
+</span></code></pre></div>
+* Negotiate Contract: from the provider catalog you can get the offer ids at
+  <div class="language-json highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="w"> </span><span class="nt">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;assetId&quot;</span><span class="p">,</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dcat:Dataset&quot;</span><span class="p">,</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nt">&quot;odrl:hasPolicy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">  </span><span class="nt">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MQ==:YXNzZXRJZA==:ZDQ2NzdjZDYtYzExOS00YjE4LTkwYzUtZTU1MzllYjY1YjRk&quot;</span><span class="p">,</span>
+</span></code></pre></div>
+  the offer id is "MQ==:YXNzZXRJZA==:ZDQ2NzdjZDYtYzExOS00YjE4LTkwYzUtZTU1MzllYjY1YjRk" for asset "assetId"</p>
+<p>You can now try to reach a contract agreement with that provider for that offer id. This is something done by the connector and is an accept the policy defined for the offer or not, there is no negotiation in place.</p>
+<p>Run the script:
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>./negotiate_contract.sh $providerdomain $providerorganisation $offerid $mydomain
+</span></code></pre></div></p>
+<blockquote>
+<p>As an example: ./negotiate_contract.sh domainA.com A "MQ==:YXNzZXRJZA==:ZDQ2NzdjZDYtYzExOS00YjE4LTkwYzUtZTU1MzllYjY1YjRk" domainB.com
+where A is the name of the provider organisation -&gt; this is used to create the provider did</p>
+</blockquote>
+<p>Sample output:
+  <div class="language-json highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">{</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w"> </span><span class="err">...</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w"> </span><span class="nt">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c4dc522a-3c21-4cb7-a431-949b8f5bd0e9&quot;</span><span class="p">,</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w"> </span><span class="nt">&quot;createdAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1685525281848</span><span class="p">,</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w"> </span><span class="err">...</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="p">}</span>
+</span></code></pre></div>
+  This is the id of the contract negotation, now it's time to check the status of the contract
+  Run the script:
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>./get_contractagreementid.sh $mydomain $negotiationid
+</span></code></pre></div></p>
+<blockquote>
+<p>where $negotiationid is the id from the previous step output
+As an example: ./get_contractagreementid.sh domainB.com c4dc522a-3c21-4cb7-a431-949b8f5bd0e9</p>
+</blockquote>
+<p>Sample output:
+  <div class="language-json highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">{</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="nt">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ContractNegotiation&quot;</span><span class="p">,</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="nt">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c4dc522a-3c21-4cb7-a431-949b8f5bd0e9&quot;</span><span class="p">,</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CONSUMER&quot;</span><span class="p">,</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="nt">&quot;protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dataspace-protocol-http&quot;</span><span class="p">,</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FINALIZED&quot;</span><span class="p">,</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="nt">&quot;counterPartyId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;did:web:ds2identityhub.idtb.ds2.icelab.cloud:idtb&quot;</span><span class="p">,</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="nt">&quot;counterPartyAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://ds2controlplane.idtb.ds2.icelab.cloud/api/dsp&quot;</span><span class="p">,</span>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="nt">&quot;callbackAddresses&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="nt">&quot;createdAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1773159906921</span><span class="p">,</span>
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="nt">&quot;assetId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;assetId&quot;</span><span class="p">,</span>
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="nt">&quot;contractAgreementId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5cd3c215-7ce4-4e21-b7e4-f02551e8c528&quot;</span><span class="p">,</span>
+</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="nt">&quot;correlationId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8131f187-a6b3-4ac2-807f-a3d545563ab1&quot;</span><span class="p">,</span>
+</span><span id="__span-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="w">  </span><span class="nt">&quot;@vocab&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://w3id.org/edc/v0.0.1/ns/&quot;</span><span class="p">,</span>
+</span><span id="__span-25-16"><a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a><span class="w">  </span><span class="nt">&quot;edc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://w3id.org/edc/v0.0.1/ns/&quot;</span><span class="p">,</span>
+</span><span id="__span-25-17"><a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a><span class="w">  </span><span class="nt">&quot;odrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.w3.org/ns/odrl/2/&quot;</span>
+</span><span id="__span-25-18"><a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a><span class="p">}</span>
+</span><span id="__span-25-19"><a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a><span class="p">}</span>
+</span></code></pre></div>
+  The sate should be "FINALIZED", which means there is a contract in place with agreement id contractAgreementId. The contractAgreementId is needed in the next steps when running the transfers.
+  From this users can select to run a pull or a push type data transfer, meaning that for the pull transfer the consumer will pull the data from the provider data plane vs the push transfer where the provider connector will push the data to a specific consumer location.   </p>
+<h5 id="run-the-pull-transfer">Run the Pull Transfer</h5>
+<h5 id="run-the-push-transfer">Run the Push Transfer</h5>
+<p>Before running the push transfer, users need to have a location where the provider will push the data. For our examples, ds2 includes an http server that can be 
+deployed on the IDT and used as the server where the provider will push the data</p>
+<p>To install the http demo server run the same steps to install the new connector, without having to delete any module, for the chart demohttp/ in the containerisation repository. No parameters are needed to install it using Containerisation.</p>
 <h4 id="connector-ui">Connector UI</h4>
 <p>TBD</p>
 <h2 id="other-information"><strong>Other Information</strong></h2>

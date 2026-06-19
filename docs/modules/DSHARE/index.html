@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -719,6 +719,29 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ds2-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DS2 Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standalone-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standalone Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standalone Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#summary-of-installation-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -738,7 +761,8 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Detailed steps">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#installing-and-running-datashare-frontend" class="md-nav__link">
@@ -759,6 +783,16 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -900,6 +934,17 @@
     <span class="md-ellipsis">
       
         OpenAPI Specification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video Link
       
     </span>
   </a>
@@ -1248,7 +1293,7 @@
   <span class="md-ellipsis">
     
   
-    Sovereignty-Decision-Support-System
+    SDS - Sovereignty-Decision-Support-System
   
 
     
@@ -1424,6 +1469,29 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ds2-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DS2 Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standalone-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standalone Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standalone Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#summary-of-installation-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1443,7 +1511,8 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Detailed steps">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#installing-and-running-datashare-frontend" class="md-nav__link">
@@ -1464,6 +1533,16 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1612,6 +1691,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#video-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video Link
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#additional-links" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1695,6 +1785,7 @@
 <th>Organisation (s)</th>
 <th>License Nature</th>
 <th>License</th>
+<th>Marketplace Link</th>
 </tr>
 </thead>
 <tbody>
@@ -1702,6 +1793,7 @@
 <td><a href="https://informationcatalyst.com">ICE</a></td>
 <td>Open Source</td>
 <td>Apache 2.0</td>
+<td><a href="https://marketplacefrontend.central.ds2.icelab.cloud/products/9c544898-bd65-4519-b090-43d21b6b7e52">dshare</a></td>
 </tr>
 </tbody>
 </table>
@@ -1734,13 +1826,36 @@
 <li>PostgreSQL Database </li>
 <li>Java Development Kit (JDK) JDK17+</li>
 </ul>
-<h3 id="summary-of-installation-steps">Summary of installation steps</h3>
+<h3 id="ds2-installation">DS2 Installation</h3>
+<p>The first action needed to install the module is to acquire the module from the Marketplace at <a href="https://marketplacefrontend.central.ds2.icelab.cloud/products/9c544898-bd65-4519-b090-43d21b6b7e52">dshare</a>. Then from the Containerisation UI:
+1. Refresh the Containerisation DS2 repository
+<img alt="DS2 DSHARE contrepo" src="../images/dsharerefreshcont.png" />
+2. Navigate to available modules section
+<img alt="DS2 DSHARE contavailable" src="../images/dshareavailablecont.png" />
+3. Click on the dshare module
+4. Click on Install button
+5. Click on Next-Apps configurations button
+6. Configure the required env variables
+    * MANAGEMENT_URL: the management url for the local connector
+    * PARTICIPANT_ID_CONSUMER: the DID of the participant
+    * PROVIDER_PUBLIC_API: the provider url
+    * PARTICIPANT_ID_PROVIDER: the DID of the provider participant
+    &gt; This variables will be changed in the next version, since the url of the connector and did are known by dshare
+<img alt="DS2 DSHARE contavailable" src="../images/dsharevariablescont.png" />
+7. Click on Install Module button
+8. Navigate to the Installed Modules 
+9. When dshare module is running, click on the Open Module button to navigate to the dshare module or navigate via Dash Button
+<img alt="DS2 DSHARE contavailable" src="../images/dshareinstalledcont.png" /> 
+10. Enjoy dshare
+<img alt="DS2 DSHARE contavailable" src="../images/dsharemaincont.png" /></p>
+<h3 id="standalone-installation">Standalone Installation</h3>
+<h4 id="summary-of-installation-steps">Summary of installation steps</h4>
 <ol>
 <li>Clone the data share repo</li>
 <li>Tap into the dshare folder</li>
 <li>Run the bash dev-build.sh script to create and run the docker files</li>
 </ol>
-<h3 id="detailed-steps">Detailed steps</h3>
+<h4 id="detailed-steps">Detailed steps</h4>
 <ol>
 <li>Clone the code</li>
 </ol>
@@ -1759,12 +1874,12 @@
 <p>The module is composed of two parts: 
 - The Datashare Frontend: a vue.js frontend application to access the DSHARE backend.
 - The proxy server: for avoiding CORS issues.</p>
-<h3 id="installing-and-running-datashare-frontend">Installing and running DataShare Frontend</h3>
+<h5 id="installing-and-running-datashare-frontend">Installing and running DataShare Frontend</h5>
 <p>To install and run Dshare Frontend, from the dshare folder you need to run the following command</p>
 <p><code>bash dev-build.sh</code></p>
 <p>This will build all the docker images required to run the frontend and the backend and start the server which you will be able to see in the terminal</p>
 <p>Dshare will be accessable from the link <code>http://localhost:8081/datashare/</code></p>
-<h3 id="environemnt-variables-for-running-the-project-locally">Environemnt variables for running the project locally</h3>
+<h5 id="environemnt-variables-for-running-the-project-locally">Environemnt variables for running the project locally</h5>
 <p>To run the project locate the .env file in nodeJsProxy folder </p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">MANAGEMENT_URL</span><span class="o">=</span><span class="s2">&quot;https://datashare.ds2.icelab.cloud/consumer/cp&quot;</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nv">PARTICIPANT_ID_CONSUMER</span><span class="o">=</span><span class="s2">&quot;did:web:consumer-identityhub%3A7083:consumer&quot;</span>
@@ -1836,6 +1951,8 @@
 <p>A development version of Dshare is hosted on ICE servers at <a href="https://datashare.ds2.icelab.cloud/datashare/">https://datashare.ds2.icelab.cloud/datashare/</a></p>
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
 <p>Open APIs: <a href="https://datashare.ds2.icelab.cloud/proxy/api-docs/">https://datashare.ds2.icelab.cloud/proxy/api-docs/</a></p>
+<h2 id="video-link"><strong>Video Link</strong></h2>
+<p>Add here video link: <a href="https://">https://</a></p>
 <h2 id="additional-links"><strong>Additional Links</strong></h2>
 <p>N/A</p>
 

@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -1109,7 +1109,7 @@
   <span class="md-ellipsis">
     
   
-    Sovereignty-Decision-Support-System
+    SDS - Sovereignty-Decision-Support-System
   
 
     
@@ -1388,6 +1388,8 @@
 <li><strong>Credential Issuer:</strong> DS2 has developed its own credential issuer capable of generating signed VCs for companies, based on dataspace agreements.</li>
 <li><strong>IDM Portal:</strong> A comprehensive web interface (backend and frontend) for managing dataspaces, collaboration agreements, and company registrations within DS2.</li>
 <li><strong>EDC IdentityHub Integration:</strong> Successful integration allows for the hosting and management of VCs.</li>
+<li><strong>DAPS (Dynamic Attribute Provisioning Service):</strong> Omejdn-based DAPS for IDS connector authentication and dynamic attribute provisioning.</li>
+<li><strong>Object Storage:</strong> MinIO-based storage for file uploads and credential data.</li>
 </ul>
 <p>The module supports the registration of dataspaces, the establishment and management of collaboration agreements between them, and the registration of companies as DS2 members, all underpinned by a system of verifiable digital credentials.</p>
 <h2 id="architecture"><strong>Architecture</strong></h2>
@@ -1399,14 +1401,19 @@
 <p>The IDM comprises the following key components:</p>
 <p>IDM Portal:</p>
 <ul>
-<li><strong>Backend:</strong> Manages the business logic for dataspace registration, agreement workflows, company registration, and interactions with the credential issuer and wallet functionalities.</li>
-<li><strong>Frontend (UIs):</strong> Provides user interfaces for:<ul>
+<li><strong>Backend (idm-rest):</strong> A Python FastAPI service managing the business logic for dataspace registration, agreement workflows, company registration, and interactions with the credential issuer and wallet functionalities.<ul>
+<li>Integrates with MongoDB for data persistence, MinIO for object storage, and Keycloak for authentication.</li>
+<li>Exposes REST endpoints for Authentication, Catalogs, Collaboration, Connector Credentials, Configurations, Credentials, Dataspaces, DRM Policy Logs, Issuer, Membership Requests, Organizations, Participants, Seed Data, Tags, and Upload Files.</li>
+</ul>
+</li>
+<li><strong>Frontend (idm-app):</strong> A Vue.js 3 application providing user interfaces for:<ul>
 <li>Registration of dataspaces in DS2.</li>
 <li>Requesting collaboration and forming agreements between dataspaces.</li>
 <li>Searching for registered dataspaces.</li>
 <li>Accepting or rejecting collaboration agreements.</li>
 <li>Visualizing dataspace policies.</li>
 <li>Registering companies as members of DS2.</li>
+<li>Requesting and viewing peer credentials.</li>
 </ul>
 </li>
 <li><strong>DS2 Credentials Issuer:</strong> An implemented service capable of generating cryptographically signed Verifiable Credentials.<ul>
@@ -1418,6 +1425,9 @@
 </ul>
 </li>
 <li><strong>EDC IdentityHub Integration Layer:</strong> Manages the interaction with the EDC IdentityHub, enabling the storage and retrieval of Verifiable Credentials.</li>
+<li><strong>DAPS (omejdn-daps):</strong> Omejdn-based Dynamic Attribute Provisioning Service for IDS connector authentication, built on Omejdn Server with Config API and plugin support.</li>
+<li><strong>Object Storage (idm-minio):</strong> MinIO-based S3-compatible object storage used for file uploads and storing credential-related assets.</li>
+<li><strong>Database (idm-database):</strong> MongoDB database with replica-set support for storing IDM data, including dataspaces, organizations, users, credentials, and collaboration agreements.</li>
 <li><strong>Core Identity Logic:</strong> Underlying mechanisms for verifying membership of companies in their respective dataspaces and managing the lifecycle of identities and credentials within the DS2 ecosystem.</li>
 </ul>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
@@ -1449,10 +1459,14 @@
 <li>Inter-dataspace collaboration agreement management (requests, acceptance/rejection).</li>
 <li>Visualization of dataspace policies.</li>
 <li>Company registration for DS2 membership.</li>
+<li>Peer credential request and wallet view.</li>
 </ul>
 </li>
 <li><strong>EDC IdentityHub Integration:</strong> Successfully achieved for robust VC hosting.</li>
 <li><strong>Wallet Functionality:</strong> Allows companies to manage and present their digital credentials.</li>
+<li><strong>DAPS Connector Authentication:</strong> Omejdn-based DAPS for IDS connector identity and dynamic attribute provisioning.</li>
+<li><strong>Object Storage:</strong> MinIO-based S3-compatible storage for file uploads and credential assets.</li>
+<li><strong>Keycloak Authentication:</strong> SSO integration for user authentication and authorization.</li>
 <li><strong>Decentralized Identity Principles:</strong> Aligns with modern approaches to identity management, enhancing security and user control.</li>
 <li><strong>Membership Verification:</strong> Mechanisms to verify company membership within specific dataspaces.</li>
 <li><strong>Secure Inter-Dataspace Communication:</strong> Facilitates trust by ensuring participants are authenticated and authorized.</li>
@@ -1468,13 +1482,15 @@ Recommended: 4 cpu cores, 8 GB RAM and 50 GB disk capacity.</p>
 <p>Steps consider the download, compilation and deployment of the different parts of the software.</p>
 <h3 id="detailed-steps">Detailed steps</h3>
 <p>Clone the code
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://git.icelab.cloud/ds2/idm.git
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://github.com/ds2-eu/identity.git
 </span></code></pre></div>
-The module is composed of three parts:</p>
+The module is composed of the following parts:</p>
 <ul>
-<li>IDM Portal: Fronend of the app providing functionality for creating dataspaces, establishing collaboration agreements, and requesting verifiable credentials.</li>
-<li>IDM Backend: A REST API for the IDM Portal to interact with the EDC IdentityHub and the Verifiable Credentials Issuer. </li>
-<li>IDM database: A database for storing the IDM data. </li>
+<li><strong>idm-app:</strong> Vue.js 3 frontend of the app providing functionality for creating dataspaces, establishing collaboration agreements, and requesting verifiable credentials.</li>
+<li><strong>idm-rest:</strong> Python FastAPI backend REST API for the IDM Portal to interact with the database, MinIO, EDC IdentityHub, and the Verifiable Credentials Issuer.</li>
+<li><strong>idm-database:</strong> MongoDB database for storing the IDM data.</li>
+<li><strong>idm-minio:</strong> MinIO object storage for file uploads and credential assets.</li>
+<li><strong>omejdn-daps:</strong> Omejdn-based DAPS for IDS connector authentication and dynamic attribute provisioning.</li>
 </ul>
 <p>Run the command
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./dev-rebuild.sh
@@ -1509,9 +1525,17 @@ The module is composed of three parts:</p>
 <h2 id="other-information"><strong>Other Information</strong></h2>
 <p>No other information at the moment for IDM</p>
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
-<p>TBC</p>
+<p>The IDM REST API exposes an auto-generated OpenAPI specification and interactive documentation:</p>
+<ul>
+<li>Swagger UI: <code>http://localhost:48087/idm-api/docs</code></li>
+<li>ReDoc: <code>http://localhost:48087/idm-api/redoc</code></li>
+<li>OpenAPI JSON: <code>http://localhost:48087/idm-api/openapi.json</code></li>
+</ul>
 <h2 id="additional-links"><strong>Additional Links</strong></h2>
-<p>TBC</p>
+<ul>
+<li>IDM GitHub Repository: <a href="https://github.com/ds2-eu/identity">https://github.com/ds2-eu/identity</a></li>
+<li>IDM Progress Project: <a href="https://github.com/orgs/ds2-eu/projects/8">https://github.com/orgs/ds2-eu/projects/8</a></li>
+</ul>
 
 
 

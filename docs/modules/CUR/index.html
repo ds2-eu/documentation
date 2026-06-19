@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -1171,7 +1171,7 @@
   <span class="md-ellipsis">
     
   
-    Sovereignty-Decision-Support-System
+    SDS - Sovereignty-Decision-Support-System
   
 
     
@@ -1617,12 +1617,12 @@ To preprocess, first run <code>python preprocess_greek_usecase.py --config_file 
 <li>Install inside the virtual environment the required modules: <code>pip install -r requirements.txtx</code></li>
 </ul>
 <p>Once the environment is set up, the CUR module can be run.  Note that the CUR module requires access to an LLM. The access key for the LLM can be defined by configuring and environment variable, LLM_APIKEY, in your sheel.  If this is not configured, then at runtime the module will request the key value.</p>
-<p>The CUR module is invoked as follows:</p>
+<p>The CUR module is invoked as follows (substitute in the correct values for '<url> ):</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python ds2_federation_main.py \
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>--prefix {Slovenia, Romania, Greece} \
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>--name llama-3-3-70b-instruct \
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>--id meta-llama/llama-3-3-70b-instruct \
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>--url https://{url}/\{model_name\}/v1
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>--url https://&lt;url&gt;/\{model_name\}/v1
 </span></code></pre></div>
 <p>where the value for "prefix" is the as described in the previous section for setting up the db, and the value for "url" is the base address of the LLM (i.e without the model name).  CUR uses llama-3-3-70b-instruct as its default model.  This can be overridden by using the --name and --id command line values (e.g. --name llama-3-3-70b-instruct --id meta-llama/llama-3-3-70b-instruct).  Note that the accuracy of the NL2SQL translation in the CUR module may depend on the model used.</p>
 <h3 id="running-with-ollama">Running with ollama</h3>
@@ -1638,7 +1638,7 @@ To preprocess, first run <code>python preprocess_greek_usecase.py --config_file 
 </ol>
 <p><code>docker build -t federation:latest -f Dockerfile_federation .</code></p>
 <ol>
-<li>Run the docker image:</li>
+<li>Run the docker image (substitute in the correct values for 'url' and 'model_name'):</li>
 </ol>
 <p><code>docker run --rm \
 -e LLM_APIKEY="${LLM_APIKEY}" \
@@ -1648,7 +1648,7 @@ To preprocess, first run <code>python preprocess_greek_usecase.py --config_file 
   --prefix Slovenia \
   --name llama-3-3-70b-instruct \
   --id meta-llama/llama-3-3-70b-instruct \
-  --url https://inference-3scale-apicast-production.apps.rits.fmaas.res.ibm.com/\{model_name\}/v1 \
+  --url https://&lt;url&gt;/\{model_name\}/v1\ \
   --loglevel ERROR \
   --dbhost host.docker.internal</code></p>
 <p>Note: On Linux add:
