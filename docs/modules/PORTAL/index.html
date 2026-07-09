@@ -307,34 +307,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../CAT/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CAT - Catalogue
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../CLM/" class="md-nav__link">
         
   
@@ -643,6 +615,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../GCAT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAT - Catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../IDM/" class="md-nav__link">
         
   
@@ -679,6 +679,62 @@
     
   
     IDT - IDT Broker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LCAT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LCAT - Local Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LIDM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CREDENTIAL MANAGER
   
 
     
@@ -1782,7 +1838,9 @@
 </li>
 <li>
 <p>Pull the docker images form the GitHub repository
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/ds2-eu/ds2charts/portal:1.2.6
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/ds2-eu/ds2charts/portal:2.0.3
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/ds2-eu/ds2charts/portal-api:2.0.4
 </span></code></pre></div></p>
 <blockquote>
 <p>You will need to log in the registry using docker login ghcr.io</p>
@@ -1792,24 +1850,24 @@
 <p>Run the docker images</p>
 <ul>
 <li>The Portal API
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>portal-api<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:3000<span class="w"> </span>-e<span class="w"> </span><span class="nv">IMAGE_GITHUB_REPONAME</span><span class="o">=</span><span class="s2">&quot;test-avatar&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">DASHBUTTON_LINKS</span><span class="o">=</span><span class="s1">&#39;{&quot;local&quot;: [{&quot;name&quot;: &quot;IDT&quot;, &quot;url&quot;: &quot;idt.ds2&quot;, &quot;icon&quot;: &quot;fa-brands fa-uncharted&quot;}, {&quot;name&quot;: &quot;Containerization&quot;, &quot;url&quot;: &quot;containerization.ds2&quot;, &quot;icon&quot;: &quot;fa-solid fa-server&quot;}], &quot;global&quot;: [{&quot;name&quot;: &quot;IDM&quot;, &quot;url&quot;: &quot;idm.ds2&quot;, &quot;icon&quot;: &quot;fa-solid fa-file-shield&quot;}, {&quot;name&quot;: &quot;Catalog&quot;, &quot;url&quot;: &quot;catalog.ds2&quot;, &quot;icon&quot;: &quot;fa-solid fa-folder-tree&quot;}, {&quot;name&quot;: &quot;Marketplace&quot;, &quot;url&quot;: &quot;https://marketplace.ds2.icelab.cloud&quot;, &quot;icon&quot;: &quot;fa-solid fa-cart-arrow-down&quot;}, {&quot;name&quot;: &quot;Chat&quot;, &quot;url&quot;: &quot;chat.ds2&quot;, &quot;icon&quot;: &quot;fa-regular fa-comment-dots&quot;}] }&#39;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">KEYCLOAK_URL</span><span class="o">=</span><span class="s1">&#39;https://keycloak.ds2.icelab.cloud&#39;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">REALM_NAME</span><span class="o">=</span>ds2<span class="w"> </span>-e<span class="w"> </span><span class="nv">CLIENT_ID</span><span class="o">=</span>portal-api<span class="w">  </span>-e<span class="w"> </span><span class="nv">CLIENT_SECRET</span><span class="o">=</span>RT7FdTDKbSI6CsU8DKosHtnw5PHRIblM<span class="w"> </span>-e<span class="w"> </span><span class="nv">DASHBUTTON_MENU_LINKS</span><span class="o">=</span><span class="s1">&#39;[{&quot;name&quot;: &quot;Marketplace&quot;, &quot;icon&quot;: &quot;fa-solid fa-cart-shopping&quot;, &quot;url&quot;: &quot;https://marketplace.ds2.icelab.cloud/&quot;}, {&quot;name&quot;: &quot;Chat&quot;, &quot;icon&quot;: &quot;fa-regular fa-comment-dots&quot;, &quot;url&quot;: &quot;http://chat&quot;}]&#39;</span><span class="w"> </span>ghcr.io/ds2-eu/ds2charts/portal-api:1.2.0
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>portal-api<span class="w"> </span>-d<span class="w"> </span>--restart<span class="w"> </span>unless-stopped<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:3000<span class="w"> </span>-e<span class="w"> </span><span class="nv">IMAGE_GITHUB_REPONAME</span><span class="o">=</span><span class="s2">&quot;avatar-repo&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">KEYCLOAK_URL</span><span class="o">=</span><span class="s1">&#39;https://keycloak.ds2.icelab.cloud&#39;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">REALM_NAME</span><span class="o">=</span>ds2<span class="w"> </span>-e<span class="w"> </span><span class="nv">CLIENT_ID</span><span class="o">=</span>portal-api<span class="w"> </span>-e<span class="w"> </span><span class="nv">CLIENT_SECRET</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">IMAGE_GITHUB_TOKEN</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">IMAGE_GITHUB_USERNAME</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">DATABASE_URL</span><span class="o">=</span><span class="s2">&quot;file:/usr/src/app/data/dev.db&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">GITHUB_TOKEN</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">GITHUB_ORG</span><span class="o">=</span><span class="s2">&quot;ds2-eu&quot;</span><span class="w"> </span>ghcr.io/ds2-eu/ds2charts/portal-api:2.0.4
 </span></code></pre></div></li>
 <li>The Portal Frontend
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>portal<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">4200</span>:80<span class="w"> </span>-e<span class="w"> </span><span class="nv">PORTAL_URL</span><span class="o">=</span><span class="s2">&quot;https://portal.ds2.icelab.cloud&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">PORTAL_API</span><span class="o">=</span><span class="s2">&quot;https://portal-api.ds2.icelab.cloud&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">DISABLE_APPLICATION_TAB</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">REDIRECT_URL</span><span class="o">=</span><span class="s2">&quot;https://portal.ds2.icelab.cloud/dashboard&quot;</span><span class="w"> </span>-e<span class="w">  </span><span class="nv">CLIENT_ID</span><span class="o">=</span>dashbtn<span class="w"> </span>-e<span class="w"> </span><span class="nv">REALM</span><span class="o">=</span>ds2<span class="w"> </span>-e<span class="w"> </span><span class="nv">SHOW_POST_LOGIN_TEXT</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">APP_DISPLAY_NAME</span><span class="o">=</span><span class="s2">&quot;Modules&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">OTHER_LINK_DISPLAY_NAME</span><span class="o">=</span><span class="s2">&quot;Default Modules&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">KEYCLOAK_URL</span><span class="o">=</span><span class="s2">&quot;https://keycloak.ds2.icelab.cloud&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">DEPLOYMENT_MODE</span><span class="o">=</span>global<span class="w"> </span>-e<span class="w"> </span><span class="nv">SHOW_ONBOARDING_MESSAGE</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span>portal:1.2.6
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>portal<span class="w"> </span>-d<span class="w"> </span>--restart<span class="w"> </span>unless-stopped<span class="w"> </span>-p<span class="w"> </span><span class="m">4200</span>:80<span class="w"> </span>-e<span class="w"> </span><span class="nv">PORTAL_API</span><span class="o">=</span><span class="s2">&quot;https://portal-api.ds2.icelab.cloud&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">REDIRECT_URL</span><span class="o">=</span><span class="s2">&quot;https://portal.ds2.icelab.cloud/dashboard&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">SHOW_POST_LOGIN_TEXT</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">DEPLOYMENT_MODE</span><span class="o">=</span>global<span class="w"> </span>-e<span class="w"> </span><span class="nv">SHOW_ONBOARDING_MESSAGE</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">REPOSITORY_API_KEY</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span>ghcr.io/ds2-eu/ds2charts/portal:2.0.3
 </span></code></pre></div></li>
 </ul>
 </li>
 </ol>
 <h4 id="marketplace_1">Marketplace</h4>
 <h4 id="dash-button_1">Dash Button</h4>
-<p>To install the dash-button web component, copy and paste it into your frontend application.</p>
+<p>To use the DashButton web component, copy and paste the following <script> tag into your application's header (<head> section).</p>
 <blockquote>
 <p><strong>Note:</strong> Please refer to the <a href="https://www.npmjs.com/package/dash-button-web">npm package page</a> to find the latest version, and replace <code>X.X.X</code> in the import script accordingly:
-<div class="language-html highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/dash-button-web@X.X.X/dist/esm/web-compnont.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/dash-button-web@X.X.X/dist/esm/web-compnont.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></code></pre></div></p>
 <p>Note: Starting from v0.0.16, you need to add the FontAwesome stylesheet file to your application. If your application is already using this package, you can ignore this.</p>
 </blockquote>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css&quot;</span> <span class="p">/&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css&quot;</span> <span class="p">/&gt;</span>
 </span></code></pre></div>
 <p>You can find the NPM package named <a href="https://www.npmjs.com/package/dash-button-web" title="dash-button-web">dash-button-web</a>.</p>
 <p>If it is a framework, you will need to configure more options. Therefore, follow the <a href="https://stenciljs.com/" title="Stencil.js">Stencil.js</a> documentation. </p>
@@ -1835,27 +1893,30 @@
 </ul>
 <p>Here, we are demonstrating how to configure the application on an Angular-based application and a basic HTML-based application. If you need to install React or Vue.js, follow the Stencil.js documentation.</p>
 <p>First, you need to enable the custom component support feature in the Angular project. To do that, the following code block needs to be added to the <code>src/app/app.module.ts</code> file.</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>@NgModule<span class="o">({</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span>…
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span>schemas:<span class="w"> </span><span class="o">[</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span>CUSTOM_ELEMENTS_SCHEMA
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="o">]</span>,
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="o">})</span>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>@NgModule<span class="o">({</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span>…
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span>schemas:<span class="w"> </span><span class="o">[</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span>CUSTOM_ELEMENTS_SCHEMA
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="o">]</span>,
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="o">})</span>
 </span></code></pre></div>
 <p>Once the above addition is completed, it is required to import the below module as follows.</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>import<span class="w"> </span><span class="o">{</span><span class="w"> </span>CUSTOM_ELEMENTS_SCHEMA<span class="o">}</span><span class="w"> </span>from<span class="w"> </span><span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>import<span class="w"> </span><span class="o">{</span><span class="w"> </span>CUSTOM_ELEMENTS_SCHEMA<span class="o">}</span><span class="w"> </span>from<span class="w"> </span><span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
 </span></code></pre></div>
 <p>Next, you need to put the script file path in the <strong>src/index.html</strong> file header section as follows.</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>&lt;head&gt;
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span>&lt;meta<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;viewport&quot;</span><span class="w"> </span><span class="nv">content</span><span class="o">=</span><span class="s2">&quot;width=device-width, initial-scale=1&quot;</span>&gt;
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span>&lt;link<span class="w"> </span><span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;icon&quot;</span><span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;image/x-icon&quot;</span><span class="w"> </span><span class="nv">href</span><span class="o">=</span><span class="s2">&quot;favicon.ico&quot;</span>&gt;
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w"> </span>&lt;script<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s1">&#39;module&#39;</span><span class="w"> </span><span class="nv">src</span><span class="o">=</span><span class="s1">&#39;https://unpkg.com/dash-button-web@X.X.X/dist/esm/web-compnont.js&#39;</span>&gt;&lt;/script&gt;
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w"> </span>&lt;link<span class="w"> </span><span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span><span class="w"> </span><span class="nv">href</span><span class="o">=</span><span class="s2">&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css&quot;</span><span class="w"> </span>/&gt;
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>...
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&lt;head&gt;
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span>&lt;meta<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;viewport&quot;</span><span class="w"> </span><span class="nv">content</span><span class="o">=</span><span class="s2">&quot;width=device-width, initial-scale=1&quot;</span>&gt;
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span>&lt;link<span class="w"> </span><span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;icon&quot;</span><span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;image/x-icon&quot;</span><span class="w"> </span><span class="nv">href</span><span class="o">=</span><span class="s2">&quot;favicon.ico&quot;</span>&gt;
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w"> </span>&lt;script<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s1">&#39;module&#39;</span><span class="w"> </span><span class="nv">src</span><span class="o">=</span><span class="s1">&#39;https://unpkg.com/dash-button-web@X.X.X/dist/esm/web-compnont.js&#39;</span>&gt;&lt;/script&gt;
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w"> </span>&lt;link<span class="w"> </span><span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span><span class="w"> </span><span class="nv">href</span><span class="o">=</span><span class="s2">&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css&quot;</span><span class="w"> </span>/&gt;
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>...
 </span></code></pre></div>
-<p>After that, you can pass configuration options as follows using the web component.</p>
+<p>After adding the script, you can use the DashButton web component in your application. Most configuration is automatically retrieved from the     backend.</p>
+<blockquote>
+<p>Note: From version v0.0.17 onward, Keycloak configuration is no longer required. These settings have been removed from the DashButton configuration and are automatically retrieved from the Portal API backend. Please ensure that the portal-api-url is configured correctly.</p>
+</blockquote>
 <ul>
 <li>
 <p>Configuration options</p>
@@ -1870,20 +1931,8 @@
 </thead>
 <tbody>
 <tr>
-<td><code>client-id</code></td>
-<td><code>Keycloak client ID</code></td>
-<td><code>string</code></td>
-<td>``</td>
-</tr>
-<tr>
-<td><code>keycloak-uri</code></td>
-<td><code>Keycloak server URI</code></td>
-<td><code>string</code></td>
-<td><code>"http://localhost:8080"</code></td>
-</tr>
-<tr>
-<td><code>realm</code></td>
-<td><code>Keycloak realm</code></td>
+<td><code>portal-api-url</code></td>
+<td><code>Portal API URL</code></td>
 <td><code>string</code></td>
 <td>``</td>
 </tr>
@@ -1904,54 +1953,6 @@
 <td><code>Authentication method</code></td>
 <td><code>string</code></td>
 <td><code>check-sso</code>, <code>(login-required)</code></td>
-</tr>
-<tr>
-<td><code>app-id</code></td>
-<td><code>Application unique ID</code></td>
-<td><code>string</code></td>
-<td>``</td>
-</tr>
-<tr>
-<td><code>portal-url</code></td>
-<td><code>Portal URL</code></td>
-<td><code>string</code></td>
-<td>``</td>
-</tr>
-<tr>
-<td><code>portal-api-url</code></td>
-<td><code>Portal API URL</code></td>
-<td><code>string</code></td>
-<td>``</td>
-</tr>
-<tr>
-<td><code>show-unauthorized-modal</code></td>
-<td><code>Show unauthorized modal</code></td>
-<td><code>boolean</code></td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td><code>other-link-type</code></td>
-<td><code>Add new links for the menu</code></td>
-<td><code>string</code></td>
-<td><code>local or global</code></td>
-</tr>
-<tr>
-<td><code>application-display-name</code></td>
-<td><code>Menu application display name</code></td>
-<td><code>string</code></td>
-<td><code>Applications</code></td>
-</tr>
-<tr>
-<td><code>disable-application-tab</code></td>
-<td><code>disable application tab</code></td>
-<td><code>boolean</code></td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td><code>menu-view-type</code></td>
-<td><code>the style of the menu</code></td>
-<td><code>string</code></td>
-<td><code>grid/list</code></td>
 </tr>
 </tbody>
 </table>
@@ -1996,13 +1997,13 @@ Using the auth-method attribute updates the application's authentication workflo
 </blockquote>
 <p>To get the module link for the Dashbutton, use the <strong>portal-api-url</strong> attribute and provide the Portal backend API endpoint URL.
   For the DS2 platform, you can use <strong>https://portal-api.ds2.icelab.cloud</strong> as the Portal API URL..</p>
-<p><div class="language-sh highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&lt;dash-button<span class="w"> </span>keycloak-uri<span class="o">=</span><span class="s2">&quot;http://localhost:8080&quot;</span><span class="w"> </span><span class="nv">realm</span><span class="o">=</span><span class="s2">&quot;demo&quot;</span><span class="w"> </span>client-id<span class="o">=</span><span class="s2">&quot;testapp&quot;</span><span class="w"> </span>portal-api-url<span class="o">=</span><span class="s2">&quot;replace_url&quot;</span><span class="w"> </span>auth-method<span class="o">=</span><span class="s2">&quot;login-required&quot;</span><span class="w"> </span>show-post-login-text<span class="o">=</span><span class="s2">&quot;false&quot;</span>&gt;&lt;/dash-button&gt;
+<p><div class="language-sh highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>&lt;dash-button<span class="w"> </span>keycloak-uri<span class="o">=</span><span class="s2">&quot;http://localhost:8080&quot;</span><span class="w"> </span><span class="nv">realm</span><span class="o">=</span><span class="s2">&quot;demo&quot;</span><span class="w"> </span>client-id<span class="o">=</span><span class="s2">&quot;testapp&quot;</span><span class="w"> </span>portal-api-url<span class="o">=</span><span class="s2">&quot;replace_url&quot;</span><span class="w"> </span>auth-method<span class="o">=</span><span class="s2">&quot;login-required&quot;</span><span class="w"> </span>show-post-login-text<span class="o">=</span><span class="s2">&quot;false&quot;</span>&gt;&lt;/dash-button&gt;
 </span></code></pre></div>
-  After that test your application can be test with user credentials and then you can get an output similar to this.</p>
+  After configuration is completed correctly, the Dash Button will be integrated into the application and ready for use. Verification can be done by signing in with user credentials.</p>
 <blockquote>
 <p>Note: You need to create a new user. Please access the portal and create an account associated with your organization.</p>
 </blockquote>
-<p>Additionally you can test some of the demo applications located in the Portal repository dash-button/demo-app/ folder (see additinal links)</p>
+<p>Additionally you can test some of the demo applications located in the Portal repository <strong>dash-button/demo-app/</strong> folder (see additinal links)</p>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
 <p>The next sections describe how to use the different components part of the Portal</p>
 <h3 id="portal_2">Portal</h3>
@@ -2011,23 +2012,35 @@ Using the auth-method attribute updates the application's authentication workflo
 <p>You need to first register your organisation to be able to log in. Click on Create an account and enter the required details.
 First enter the name of the new organisation and click Next to check whether it already exists or not in the system.
 <img alt="Portal-RegisterOrganisation" src="../images/Portal-registerorganisation.JPG" /></p>
-<p>Then enter all the details required for the organisation registration and click Register.
-<img alt="Portal-RegisterOrganisation2" src="../images/Portal-registerorganisation2.JPG" /> </p>
+<p>Then fill in all the required details for the organization registration form.</p>
+<p align="center">
+  <img src="./images/Portal-registerorganisation2.png" width="1000">
+</p>
+
+<p>Agree to the DS2 policy and click Register.</p>
+<p align="center">
+  <img src="./images/Portal-registerorganisationterms.png" width="1000">
+</p>
+
 <p>After that, organisation is registered.
-<img alt="Portal-RegisteredOrganisation" src="../images/Portal-registeredorganisation.JPG" /></p>
+<img alt="Portal-RegisteredOrganisation" src="../images/Portal-registeredorganisation.png" /></p>
 <p>User can now log in with newly created organisation and username.
-<img alt="Portal-LogIn" src="../images/Portal-login.JPG" /></p>
+<img alt="Portal-LogIn" src="../images/Portal-login.png" /></p>
 <p>User will receive a verification email upon first login attempt
-<img alt="Portal-LogIn" src="../images/Portal-email.JPG" /></p>
+<img alt="Portal-LogIn" src="../images/Portal-email.png" /></p>
 <p>Once logged in there is a guided tour on the different options available that uses can follow.
-<img alt="Portal-Tour" src="../images/Portal-tour.JPG" /></p>
-<p>The main Dashboard of the Portal shows the list of default central modules running in the DS2 Cloud Platform ie. IDM, Catalog, Marketplace and Chat at the moment. The list will evolve as new features are added to DS2.
-<img alt="Portal-MainDashboard" src="../images/Portal-maindashboard.JPG" /></p>
-<p>In the left navigation bar users can access and edit the profile information.
-<img alt="Portal-Profile" src="../images/Portal-profile.JPG" /></p>
-<p>The Dataspaces option which links to the IDM (see IDM documentation). So far this is a link but researching to embedd the functionality inside the Portal.</p>
-<p>The Users option allows creating new users for this organisation. Click on Add new user and enter the details.
-<img alt="Portal-Profile" src="../images/Portal-users.JPG" /></p>
+<img alt="Portal-Tour" src="../images/Portal-tour.png" /></p>
+<p>The main Dashboard of the Portal displays the default central modules running on the DS2 Cloud Platform, including IDM, Catalog, Marketplace, Chat, and more. For first-time users, the Dashboard also highlights any required profile fields that must be completed to enable full access to IDT and the DS2 ecosystem.
+<img alt="Portal-MainDashboard" src="../images/Portal-maindashboard.png" /></p>
+<p>The left navigation menu is organized into four main sections: Profile, Organization, DS2, and Admin. Each section provides access to different Portal features and management tasks.</p>
+<ul>
+<li>Profile – View and update personal profile information.</li>
+<li>Organization – Manage organization details, users, and other organization-related settings.</li>
+<li>DS2 – Access and manage dataspaces, catalogs, and documentation.</li>
+<li>Admin – Available only to administrator users. This section provides interfaces to manage Portal administration features, including dynamic registration forms, Dashboard configuration, policies, DLM settings, and other platform configurations.</li>
+</ul>
+<p><img alt="Portal-Directory" src="../images/Portal-directory.png" />
+<img alt="Portal-DashbuttonConfig" src="../images/Portal-dashbuttonconfig.png" /></p>
 <p>In addition, the Portal already includes the DashButton which is described in the DashButton section.</p>
 <h3 id="marketplace_2">Marketplace</h3>
 <p>The Marketplace includes two main different views. The first one is the so called Marketplace for users to be able to purchase modules. The second one is the Product License Manager aimed at module developers to be able to publish their modules and monitor sales.</p>
@@ -2041,7 +2054,7 @@ First enter the name of the new organisation and click Next to check whether it 
 </li>
 </ul>
 <h3 id="dash-button_2">Dash Button</h3>
-<p>The Dash Button provides one key functionality from the user point of view which is enabling navigation between modules, by providing a pop-up dialog with the list of modules installed.</p>
+<p>The Dash Button provides a convenient way for users to navigate between installed modules by displaying a pop-up dialog containing the list of available modules. In the latest version, Dash Button management is integrated into the Portal Dashboard, allowing administrators to update the default configuration easily without reinstalling or manually modifying the existing setup.</p>
 <p>First you click on the dash button, typically in the top right of the navigation bar and the main dialog is displayed which contains </p>
 <ul>
 <li>Info on the current user logged in</li>
@@ -2049,7 +2062,7 @@ First enter the name of the new organisation and click Next to check whether it 
 <li>The Main list which contains a link back to the Portal, the Logout button and the Modules link that displays a second pop-up dialog with the list of modules that the user has available in the Global Portal or the IDT</li>
 </ul>
 <p>The next figure shows an example of the main pop-up dialog of the Dash Button in the Global Portal</p>
-<p><img alt="Portal-DashButton" src="../images/Portal-dashbutton.JPG" /></p>
+<p><img alt="Portal-DashButton" src="../images/Portal-dashbutton.png" /></p>
 <p>When clicking on the Modules icon, the second pop-up dialog with the list of available modules is displayed. The next figure shows and example of the Modules pop-up dialog of the Dash Button in the Local IDT Portal.</p>
 <p><img alt="Portal-DashButtonModules" src="../images/Portal-dashbuttonmodules.JPG" /> </p>
 <h2 id="other-information"><strong>Other Information</strong></h2>

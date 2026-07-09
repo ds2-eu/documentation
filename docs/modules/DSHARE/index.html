@@ -307,34 +307,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../CAT/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CAT - Catalogue
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../CLM/" class="md-nav__link">
         
   
@@ -1034,6 +1006,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../GCAT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAT - Catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../IDM/" class="md-nav__link">
         
   
@@ -1070,6 +1070,62 @@
     
   
     IDT - IDT Broker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LCAT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LCAT - Local Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LIDM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CREDENTIAL MANAGER
   
 
     
@@ -1836,12 +1892,9 @@
 4. Click on Install button
 5. Click on Next-Apps configurations button
 6. Configure the required env variables
-    * MANAGEMENT_URL: the management url for the local connector
-    * PARTICIPANT_ID_CONSUMER: the DID of the participant
-    * PROVIDER_PUBLIC_API: the provider url
-    * PARTICIPANT_ID_PROVIDER: the DID of the provider participant
-    &gt; This variables will be changed in the next version, since the url of the connector and did are known by dshare
-<img alt="DS2 DSHARE contavailable" src="../images/dsharevariablescont.png" />
+    * DOMAIN: The connector domain
+    * ORGANISATION: organisation name that you set
+<img alt="DS2 DSHARE contavailable" src="../images/dshareenv.png" />
 7. Click on Install Module button
 8. Navigate to the Installed Modules 
 9. When dshare module is running, click on the Open Module button to navigate to the dshare module or navigate via Dash Button
@@ -1880,13 +1933,11 @@
 <p>This will build all the docker images required to run the frontend and the backend and start the server which you will be able to see in the terminal</p>
 <p>Dshare will be accessable from the link <code>http://localhost:8081/datashare/</code></p>
 <h5 id="environemnt-variables-for-running-the-project-locally">Environemnt variables for running the project locally</h5>
-<p>To run the project locate the .env file in nodeJsProxy folder </p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">MANAGEMENT_URL</span><span class="o">=</span><span class="s2">&quot;https://datashare.ds2.icelab.cloud/consumer/cp&quot;</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nv">PARTICIPANT_ID_CONSUMER</span><span class="o">=</span><span class="s2">&quot;did:web:consumer-identityhub%3A7083:consumer&quot;</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nv">PROVIDER_PUBLIC_API</span><span class="o">=</span><span class="s2">&quot;https://datashare.ds2.icelab.cloud/provider-qna/public&quot;</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nv">PARTICIPANT_ID_PROVIDER</span><span class="o">=</span><span class="s2">&quot;did:web:provider-identityhub%3A7083:provider&quot;</span>
+<p>To run the project locate the docker-compose.yml file</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">   </span>DOMAIN:<span class="w"> </span>idta.ds2.icelab.cloud
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">   </span>ORGANISATION:<span class="w"> </span>idta
 </span></code></pre></div>
-<p>These variables are setup to use the connector that's deployed on ICE servers. </p>
+<p>These variables are setup to use the IDTA connector. </p>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
 <p>First of all be sure that you understand the mechanism of transfering data using EDC, as initially the datashare component will be using MVD hosted on ICE server. DShare contains a provider hub and a consumer hub.</p>
 <h3 id="accessing-the-provider-hub">Accessing the Provider Hub</h3>
@@ -1895,8 +1946,8 @@
 <li>This page shows the dashboard of the provider-hub, you can see all the contracts the provider has. Clicking the details button opens a detailed page that shows more infomration about the consumer</li>
 </ul>
 <p><strong>Note:</strong> If prompted to login please use the following credentials.</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Username:<span class="w"> </span>kronos
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Password:<span class="w"> </span>kronos
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Username:<span class="w"> </span>idta
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Password:<span class="w"> </span>idta
 </span></code></pre></div>
 <h4 id="provider-hub-dashboard-page"><strong>Provider Hub Dashboard Page</strong></h4>
 <ul>
