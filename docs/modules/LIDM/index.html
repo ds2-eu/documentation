@@ -23,7 +23,7 @@
     
     
       
-        <title>CREDENTIAL MANAGER - Documentation DS2</title>
+        <title>LIDM - Credential Manager - Documentation DS2</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#credential-manager" class="md-skip">
+        <a href="#lidm-credential-manager" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CREDENTIAL MANAGER
+              LIDM - Credential Manager
             
           </span>
         </div>
@@ -743,7 +743,7 @@
   <span class="md-ellipsis">
     
   
-    CREDENTIAL MANAGER
+    LIDM - Credential Manager
   
 
     
@@ -761,7 +761,7 @@
   <span class="md-ellipsis">
     
   
-    CREDENTIAL MANAGER
+    LIDM - Credential Manager
   
 
     
@@ -1617,7 +1617,7 @@
 
 
 
-<h1 id="credential-manager">CREDENTIAL MANAGER</h1>
+<h1 id="lidm-credential-manager">LIDM - Credential Manager</h1>
 <table>
 <thead>
 <tr>
@@ -1685,14 +1685,8 @@
 </li>
 </ul>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
-<p>A static walk-through of the dashboard is available below.</p>
-<p><img alt="Credential Manager Dashboard" src="../images/credentialmanager-screenshots.png" /></p>
-<p>Individual panes (wallet, expiration monitor, credential type builder, issuer request, self-sign, downloadable credentials, puller admin, participant DID modal)
-<img alt="Credential Manager Wallet" src="../images/credentialmanager-wallet.png" />
-<img alt="Credential Manager Credential Expiration" src="../images/credentialmanager-expiration.png" />
-<img alt="Credential Manager Credential Downloadable Credentials" src="../images/credentialmanager-downloadable.png" />
-<img alt="Credential Manager Credential Puller" src="../images/credentialmanager-puller.png" />
-<img alt="Credential Manager Credential Participant DID" src="../images/credentialmanager-participantdid.png" /></p>
+<p>A static walkthrough of the dashboard is available below.</p>
+<p><img alt="Credential Manager Dashboard" src="./images/credentialmanager-screenshots.img" /></p>
 <h2 id="commercial-information"><strong>Commercial Information</strong></h2>
 <table>
 <thead>
@@ -1708,27 +1702,26 @@
 <td><a href="https://informationcatalyst.com">ICE</a></td>
 <td>Open Source</td>
 <td>Apache 2.0</td>
-<td>credentialmanager</td>
+<td>credentialmanager <a href="https://marketplacefrontend.central.ds2.icelab.cloud/products/2adb8103-e490-4f5b-abd9-403cf9771d4e">https://marketplacefrontend.central.ds2.icelab.cloud/products/2adb8103-e490-4f5b-abd9-403cf9771d4e</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="top-features"><strong>Top Features</strong></h2>
 <ol>
-<li><strong>Connector-edge wallet (Accepted Credentials pane):</strong> stacked-card visualisation with full credential JSON view, issuer, holder, claim subject, status, expiration and policy lookup. Filter and search by claim value or credential type.</li>
-<li><strong>Expiration Monitor:</strong> filterable timelines for expired/expiring-soon/valid credentials; sort by expiration date, issuance date or credential type.</li>
-<li><strong>IdentityHub participant lifecycle:</strong> create, set active state, publish DID, register service endpoints (<code>CredentialService</code>, optional <code>ProtocolEndpoint</code>) and inspect the resulting DID document directly in the UI.</li>
-<li><strong>Multi-tenant Issuer configuration:</strong> maintain one or more issuer entries per connector DID, with explicit default selection; add/edit/remove/reset without restarting the service.</li>
-<li><strong>IssuerService Admin proxy:</strong> list, create, push, and recreate credential definitions and Passthrough attestations from the dashboard.</li>
-<li><strong>DCP credential request flow:</strong> request a Verifiable Credential from a selected IssuerService, poll the resulting request to completion, and auto-register the finished credential into the global DS2 Repository.</li>
-<li><strong>IDM signing integration (sync fallback):</strong> alternative issuance via the global IDM <code>/credentials/sign</code> endpoint for both standard claim-based types (<code>MembershipCredential</code>, <code>AgreementCredential</code>, <code>AcquisitionCredential</code>) and fully custom credential contexts via <code>/credentials/sign-custom</code>.</li>
+<li><strong>Connector-edge wallet (Accepted Credentials pane):</strong> stacked-card visualisation with full credential JSON view, issuer, holder, claim subject, status, expiration and policy lookup. Filter and search by claim value or credential type.
+<img alt="Credential Manager Wallet" src="../images/credentialmanager-wallet.png" /></li>
+<li><strong>Expiration Monitor:</strong> filterable timelines for expired/expiring-soon/valid credentials; sort by expiration date, issuance date or credential type.
+<img alt="Credential Manager Credential Expiration" src="../images/credentialmanager-expiration.png" /></li>
+<li><strong>IdentityHub participant lifecycle:</strong> create, set active state, publish DID, register service endpoints (<code>CredentialService</code>, optional <code>ProtocolEndpoint</code>) and inspect the resulting DID document directly in the UI.
+<img alt="Credential Manager Credential Participant DID" src="../images/credentialmanager-participantdid.png" /></li>
 <li><strong>Self-sign <code>did:key</code> credentials:</strong> fully offline generation of <code>VC1_0_JWT</code> credentials signed with an ephemeral Ed25519 key pair and stored in the IdentityHub — no external issuer required.</li>
-<li><strong>Downloadable Credentials flow:</strong> browse PENDING objects from the global DS2 Repository, accept them to trigger automatic delivery into the IdentityHub, and inspect already-DELIVERED items mirrored to the local repository.</li>
-<li><strong>Requestable Credentials (peer credentials, optional):</strong> dataspace membership/agreement/acquisition flows proxied from the IDM portal APIs; only shown when both <code>REQUESTABLE_CREDENTIALS_ENABLED</code> and <code>IDM_ENABLED</code> are set.</li>
-<li><strong>Generic Object Puller:</strong> configurable routes filter by object type, status, name, or metadata; each route dispatches to one of the bundled handlers on a per-route schedule (fixed time or interval). Routes can be created, edited, deleted and executed on demand from the dashboard.</li>
+<li><strong>Downloadable Credentials flow:</strong> browse PENDING objects from the global DS2 Repository, accept them to trigger automatic delivery into the IdentityHub, and inspect already-DELIVERED items mirrored to the local repository.
+<img alt="Credential Manager Credential Downloadable Credentials" src="../images/credentialmanager-downloadable.png" /></li>
+<li><strong>Generic Object Puller:</strong> configurable routes filter by object type, status, name, or metadata; each route dispatches to one of the bundled handlers on a per-route schedule (fixed time or interval). Routes can be created, edited, deleted and executed on demand from the dashboard.
+<img alt="Credential Manager Credential Puller" src="../images/credentialmanager-puller.png" /></li>
 <li><strong>Puller Logs &amp; Diagnostics:</strong> rolling log view persisted to <code>data/pending-sync.log</code>; one-shot <code>Run Now</code> action and per-route <code>Run</code> from the UI for debugging.</li>
 <li><strong>Repository status transitions:</strong> automatic sync of credentail status between global repository ↔ local repository ↔ IdentityHub (PENDING → DELIVERED → DELETED/REVOKED).</li>
 <li><strong>Dynamic URL resolution:</strong> participants authenticated via JWT pull <code>organizationUrl</code> from the token to dynamically build <code>IDENTITYHUB_BASE_URL</code> and <code>LOCAL_REPOSITORY_API_URL</code> when those env vars are not set.</li>
-<li><strong>Policy inspection:</strong> per-credential policy view backed by the local repository, with a Policy modal accessible from individual cards.</li>
 <li><strong>Containerised:</strong> shipped as a <code>node:20-alpine</code> Docker image (<code>ghcr.io/vicanfon/ds2-ice/credential-manager</code>) with a full Helm chart for the DS2 Containerisation stack.</li>
 </ol>
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
