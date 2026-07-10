@@ -2011,8 +2011,9 @@
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
 <p>The IDT installs a pre-packaged enterprise ready Kubernetes cluster along with some extra features for management and deployment.</p>
 <h3 id="requirements">Requirements</h3>
-<p>Provision a Linux VM (Ubuntu 18.04, 20.04, 22.04)
-Resources:</p>
+<p>Provision a Linux Node or VM (Ubuntu 18.04, 20.04, 22.04)</p>
+<p><strong>The VM has to be run on top of AMD architectures ie. don't run a vm on a mac host machine since typically module images won't support arm architectures</strong></p>
+<p>Resources:</p>
 <p>Kubernetes Node</p>
 <ul>
 <li>Minimum: 2 cpu cores, 4 GB RAM and 10 GB disk capacity.</li>
@@ -2264,7 +2265,8 @@ The Rancher UI is the main entry point for Kubernetes cluster management but won
 * You will be redirected to the DLM module where you have the available links for the IDT core modules
       <img alt="IDT-dlm" src="../images/IDT-dlm.png" /></p>
 <h3 id="ds2-connector">DS2 Connector</h3>
-<p>Once the IDT is installed, the DS2 Connector is deployed automatically and exposed using the domain selected when installing the IDT. The main module that allows management of the connector ie. creating data assets, policies, data offers, etc. is the LCAT localcatalog module which is a core module deployed with IDT installation. Please read the instructions at <a href="lcat.md#how-to-use">LCAT</a>. The DS2 Connector can also be managed via API and included in the idtinstaller package, we have created a set of scritps that allow you to perform some of the basic operations of the connector:
+<p>Once the IDT is installed, the DS2 Connector is deployed automatically and exposed using the domain selected when installing the IDT. The main module that allows management of the connector ie. creating data assets, policies, data offers, etc. is the LCAT localcatalog module which is a core module deployed with IDT installation. This is the recommended way of managing the DS2 Connector for production, please read the instructions at <a href="../LCAT/#how-to-use">LCAT</a>. </p>
+<p>The DS2 Connector can also be managed via API and included in the idtinstaller package, we have created a set of scritps that allow you to perform some of the basic operations of the connector:
 1. Create a data asset
 2. Create a policy
 3. Create a data offer (contract definition)
