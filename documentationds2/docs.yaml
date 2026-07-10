@@ -13,7 +13,7 @@ MDT mdt_module
 E2C e2c
 PAE pae_module
 DRM DRM
-CAT cat
+GCAT cat
 SEC sec_module
 MCL mcl_module
 RET RET
@@ -21,3 +21,5 @@ CLM CLM-module
 DMK dmk_module
 SDS Sovereignty-Decision-Support-System
 PCR PAC-ACM-
+LCAT localcatalog
+LIDM credentialmanager

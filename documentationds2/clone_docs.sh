@@ -11,7 +11,11 @@ REPO=$(echo $line | awk '{print $2}')
 REPOURL=github.com/ds2-eu/$REPO
 git clone https://"$USER":"$PASS"@"$REPOURL"
 mkdir -p docs/modules/images
+mkdir -p docs/guides
 cp $REPO/docs/README.md docs/modules/$modulename.md
+if [ $modulename == "IDT" ]; then
+	cp $REPO/docs/ds2connector.md docs/guides
+fi
 cp  $REPO/docs/images/* docs/modules/images/
 rm -rf $REPO
 done
