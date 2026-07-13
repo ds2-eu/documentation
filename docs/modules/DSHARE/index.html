@@ -1,0 +1,2149 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../DRM/">
+      
+      
+        <link rel="next" href="../DVM/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>DSHARE - Data Share Controller - Documentation DS2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dshare-data-share-controller" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Documentation DS2" class="md-header__button md-logo" aria-label="Documentation DS2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation DS2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DSHARE - Data Share Controller
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Documentation DS2" class="md-nav__button md-logo" aria-label="Documentation DS2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentation DS2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The DS2 Software Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstartguide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DS2 Quick Start Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/ds2connector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DS2 Connector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLM - Culture and Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONT - Containerisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CUR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CUR - DS2 Data Curation module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DARC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DARC - Discovery Assessment Recommend Configure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DDT - Data Detection and Transformation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DINS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DINS - Data Inspector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DMK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DMK - Data Marketplace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DRM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DRM - Data Rights Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSHARE - Data Share Controller
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSHARE - Data Share Controller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Definition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commercial-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commercial Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How To Install
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ds2-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DS2 Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standalone-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standalone Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standalone Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of installation steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-and-running-datashare-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing and running DataShare Frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environemnt-variables-for-running-the-project-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environemnt variables for running the project locally
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How To Use
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-provider-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing the Provider Hub
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Accessing the Provider Hub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#provider-hub-dashboard-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provider Hub Dashboard Page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assets-analytics-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assets Analytics Page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alerts-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alerts Page
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-consumer-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing the Consumer Hub
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Accessing the Consumer Hub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consumer-hub-dashboard-shows-all-the-contracts-a-consumer-has-initiated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consumer Hub Dashboard shows all the contracts a consumer has initiated.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asset-analytics-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asset Analytics Page
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-settings-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing Settings Page
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapi-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAPI Specification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video Link
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DVM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVM - Data Visualisation Module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E2C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2C - Edge to Cloud Connector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GCAT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAT - Catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDM - Identity Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDT - IDT Broker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LCAT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LCAT - Local Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LIDM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LIDM - Credential Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MCL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCL - Multi-cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MDT - Model Development Toolkit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ORC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ORC - Orchestration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PAE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PAE - Policy Agreement and Enforcement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PCR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCR - Policy Creation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PORTAL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PORTAL - Portal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DS2 Data retrieval module (RET)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SDS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDS - Sovereignty-Decision-Support-System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SEC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SEC - Edge-to-cloud Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Definition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commercial-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commercial Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How To Install
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ds2-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DS2 Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standalone-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standalone Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standalone Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of installation steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-and-running-datashare-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing and running DataShare Frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environemnt-variables-for-running-the-project-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environemnt variables for running the project locally
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How To Use
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-provider-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing the Provider Hub
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Accessing the Provider Hub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#provider-hub-dashboard-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provider Hub Dashboard Page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assets-analytics-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assets Analytics Page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alerts-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alerts Page
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-consumer-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing the Consumer Hub
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Accessing the Consumer Hub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consumer-hub-dashboard-shows-all-the-contracts-a-consumer-has-initiated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consumer Hub Dashboard shows all the contracts a consumer has initiated.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asset-analytics-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asset Analytics Page
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-settings-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing Settings Page
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapi-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAPI Specification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video Link
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dshare-data-share-controller">DSHARE - Data Share Controller</h1>
+<p>Powered by</p>
+<p><a href="https://informationcatalyst.com"><img alt="DS2 DSHARE IceLogo" src="../images/DSHARE-icelogosmall.jpg" /></a></p>
+<table>
+<thead>
+<tr>
+<th>Project Links</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Software GitHub Repository <a href="https://github.com/ds2-eu/datashare">https://github.com/ds2-eu/datashare</a></td>
+</tr>
+<tr>
+<td>Progress GitHub Project <a href="https://github.com/orgs/ds2-eu/projects/10">https://github.com/orgs/ds2-eu/projects/10</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="general-description"><strong>General Description</strong></h2>
+<p>To provide a user-orientated view of control plane information related to a specific exchange of data to monitor its status and to potentially limit or block it. It will access data through a Data Interceptor component which it shares with the DS2 Data Inspection component (DINS) which operates more at the data level. It can be seen as an In-Dataspace enablement module. Its role is especially important in an Inter-DS environment to provide extra monitoring and control of the data exchanges when partners are less known.</p>
+<p>The DS2 DSHARE is for it to access control data regarding an exchange via the common Data Interceptor component and an API to the used connector - either within IDT or a specific Dataspace one. It will then log and monitor this information and allow it to be presented in user-friendly form. For short duration one-shot type transactions, this is more of an after-the-event easy-viewer. However, for longer duration transactions (e.g., querying records over a period of time) then it allows the user themselves to monitor the flow and perform control-type actions such as limiting or blocking the transaction.</p>
+<h2 id="architecture"><strong>Architecture</strong></h2>
+<p>The figure below represents the module fit into the DS-DS environment.</p>
+<p><img alt="DS2 DSHARE Architecturefits" src="../images/DSHARE-architecturefits.png" /></p>
+<p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.</p>
+<p><img alt="DS2 DSHARE Architecture" src="../images/DSHARE-ds2architecture.png" /></p>
+<h2 id="component-definition"><strong>Component Definition</strong></h2>
+<p>This module has the following subcomponents and other functions (as detailed in Data Share.pdf, pages 3-4):</p>
+<ul>
+<li><strong>Data Share Controller</strong><ul>
+<li><strong>Data Share Manager</strong>: The primary module that onboards control data (from Connector, Interceptor, Trust environment), stores it in the DSC DB, correlates it, and handles triggers for data actions (limit/block).</li>
+<li><strong>Data Share UI</strong>: For configuration, visualization of exchange-related data, and control actions (limiting, blocking).</li>
+<li><strong>DSC DB</strong>: Stores component data for use by the UI and Data Share Management.</li>
+</ul>
+</li>
+<li><strong>Connector and API</strong>: Primarily the connector within IDT; other local connectors will be explored. APIs (existing or extensions) service data to the Data Share Manager.</li>
+<li><strong>Tier 1 Service Stack for Marketplace and deployment and API</strong>: Generic DS2 stack implementation (Platform not used by DSHARE).</li>
+<li><strong>Tier 2</strong>: Data Inspector Manager and API: DINS may trigger DSHARE if anomalies suggest blocking data transfers.</li>
+<li><strong>Tier 3</strong>: Trust Environment and API: Feeds static agreement information to the Data Share Manager for visualization and control decisions.</li>
+<li><strong>Data Share Interceptor and API</strong><ul>
+<li><strong>Interceptor</strong>: Intercepts data/query streams between IDT/Connector and participant's Business Application/Datastores. Interfaces with DSHARE (DSC) and DINS. Capable of receiving block/limit commands. Research ongoing for interception techniques (man-in-the-middle vs. duplicator).</li>
+<li><strong>Interceptor UI</strong>: For configuring the Interceptor (I/O).</li>
+</ul>
+</li>
+<li><strong>Participant DB/Application</strong>: Represents business applications feeding data to/receiving queries from the connector.</li>
+</ul>
+<h2 id="screenshots"><strong>Screenshots</strong></h2>
+<p><img alt="DS2 DSHARE Screenshots" src="../images/ds2.gif" /></p>
+<h2 id="commercial-information"><strong>Commercial Information</strong></h2>
+<p>Table with the organisation, license nature (Open Source, Commercial ... ) and the license. Replace with the values of your module.</p>
+<table>
+<thead>
+<tr>
+<th>Organisation (s)</th>
+<th>License Nature</th>
+<th>License</th>
+<th>Marketplace Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://informationcatalyst.com">ICE</a></td>
+<td>Open Source</td>
+<td>Apache 2.0</td>
+<td><a href="https://marketplacefrontend.central.ds2.icelab.cloud/products/9c544898-bd65-4519-b090-43d21b6b7e52">dshare</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="top-features"><strong>Top Features</strong></h2>
+<ol>
+<li><strong>Consumer analytics</strong>: Comprehensive Data Exchange Monitoring, tracking Real-time data exchanges between a provider and a consumer. The provider of the app can:<ul>
+<li>Know active contracts of the consumer</li>
+<li>Know how much data has been exchanged associated to a given contract</li>
+<li>Granular Control: Ability to monitor, limit, or block data transfers based on defined policies or user intervention.</li>
+<li>Advanced Analytics: Features weekly data charts, consumption pattern monitoring, and a consumer ranking system.</li>
+</ul>
+</li>
+<li><strong>Provider analytics</strong>: Tracking real-time data exchanges between a consumer and a provider. The consumer of the app can:<ul>
+<li>Know all of their active contracts</li>
+<li>See all the providers they are consuming data from</li>
+<li>Know how much data has been exchanged associated to a given contract</li>
+</ul>
+</li>
+<li><strong>Assets analytics</strong>: DSHARE provides a cockpit to identify most used assets offered by the provider, weekly and monthly consumption trends helpful for identifying inner problems</li>
+<li><strong>Alerting System</strong>: Notifies users or administrators about approaching or exceeded transfer limits. Alerts are also raisen when consumers have problems accessing an asset (insufficient credentials, etc)</li>
+</ol>
+<h2 id="how-to-install"><strong>How To Install</strong></h2>
+<p>The module is installed as part of the IDT. The installation steps are provided if someone wants to run and test the system locally. </p>
+<h3 id="requirements">Requirements</h3>
+<p>Provision a Linux VM (Ubuntu 24.10) Resources:</p>
+<p>Recommended: 4 cpu cores, 8 GB RAM and 50 GB disk capacity.</p>
+<h3 id="software">Software</h3>
+<ul>
+<li>Eclipse Dataspace Connector (EDC) </li>
+<li>PostgreSQL Database </li>
+<li>Java Development Kit (JDK) JDK17+</li>
+</ul>
+<h3 id="ds2-installation">DS2 Installation</h3>
+<p>The first action needed to install the module is to acquire the module from the Marketplace at <a href="https://marketplacefrontend.central.ds2.icelab.cloud/products/9c544898-bd65-4519-b090-43d21b6b7e52">dshare</a>. Then from the Containerisation UI:
+1. Refresh the Containerisation DS2 repository
+<img alt="DS2 DSHARE contrepo" src="../images/dsharerefreshcont.png" />
+2. Navigate to available modules section
+<img alt="DS2 DSHARE contavailable" src="../images/dshareavailablecont.png" />
+3. Click on the dshare module
+4. Click on Install button
+5. Click on Next-Apps configurations button
+6. Configure the required env variables
+    * DOMAIN: The connector domain
+    * ORGANISATION: organisation name that you set
+<img alt="DS2 DSHARE contavailable" src="../images/dshareenv.png" />
+7. Click on Install Module button
+8. Navigate to the Installed Modules 
+9. When dshare module is running, click on the Open Module button to navigate to the dshare module or navigate via Dash Button
+<img alt="DS2 DSHARE contavailable" src="../images/dshareinstalledcont.png" /> 
+10. Enjoy dshare
+<img alt="DS2 DSHARE contavailable" src="../images/dsharemaincont.png" /></p>
+<h3 id="standalone-installation">Standalone Installation</h3>
+<h4 id="summary-of-installation-steps">Summary of installation steps</h4>
+<ol>
+<li>Clone the data share repo</li>
+<li>Tap into the dshare folder</li>
+<li>Run the bash dev-build.sh script to create and run the docker files</li>
+</ol>
+<h4 id="detailed-steps">Detailed steps</h4>
+<ol>
+<li>Clone the code</li>
+</ol>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ds2-eu/datashare.git
+</span></code></pre></div>
+<ol>
+<li>Navigate to the datashare folder using following command </li>
+</ol>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>datashare
+</span></code></pre></div>
+<ol>
+<li>In the main directory you need access the dshare folder. use the following command</li>
+</ol>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>dshare
+</span></code></pre></div>
+<p>The module is composed of two parts: 
+- The Datashare Frontend: a vue.js frontend application to access the DSHARE backend.
+- The proxy server: for avoiding CORS issues.</p>
+<h5 id="installing-and-running-datashare-frontend">Installing and running DataShare Frontend</h5>
+<p>To install and run Dshare Frontend, from the dshare folder you need to run the following command</p>
+<p><code>bash dev-build.sh</code></p>
+<p>This will build all the docker images required to run the frontend and the backend and start the server which you will be able to see in the terminal</p>
+<p>Dshare will be accessable from the link <code>http://localhost:8081/datashare/</code></p>
+<h5 id="environemnt-variables-for-running-the-project-locally">Environemnt variables for running the project locally</h5>
+<p>To run the project locate the docker-compose.yml file</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">   </span>DOMAIN:<span class="w"> </span>idta.ds2.icelab.cloud
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">   </span>ORGANISATION:<span class="w"> </span>idta
+</span></code></pre></div>
+<p>These variables are setup to use the IDTA connector. </p>
+<h2 id="how-to-use"><strong>How To Use</strong></h2>
+<p>First of all be sure that you understand the mechanism of transfering data using EDC, as initially the datashare component will be using MVD hosted on ICE server. DShare contains a provider hub and a consumer hub.</p>
+<h3 id="accessing-the-provider-hub">Accessing the Provider Hub</h3>
+<ul>
+<li>Navigate to the DSHARE UI URL (e.g., http://localhost:8081/datashare/).</li>
+<li>This page shows the dashboard of the provider-hub, you can see all the contracts the provider has. Clicking the details button opens a detailed page that shows more infomration about the consumer</li>
+</ul>
+<p><strong>Note:</strong> If prompted to login please use the following credentials.</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Username:<span class="w"> </span>idta
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Password:<span class="w"> </span>idta
+</span></code></pre></div>
+<h4 id="provider-hub-dashboard-page"><strong>Provider Hub Dashboard Page</strong></h4>
+<ul>
+<li>This page shows the information about the consumers, how my contracts a consumer has initiated. The provider has the functionality to pause, start and terminate those contracts using the action buttons. There is some further analytics information that can be useful.</li>
+</ul>
+<p><img alt="DS2 DSHARE Screenshots" src="../images/provider-dashboard.png" /></p>
+<h4 id="assets-analytics-page"><strong>Assets Analytics Page</strong></h4>
+<ul>
+<li>
+<p>This page shows useful information about the assets a provider has.</p>
+</li>
+<li>
+<p>It also shows real-time data on active transfers.</p>
+</li>
+</ul>
+<p><img alt="DS2 DSHARE Screenshots" src="../images/provider-assets.png" /></p>
+<h4 id="alerts-page"><strong>Alerts Page</strong></h4>
+<ul>
+<li>This page shows all the useful alerts coming from the connector. These include critical alerts eg, contract has been terminated, warning alerts and information alerts.</li>
+</ul>
+<p><img alt="DS2 DSHARE Screenshots" src="../images/alerts.png" /></p>
+<h3 id="accessing-the-consumer-hub">Accessing the Consumer Hub</h3>
+<h4 id="consumer-hub-dashboard-shows-all-the-contracts-a-consumer-has-initiated"><strong>Consumer Hub Dashboard</strong> shows all the contracts a consumer has initiated.</h4>
+<ul>
+<li>
+<p>This is similar to the provider hub but the only difference is that this page shows all the consumer side contracts.</p>
+</li>
+<li>
+<p>Consumers that see which providers they have been consuming data from and the transfer details of those contracts.</p>
+</li>
+</ul>
+<p><img alt="DS2 DSHARE Screenshots" src="../images/consumer-dashboard.png" /></p>
+<h4 id="asset-analytics-page"><strong>Asset Analytics Page</strong></h4>
+<ul>
+<li>This page shows the analytics information from the consumer side. </li>
+</ul>
+<p><img alt="DS2 DSHARE Screenshots" src="../images/consumer-analytics.png" /></p>
+<h3 id="accessing-settings-page">Accessing Settings Page</h3>
+<ul>
+<li>
+<p>The Database Configuration section allows users to test the database of the connector.</p>
+</li>
+<li>
+<p>The Api Test section allows users to test all the APIs dshare is using.</p>
+</li>
+<li>
+<p>Asset Endpoint Tester allows users to see the infromation of assets endpoints.</p>
+</li>
+</ul>
+<p><img alt="DS2 DSHARE Screenshots" src="../images/settings.gif" /></p>
+<h2 id="other-information"><strong>Other Information</strong></h2>
+<p>A development version of Dshare is hosted on ICE servers at <a href="https://datashare.ds2.icelab.cloud/datashare/">https://datashare.ds2.icelab.cloud/datashare/</a></p>
+<h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
+<p>Open APIs: <a href="https://datashare.ds2.icelab.cloud/proxy/api-docs/">https://datashare.ds2.icelab.cloud/proxy/api-docs/</a></p>
+<h2 id="video-link"><strong>Video Link</strong></h2>
+<p>Add here video link: <a href="https://">https://</a></p>
+<h2 id="additional-links"><strong>Additional Links</strong></h2>
+<p>N/A</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2463 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../CLM/">
+      
+      
+        <link rel="next" href="../CUR/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>CONT - Containerisation - Documentation DS2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cont-containerisation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Documentation DS2" class="md-header__button md-logo" aria-label="Documentation DS2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation DS2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CONT - Containerisation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Documentation DS2" class="md-nav__button md-logo" aria-label="Documentation DS2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentation DS2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The DS2 Software Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstartguide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DS2 Quick Start Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/ds2connector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DS2 Connector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLM - Culture and Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONT - Containerisation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONT - Containerisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Definition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commercial-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commercial Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How To Install
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ds2-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DS2 Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standalone-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standalone Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standalone Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of installation steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How To Use
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#as-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As a User
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="As a User">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deploy-a-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy a Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delete a Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-a-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update a Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#as-a-developer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As a Developer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="As a Developer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-module-chart-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Module Chart Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#as-an-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As an Operator
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="As an Operator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-base-chart-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Base Chart Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips-for-best-containerisation-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips For Best Containerisation Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapi-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAPI Specification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CUR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CUR - DS2 Data Curation module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DARC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DARC - Discovery Assessment Recommend Configure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DDT - Data Detection and Transformation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DINS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DINS - Data Inspector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DMK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DMK - Data Marketplace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DRM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DRM - Data Rights Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DSHARE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSHARE - Data Share Controller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DVM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVM - Data Visualisation Module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E2C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2C - Edge to Cloud Connector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GCAT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAT - Catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDM - Identity Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDT - IDT Broker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LCAT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LCAT - Local Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LIDM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LIDM - Credential Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MCL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCL - Multi-cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MDT - Model Development Toolkit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ORC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ORC - Orchestration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PAE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PAE - Policy Agreement and Enforcement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PCR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCR - Policy Creation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PORTAL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PORTAL - Portal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DS2 Data retrieval module (RET)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SDS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDS - Sovereignty-Decision-Support-System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SEC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SEC - Edge-to-cloud Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Definition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commercial-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commercial Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How To Install
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ds2-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DS2 Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standalone-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standalone Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standalone Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of installation steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How To Use
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#as-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As a User
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="As a User">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deploy-a-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy a Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delete a Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-a-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update a Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#as-a-developer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As a Developer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="As a Developer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-module-chart-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Module Chart Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#as-an-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As an Operator
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="As an Operator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-base-chart-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Base Chart Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips-for-best-containerisation-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips For Best Containerisation Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapi-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAPI Specification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cont-containerisation">CONT - Containerisation</h1>
+<p>Powered by</p>
+<p><a href="https://informationcatalyst.com"><img alt="DS2 CONT IceLogo" src="../images/CONT-icelogosmall.jpg" /></a></p>
+<table>
+<thead>
+<tr>
+<th>Project Links</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Software GitHub Repository <a href="https://github.com/ds2-eu/containerisation">https://github.com/ds2-eu/containerisation</a></td>
+</tr>
+<tr>
+<td>Progress GitHub Project <a href="https://github.com/orgs/ds2-eu/projects/7">https://github.com/orgs/ds2-eu/projects/7</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="general-description"><strong>General Description</strong></h2>
+<p>To allow easy and automated packaging and deployment of modules on the IDT Kubernetes runtime subcomponent environment. The containerisation module leverages on custom Helm Chart descriptors to automatically convert them into full Kubernetes Helm Charts representing the module, based on standard base templates located in the DS2 Portal Marketplace. The Helm Charts are then deployed on the IDT Module. </p>
+<p>The Containerisation module is a core module to the IDT Broker module that enables deployment of all the DS2 modules in the IDT Broker Kubernetes sub-component. The Containerisation module uses Helm Chart standard base templates describing a DS2 module. Those templates are provisioned by the IDT Broker module and provide the standard for DS2 module deployment in IDT Broker. Base templates are stored in the DS2 Portal Marketplace. Then, when uploading a DS2 module by module developers, to the DS2 Portal Marketplace, a custom Helm Chart descriptor that includes values for those base templates needs to be provided with the module. The Containerisation module will use the descriptor together with the base templates to create the Helm Chart for the DS2 module during deployment time on the IDT Broker.</p>
+<p>The Containerisation module can work in two different modes:</p>
+<ul>
+<li>The standard DS2 working mode: developers upload module Helm Chart Release to the DS2 Portal Marketplace. Participants use the Containerisation UI to create a Containerisation Release from the Chart Release and push it to the DS2 Portal. The Chart Controller is triggered when detecting the update of the Containerisation Release, retrieves the Chart templates from the DS2 Portal and creates the full Helm Chart and deploys it on the IDT Kubernetes Runtime sub-component</li>
+<li>The GitOps way: automatic deployment of the Helm Chart is triggered by the Source controller sub-component upon detecting a change on the Containerisation Release in the DS2 Portal. Then as in the previous mode, the Chart Controller creates the full Helm Chart and deploys it on the IDT. This is the deployment mode of the core IDT modules ie. Containerisation.</li>
+</ul>
+<p>In both cases, the only difference is how the Helm Chart descriptor is deployed on the IDT either by the participant manually deploying the descriptor, or being automatically deployed by the Source Controller sub-component.</p>
+<h2 id="architecture"><strong>Architecture</strong></h2>
+<p>The figure below represents the module fit into the DS-DS environment.
+<img alt="DS2 CONT Architecturefits" src="../images/CONT-architecturefits.png" /></p>
+<p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.
+<img alt="DS2 CONT Architecture" src="../images/CONT-ds2architecture.png" /></p>
+<h2 id="component-definition"><strong>Component Definition</strong></h2>
+<p>This module has the following subcomponent and other functions:</p>
+<ul>
+<li>
+<p><strong>ChartController</strong>: The ChartController is a Kubernetes controller, following the Kubernetes controller pattern which keeps track of a new Kubernetes custom resource definition - the “HelmChartRelease Descriptor”. When changes are detected on a release, ie. addition, update, the Controller connects to a configured location ie. GitHub repository, to download the corresponding Helm Chart base templates. Then, together with the HelmChartRelease, the Chart Controller will create a full Helm Chart describing the module. This Helm Chart will be deployed into the IDT Kubernetes Runtime subcomponent using the Installer component. The ChartController is based on The HelmController from Flux The GitOps Toolkit and embeds the Installer component for Helm Charts.</p>
+</li>
+<li>
+<p><strong>ChartManager</strong>: The ChartManager is mainly used to monitor the Helm Charts and HelmChartReleases deployed in the system. It will query the IDT Module’s Kubernetes subcomponent to retrieve current Charts and descriptors. The Chart Manager can also be used to create a HelmChartReleases using some input parameters and install it via the Installer component. Once installed, the ChartController will detect the new ChartRelease and will convert it to a Chart deploying it back into the IDT Module’s Kubernetes subcomponent. </p>
+</li>
+<li>
+<p><strong>Installer</strong>: This is the component responsible for installing Helm Charts and HelmChartDescriptors in the IDT Kubernetes subcomponent. It will receive the corresponding Helm Charts and Helm Chart Base Templates and will apply them in the IDT Kubernetes subcomponent. The Installer also takes care of installing new Sources created by the Source Manager component. The Installer has been merged into the ChartController and SourceController both based on Flux, but for the sake of simplicity is kept as a separate component in the architecture diagram.</p>
+</li>
+<li>
+<p><strong>Containerisation UI</strong>: This is the main module UI that allows users to monitor current existing Charts, ChartReleases and Sources in the system. Users will have an overview of what is installed in the system and its current status regarding to those specific resources. The UI can also be used to create, update or delete ChartReleases via the ChartManager and Sources via the Source Manager.  </p>
+</li>
+<li>
+<p><strong>GitOps Source Controller</strong>: The Source Controller, similar to the ChartController,  is a Kubernetes controller that keeps track of the custom resource definition Source. A Source mainly represents a reference to a repository where Chart Templates are stored. The Source Controller monitors the status of the Source and reacts to changes by reflecting those changes in the IDT Kubernetes subcomponent. The Source Controller is an optional subcomponent, and users can just install the Charts using the IDT or via Kubernetes standard kubectl. The Source Controller, as the Chart Controller, is based on the Source Controller from Fluxt The GitOps Toolkit, and embeds part of the Installer component.</p>
+</li>
+<li>
+<p><strong>(DS2) GitOps Source Manager</strong>: The Source Manager, similar to the ChartManager is mainly used to monitor the Source in the system and is customised to DS2. It can also be used to create, update, and delete new sources that will be installed via the Installer component. As the Source Controller, this is an optional component. </p>
+</li>
+<li>
+<p><strong>Tier 1 Service Stack for Marketplace and deployment and API</strong>: The full stack will be implemented as generically described elsewhere in this document. Exceptions: This module runs in the IDT and uses the IDT Kubernetes subcomponent for Chart and ChartRelease installations. The DS2 Portal Marketplace component and its repository system is used to store the Chart base templates and releases. Since the DS2 Portal is also a DS2 module, it is deployed and run on the IDT, so Containerisation module can also be used for the DS2 Portal and other intermediary services. </p>
+</li>
+</ul>
+<h2 id="screenshots"><strong>Screenshots</strong></h2>
+<p>The Containerisation UI development has not yet been started, so no screenshots.
+<img alt="DS2 CONT Screenshots" src="./images/CONT-screenshots.gif" /></p>
+<h2 id="commercial-information"><strong>Commercial Information</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Organisation (s)</th>
+<th>License Nature</th>
+<th>License</th>
+<th>Marketplace Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://informationcatalyst.com">ICE</a></td>
+<td>Open Source</td>
+<td>Apache 2.0</td>
+<td><a href="https://marketplacefrontend.central.ds2.icelab.cloud/products/3654da09-740d-499a-a2d8-4806ea4911af">CONT</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="top-features"><strong>Top Features</strong></h2>
+<ol>
+<li><strong>Kubernetes Native</strong>: The CONT module is a Kubernetes native solution based on open-source system Flux and The GitOps Toolkit</li>
+<li><strong>Kubernetes Application Deployment Control</strong>: Provides control to Kubernetes administrators or SREs over what and how a module or application is deployed on a given Kubernets cluster ie. IDT2. </li>
+<li><strong>Kubernetes Application Abstraction</strong>: The CONT module abstracts developers from the Kubernetes complexity when creating a Kubernetes application, leveraging on a templating system based on Helm Charts and Flux HelmRelease CRD</li>
+<li><strong>Helm Chart Templates</strong>: Ability to create Helm Chart templates for different types of applications</li>
+<li><strong>Helm Release CRDs Templates</strong>: Based on the HelmRelease CRDs from Flux, the CONT module enables the creation of HelmRelease templates that will make use of the Helm Chart Templates</li>
+<li><strong>Application Management using API</strong>: Manage application (module) lifecycle (create, install, uninstall, delet) using the CONT Chart Manager API</li>
+<li><strong>Containerisation UI</strong>: Manage the Containerisation module using a modern web based UI</li>
+<li><strong>Operator vs Developer View</strong>: Access the Containerisation module features with different views depending on the role Operators vs Developer  </li>
+</ol>
+<h2 id="how-to-install"><strong>How To Install</strong></h2>
+<p>The Containerisation module is part of the IDT installation, but can also be installed standalone for development tests. </p>
+<h3 id="requirements">Requirements</h3>
+<p>The IDT or a Kubernetes cluster and Helm is required. This component can't be installed without a Kubernetes cluster, in fact, the goal of the component is to deploy the modules on the Kubernetes cluster.</p>
+<h3 id="software">Software</h3>
+<p>Containerisation module so far installs these software utilities and specific tested compatible versions:</p>
+<ul>
+<li>Flux Helm Controller (Chart Controller + Installer)</li>
+<li>Flux Source Controller (Source Controller)</li>
+<li>Flux Notification Controller (default)</li>
+<li>Flux Kustomization Controller (default)</li>
+<li>Containerisation Backend<ul>
+<li>Chart Manager</li>
+<li>Source Manager</li>
+</ul>
+</li>
+<li>Containerisation UI</li>
+</ul>
+<h3 id="ds2-installation">DS2 Installation</h3>
+<p>The Containerisation module is deployed as a core module along with the <a href="../IDT/#how-to-install">IDT installation</a> so users don't need to run a separate installation.
+More details to update the module in the <a href="#how-to-use">How To Use</a> section.</p>
+<h3 id="standalone-installation">Standalone Installation</h3>
+<p>The Containerisation module is not meant to be installed standalone, but for testing purposes users can install Containerisation standalone on top of the IDT or a Kubernetes cluster</p>
+<h4 id="summary-of-installation-steps">Summary of installation steps</h4>
+<ol>
+<li>
+<p>Clone the repo containerisation</p>
+</li>
+<li>
+<p>Create the platform side configuration </p>
+</li>
+<li>
+<p>Install the Containerisation module by running the installfluxghorg.sh script </p>
+</li>
+</ol>
+<h4 id="detailed-steps">Detailed steps</h4>
+<ol>
+<li>
+<p>Clone the repo containerisation
+  <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ds2-eu/containerisation
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Create the platform configuration by running the kubernetes_configuration.sh script. The Helm templates to be used by the Containerisation module rely on a platform configmap and secret that are created in this step and contain platform configuration
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./kubernetes_configuration.sh imagepath github_user github_token organisation_domain namespace
+</span></code></pre></div></p>
+<blockquote>
+<p>imagepath: The registry path where the docker images are stored ie. in ghcr.io/ds2-eu/ds2charts/image the imagepath would be ds2eu/ds2charts</p>
+<p>github_user: The admin user for the customer organisation registered in the DS2 Portal</p>
+<p>github_token: The admin user token retrieved from the DS2 Portal</p>
+<p>organisation_domain: The user organisation domain for the modules urls ie. customer.domain.com</p>
+<p>namespace: The namespace where to create the configmap and secret ie. icekube</p>
+<p>An example of running the script</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./kubernetes_configuration.sh<span class="w"> </span>ds2-eu/ds2charts<span class="w"> </span>user<span class="w"> </span>ghp_qRoTB9z1w1xa3ki4hzrl5Vw9bQPd82pkaxU4<span class="w"> </span><span class="m">192</span>-168-50-5.idt.ds2.sslip.io<span class="w"> </span>icekube
+</span></code></pre></div>
+</blockquote>
+</li>
+<li>
+<p>Install the Containerisation module by running the installfluxghorg.sh script : So far the Kubernetes controllers are available, which will deploy a template helm chart from a helmrelease CRD
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./installfluxghorg.sh github_token github_organisation github_repository
+</span></code></pre></div></p>
+<blockquote>
+<p>github_token: a GitHub user token. This is a personal access token that has access permissions to the org repository</p>
+<p>github_organisation: a GitHub organisation. This will be in a later stage  the organisation from the Marketplace ie. ds2-marketplace where modules are stored</p>
+<p>github_repository: this is the name of a repository in the GitHub organisation. This will be in a later stage a repository of the organisation id of the participant as registered in the Portal. The repository is created via the Marketplace and the acquired modules will be located in that GitHub repository. This is linked to the Marketplace purchase process</p>
+<p>An example of running the script
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./installfluxghorg.sh<span class="w"> </span>ghp_qRoTB9z1w1xa3ki4hzrl5Vw9bQPd82pkaxU4<span class="w"> </span>ds2-eu<span class="w"> </span>containerisation
+</span></code></pre></div></p>
+</blockquote>
+</li>
+<li>
+<p>Install the core IDT modules. To do this, run the copy_charts script. This will install and customize the core modules of the IDT. Only Containerisation UI and Backend are copied. For all core modules installation run the IDT installer.
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>./copy_charts.sh github_user github_token github_organisation user_organisation organisation_domain
+</span></code></pre></div></p>
+<blockquote>
+<p>github_user: The admin user for the customer organisation registered in the DS2 Portal</p>
+<p>github_token: The admin user token retrieved from the DS2 Portal</p>
+<p>github_organisation: a GitHub organisation. This will be in a later stage  the organisation from the Marketplace ie. ds2-marketplace where modules are stored</p>
+<p>user_organisation (github_repository): the name of the organisation which must be the same as the GitHub repository name created for that organisation</p>
+<p>organisation_domain: The user organisation domain for the modules urls ie. customer.domain.com</p>
+<p>An example of running the script
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>./copy_charts.sh user ghp_qRoTB9z1w1xa3ki4hzrl5Vw9bQPd82pkaxU4 ds2-eu demoorg ds2.demoorg.com
+</span></code></pre></div></p>
+</blockquote>
+</li>
+</ol>
+<p>Now the Containerisation UI can be accessed at <a href="https://containerisationfrontend.$organisation_domain">https://containerisationfrontend.$organisation_domain</a> .</p>
+<h2 id="how-to-use"><strong>How To Use</strong></h2>
+<p>Containerisation module is meant to be used in three different ways:
+* As a user: to deploy modules on the IDT
+* As a developer: to create the Containerisation charts for the modules being deployed
+* As an Operator (or Cluster admin): to create the Chart templates that dictate how a module (an application) is deployed on a cluster</p>
+<h3 id="as-a-user"><strong>As a User</strong></h3>
+<p>The main use of Containerisation is to deploy or delete the modules, acquired from the Marketplace, on the IDT. </p>
+<h4 id="deploy-a-module"><strong>Deploy a Module</strong></h4>
+<ol>
+<li>
+<p>Once a module has been purchased from the DS2 Marketplace, navigate to the Containerisation UI, in the Git Repositories section and refresh the repository.
+   <img alt="DS2 CONT refresh" src="./images/CONT-refresh.png" /></p>
+</li>
+<li>
+<p>The new module purchased will be available in the Available Modules section
+   <img alt="DS2 CONT available" src="./images/CONT-available.png" /></p>
+</li>
+<li>
+<p>Click on the module and click on install, then click on next and fill in the required paramters (this dependes on each module to configure the module). Then click on Install Module Button
+    <img alt="DS2 CONT install" src="./images/CONT-install.png" /></p>
+</li>
+<li>
+<p>The module is now being installed
+    <img alt="DS2 CONT installing" src="./images/CONT-installing.png" /></p>
+</li>
+<li>
+<p>The module is now installed and you can access to it from the Containerisation Installed modules View Module or from the Dash Button
+   <img alt="DS2 CONT installed" src="./images/CONT-installed.png" /></p>
+</li>
+</ol>
+<h4 id="delete-a-module"><strong>Delete a Module</strong></h4>
+<ol>
+<li>
+<p>Navigate to the installed modules and click on the three dots on the top right side of the module card and click uninstall module
+   <img alt="DS2 CONT uninstall" src="./images/CONT-uninstall.png" /></p>
+</li>
+<li>
+<p>The module will transition to a deleted state while all Kubernetes resources related to the module are deleted. Once deleted the module will be removed from the installed modules. A deleted module can be re-installed from the available modules list using the <a href="#deploy-a-module">Deploy a Module</a> process.
+   <img alt="DS2 CONT uninstalled" src="./images/CONT-uninstalled.png" /></p>
+</li>
+</ol>
+<h4 id="update-a-module"><strong>Update a Module</strong></h4>
+<p>The Containerisation module supports updating a module by deleting the current installed module and installing the new version from the available modules.</p>
+<ol>
+<li>Delete the module</li>
+<li>Acquire the new version from the Marketplace. This will override current module version with the new one in the available modules</li>
+<li>Refresh the Git Repository in the Git Repository UI</li>
+<li>Install the new module from the available list</li>
+</ol>
+<p><strong>Follow the presented exact order to update a module ie. delete current version before acquiring the new one from the Marketplace, since due to the behaviour of Flux with Git Repositories as sources, if the module is acquired from the Marketplace before being deleted, the module will be auto-updated by Flux. This would not be a problem unless there is a change on the required input parameters for the module. In this case, if module is auto-updated, those new paramters will get their default values and won't be configured by the users</strong></p>
+<h3 id="as-a-developer"><strong>As a Developer</strong></h3>
+<p>Containerisation does not support creating the module charts from the UI and it requires manual creation using a code or text editor. Future development of a flow to create those charts from the UI is planned in the Containerisation Roadmap. </p>
+<h4 id="manual-module-chart-design"><strong>Manual Module Chart Design</strong></h4>
+<p>To manually prepare the module chart to be uploaded to the Marketplace and deployed using the containerisation modul,e first create the HelmRelease chart using the demomodule4 template in the helmreleases repository at demomodule4/.</p>
+<ol>
+<li>Clone the repository and copy the folder to another folder named after the module name ie. mymodule. This will be the module chart.
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git clone https://github.com/ds2-eu/helmreleases.git
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>cp -r helmreleases/demomodule4/ mymodule
+</span></code></pre></div></li>
+<li>
+<p>Change the name and the version in the Chart.yaml file with the module name and version. You can edit the file or use sed
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sed -i &#39;s/demomodule4/mymodule/g&#39; mymodule/Chart.yaml
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Navigate to the templates folder of the module chart
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>cd mymodule/templates
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Duplicate the helmrelease.yaml file as per the number of components in your module and delete the original helmrelease.yaml. This means, if your module includes a backend and a frontend, you need two helmreleases, if there is also a database, three helmreleases and so on. Name the files with the name of the module and component ie. mymodulebackend, mymodulefrontend ... Don't use '-' or similar characters.
+You can see an example of a two components module in the helmreleases repository at demomodule2 folder with a backend and frontend components.
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>cp demomodule4component1.yaml mymodulebackend.yaml
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>cp demomodule4component1.yaml mymodulefrontend.yaml
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>rm demomodule4component1.yaml
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Change the reference to demomodule4 by the module name in the _helpers file
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/demomodule4/mymodule/g&#39;</span><span class="w"> </span>_helpers.tpl
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Edit the components helmrelease files in order to use the component name. An example of the backend where the name and values.app.name are changed. Repeat this step with every component.
+  <div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HelmRelease</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Name</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">-mymodulebackend    -&gt; Changed this with suffix mymodulebackend</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Namespace</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"> </span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nt">spec</span><span class="p">:</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">  </span><span class="nt">chart</span><span class="p">:</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">      </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./charts/ds2modulebase4</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">      </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;1.0.0&#39;</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">      </span><span class="nt">sourceRef</span><span class="p">:</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">        </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitRepository</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2charts</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">        </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">  </span><span class="nt">values</span><span class="p">:</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">    </span><span class="nt">module</span><span class="p">:</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Name</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Leave as it is</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">    </span><span class="nt">app</span><span class="p">:</span>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mymodulebackend -&gt; Changed this to mymodulebackend</span>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80 -&gt; Change this to the docker container port of the component. This is the port you use to expose the component in the docker image.</span>
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="w">      </span><span class="nt">env</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true -&gt; set to true if you need to add extra configuration environment variables to the component otherwhise set to false</span>
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginxmessage -&gt; Change this to the docker image name of the component</span>
+</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Change this to the docker image tag of the component</span>
+</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="w">    </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span>
+</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080 -&gt; Change this port only if you want to expose the Kubernetes cluster ip through another port.</span><span class="w"> </span>
+</span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="w">    </span><span class="p p-Indicator">{{</span><span class="nv">- toYaml .Values.mymodulebackend | nindent 4</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Change to .Values.mymodulebackend or if your module does not have extra configuration, REMOVE THIS</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Add persistence to a component. If a module's component needs persistence ie. a database, add the persistence section to the helmrelease file in the values section:
+   <div class="language-yaml highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nn">...</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nt">values</span><span class="p">:</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">   </span><span class="nt">module</span><span class="p">:</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">     </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Name</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">   </span><span class="nt">app</span><span class="p">:</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">     </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mymodulebackend</span><span class="w"> </span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">     </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span><span class="w"> </span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">     </span><span class="nt">env</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">   </span><span class="nt">image</span><span class="p">:</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">     </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginxmessage</span><span class="w"> </span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">     </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span><span class="w"> </span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">   </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">     </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span><span class="w"> </span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">   </span><span class="nt">persistence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; add this persistence section</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">enabled</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true -&gt; enabled to true</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">storage</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5Gi -&gt; add how much storage needed for the module</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">path</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;/idt/mymodule/mymodulebackend&quot;</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; the path of the local filesystem of the IDT needs to follow the convention /idt/modulename/componentname</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">     </span><span class="l l-Scalar l-Scalar-Plain">mountpath</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;/data/backend&quot;</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; the module component docker container persistence path depends on the component</span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w">   </span><span class="p p-Indicator">{{</span><span class="nv">- toYaml .Values.mymodulebackend | nindent 4</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+</span></code></pre></div>
+   Only hostpath persistence is supported by IDT so far. Future development is in the roadmap to support other persistence types such as NFS or OpenEBS</p>
+</li>
+<li>
+<p>Add extra configuration to the chart. If a module's component needs some configuration from the end user, set the values.app.env to true in the helmrelease file.
+   <div class="language-yaml highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nn">...</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nt">values</span><span class="p">:</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">   </span><span class="nt">module</span><span class="p">:</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">     </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">.Release.Name</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">   </span><span class="nt">app</span><span class="p">:</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">     </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mymodulebackend</span><span class="w"> </span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">     </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span><span class="w"> </span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">     </span><span class="nt">env</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span></code></pre></div>
+   Leave the last line of the helmrelease as it is
+   <div class="language-yaml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nn">...</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="p p-Indicator">{{</span><span class="nv">- toYaml .Values.mymodulebackend | nindent 4</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+</span></code></pre></div></p>
+</li>
+</ol>
+<p>Navigate back to the main chart folder (cd ..) and edit the values. In the example we add configuration to two components in the module, with the same variable name WELCOME_MESSAGE. <strong>If a variable is a bool with values true or false, double or single quote the value</strong> <strong><em>ie. myvariable: "true"</em></strong>
+  <div class="language-yaml highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">mymodulebackend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Change this to the module component</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">config</span><span class="p p-Indicator">:</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nt">WELCOME_MESSAGE</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;The</span><span class="nv"> </span><span class="s">flux</span><span class="nv"> </span><span class="s">containerisation</span><span class="nv"> </span><span class="s">helm</span><span class="nv"> </span><span class="s">chart</span><span class="nv"> </span><span class="s">nginx</span><span class="nv"> </span><span class="s">message</span><span class="nv"> </span><span class="s">backend&quot;</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Add here as many variables as you may have as a key value pair</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="nt">mymodulefrontend</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Chnage this to another module component</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">config</span><span class="p p-Indicator">:</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="nt">WELCOME_MESSAGE</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;The</span><span class="nv"> </span><span class="s">flux</span><span class="nv"> </span><span class="s">containerisation</span><span class="nv"> </span><span class="s">helm</span><span class="nv"> </span><span class="s">chart</span><span class="nv"> </span><span class="s">nginx</span><span class="nv"> </span><span class="s">message</span><span class="nv"> </span><span class="s">frontend&quot;</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-&gt; Add here as many variables as you may have as a key value pair</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="l l-Scalar l-Scalar-Plain">-&gt; Add more components to the module</span>
+</span></code></pre></div></p>
+<ol>
+<li>With this, the  module is ready. Follow the Marketplace intructions to upload the Chart and images. </li>
+</ol>
+<h3 id="as-an-operator">As an Operator</h3>
+<p>Operators or administrators of Kubernetes clusters are the ones in charge to develop the Containerisation Base Chart Templates. Those are the Charts that dictate how a module or application will be deployed on the cluster. In the case of DS2, the Operators are the DS2 Operators running the intermediary services  Portal and Marketplace, dictating how the modules will be deployed on the local IDT Kubernetes cluster.</p>
+<p>Containerisation does not support creating the Base Chart Templates from the UI and it requires manual creation using a code or text editor. Future development of a flow to create those charts from the UI is planned in the Containerisation Roadmap. </p>
+<h4 id="manual-base-chart-design">Manual Base Chart Design</h4>
+<p>Designing a Base Chart is no different from designing a regular Helm Chart. The Base Chart contains all the core resources needed by Kubernetes to deploy a module component: deployment, service, imagepullsecret, ingress, configmap, secret, serviceaccount, persistentvolume and persistentvolumeclaim, etc. This depends on specifics of the platform where modules will be deployed ie. support for specific storage type, ingress type, etc.</p>
+<p>For DS2, some Base Charts have been created in the <a href="https://github.com/ds2-eu/helmtemplates.git">helmtemplates</a> repository, in the charts/ folder. The core ones for modules are:
+* ds2modulebase3: meant for local tests
+* ds2modulebase4: meant for marketplace publishing</p>
+<p>Those two Base Charts include the Kubernetes resources required for a module to be deployed on the IDT and are designed in a generic way using Helm Chart templating, to support customization during design and deployment time, when creating the Module Chart referencing the Base Chart ie. name of the module, image, etc.</p>
+<p>The two Base Charts support 90 % of a typical web application (DS2 modules) composed by frontend, backend and database, but for cases when this is not enough and the module requires very specific configuration and deployment needs, specific Base Charts can be created, tailored to the module needs. Then the Module Chart is created referencing this new specific Base Chart. This has been the case for the DS2Connector chart and the Containerisation modules.</p>
+<p>If you need a specific Base Chart for DS2, contact the DS2 Operator in order to provide the new Base Chart.</p>
+<h3 id="tips-for-best-containerisation-integration"><strong>Tips For Best Containerisation Integration</strong></h3>
+<ul>
+<li><strong>Testing the charts before uploading to the Marketplace</strong></li>
+<li>Install a local IDT as per the <a href="../IDT/#how-to-install">IDT Installation Guide</a></li>
+<li>Change the reference of the basechart from ds2modulebase4 to ds2modulebase3
+     <div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>...
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>chart:
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a> spec:
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>   chart: ./charts/ds2modulebase3 -&gt; change this to ds2modulebase3
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>   version: &#39;1.0.0&#39;
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>...
+</span></code></pre></div></li>
+<li>Push the chart to your IDT organisation repository at the charts/ folder. This is the repository created by the Portal when registering the organisation which is the organisation configured when installing IDT
+     <div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ds2-eu/myorganisation.git
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>cp<span class="w"> </span>-r<span class="w"> </span>mymodule/<span class="w"> </span>myorganisation/charts/
+</span></code></pre></div></li>
+<li>Push the docker images for the module to the ds2 GitHub. For DS2, the docker images for the modules need to be pushed to github using ds2charts image path.  An example of an image in the ds2charts image path
+     <div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>docker<span class="w"> </span>push<span class="w"> </span>ghcr.io/ds2-eu/ds2charts/nginxmessage:1.0.0
+</span></code></pre></div>
+     &gt; ghcr.io is the registry
+     &gt; 
+     &gt; ds2-eu/ds2charts is the path
+     &gt; 
+     &gt; nginxmessage:1.0.0 the image name and version</li>
+<li>Navigate to the Containerisation UI, refresh the Git Repository and Install the module from the available modules.</li>
+<li>
+<p>If local installation runs ok, the module is ready to be uploaded to the Marketplace. Change the basechart reference back to ds2modulebase4</p>
+</li>
+<li>
+<p><strong>Building your images</strong>: The images will run on top of the IDT, and the IDT runs a Kubernetes cluster on Linux, typically Ubuntu server, so you need to build your images for Linux/amd platform. That is mainly for those developing usin MacOS. The better option is to build the images on a Linux server.</p>
+</li>
+<li><strong>Backend URL</strong>: A typical issue is to generate the backend URL from the frontend. Since modules will be deployed on top of the IDT, and the IDT will be deployed on-premise for different customer organisations, thus using different domains for the module URLs, the Helm Chart templates are configured to use a platform configuration that contains the organisation domain. This platform configuration is stored in Kubernetes and is created during Containerisation installation. The Helm Chart templates are also configured to create by default an ingress that will expose an https URL for the different components ie. frontend, backend. The component URL is automatically created by joining the component name with the domain, so for instance, if a component is called mymodulefrontend, and the domain for the organisation is myorg.com, the ingress URL of that component is https://mymodulefrontend.myorg.com. So to generate the backend URL dynamically from the frontend, the recommended approach is from the frontend to obtain the domain using the frontend URL and then use the component name which is static, and what you configured as name for the component in the chart. An example of how to do this for dhsare:
+  <div class="language-vue highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>let host = window.location.host;
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>let hostname = window.location.hostname;
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>host = hostname.replace(/^dsharefrontend\./, &quot;&quot;); --&gt; where dsharefrontend is the name of the dshare frontend component
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>app.config.globalProperties.$apiBase = `${protocol}//dsharebackend.${host}`; --&gt; where dhsarebackend is the name of the dshare backend component
+</span></code></pre></div></li>
+<li>
+<p><strong>Database connection string</strong>: Another typical issue is how to access a database or any internal component that is not being exposed via internet. In this case it is assumed that best practices are being followed and the database is not exposed using ingress and the frontend is only accessing the database via a backend API. The Helm Chart templates are configured to expose the dabase in the cluster using the component that you configured in the chart. The port is the one being exposed by the service, in the example above of the helmrelease file it's the service.port: 8080 from the values. You can set this port to any port and then that's the one you use for accessing the database. So an example of a helmrelease for a database:
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>...
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>values:
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>  app:
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    name: mymoduledb -&gt; Changed this to mymodulebackend
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>    port: 3306 -&gt; This is the port in the image
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>    env: true
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>  image:
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>    name: mysql -&gt; Change this to the docker image name of the component
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>    tag: &quot;1.0.0&quot; -&gt; Change this to the docker image tag of the component
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>  service: 
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>    port:  3300 -&gt; This is the port used to expose the service to the cluster
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>...
+</span></code></pre></div>
+  With this configuration, the url to access mysql would be jdbc:mysql://mymoduledb:3300/dbname where dbname is the name of the database in the image.</p>
+</li>
+<li>
+<p><strong>Ingress Enable/Disable</strong>: As discussed in the previous step 5, when creating the helmrelease file for a component, you can add some additional variables in the values from the Helm Chart template. One of those variables enables or disables the creation of an ingress URL to expose the component outside the cluster. Usually ingress will be enabled for frontend and backend components that need to be accessed outside the cluster, and is enabled by default. For components like databases and others that don't need to be accessed from outside the cluster, you can disable the ingress by adding the variable ingress.enabled and set to false:
+  <div class="language-yaml highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nn">...</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="nt">values</span><span class="p">:</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="nt">app</span><span class="p">:</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mymodulebackend</span><span class="w"> </span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span><span class="w"> </span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">      </span><span class="nt">env</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginxmessage</span><span class="w"> </span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="w">      </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span><span class="w"> </span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">    </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span><span class="w"> </span>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="w">    </span><span class="nt">ingress</span><span class="p">:</span>
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false --&gt; add this if no need to expose module component with ingress</span>
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="w">    </span><span class="p p-Indicator">{{</span><span class="nv">- toYaml .Values.mymodulebackend | nindent 4</span><span class="w"> </span><span class="p p-Indicator">}}</span><span class="w"> </span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Manual Module Deployment</strong>: Users can manually deploy a module by pushing the ContainerisationRelease to the organisation GitRepository without using the Containerisation UI. This is only intended for development tests and not recommended for production environments.</p>
+</li>
+</ul>
+<p>To manually install a module, assuming IDT is already running and Containerisation has been installed following the instructions above, users can create their own Containerisation HelmRelease Yaml File and push it to the repository where the containerisation controllers have been configured during installation. In the next example the organisation fluxtest is used as an example of an organisation using Containerisation to deploy a demo module. <strong>Replace fluxtest with your organisation</strong>.</p>
+<ol>
+<li>
+<p>Create the <fluxtest> repository in GitHub and create a personal access token with permissons to read/write the repository</p>
+<blockquote>
+<p>Replace <fluxtest> with your organisation</p>
+</blockquote>
+</li>
+<li>
+<p>IDT, Configuration, Flux, DS2 GitRepository and Containerisationhas have been installed
+   The DS2 GitRepository is created during IDT installation. This is a Flux resource that monitors the Helm templates folder at helmtemplates repository in ds2 and a namespace resource where this GitRepository will be created. This is the configuration of the GitRepository in the clusters/my-cluster/ds2 folder of your organisation repository
+gitrepository.yaml file
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source.toolkit.fluxcd.io/v1</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitRepository</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="nt">metadata</span><span class="p">:</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2charts</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="nt">spec</span><span class="p">:</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">  </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1m</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/ds2-eu/helmtemplates.git</span><span class="w"> </span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">  </span><span class="nt">ref</span><span class="p">:</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="w">    </span><span class="nt">branch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+</span></code></pre></div>
+namespace.yaml file
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>apiVersion: v1
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>kind: Namespace
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>metadata:
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>  name: ds2
+</span></code></pre></div>
+kustomization file kustomization.yaml
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>apiVersion: kustomize.config.k8s.io/v1beta1
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>kind: Kustomization
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>resources:
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>- namespace.yaml
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>- gitrepository.yaml
+</span></code></pre></div></p>
+</li>
+</ol>
+<p>Run this command to inspect the ds2 gitrepository in the vm where idt is installed:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>kubectl get gitrepository -n ds2
+</span></code></pre></div>
+<img alt="DS2 CONT gitrepository" src="../images/CONT-gitrepository.JPG" /></p>
+<ol>
+<li>
+<p>Once everything is installed, containerisation is configured to monitor changes in the <fluxtest> repository, and the folders /cluster/my-cluster/flux-system are created. In the flux-system folders there are already some yaml files which are the components from Containerisation flux itself, <strong>This can't be modified</strong></p>
+</li>
+<li>
+<p>Push the module chart to the <fluxtest> repository to simulate what would happen when a module is purchased from the Marketplace, and copied to the organisation repository  <br />
+Clone the helmreleases repository
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>git clone https://github.com/ds2-eu/myorganisation.git
+</span></code></pre></div>
+Copy the module chart to the <fluxtest> repository and push it to the <fluxtest> repository in the charts folder. If the charts folder does not exist yet, create it. The module won't be deployed yet.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>mkdir myorganisation/charts
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>cp -r mymodule/ myorganisation/charts/
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Create the Containerisation Helm Release Yaml file, the namespace file and the kustomization file
+Create the helmrelease-demomodule.yaml with the values overriding any variable that needs to be configured. These variables are the ones in the values.yaml file of the module chart. <strong>If a variable is a bool with values true or false, double or single quote the value</strong> <strong><em>ie. myvariable: "true"</em></strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>kind: HelmRelease
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>metadata:
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>  name: demomodule    --&gt; Change this to the name of the module
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>  namespace: demomodule --&gt; Change this to the name of the module
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>spec:
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>  interval: 10m
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>  chart:
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>    spec:
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>      chart: ./charts/demomodule --&gt; Change this to ./charts/name of the module
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>      version: &#39;1.0.0&#39; --&gt; Change this to the version of the module as per the version in the Chart.yaml file of the module chart
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a>      sourceRef:
+</span><span id="__span-29-12"><a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a>        kind: GitRepository
+</span><span id="__span-29-13"><a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a>        name: flux-system
+</span><span id="__span-29-14"><a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a>        namespace: flux-system
+</span><span id="__span-29-15"><a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a>      interval: 10m
+</span><span id="__span-29-16"><a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a>  values:
+</span><span id="__span-29-17"><a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a>    demomodulecomponent1: --&gt; Change this to a module component
+</span><span id="__span-29-18"><a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a>      config:
+</span><span id="__span-29-19"><a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a>        WELCOME_MESSAGE: &quot;COMPONENT1&quot; --&gt; Change this according to the variables of values.yaml file of the module chart. You can change the value.
+</span></code></pre></div>
+You can copy the helmrelease-demomodule.yaml from the helmreleases repository in the releases/demomodule/ folder. <br />
+Create the namespace-demomodule.yaml
+<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>apiVersion: v1
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>kind: Namespace
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>metadata:
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>  name: demomodule --&gt; Change this to the name of the module
+</span></code></pre></div>
+You can copy the namespace-demomodule.yaml from the helmreleases repository in the releases/demomodule/ folder.
+Create the kustomization file
+<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>kind: Kustomization
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>resources:
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>- namespace-demomodule.yaml --&gt; Change this to namespace-nameofthemodule.yaml
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>- helmrelease-demomodule.yaml --&gt; Change this to helmrelease-nameofthemodule.yaml
+</span></code></pre></div>
+You can copy the kustomization.yaml from the helmreleases repository in the releases/demomodule/ folder.
+Copy the yaml files to the fluxtest/cluster/my-cluster/releases/demomodule/ folder and push the repository. If the releases and demomodule folders do not exist yet, create them. The module will be deployed after some seconds automatically by Containerisation Flux component. 
+Run the following command to check the helmreleases are installed
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>helm ls -n demomodule
+</span></code></pre></div>
+<img alt="DS2 CONT helmcharts" src="../images/CONT-helmcharts.JPG" />
+You can see there are two charts created, the demomodule helmchart which corresponds to the Containerisation HelmRelease and the demomodule-demomodulecomponent1 which is triggered by the first one and expanded to a full chart using the templates from the modulebase chart.
+Run the following command to check the pod is running
+<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>kubectl get pods -n demomodule
+</span></code></pre></div>
+<img alt="DS2 CONT pods" src="../images/CONT-pods.JPG" />
+The modulebase chart also creates an ingress to access the module. Run the following command to retrieve the ingress url
+<div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>kubectl get ing -n demomodule
+</span></code></pre></div>
+<img alt="DS2 CONT ingress" src="../images/CONT-ingress.JPG" />
+Run the following command to test access to the module
+<div class="language-text highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>curl -k https://demomodulecomponent1.192-168-50-5.idt.ds2.sslip.io
+</span></code></pre></div>
+<img alt="DS2 CONT curl" src="../images/CONT-curl.JPG" />
+Your ip will be different depending on the domain congfigured during installation when the platform_configuration was created.</p>
+</li>
+</ol>
+<p>If you want to deploy another module, using the same templates but with a different name, just for testing purposes, repeat the previous steps but replacing demomodule by the new module name. Place the module chart in the charts/ folder, the release in the releases folder, and the module will automatically be deployed by Containerisation Flux.</p>
+<h2 id="other-information"><strong>Other Information</strong></h2>
+<p>No other information at the moment for Containerisation</p>
+<h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
+<p>N/A</p>
+<h2 id="video">Video</h2>
+<p><a href="https://cont">https://cont</a></p>
+<h2 id="additional-links"><strong>Additional Links</strong></h2>
+<p>Flux <a href="https://fluxcd.io/">https://fluxcd.io/</a></p>
+<p>Helm <a href="https://helm.sh/docs/topics/charts">https://helm.sh/docs/topics/charts</a></p>
+<p>Containerisation Repository <a href="https://github.com/ds2-eu/containerisation">https://github.com/ds2-eu/containerisation</a> (Private Link for Project Members)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

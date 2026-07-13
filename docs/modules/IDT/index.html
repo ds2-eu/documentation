@@ -1,0 +1,2254 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../IDM/">
+      
+      
+        <link rel="next" href="../LCAT/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>IDT - IDT Broker - Documentation DS2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#idt-idt-broker" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Documentation DS2" class="md-header__button md-logo" aria-label="Documentation DS2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation DS2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              IDT - IDT Broker
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Documentation DS2" class="md-nav__button md-logo" aria-label="Documentation DS2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentation DS2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The DS2 Software Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstartguide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DS2 Quick Start Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/ds2connector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DS2 Connector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLM - Culture and Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONT - Containerisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CUR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CUR - DS2 Data Curation module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DARC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DARC - Discovery Assessment Recommend Configure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DDT - Data Detection and Transformation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DINS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DINS - Data Inspector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DMK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DMK - Data Marketplace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DRM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DRM - Data Rights Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DSHARE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSHARE - Data Share Controller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DVM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVM - Data Visualisation Module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E2C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2C - Edge to Cloud Connector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GCAT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAT - Catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDM - Identity Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDT - IDT Broker
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDT - IDT Broker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Definition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commercial-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commercial Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How To Install
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ds2-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DS2 Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DS2 Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of installation steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-existing-installation-without-re-installting-kubernetes-and-flux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update existing installation without re-installting Kubernetes and Flux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-existing-installation-reinstalling-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update existing installation reinstalling everything
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standalone-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standalone Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standalone Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-installation-steps_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of installation steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-steps_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How To Use
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rancher-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rancher UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubectl-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kubectl commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DLM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ds2-connector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DS2 Connector
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapi-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAPI Specification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video Link
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LCAT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LCAT - Local Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LIDM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LIDM - Credential Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MCL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCL - Multi-cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MDT - Model Development Toolkit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ORC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ORC - Orchestration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PAE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PAE - Policy Agreement and Enforcement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PCR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCR - Policy Creation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PORTAL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PORTAL - Portal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DS2 Data retrieval module (RET)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SDS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDS - Sovereignty-Decision-Support-System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SEC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SEC - Edge-to-cloud Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Definition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commercial-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commercial Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How To Install
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ds2-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DS2 Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DS2 Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of installation steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-existing-installation-without-re-installting-kubernetes-and-flux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update existing installation without re-installting Kubernetes and Flux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-existing-installation-reinstalling-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update existing installation reinstalling everything
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standalone-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standalone Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standalone Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-installation-steps_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of installation steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-steps_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How To Use
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rancher-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rancher UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubectl-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kubectl commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dlm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DLM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ds2-connector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DS2 Connector
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapi-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAPI Specification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video Link
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="idt-idt-broker">IDT - IDT Broker</h1>
+<p>Powered by</p>
+<p><a href="https://informationcatalyst.com"><img alt="DS2 IDT IceLogo" src="../images/IDT-icelogosmall.jpg" /></a></p>
+<table>
+<thead>
+<tr>
+<th>Project Links</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Software GitHub Repository <a href="https://github.com/ds2-eu/idt.git">https://github.com/ds2-eu/idt.git</a></td>
+</tr>
+<tr>
+<td>Progress GitHub Project <a href="https://github.com/orgs/ds2-eu/projects/3">https://github.com/orgs/ds2-eu/projects/3</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="general-description"><strong>General Description</strong></h2>
+<p>IDT is the core enabler of DS2 who purpose is to be deployed in front of participants data source/spaces and network connected to any other IDT-enabled data source. As such its aim is to run all DS2 modules, including the DS2 Connector, the core module for Inter-Dataspace communication and data transfer, and the Containerisation module for DS2 module deployment. The IDT contains the core Kubernetes runtime to run all containerised modules and a series of additional open-source software for module management.</p>
+<p>The IDT contains the Kubernetes runtime that is the core service to run all modules in a containerised way. Those modules descriptors are uploaded to the DS2 Portal Marketplace and then, using the IDT Kubernetes UI, are deployed to the Kubernetes runtime. The Containerisation module kicks-in and then converts those module descriptors to full module charts effectively deploying the DS2 modules. The Kubernetes UI, alongside the Management and Monitoring Controller, will be used to manage and monitor all DS modules running on a participants IDT. Additional services will also be run as part of the IDT such as certificate management, ingress network traffic management using traditional ingress controllers with ingress resources to expose modules and eventually transitioning to service mesh and gateway API, storage management and possibly other useful open-source tools. The other key component of the IDT is the DS2 Connector used for Dataspace like communications following current IDSA and Gaia-X standards. An additional IDT UI will be provided for module navigation and Connector management.</p>
+<h2 id="architecture"><strong>Architecture</strong></h2>
+<p>The figure below represents the module fit into the DS-DS environment.
+<img alt="DS2 IDT Architecturefits" src="../images/IDT-architecturefits.png" /></p>
+<p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.
+<img alt="DS2 IDT Architecture" src="../images/IDT-ds2architecture2.png" /></p>
+<h2 id="component-definition"><strong>Component Definition</strong></h2>
+<p>This module has the following subcomponent and other functions:</p>
+<ul>
+<li>
+<p><strong>Kubernetes (Module Runtime)</strong>: Kubernetes is the leading technology in container orchestration and the choice and key component of the IDT for deployment and integration of the DS2 modules. This is the core IDT subcomponent that runs and orchestrates the DS2 modules and all the other IDT subcomponents, as containers. This is Open-Source software and the current distribution being used is K3s, a lightweight version of Kubernetes easy to install, half the memory, all in a binary, in less than 100 MB among other enhancements. One of the main advantages is the flexibility of installation, since it can be deployed at a participant edge, onPremise, InCloud, etc.</p>
+</li>
+<li>
+<p><strong>Kubernetes UI</strong>: The Kubernetes UI is open-source software based on Rancher that allows to install and manage Kubernetes in a more user-friendly way both onPremise and InCloud. The Kubernetes UI will provide the management interface for platform administrators to manage the Kubernetes cluster and resources running on top of it. The Kubernetes UI will also provide the monitoring interface to the IDT Kubernetes subcomponent and the DS2 modules.</p>
+</li>
+<li>
+<p><strong>Management and Monitoring Controller</strong>: This is the main interface from the Kubernetes UI to the Kubernetes subcomponent and also for external integrations. The Management and Monitoring Controller is open-source software based on the Kubernetes and Rancher API and the Rancher agents. It is used as the primary interface to the IDT Kubernetes subcomponent for cluster management. It will also be used as the primary interface for monitoring which will potentially be integrated with the DRM Blockchain module for traceability. In addition, further research on using other modules for monitoring such as Prometheus-Grafana will be conducted for enhanced monitoring.</p>
+</li>
+<li>
+<p><strong>Ingress – Gateway</strong>: The ingress or gateway resource provides the entry point to the IDT Kubernetes subcomponent via the Ingress controller, thus, the IDT network, for all network traffic from external apps, being an external app, any system external to the IDT. It describes how the DS2 modules are exposed outside of the IDT. Initially the modules will use a Kubernetes Ingress resource to expose the modules but further research will be conducted to examine the use of the Gateway API and Service Mesh technology.</p>
+</li>
+<li>
+<p><strong>Ingress Controller – Service Mesh</strong>: Based on Open Source, the Ingress Controller is the Kubernetes controller dealing with Ingress resources, that is, managing the entry point to the IDT and how the DS2 modules are exposed outside of IDT. Further research is expected for replacement of the Ingress Controller with Service Mesh technology and the Kubernetes Gateway API, that adds a transparent layer to provide the IDT with enhanced connectivity, security, control and observability. The use of the Service Mesh could also be a key feature for using more secure communication via mutual TLS protocol (mTLS) in all DS2 communications which provides and additional trust layer. This could also be integrated with the DS2 trust and identity system.</p>
+</li>
+<li>
+<p><strong>Storage Manager</strong>: Open-source software to provide the interface between the IDT Kubernetes subcomponent and the physical storage for DS2 stateful modules. This will use Kubernetes native storage technology to allow highly available stateful module deployments in IDT. When data from DS2 modules need to be persisted in a participant backend storage system, the Storage Manager will be used to map current deployment and Kubernetes Persistent Volumes to external storage systems. This is not a storage system or technology for modules… If DS2 modules need to use storage, the DS2 modules need to provide them by packaging them in their module Chart.</p>
+</li>
+<li>
+<p><strong>CertManager</strong>: Based on Open-source software, it provides management of SSL certificates for secure connectivity ie. HTTPS, with verified signed certificates using Let’s Encrypt CertificateAuthority (CA) and configures them for the Ingress or Gateway resource. The CertManager integrates with the Ingress Controller and/or Service Mesh subcomponents and in addition, further research on integration with DS2 Trust system will be explored.</p>
+</li>
+<li>
+<p><strong>DS2 Connector</strong>: The DS2 Connector in the IDT is the key element that will allow for DS2 transactions and data exchange, following the IDSA and Gaia-X standards. The Open-source Eclipse EDC Connector and the necessary components (control plane, data plane …) will be used to provide interoperability between Dataspaces and secure, trustworthy exchange of data. Following existing Dataspace principles and protocols, the DS2 Connector will use the DS2 Trust system for identity management and will connect to other participants IDT DS2 Connectors in other Dataspaces for data exchange. The Connector will also integrate with the DS2 Catalog or a Dataspace level Metadata Broker for participant and data discovery.</p>
+</li>
+<li>
+<p><strong>IDT UI</strong>: This is the main interface for the IDT from the user point of view. The interface is actually two interfaces, one is the Participant Portal, which is a local version of the DS2 Portal and displays the list of modules running in an IDT and user and role management. The other is a more Connector focused UI, with Connector configuration and management features.</p>
+</li>
+<li>
+<p><strong>IDT Toolkit / Platform Configuration</strong>: This is a toolkit box where common tools will be deployed for use by the modules, including platform configuration to be used mainly by the Containerisation module and the Chart templates, but also can be used by other modules. The first tool in the box will be an email server to be used by modules.</p>
+</li>
+<li>
+<p><strong>Tier 0 Support Service Stack</strong>:</p>
+<ul>
+<li><strong>DRM and API</strong>: For further exploration integration of the monitoring controller with the Blockchain will be considered.</li>
+</ul>
+</li>
+<li>
+<p><strong>Tier 1 Service Stack for Marketplace and deployment and API</strong>: The full stack will be implemented as generically described elsewhere in this document. Exceptions: The IDT uses the DS2 Portal and Marketplace to retrieve the ChartDescriptors of modules and deploy them via the Kubernetes UI. Then the Containerisation module uses the descriptors to deploy the full module Helm Chart. In addition, The DS2 Connector in the IDT integrates with other IDT DS2 Connectors for data exchange.</p>
+</li>
+<li>
+<p><strong>Tier 3 Trust Stack and Catalog and API</strong>: The IDT will make use of the relevant parts of the DS2 Trust Stack for certificates in the Ingress Controller – Service Mesh and identities in the DS2 Connector. The IDT will also connect via the DS2 Connector to the Catalog.</p>
+</li>
+<li>
+<p><strong>External Apps</strong>: External Apps refer to any software application external to the IDT and DS2 ecosystem that uses the DS2 Connector in the IDT for any DS2 data transaction. It’s the application that can trigger a data exchange via the Connector, either as a consumer or producer.</p>
+</li>
+<li>
+<p><strong>External Storage Systems</strong>: This refers to any external storage system, physical or software defined, that a participant has already in place and where data from the IDT and DS2 ecosystem can be persisted, thus, is mapped via the Storage Manager into the IDT Kubernetes</p>
+</li>
+</ul>
+<h2 id="screenshots"><strong>Screenshots</strong></h2>
+<p><img alt="DS2 IDT Screenshots" src="../images/IDT-screenshots.gif" /></p>
+<h2 id="commercial-information"><strong>Commercial Information</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Organisation (s)</th>
+<th>License Nature</th>
+<th>License</th>
+<th>Marketplace Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://informationcatalyst.com">ICE</a></td>
+<td>Open Source</td>
+<td>Apache 2.0</td>
+<td><a href="https://marketplacefrontend.central.ds2.icelab.cloud/products/4d8707ef-4c2d-4ba7-94c7-7e98617a7bc8">idt</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="top-features"><strong>Top Features</strong></h2>
+<ol>
+<li><strong>Kubernetes Platform</strong>: The IDT provides a Kubernetes based platform for ease of integration and deployment of the modules</li>
+<li><strong>Flexible Installation Process</strong>: The IDT provides a user friendly installation process for easy installation to non-experienced users.
+   In any case, management of the platform itself, will require some expertise. In addition, it supports different installation modes from on-cloud to on-prem and edge.</li>
+<li><strong>Management Interface</strong>: A Rancher based UI is provided for the Kubernetes cluster management. Management of Kubernetes itself will require some expertise. The Management UI  provides the interface and API for module management : deployment, deletion, upgrade</li>
+<li><strong>Monitoring of Platfom and Apps</strong>: Provides the interface and API to monitor the cluster itself and the modules using Rancher UI</li>
+<li><strong>Seamless Integration with Containerisation Deployment</strong>: IDT integrates seamlessly with the Containerisation module for ease of module deployment</li>
+<li><strong>Networking</strong>: Provides secure networking and connectivity among the installed apps and to and from outside the cluster</li>
+<li><strong>Log management</strong>: Ability to retrieve module logs for troubleshooting and debugging</li>
+<li><strong>Native Storage</strong>: Provides Kubernetes native storage for stateful applications</li>
+<li><strong>IDT UI</strong>: Provides the DLM UI as the entry point to the IDT, single sign on and module navigation which includes all the IDT core module links: containerisation, localcatalog, dlm, credentialmanager and dlmstore</li>
+<li><strong>DS2 Connector</strong>: The IDT incorporates the DS2 Connector for DS2 data exchange</li>
+</ol>
+<h2 id="how-to-install"><strong>How To Install</strong></h2>
+<p>The IDT installs a pre-packaged enterprise ready Kubernetes cluster along with some extra features for management and deployment.</p>
+<h3 id="requirements">Requirements</h3>
+<p>Provision a Linux Node or VM (Ubuntu 18.04, 20.04, 22.04)</p>
+<p><strong>The VM has to be run on top of AMD architectures ie. don't run a vm on a mac host machine since typically module images won't support arm architectures</strong></p>
+<p>Resources:</p>
+<p>Kubernetes Node</p>
+<ul>
+<li>Minimum: 2 cpu cores, 4 GB RAM and 10 GB disk capacity.</li>
+<li>Recommended: 4 cpu cores, 8 GB RAM and 50 GB disk capacity.</li>
+<li>Recommended when installgin idt core bundle: 8 cpu cores, 16 GB RAM and 100 GB disk capacity</li>
+</ul>
+<p>These numbers may change since a number of IDT components will be deployed, check specific requirements for specific components.</p>
+<h3 id="software">Software</h3>
+<p>IDT installs these software utilities and specific tested compatible versions:</p>
+<ul>
+<li>Docker</li>
+<li>K3s (Kubernetes)</li>
+<li>Helm</li>
+<li>Cert-manager</li>
+<li>Rancher</li>
+<li>Creates signed certificates to use by the ingress controller from various providers (digitalocean, cloudflare), from files or self signed</li>
+<li>Nginx Ingress Controller</li>
+<li>Nginx docker (load balancer - optional)</li>
+<li>DS2 Connector</li>
+<li>Core DS2 modules</li>
+</ul>
+<h3 id="ds2-installation">DS2 Installation</h3>
+<p>The DS2 Installation of IDT includes not only the IDT itself but the installation of all core modules</p>
+<h4 id="summary-of-installation-steps">Summary of installation steps</h4>
+<ol>
+<li>Purchase the IDT Core bundle  </li>
+<li>From the purchased bundle, download the idtinstaller module</li>
+<li>Unzip and untar the installer in the VM to be installed</li>
+<li>Configure the installation</li>
+<li>Run the installer</li>
+</ol>
+<h4 id="detailed-steps">Detailed Steps</h4>
+<ul>
+<li>
+<p>Purchase the IDT Core bundle from the DS2 Marketplace at <a href="https://marketplacefrontend.central.ds2.icelab.cloud">Marketplace</a> . This includes the "idtinstaller" and all the core modules
+<img alt="IDT-bundle" src="../images/IDT-bundle.png" /></p>
+</li>
+<li>
+<p>From the purchased bundle, download and copy the idtinstaller module to the VM where the IDT is going to be installed.
+<img alt="IDT-mktidt" src="../images/IDT-mktidt.png" /></p>
+</li>
+<li>
+<p>The idtinstaller is a tar.gz file which is packaged as a zip file for the Marketplace. First unzip the zip file and then untar the tar file
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tar<span class="w"> </span>-xzvf<span class="w"> </span>idtinstaller.tar.gz
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Once the installer is unpacked, navigate to the idtinstaller folder and edit the global.yaml file to configure the installation
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># idt params</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">nodeip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.50.241</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">iface</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eth0</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nt">idt_domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ybeer.ds2.icelab.cloud</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nt">custom_ssl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nt">issuer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">digitalocean</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># cont params</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nt">githubuser</span><span class="p">:</span><span class="w"> </span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nt">githubtoken</span><span class="p">:</span><span class="w"> </span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="nt">organisation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myorganisation</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1"># connector</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="nt">connectorversion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ds2connectorv24pae</span>
+</span></code></pre></div>
+where the parameters are</p>
+<blockquote>
+<p>nodeip: ip of the node where idt is being installed</p>
+<p>iface: the network interface of the ip</p>
+<p>idt_domain: the domain as configured in the Portal</p>
+<p>custom_ssl: optional parameter to create the ssl certificates for the idt domain with values 0, 1 and 2. 
+* 0: the installer creates a self-signed certificate for the domain 
+* 1: the installer creates a valid let's encrypt signed certificate for an exisiting domain using the dns challenge. If this option is selected, the parameter issuer needs to be added to the yaml file with the name of the dns server that hosts the domain. 
+Supported issuers so far are:
+  * cloudflare
+    <div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">custom_ssl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">issuer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cloudflare</span>
+</span></code></pre></div>
+    Edit the /idtinstaller/minids23.0/issuers/cloudflare-secret.yaml and add your cloudflare API token
+    api-token: API Token
+  * digitalocean
+    <div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">custom_ssl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">issuer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">digitalocean</span>
+</span></code></pre></div>
+    Edit the /idtinstaller/minids23.0/issuers/digitalocean-secret.yaml and add your digitalocean access token base64 encoded ie. echo -n $accesstoken | base64
+    access-token: “Acess Token”
+* 2: the installer creates a secret based on an existing valid signed certificate owned by the user. If this option is selected, the parameters public_key and private_key need to be added to the yaml file with the path to the crt and key files of the certificate.
+  ```yaml
+  custom_ssl: 2
+  public_key: idt.crt
+  private_key: idt.key
+githubuser: the github username as configured in the Portal</p>
+<p>githubtoken: create a githubtoken for the github user with pull permissions from the repo. It will be used to pull charts and images for the modules</p>
+<p>organisation: the organisation registered in the portal</p>
+<p>connectorversion: leave as it is</p>
+</blockquote>
+</li>
+<li>
+<p>Run the installer from the idtinstaller folder. The installer will install the IDT and all the core modules acquired with the Marketplace core bundle: IDT, Containerisation, Connector, DLM, LCAT, CredManager, DLM Store
+  <div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="l l-Scalar l-Scalar-Plain">./idtinstaller.sh</span>
+</span></code></pre></div></p>
+</li>
+<li>Access the Portal and navigate via DashButton to Containerisation module</li>
+<li>Refresh the GitHub repository to refresh all installed modules
+  <img alt="IDT-cont" src="../images/IDT-cont.png" /></li>
+<li>Navigate to all core modules via DashButton or DLM
+  <img alt="IDT-dashbutton" src="../images/IDT-dashbutton.png" /></li>
+</ul>
+<h4 id="update-existing-installation-without-re-installting-kubernetes-and-flux">Update existing installation without re-installting Kubernetes and Flux</h4>
+<h4 id="update-existing-installation-reinstalling-everything">Update existing installation reinstalling everything</h4>
+<h3 id="standalone-installation">Standalone Installation</h3>
+<h4 id="summary-of-installation-steps_1">Summary of installation steps</h4>
+<ol>
+<li>Clone the repo</li>
+<li>Deploy IDT<ul>
+<li>Create the parameters yaml file</li>
+<li>Run the command minids23.1.sh as per instructions. This deploys the Kubernetes platform</li>
+</ul>
+</li>
+<li>Access Rancher at https://rancher.$nodeip.ds2.sslip.io where $nodeip uses '-' instead of '.' (The domain can be changed if needed)</li>
+<li>
+<ol>
+<li>If http access is needed, run patch_nginx.sh</li>
+</ol>
+</li>
+<li>Deploy IDT modules from the Rancher UI (Using Containerisation module at a later stage)<ul>
+<li>Any script required before deploying any component should be in the idt/modules folder</li>
+<li>Upon deployment of first module import the self-signed certificate in the trusted CA's store</li>
+</ul>
+</li>
+</ol>
+<h4 id="detailed-steps_1">Detailed steps</h4>
+<ul>
+<li>
+<p>Clone the repository
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ds2-eu/idt.git
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Navigate to idt folder
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">cd</span><span class="w"> </span>idt/idt3.0/minids23.0
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Create the parameters file minids2.yaml with this parameters:</p>
+</li>
+</ul>
+<blockquote>
+<p>nodeip: the ip of the vm where idt and k3s will be installed ie. 192.168.50.10</p>
+<p>iface: the network interface of the nodeip ie. enp0s8</p>
+<p>idt_domain: optional parameter to configure the domain of the idt and modules that will later be deployed to organisation domain. This domain will usually be public. If not set, the domain defaults to "$ip.idt.ds2.sslip.io" where $ip is the nodeip configured but using '-' between the numbers ie. 192-168-50-10</p>
+<p>rancher_domain: optional parameter to configure the Rancher domain to a different domain that the one from the organisation. This domain will usually be private since it has access to the IDT Kubernetes cluster. If not set, the domain defaults to "$ip.ds2.sslip.io" where ip is the same as the idt_domain example.</p>
+<p>custom_ssl: optional parameter to create the ssl certificates for the idt domain with values 0, 1 and 2.
+   0: the installer creates a self-signed certificate for the domain
+   1: the installer creates a valid let's encrypt signed certificate for an exisiting domain using the dns challenge. If this option is selected, the parameter &gt; issuer needs to be added to the yaml file with the name of the dns server that hosts the domain. Supported issuers so far are: cloudflare
+   2: the installer creates a secret based on an existing valid signed certificate owned by the user. If this option is selected, the parameters public_key and &gt; private_key need to be added to the yaml file with the path to the crt and key files of the certificate.</p>
+</blockquote>
+<p>An example of a yaml file for issuer type of ssl:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>nodeip:<span class="w"> </span><span class="m">192</span>.168.50.5
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>iface:<span class="w"> </span>enp0s8
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>idt_domain:<span class="w"> </span>idt.myexternaldomain.com
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>rancher_domain:<span class="w"> </span>idt.myinternaldomain.com
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>custom_ssl:<span class="w"> </span><span class="m">1</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>issuer:<span class="w"> </span>cloudflare
+</span></code></pre></div></p>
+<p>Another example using existing certificate:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>iface:<span class="w"> </span>enp0s8
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>idt_domain:<span class="w"> </span>idt.myexternaldomain.com
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>rancher_domain:<span class="w"> </span>idt.myinternaldomain.com
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>custom_ssl:<span class="w"> </span><span class="m">2</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>public_key:<span class="w"> </span>idt.crt
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>private_key:<span class="w"> </span>idt.key
+</span></code></pre></div></p>
+<ul>
+<li>
+<p>Run idt
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>./minids23.1.sh
+</span></code></pre></div>
+The script will install the software utilities in this order:</p>
+</li>
+<li>
+<p>First, IDT installs Docker</p>
+</li>
+<li>
+<p>Then, k3s Kubernetes cluster is installed. Once installed, the installation process will wait and check for K3s to be up and running. Helm is installed together with K3s and kubectl.</p>
+</li>
+<li>
+<p>Next cert-manager is deployed in order to provide a ssl certificate for Rancher. Process will wait and check that cert-manager is running.</p>
+</li>
+<li>
+<p>Then Rancher is deployed in the cluster. Process will wait and check that Rancher is running.</p>
+</li>
+<li>
+<p>Next, the nginx ingress controller is deployed. Before this, a self signed ssl certificate is created using certmanager. Notice that the domain that is configured in the certificate, is the one to be used as domain for the modules when deployed to IDT which defaults to *.$nodeip.modules.ds2.sslip.io . This domain can be changed.</p>
+</li>
+<li>
+<p>An external to Kubernetees nginx server is also run as nginxlb docker image, as the entry point to the cluster, to serve as an external load balancer. </p>
+</li>
+<li>
+<p>DS2 IDT is now ready.</p>
+</li>
+</ul>
+<p>Users can also select which components need to be installed, ie. maybe docker is already installed in the vm, or this is a re-installation, or the nginxlb does not need to be installed. To select the components, create or edit the file minids2.cfg and add remove the components to be installed. If the name of the component is not in the file, that component will be installed, if the name is in the file, that component will not be installed.
+  * docker
+  * k3s
+  * certmanager
+  * rancher
+  * ingress
+  * nginxlb</p>
+<p>An example of a file for an installation where docker and nginxlb are not installed:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docker
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>nginxlb
+</span></code></pre></div></p>
+<p>The IDT is then installed.</p>
+<p><img alt="IDT-SH" src="../images/IDT-sh3.JPG" /></p>
+<ul>
+<li>Access Rancher by accessing the Rancher url in the browser (https://rancher.$nodeip.ds2.sslip.io)</li>
+<li>Once in the Rancher UI, the admin password is set</li>
+<li>Then navigate to the workloads in the system project</li>
+</ul>
+<p><img alt="Rancher" src="../images/IDT-Rancher.JPG" /></p>
+<ul>
+<li>
+<p>The nginx ingress controller is by default set to only accept https connections and redirect to https. In order to use http, run the script patch_nginx.sh which will configure nginx ingress controller to accept http (optional). </p>
+</li>
+<li>
+<p>Now that the cluster is up and running, the Rancher UI can be accessed in order to manage the cluster and install modules. </p>
+</li>
+</ul>
+<h2 id="how-to-use"><strong>How To Use</strong></h2>
+<p>The IDT is mainly the Kubernetes based platform with some extra features and enhancements where all the modules are deployed and managed. So, the how to use in this case is focused first on managing the Kubernetes cluster which is the core of IDT itself and requires some IT expertise. In addition, the DLM module is included which is the entry point to all the core modules in IDT. Some instructions on how to use the DS2 connector will also be included.</p>
+<h3 id="rancher-ui">Rancher UI</h3>
+<p>Once the IDT has been installed, the Rancher UI along with the IDT Portal (local Portal) and the core modules (to be done) can be accessed.
+The Rancher UI is the main entry point for Kubernetes cluster management but won't be used to manage modules since the Containerisation module is the module to install and delete modules from IDT. </p>
+<ul>
+<li>
+<p>Inspect the cluster and check number of nodes, resources, etc
+      <img alt="Rancher Cluster" src="../images/IDT-ranchercluster.JPG" /></p>
+</li>
+<li>
+<p>Module logs: In order to review the modules logs, navigate to Apps, Installed Apps, and the list of installed modules is displayed. Select the module to be monitored and the list of Kubernees resources of that module are displayed. Select the Deployment and the Pod is displayed. Click on the three dots on the right and select View Logs. The logs of the module are displayed.
+      <img alt="Rancher Logs" src="../images/IDT-rancherlogs.JPG" /> </p>
+</li>
+</ul>
+<h3 id="kubectl-commands">Kubectl commands</h3>
+<p>Experienced IT users can also use kubectl commands, installed during the IDT installation in order to manage the cluster. Please see the Kubernetes documentation in the <a href="#additional-links">additional links</a> section.</p>
+<h3 id="dlm">DLM</h3>
+<p>The DLM is a module or sub-module of IDT which is a web application that includes all the links to the core modules running in IDT. 
+* From the dash button, click on modules and click on dlm
+      <img alt="IDT-dlmbutton" src="../images/IDT-dlmbutton.png" />
+* You will be redirected to the DLM module where you have the available links for the IDT core modules
+      <img alt="IDT-dlm" src="../images/IDT-dlm.png" /></p>
+<h3 id="ds2-connector">DS2 Connector</h3>
+<p>Once the IDT is installed, the DS2 Connector is deployed automatically and exposed using the domain selected when installing the IDT. The main module that allows management of the connector ie. creating data assets, policies, data offers, etc. is the LCAT localcatalog module which is a core module deployed with IDT installation. This is the recommended way of managing the DS2 Connector for production, please read the instructions at <a href="../LCAT/#how-to-use">LCAT</a>. </p>
+<p>The DS2 Connector can also be managed via API and mainly for testing purposes, included in the idtinstaller package, we have created a set of scritps that allow you to perform some of the basic operations of the connector:
+1. Create a data asset
+2. Create a policy
+3. Create a data offer (contract definition)
+4. Fetch a connector catalog
+5. Negotiate a contract
+6. Transfer data (http push and pull)</p>
+<p>For details on how to work with the DS2 Connector and use those scripts please red the [Guide of the DS2 Connector](../guides(ds2connector.md).</p>
+<h2 id="other-information"><strong>Other Information</strong></h2>
+<p>No other information at the moment for IDT</p>
+<h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
+<p><img alt="OpenAPI" src="../images/IDT-openapi.JPG" /></p>
+<h2 id="video-link"><strong>Video Link</strong></h2>
+<p>Add here video link <a href="https://idt">https://idt</a></p>
+<h2 id="additional-links"><strong>Additional Links</strong></h2>
+<p>Video <a href="https://youtube.com/idt">https://youtube.com/idt</a></p>
+<p>Kubernetes <a href="https://v1-26.docs.kubernetes.io/docs/home/">https://v1-26.docs.kubernetes.io/docs/home/</a></p>
+<p>Helm <a href="https://helm.sh/">https://helm.sh/</a></p>
+<p>K3s <a href="https://k3s.io/">https://k3s.io/</a></p>
+<p>Rancher <a href="https://ranchermanager.docs.rancher.com/v2.7/getting-started/quick-start-guides">https://ranchermanager.docs.rancher.com/v2.7/getting-started/quick-start-guides</a></p>
+<p>EDC Connector <a href="https://eclipse-edc.github.io/">https://eclipse-edc.github.io/</a></p>
+<p>Portal Repository <a href="https://github.com/ds2-eu/portal">https://github.com/ds2-eu/portal</a> (Private Link for Project Members)</p>
+<p><a href="../../guides/ds2connector/">DS2 Connector Guide</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

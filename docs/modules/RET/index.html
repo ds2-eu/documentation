@@ -1,0 +1,1909 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../PORTAL/">
+      
+      
+        <link rel="next" href="../SDS/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>DS2 Data retrieval module (RET) - Documentation DS2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ds2-data-retrieval-module-ret" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Documentation DS2" class="md-header__button md-logo" aria-label="Documentation DS2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation DS2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DS2 Data retrieval module (RET)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Documentation DS2" class="md-nav__button md-logo" aria-label="Documentation DS2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentation DS2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The DS2 Software Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstartguide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DS2 Quick Start Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/ds2connector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DS2 Connector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLM - Culture and Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONT - Containerisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CUR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CUR - DS2 Data Curation module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DARC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DARC - Discovery Assessment Recommend Configure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DDT - Data Detection and Transformation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DINS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DINS - Data Inspector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DMK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DMK - Data Marketplace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DRM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DRM - Data Rights Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DSHARE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSHARE - Data Share Controller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DVM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVM - Data Visualisation Module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E2C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2C - Edge to Cloud Connector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GCAT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAT - Catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDM - Identity Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDT - IDT Broker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LCAT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LCAT - Local Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LIDM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LIDM - Credential Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MCL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCL - Multi-cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MDT - Model Development Toolkit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ORC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ORC - Orchestration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PAE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PAE - Policy Agreement and Enforcement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PCR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCR - Policy Creation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PORTAL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PORTAL - Portal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DS2 Data retrieval module (RET)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DS2 Data retrieval module (RET)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Description
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Definition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commercial-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commercial Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How To Install
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-the-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running the module
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to use
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-configuration-files-local-gui-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating the configuration files (local GUI only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-in-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running in Docker
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idt-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IDT Portal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connector-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connector UI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapispec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenApiSpec
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SDS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDS - Sovereignty-Decision-Support-System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SEC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SEC - Edge-to-cloud Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Description
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Definition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commercial-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commercial Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How To Install
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-the-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running the module
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to use
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-configuration-files-local-gui-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating the configuration files (local GUI only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-in-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running in Docker
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idt-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IDT Portal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connector-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connector UI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapispec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenApiSpec
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ds2-data-retrieval-module-ret">DS2 Data retrieval module (RET)</h1>
+<p>Powered by</p>
+<p><a href="https:/ibm.com"><img alt="DS2 IDT IBM Logo" src="../images/IBM_logo%C2%AE_pos_blue60_CMYK.jpg" /></a></p>
+<table>
+<thead>
+<tr>
+<th>Project Links</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Software GitHub Repository <a href="https://github.com/ds2-eu/ret.git">https://github.com/ds2-eu/ret.git</a></td>
+</tr>
+<tr>
+<td>Progress GitHub Project <a href="https://github.com/orgs/ds2-eu/projects/3">https://github.com/orgs/ds2-eu/projects/3</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="general-description"><strong>General Description</strong></h2>
+<p>The RET module uses machine learning technology to help a data consumer obtain access to a data store. The obtain data can either be saved to a file, or pipelined to an application with transformations between the source and target schemas automatically executed.</p>
+<h3 id="description">Description</h3>
+<p>Data offered by a data provider may be either a fix set of data, or, more typically for large sets of data, a slice extracted from a larger set of data, selectable through parameters such as a time window, or the ID of a specific entity.  While in the former case the creation of the REST call to obtain the data is straightforward, the latter case can be challenging, especially if special formatting of the request parameters – such as creating timestamp in a given RFC format – is needed.  Additionally, the data in the data offering may not conform to the requirements of the data requester (format, data field names, units etc.).  Both of these cases can benefit from technical features to allow a data consumer to obtain and use data, which in the worst case will prevent non-technical users from taking advantage of the data space concept.</p>
+<p>The Data Retrieval module addresses both of these issues through the use of a machine learning Large Language Model (LLM).  Using an OpenAPI spec for the Provider data (obtained through the Catalogue), the user is guided to enter whatever request parameters are required by the REST call to the provider.  The LLM is supplemented with the relevant portions of the OpenAPI spec and will compose the correct REST call, automatically formatting the input parameters to conform to the requirements of the spec.  The REST command can then be automatically executed from the Data Retrieval GUI.</p>
+<p>Optionally, to supply the consumer with data in the expected format, a data schema for the target must be supplied.  The OpenAI spec supplies the data schema for the source data.  Additionally, the consumer will require a library of various commonly required transformations, such as changing column names.  Once again, LLM RAG technology is used, supplying the LLM with the source and destination schemas, as well as a description of the functions in the transformation library.  The LLM is then able to determine what transformations are required on the source data, and the Data Retrieval module then automatically adds to the data acquisition pipeline the required transformations on the data.  Optionally, a target application can be specified, and the Data Retrieval module will automatically add this to its pipeline and execute the target application with the obtained and transformed data.</p>
+<p>Function generation (i.e. the creation of the REST call) works without any errors for use case data sets that take parameters.  In the GreenDeal use case, for example, the module will correctly create timestamps entered in natural language to the required RFC 3339 format. Similarly, the selection of a transformation routine from the transformation library works properly for our test.</p>
+<p>More experimentation is required, however with a larger number of required transformations from actual user requirements.</p>
+<h2 id="architecture"><strong>Architecture</strong></h2>
+<p>The figure below represents the module fit into the DS-DS environment.
+<img alt="DS2 CUR Architecturefits" src="../images/T4.1_architecture.png" /></p>
+<p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.
+<img alt="DS2 CUR Architecture" src="../images/T4.1_components.png" /></p>
+<h2 id="component-definition"><strong>Component Definition</strong></h2>
+<p>The Retrieval module is composed of two main components, a graphical user interface (GUI) and a backend which handles the program logic.  There are two versions of the GUI, a web based version and a local graphical version.</p>
+<p>The GUI displays all data sources which are available for retrieval, and using their description from an OpenAPI spec, guides the user through the process of supplying all required input parameters.  Note however that formatting of the parameters, such as timestamps, is not required, as will be explained below.</p>
+<p>The backend requires an OpenAPI specification for each data source and uses a Large Language Model (LLM) for function calling - i.e. the proper composition of a REST call from parameters given the description of the REST call from the OpenAPI spec.</p>
+<p>Created REST calls are executed by the backend.  In the event that the REST call fails, the backend feeds back the generated REST call together with the execution error to the LLM and requests that a corrected REST call be generated.  This loop will happen up to three times, after which an error is returned to the user.  The generated REST call displayed in the GUI can be then modified by hand and reexecuted.</p>
+<p>The destination location for the retrieved data is selectable from the GUI - either data can be stored to a file or pipelined into an application chosen from a pre-defined list.  While storage to a Cloud store is currently not support, the code can be easily extended to handle this case.</p>
+<h2 id="screenshots"><strong>Screenshots</strong></h2>
+<p>The picture below represents how RET guides the user through the parameter input process:
+<img alt="DS2 RET Basic GUI" src="../images/screenshot_file.png" /></p>
+<p>The following picture shows the result of executing the RET, requesting transformations and application execution.
+<img alt="DS2 RET Graph GUI" src="../images/screenshot_graph.png" /></p>
+<h2 id="commercial-information"><strong>Commercial Information</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Organisation (s)</th>
+<th>License Nature</th>
+<th>License</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IBM</td>
+<td>Consortium Confidential</td>
+<td>TBD</td>
+</tr>
+</tbody>
+</table>
+<h2 id="top-features"><strong>Top Features</strong></h2>
+<ol>
+<li>
+<p>GUI to guide through the input of command line parameters</p>
+</li>
+<li>
+<p>LLM function calling to properly compose the REST call, including formatting of command line parameters</p>
+</li>
+<li>
+<p>Automatic execution of the REST call and either storing the returned results to a file or pipelining the results to an application.</p>
+</li>
+<li>
+<p>Automatic selection of required data transformations to bring the downloaded data to the format of a target schema.</p>
+</li>
+<li>
+<p>Automatic injection of API token into the composed REST call.</p>
+</li>
+</ol>
+<h2 id="how-to-install"><strong>How To Install</strong></h2>
+<p>Clone this git module.  </p>
+<p>In order to run the RET module, the correct python environment needs to be created.  It is recommended that you create a virtual environment as follows:</p>
+<ul>
+<li>python -m venv [name]  where "name" will be the name of the virtual environment, for example, "venv".</li>
+<li>Activate the virtual environment: On Mac or Linux this will be: <code>source &lt;name&gt;/bin/activate</code>, where the value of "name" is from the previous step.</li>
+<li>Install inside the virtual environment the required modules: <code>pip install -r requirements.txt</code></li>
+</ul>
+<h3 id="running-the-module">Running the module</h3>
+<p>To run the local GUI version:</p>
+<p>Run the RET module as: <code>python local_gui/code/data_discovery_main.py</code> with the command line options described in the following table:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Explanation</th>
+<th>Required or Optional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--dir</td>
+<td>The pathname to the directory for the OpenAPI files for the source data.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>--transform</td>
+<td>The pathname to the file defining configuration for the transformation and application execution pipeline.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>--llmurl</td>
+<td>The base URL for the LLM. (E.g. "https://api.groq.com/openai/v1")</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>--llmname</td>
+<td>The model name for the LLN.  It is recommended not to change the default value.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>--llmid</td>
+<td>The model id for the LLM.  It is recommended not to change the default value.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>--llmkey</td>
+<td>The API key for the LLM.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>--token</td>
+<td>The API token to be passed to the data source server.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>--outdir</td>
+<td>The starting directory in the directory selection box when export to a file is requested.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>--appconfig</td>
+<td>The pathname of the application configuration file</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<p>To run the web based version:</p>
+<p>Run the RET module from the web_based/code directory as <code>python code/web_gui_data_discovery_main.py</code> with the command line options as described in the following table:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Explanation</th>
+<th>Required or Optional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--llmurl</td>
+<td>The base URL for the LLM. (E.g. "https://api.groq.com/openai/v1")</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>--llmname</td>
+<td>The model name for the LLN.  It is recommended not to change the default value.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>--llmid</td>
+<td>The model id for the LLM.  It is recommended not to change the default value.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>--llmkey</td>
+<td>The API key for the LLM.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>--token</td>
+<td>The API token to be passed to the data source server.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>--output_fname</td>
+<td>The starting directory in the directory selection box when export to a file is requested.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-to-use">How to use</h2>
+<p>The current version of RET requires an OpenAPI specification for the source data.  OpenAPI specifications have become the industrial standard for describing RESTful APIs and provide information on the parameters supplied to the REST call as well as the expected format (schema) for the data to be returned.  However, while OpenAPI specifications are designed to be human-readable, it is not always easy to understand what is required for input (e.g. the format of a timestamp).  </p>
+<p>The RET module is configurable to point to a list of OpenAPI specifications, and the user is able to select one or more specifications in the application GUI.  Selecting an OpenAPI spec will display a list of all the REST endpoints (functions) contained within that specification.  Selecting a function will display the text description of the function from the OpenAPI file, as well as list of all possible parameters for that function in "Associated Parameters" listbox.  The user can then select a parameter and enter a parameter value.  If the OpenAPI spec contains a description of the parameter, this will be displayed too.</p>
+<p>The destination for the output for the data source is selectable in the GUI.  Picking the "File" radio button in the "Data to:" box will bring up a directory selector for output file.  After selecting an output directory, the user should then complete the displayed path with the name of the desired output file.</p>
+<p>The RET module also allows data obtained from a data source to be transformed before storing to a file, based on the requirements of a target application.</p>
+<p>When all desired parameters have been entered, the user can press the "Create request for data" button which will take all the input values and use an LLM to properly format them and construct a REST call and obtain the data. The code will check if the generated REST call succeeded or failed, and if failed, it will supply the LLM with the originally composed REST call and the error and prompt it to correct the REST call.  This loop of REST generation, execution and validation will occur up to three times before an error is announced and human intervention is requested to correct the generated REST call displayed in the GUI.</p>
+<p>The retrieved data will then either be written to a file or piplined to an application (local GUI version only), as explained above.</p>
+<h3 id="creating-the-configuration-files-local-gui-only">Creating the configuration files (local GUI only)</h3>
+<p>The "schemas" directory holds two files, "application_schema.json" and "mappings.json".</p>
+<p>The "application_schema.json" file describes the user applications which can be selected from the RET GUI to become part of the data download, transform and application execution pipeline.  This file emulates the format used by the OpenAPI specification to describe data sources. The name of this file is specified on the command line with "--transform" option.</p>
+<p>The "mappings.json" file defines the mapping between a field in the source data schema and the target data schema, as well as the transformation required, where the transmation needs to be defined in the "transformations.py" file in the code directory.  Note that in the future this file may be automatically generated by RET, however currently it must be manually created.</p>
+<h3 id="running-in-docker">Running in Docker</h3>
+<ol>
+<li>Create ther docker image:
+(For the local based GUI) <code>docker build -t &lt;username&gt;/discovery:latest -f local_gui/Dockerfile_discovery .</code>
+(For the web-based GUI) <code>docker build -t &lt;username&gt;/discovery:latest -f web_based/Dockerfile_retrieval .</code></li>
+</ol>
+<p>If running the local based GUI, do the following three steps:</p>
+<ol>
+<li>Start XQuartz:
+<code>open -a XQuartz</code></li>
+<li>From XQuartz, open an xterm window.  Do the rest of the operations from the xterm.</li>
+<li>xhost + 127.0.0.1</li>
+</ol>
+<p>Run the docker container:</p>
+<p>For the local GUI version (Replace '<url>' with the actual LLM url):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker run -it --rm \
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  --name discovery \
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  -e DISPLAY=host.docker.internal:0 \
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  -v /tmp/.X11-unix:/tmp/.X11-unix \
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  -v &lt;full path name to where the output files should be written&gt;:/mounted_outdir \
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  -v &lt;full path name to where the openAPI specs reside&gt;:/mounted_specs \
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  &lt;user_name&gt;/discovery python data_discovery_main.py \
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  --llmname llama-3-3-70b-instruct \
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  --llmid meta-llama/llama-3-3-70b-instruct \
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  --llmurl https://&lt;url&gt;/\{model_name\}/v1 \
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  --token $&lt;APIKEY_BACKEND&gt; \
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  --llmkey $LLM_APIKEY \
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  --outdir /app/mounted_outdir \
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>  --appconfig /app/mounted_schemas \
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>  --dir /app/mounted_spec \
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>  --transform /app/schemas/mappings.json 
+</span></code></pre></div>
+<p>For the web-based version (Replace '<url>' with the actual LLM url):
+<code>docker run -it --rm \
+  --name gui-discovery \
+  -p 5002:5002 \
+  -v &lt;full path name to where the output files should be written&gt;:/mounted_outdir \
+  -v &lt;full path name to where the openAPI specs reside&gt;:/mounted_specs \
+  ghcr.io/ds2-eu/ds2charts/discovery:1.0.0 \
+  python web_gui_data_discovery_main.py \
+  --llmname llama-3-3-70b-instruct \
+  --llmid meta-llama/llama-3-3-70b-instruct \
+  --llmurl https://&lt;url&gt;/\{model_name\}/v1\
+  --token "$&lt;APIKEY_BACKEND&gt;" \
+  --llmkey "$LLM_APIKEY" \
+  --output_fname /app/mounted_outdir</code></p>
+<p>Notes:
+If using Rancher Desktop, the mounted file system on the local host must be under the user
+home directory</p>
+<p>If using Docker Desktop, in Docker Desktop go to: Settings → Resources → File Sharing and
+add the path to the local directory to be mounted.</p>
+<h2 id="idt-portal">IDT Portal</h2>
+<p>TBD</p>
+<h2 id="connector-ui">Connector UI</h2>
+<p>TBD</p>
+<h2 id="other-information">Other Information</h2>
+<p>N/A</p>
+<h2 id="openapispec">OpenApiSpec</h2>
+<p>N/A</p>
+<h2 id="additional-links">Additional Links</h2>
+<p>N/A</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

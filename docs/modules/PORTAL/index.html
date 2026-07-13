@@ -1,0 +1,3130 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../PCR/">
+      
+      
+        <link rel="next" href="../RET/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>PORTAL - Portal - Documentation DS2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#portal-portal" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Documentation DS2" class="md-header__button md-logo" aria-label="Documentation DS2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation DS2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PORTAL - Portal
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Documentation DS2" class="md-nav__button md-logo" aria-label="Documentation DS2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentation DS2
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The DS2 Software Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstartguide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DS2 Quick Start Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/ds2connector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DS2 Connector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CLM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLM - Culture and Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONT - Containerisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CUR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CUR - DS2 Data Curation module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DARC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DARC - Discovery Assessment Recommend Configure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DDT - Data Detection and Transformation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DINS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DINS - Data Inspector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DMK/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DMK - Data Marketplace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DRM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DRM - Data Rights Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DSHARE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSHARE - Data Share Controller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DVM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DVM - Data Visualisation Module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E2C/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E2C - Edge to Cloud Connector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GCAT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAT - Catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDM - Identity Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IDT - IDT Broker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LCAT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LCAT - Local Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LIDM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LIDM - Credential Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MCL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCL - Multi-cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MDT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MDT - Model Development Toolkit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ORC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ORC - Orchestration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PAE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PAE - Policy Agreement and Enforcement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PCR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCR - Policy Creation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PORTAL - Portal
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PORTAL - Portal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Definition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commercial-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commercial Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How To Install
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of installation steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary of installation steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Portal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marketplace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Marketplace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dash-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dash Button
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#portal_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Portal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dash-button_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dash Button
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How To Use
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#portal_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Portal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marketplace_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Marketplace
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Marketplace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-few-terms-used-in-this-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A few terms used in this guide
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-seller-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Seller Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Seller Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-getting-seller-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Getting seller access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-starting-a-new-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Starting a new asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13a-creating-an-on-premise-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3a Creating an On-Premise asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13b-creating-a-downloadable-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3b Creating a Downloadable asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13c-adding-related-module-suggestions-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3c Adding related module suggestions (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-tracking-publish-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Tracking publish status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-managing-existing-assets-and-bundles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Managing existing assets and bundles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15a-creating-a-new-version-of-an-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5a Creating a new version of an asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15b-bundling-assets-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5b Bundling assets together
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-setting-up-payments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 Setting up payments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-responding-to-buyer-support-requests-dev-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7 Responding to buyer support requests (Dev Connect)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-buyer-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Buyer Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Buyer Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-browsing-and-searching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Browsing and searching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-viewing-an-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Viewing an asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-choosing-an-option-and-buying" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Choosing an option and buying
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-cart-and-checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Cart and checkout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-accessing-your-purchases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Accessing your purchases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-getting-help-raising-a-support-ticket-dev-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Getting help / raising a support ticket (Dev Connect)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-rating-and-reviewing-a-purchased-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 Rating and reviewing a purchased asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-admin-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Admin Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Admin Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#32-platform-wide-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Platform-wide dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-managing-all-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Managing all assets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-managing-catalog-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Managing catalog settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-other-admin-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 Other admin capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dash-button_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dash Button
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapi-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAPI Specification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DS2 Data retrieval module (RET)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SDS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDS - Sovereignty-Decision-Support-System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SEC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SEC - Edge-to-cloud Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Definition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commercial-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commercial Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How To Install
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of installation steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary of installation steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Portal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marketplace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Marketplace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dash-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dash Button
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#portal_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Portal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dash-button_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dash Button
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How To Use
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#portal_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Portal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marketplace_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Marketplace
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Marketplace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-few-terms-used-in-this-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A few terms used in this guide
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-seller-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Seller Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Seller Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-getting-seller-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Getting seller access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-starting-a-new-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Starting a new asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13a-creating-an-on-premise-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3a Creating an On-Premise asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13b-creating-a-downloadable-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3b Creating a Downloadable asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13c-adding-related-module-suggestions-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3c Adding related module suggestions (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-tracking-publish-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Tracking publish status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-managing-existing-assets-and-bundles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Managing existing assets and bundles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15a-creating-a-new-version-of-an-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5a Creating a new version of an asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15b-bundling-assets-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5b Bundling assets together
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-setting-up-payments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 Setting up payments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-responding-to-buyer-support-requests-dev-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7 Responding to buyer support requests (Dev Connect)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-buyer-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Buyer Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Buyer Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-browsing-and-searching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Browsing and searching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-viewing-an-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Viewing an asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-choosing-an-option-and-buying" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Choosing an option and buying
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-cart-and-checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Cart and checkout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-accessing-your-purchases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Accessing your purchases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-getting-help-raising-a-support-ticket-dev-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 Getting help / raising a support ticket (Dev Connect)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-rating-and-reviewing-a-purchased-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 Rating and reviewing a purchased asset
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-admin-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Admin Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Admin Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#32-platform-wide-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Platform-wide dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-managing-all-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Managing all assets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-managing-catalog-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Managing catalog settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-other-admin-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 Other admin capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dash-button_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dash Button
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapi-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAPI Specification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Links
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="portal-portal">PORTAL - Portal</h1>
+<p>Powered by</p>
+<p><a href="https://informationcatalyst.com"><img alt="DS2 Portal IceLogo" src="../images/Portal-icelogosmall.jpg" /></a></p>
+<table>
+<thead>
+<tr>
+<th>Project Links</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Software GitHub Repository <a href="https://github.com/ds2-eu/portal">https://github.com/ds2-eu/portal</a></td>
+</tr>
+<tr>
+<td>Progress GitHub Project <a href="https://github.com/orgs/ds2-eu/projects/11">https://github.com/orgs/ds2-eu/projects/11</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="general-description"><strong>General Description</strong></h2>
+<p>To provide a user and developer friendly portal allowing dataspace participants to register and select DS2 modules which can then be packaged into a IDT environment subsequently deployed by participants enabling both In-Data Space and Inter-Data Space operations. As such it includes functionality for developers to include modules, users to find those modules, to trigger the packaging through links with the containerisation module, as well as supporting functionality for dataspace support, dataspace resources, registration and identity management, and administration. It also provides support for the Data Marketplace. </p>
+<p>The portal will operate in the DS2 cloud hosted by i4RI. Parties interested in DS may register – this includes participants, dataspace governance/operators, DS2 module developers as well as, potentially, service intermediaries. Developers will provide modules to the portal marketplace which can be selected/purchased by participants. Selected modules will then be  downloaded and installed by and at a participant IDT. All parties involved will be granted unique IDs including DS-Pair IDs where DS’s agree to cooperate. If manpower resources allow ,a subcomponent will also support user-developer and developer-developer interactions as well as additional static resources such as useful materials or links to IDSA etc. The portal will run on the DS2 platform as a central node but in itself will not be involved in any participant-participant process either at the control or data plane levels. It operates at Tier 1, so is not a “module” in-itself, even though it will be deployed and run on top of IDT like a module, so participants would not deploy it. However, conceptually it could be run locally. It could be run by any one as an additional service – for example dataspace operators. Its main interfaces are to the Containerisation module for module description and packaging, IDT for deployment, the Platform where it is both deployed and will interface to some system modules, and the Data Marketplace which uses it for base marketplace functions. </p>
+<h2 id="architecture"><strong>Architecture</strong></h2>
+<p>The figure below represents the module fit into the DS-DS environment.
+<img alt="DS2 Portal Architecturefits" src="../images/Portal-architecturefits.png" /></p>
+<p>The figure below represents the actors, internal structure, primary sub-components, primary DS2 module interfaces, and primary other interfaces of the module.
+<img alt="DS2 Portal Architecture" src="../images/Portal-ds2architecture.png" /></p>
+<h2 id="component-definition"><strong>Component Definition</strong></h2>
+<p>This module has the following subcomponent and other functions:</p>
+<ul>
+<li>
+<p><strong>Portal Front End</strong>: This is the initial web front end entry point seen by any user of the portal, regardless of participant type or if an external party (eg developer). If unregistered, it directs them to the Registration and Management component and if registered a login process follows. Dynamic menus then allow users to navigate to the elements they wish to see and have access for and as such there is an inferred link to all subcomponents with some form of UI. Of particular relevance is the Dashbutton which is a kind-of mini-Portal Front End embedded in all subcomponents and modules including the Portal itself.</p>
+</li>
+<li>
+<p><strong>Registration and Management</strong>: This allows the registration of any actor which wishes to take advantage or use DS2. This includes human actors such as user’s requiring IDT/modules and developers through to system actors such as dataspaces. This will be a customised version of ICE’s existing portal registration system. It’s primary link is to the DS2 Identity Manager.</p>
+</li>
+<li>
+<p><strong>Dash button</strong>: The Dashbutton is a DS2 library feature used by most modules and is a dynamic shortcut menu to things of most relevance to the user (eg mainly their installed modules). It allows users to quickly get awareness of their personal DS2 environment as well as control it. The Dashbutton dynamic is detailed within the IDT Module. The base functionality of the Dashbutton exists now but needs to be highly customised for the DS2 environment. It relies on embedded HTML vs an API and enables a holistic environment for DS2 in an easy way. It is detailed in the IDT module.</p>
+</li>
+<li>
+<p><strong>Resource Connect</strong>: This will have no deep functionality but allows the users to navigate to further web/document/video type resources both within DS2 and externally (eg IDSA). For example, to read more technical details, look up example dataspaces or any other material. This component is an “if-time-allows” option.</p>
+</li>
+<li>
+<p><strong>Developer Connect</strong>: This is intended to simplify casual chat-like interaction between users and developers or in fact any set of participants subscribed to DS2. For example, for support or to discuss new ideas. If included it will be based on existing third part components. This component is an “if-time-allows” option.</p>
+</li>
+<li>
+<p><strong>Module Marketplace</strong>: Listing, Cart, Purchase: DS2 modules need to be selected from a catalogue of all modules, purchased (which may be for 0 EUR), and licensed which then makes them available to be packaged into IDT. Except for the latter this is classic marketplace functionality and is mainly configuration of ICE’s existing marketplace module. Its primary links are to the Module uploader to populate its shopfront and once a module is ’purchased’ the License and Use Manager.</p>
+</li>
+<li>
+<p><strong>Module Uploader</strong>: Beneficiaries (or third parties) develop data-orientated DS2 modules which can be put on DS2 Marketplace. A main link is to the DS2 Identity Manager to give unique identities to the module uploaded. This subcomponent ensures all relevant information is provided and packaged in the right way. This includes software, module details (eg price, licenses, description, logo...), and accompanying knowledge (eg How To’s, Videos…). It ensures a module is K8s/Helm compliant so that it can be potentially packaged into IDT. It will be based on ICE Asset upload being customised for the DS2 environment and all modules must confirm to its needs.</p>
+</li>
+<li>
+<p><strong>Payment</strong>: Once agreed the product is paid for and both the portal and the developer compensated. An existing payment service (stripe) will be used and a cart-mediator service is used to link to that (strip link is not shown in architecture). This service will also be used by the Data Marketplace</p>
+</li>
+<li>
+<p><strong>License and Use Manager</strong>: Following potential purchase from the marketplace the asset is then licensed for use (fixed licenses, subscription etc – however developer determines) and a Payment is then due. Once licensed it becomes available for the Containerisation and Deployment grouping to either issue a new IDT or to upgrade and existing IDT. The components is based on existing ICE Marketplace technology upgraded for DS2. Other modules can also use the licensing system – eg the Data Marketplace (TBD). Note that on first use core modules such as containerisation will also be packaged</p>
+</li>
+<li>
+<p><strong>Administration</strong>: A UI for Portal (and Platform) administrator to use to configure other elements and functions of the portal based on access credentials.</p>
+</li>
+<li>
+<p><strong>Portal Identity Manager</strong>: Provides identities for actors (parties and modules) relevant to the Portal. All DS2 users must have a DS2 ID, as should Dataspaces, and Dataspace Pairs. The Portal Identity Manager will where necessary interface with the DS2 Identity Module (IDM) to validate participant IDs which will run on the DS2 Platform</p>
+</li>
+<li>
+<p><strong>DS2 Containerisation and API</strong>: This provides two basic services to the portal: A) Assisting and ensuring a developer uploads a containerisation compliant module. B) Once modules are selected and licensed, they can be packaged and deployed via this module to downloadable/upgradable IDTs</p>
+</li>
+<li>
+<p><strong>DS2 S/W Platform and API</strong>: This platform is available to all modules and is the cloud home of the Portal as well as the Portal hosting an administrative interface to configure it</p>
+</li>
+<li>
+<p><strong>DS2 Data Marketplace and API</strong>: The cloud base data marketplace may take advantage of some of the portal common administration function – user management, licensing, payment</p>
+</li>
+<li>
+<p><strong>DS2 IDT Broker</strong>: The licensed modules are packaged via DS2 Containerisation and deployed as a bespoke IDT to the participant</p>
+</li>
+<li>
+<p><strong>DS2 Portal Operator</strong>: This represents the administrator and operator of the system who use the Administration UI</p>
+</li>
+<li>
+<p><strong>Modules, s/w, details, knowledge</strong>: This represents the upload of the module and accompanying information to become an asset in the portal which can be later explored and purchased. The upload is to the Module Uploaders.</p>
+</li>
+<li>
+<p><strong>Developers</strong>: Technicians and business partners representing a developed module to be uploaded</p>
+</li>
+<li>
+<p><strong>User</strong>: Any participant of any data space, or future potential participant who wishes to explorer/download modules available</p>
+</li>
+<li>
+<p><strong>External Modules</strong>: Other modules which could be applicable to show on a users Dashbutton</p>
+</li>
+</ul>
+<h2 id="screenshots"><strong>Screenshots</strong></h2>
+<p><img alt="DS2 Portal Screenshots" src="../images/Portal-screenshots.gif" /></p>
+<h2 id="commercial-information"><strong>Commercial Information</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Organisation (s)</th>
+<th>License Nature</th>
+<th>License</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://informationcatalyst.com">ICE</a></td>
+<td>Open Source</td>
+<td>Apache 2.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="top-features"><strong>Top Features</strong></h2>
+<ol>
+<li><strong>Organisation Registration and Management</strong>: The Portal provides the functionality to register an organisation in DS2 and manage its profile</li>
+<li><strong>User and Role Management</strong>: Create additional users and roles to the organisation</li>
+<li><strong>Main DS2 Entry Point</strong>: The Portal is the UI main entry point to DS2</li>
+<li><strong>DS2 Navigation</strong>: Allows seamless navigation between intermediary modules in the DS2 Cloud Platform</li>
+<li><strong>Global and Local Portal</strong>: The Portal has two different views, the Global Portal running as an intermediary service in the DS2 Cloud Platform and the Local Portal which is meant for the IDT as the IDT Portal</li>
+<li><strong>Dash Button</strong>: A web component to be integrated by all modules that provide the interface to the DS2 security and identity system and allows module navigation</li>
+<li><strong>Developer Access</strong>: Generate API Key to use the Portal API for integration</li>
+<li><strong>Portal Marketplace</strong>: The Portal includes a fully featured Marketplace, which could be considered a module on its own, with functionalities to publish and purchase modules, module search, feedback and ratings, flexible license models, secure payment integration, etc.</li>
+<li><strong>GitHub Backend Storage</strong>: The Marketplace feature is backed by GitHub storage, meaning that modules and container images are stored in GitHub</li>
+<li><strong>Containerisation Integration</strong>: The Module creation view of the Containerisation module is integrated into the Portal</li>
+</ol>
+<h2 id="how-to-install"><strong>How To Install</strong></h2>
+<p>Even though the Portal (Global Portal) is a DS2 intermediary service, and users don't need to install it, it is packaged as a regular DS2 module and can be installed on top of the IDT, same as the Local Portal. The Marketplace is also installed as an additional module. In addition, the Dash Button is a web component that needs to be integrated in all DS2 module UIs. Details on how to integrate it are explained next.</p>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>Docker</li>
+<li>Keycloak (to be included in the module package for DS2 Containerisation)</li>
+<li>Linux (Ubuntu 20, 22)</li>
+</ul>
+<h3 id="software">Software</h3>
+<p>N/A</p>
+<h3 id="summary-of-installation-steps">Summary of installation steps</h3>
+<h4 id="portal">Portal</h4>
+<ol>
+<li>Run a keycloak instance or use the ds2 one (recommended)</li>
+<li>Pull the docker images from the DS2 GitHub Container Registry</li>
+<li>Run the containers from the docker images: Portal API and Portal Frontend</li>
+</ol>
+<h4 id="marketplace">Marketplace</h4>
+<h4 id="dash-button">Dash Button</h4>
+<ol>
+<li>
+<p>Add script file path to index.html</p>
+</li>
+<li>
+<p>Add the font-awesome library (starting from v0.0.16)</p>
+</li>
+<li>
+<p>Configure according frontend framework ie. Angular ...</p>
+</li>
+<li>
+<p>Place the web-component button tag at the top of the navigation bar </p>
+</li>
+</ol>
+<h3 id="detailed-steps">Detailed steps</h3>
+<h4 id="portal_1">Portal</h4>
+<ol>
+<li>First, you need to start your own <strong>Keycloak instance</strong> or use the <strong>DS2 version</strong>. We recommend using the DS2-based Keycloak instance<ul>
+<li>Instructions on using own Keycloak instance TBD</li>
+<li>To use the DS2 Keycloak instance, you just need to configure the URL https://keycloak.ds2.icelab.cloud when running the containers - see next step </li>
+</ul>
+</li>
+<li>
+<p>Pull the docker images form the GitHub repository
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/ds2-eu/ds2charts/portal:2.0.3
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/ds2-eu/ds2charts/portal-api:2.0.4
+</span></code></pre></div></p>
+<blockquote>
+<p>You will need to log in the registry using docker login ghcr.io</p>
+</blockquote>
+</li>
+<li>
+<p>Run the docker images</p>
+<ul>
+<li>The Portal API
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>portal-api<span class="w"> </span>-d<span class="w"> </span>--restart<span class="w"> </span>unless-stopped<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:3000<span class="w"> </span>-e<span class="w"> </span><span class="nv">IMAGE_GITHUB_REPONAME</span><span class="o">=</span><span class="s2">&quot;avatar-repo&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">KEYCLOAK_URL</span><span class="o">=</span><span class="s1">&#39;https://keycloak.ds2.icelab.cloud&#39;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">REALM_NAME</span><span class="o">=</span>ds2<span class="w"> </span>-e<span class="w"> </span><span class="nv">CLIENT_ID</span><span class="o">=</span>portal-api<span class="w"> </span>-e<span class="w"> </span><span class="nv">CLIENT_SECRET</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">IMAGE_GITHUB_TOKEN</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">IMAGE_GITHUB_USERNAME</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">DATABASE_URL</span><span class="o">=</span><span class="s2">&quot;file:/usr/src/app/data/dev.db&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">GITHUB_TOKEN</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">GITHUB_ORG</span><span class="o">=</span><span class="s2">&quot;ds2-eu&quot;</span><span class="w"> </span>ghcr.io/ds2-eu/ds2charts/portal-api:2.0.4
+</span></code></pre></div></li>
+<li>The Portal Frontend
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>portal<span class="w"> </span>-d<span class="w"> </span>--restart<span class="w"> </span>unless-stopped<span class="w"> </span>-p<span class="w"> </span><span class="m">4200</span>:80<span class="w"> </span>-e<span class="w"> </span><span class="nv">PORTAL_API</span><span class="o">=</span><span class="s2">&quot;https://portal-api.ds2.icelab.cloud&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">REDIRECT_URL</span><span class="o">=</span><span class="s2">&quot;https://portal.ds2.icelab.cloud/dashboard&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">SHOW_POST_LOGIN_TEXT</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">DEPLOYMENT_MODE</span><span class="o">=</span>global<span class="w"> </span>-e<span class="w"> </span><span class="nv">SHOW_ONBOARDING_MESSAGE</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">REPOSITORY_API_KEY</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="w"> </span>ghcr.io/ds2-eu/ds2charts/portal:2.0.3
+</span></code></pre></div></li>
+</ul>
+</li>
+</ol>
+<h4 id="dash-button_1">Dash Button</h4>
+<p>To use the DashButton web component, copy and paste the following script tag into your application's header (head section).</p>
+<blockquote>
+<p><strong>Note:</strong> Please refer to the <a href="https://www.npmjs.com/package/dash-button-web">npm package page</a> to find the latest version, and replace <code>X.X.X</code> in the import script accordingly:
+<div class="language-html highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;module&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/dash-button-web@X.X.X/dist/esm/web-compnont.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div></p>
+<p>Note: Starting from v0.0.16, you need to add the FontAwesome stylesheet file to your application. If your application is already using this package, you can ignore this.</p>
+</blockquote>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css&quot;</span> <span class="p">/&gt;</span>
+</span></code></pre></div>
+<p>You can find the NPM package named <a href="https://www.npmjs.com/package/dash-button-web" title="dash-button-web">dash-button-web</a>.</p>
+<p>If it is a framework, you will need to configure more options. Therefore, follow the <a href="https://stenciljs.com/" title="Stencil.js">Stencil.js</a> documentation. </p>
+<ul>
+<li>Setup Keycloak Server Application</li>
+</ul>
+<p>First, you need to start your own <strong>Keycloak instance</strong> or use the <strong>DS2 version</strong>. We recommend using the DS2-based Keycloak instance.</p>
+<div class="language-text highlight"><pre><span></span><code>* Option 1 – Use DS2 Keycloak details
+
+  You can use predefined Keycloak credentials to configure DashButton. The required details are summarized below.
+
+  - Keyclaok URL: **https://keycloak.ds2.icelab.cloud**
+  - Realm: **ds2**
+  - Client ID: **dashbtn**
+
+* Option 2 – Configure your own Keycloak client
+
+  If you use your own version, you need to configure the realm, client, and test users.  
+  Make sure the client is set up with a **client ID** and that **client authentication is disabled**.
+</code></pre></div>
+<ul>
+<li>Configure frontend application</li>
+</ul>
+<p>Here, we are demonstrating how to configure the application on an Angular-based application and a basic HTML-based application. If you need to install React or Vue.js, follow the Stencil.js documentation.</p>
+<p>First, you need to enable the custom component support feature in the Angular project. To do that, the following code block needs to be added to the <code>src/app/app.module.ts</code> file.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>@NgModule<span class="o">({</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span>…
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span>schemas:<span class="w"> </span><span class="o">[</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span>CUSTOM_ELEMENTS_SCHEMA
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="o">]</span>,
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="o">})</span>
+</span></code></pre></div>
+<p>Once the above addition is completed, it is required to import the below module as follows.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>import<span class="w"> </span><span class="o">{</span><span class="w"> </span>CUSTOM_ELEMENTS_SCHEMA<span class="o">}</span><span class="w"> </span>from<span class="w"> </span><span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+</span></code></pre></div>
+<p>Next, you need to put the script file path in the <strong>src/index.html</strong> file header section as follows.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&lt;head&gt;
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span>&lt;meta<span class="w"> </span><span class="nv">name</span><span class="o">=</span><span class="s2">&quot;viewport&quot;</span><span class="w"> </span><span class="nv">content</span><span class="o">=</span><span class="s2">&quot;width=device-width, initial-scale=1&quot;</span>&gt;
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span>&lt;link<span class="w"> </span><span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;icon&quot;</span><span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;image/x-icon&quot;</span><span class="w"> </span><span class="nv">href</span><span class="o">=</span><span class="s2">&quot;favicon.ico&quot;</span>&gt;
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w"> </span>&lt;script<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s1">&#39;module&#39;</span><span class="w"> </span><span class="nv">src</span><span class="o">=</span><span class="s1">&#39;https://unpkg.com/dash-button-web@X.X.X/dist/esm/web-compnont.js&#39;</span>&gt;&lt;/script&gt;
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w"> </span>&lt;link<span class="w"> </span><span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span><span class="w"> </span><span class="nv">href</span><span class="o">=</span><span class="s2">&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css&quot;</span><span class="w"> </span>/&gt;
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>...
+</span></code></pre></div>
+<p>After adding the script, you can use the DashButton web component in your application. Most configuration is automatically retrieved from the     backend.</p>
+<blockquote>
+<p>Note: From version v0.0.17 onward, Keycloak configuration is no longer required. These settings have been removed from the DashButton configuration and are automatically retrieved from the Portal API backend. Please ensure that the portal-api-url is configured correctly.</p>
+</blockquote>
+<ul>
+<li>
+<p>Configuration options</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>portal-api-url</code></td>
+<td><code>Portal API URL</code></td>
+<td><code>string</code></td>
+<td>``</td>
+</tr>
+<tr>
+<td><code>redirect-uri</code></td>
+<td><code>Application redirect URI</code></td>
+<td><code>string</code></td>
+<td>``</td>
+</tr>
+<tr>
+<td><code>show-post-login-text</code></td>
+<td><code>Successfully logged in shows a custom button message</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>auth-method</code></td>
+<td><code>Authentication method</code></td>
+<td><code>string</code></td>
+<td><code>check-sso</code>, <code>(login-required)</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Theme configuration options</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>primary-color</code></td>
+<td><code>Set primary colour</code></td>
+<td><code>string</code></td>
+<td>``</td>
+</tr>
+<tr>
+<td><code>accent-color</code></td>
+<td><code>Set secondary or accent color</code></td>
+<td><code>string</code></td>
+<td>``</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>AuthMethod</strong>
+Using the auth-method attribute updates the application's authentication workflow.
+<code>login-required</code>:  User is forced to the login screen if they are not logged in.
+<code>check-sso</code>: User is not forced to the login screen; instead, when the user clicks the login button, they are redirected to the login screen.</p>
+</blockquote>
+</li>
+</ul>
+<p>Now, you are almost done. In the final stage, you can place the web-component button tag at the top of the navigation bar using the following code block.</p>
+<blockquote>
+<p>Note: Replace DashButton configuration with actual values.</p>
+</blockquote>
+<p>To get the module link for the Dashbutton, use the <strong>portal-api-url</strong> attribute and provide the Portal backend API endpoint URL.
+  For the DS2 platform, you can use <strong>https://portal-api.ds2.icelab.cloud</strong> as the Portal API URL..</p>
+<p><div class="language-sh highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>&lt;dash-button<span class="w"> </span>keycloak-uri<span class="o">=</span><span class="s2">&quot;http://localhost:8080&quot;</span><span class="w"> </span><span class="nv">realm</span><span class="o">=</span><span class="s2">&quot;demo&quot;</span><span class="w"> </span>client-id<span class="o">=</span><span class="s2">&quot;testapp&quot;</span><span class="w"> </span>portal-api-url<span class="o">=</span><span class="s2">&quot;replace_url&quot;</span><span class="w"> </span>auth-method<span class="o">=</span><span class="s2">&quot;login-required&quot;</span><span class="w"> </span>show-post-login-text<span class="o">=</span><span class="s2">&quot;false&quot;</span>&gt;&lt;/dash-button&gt;
+</span></code></pre></div>
+  After configuration is completed correctly, the Dash Button will be integrated into the application and ready for use. Verification can be done by signing in with user credentials.</p>
+<blockquote>
+<p>Note: You need to create a new user. Please access the portal and create an account associated with your organization.</p>
+</blockquote>
+<p>Additionally you can test some of the demo applications located in the Portal repository <strong>dash-button/demo-app/</strong> folder (see additinal links)</p>
+<h2 id="how-to-use"><strong>How To Use</strong></h2>
+<p>The next sections describe how to use the different components part of the Portal</p>
+<h3 id="portal_2">Portal</h3>
+<p>In order to use the Portal, first navigate to the main entry page at <a href="https://portal.ds2.icelab.cloud/">https://portal.ds2.icelab.cloud/</a>. 
+<img alt="Portal-MainUI" src="../images/Portal-mainui.JPG" /></p>
+<p>You need to first register your organisation to be able to log in. Click on Create an account and enter the required details.
+First enter the name of the new organisation and click Next to check whether it already exists or not in the system.
+<img alt="Portal-RegisterOrganisation" src="../images/Portal-registerorganisation.JPG" /></p>
+<p>Then fill in all the required details for the organization registration form.</p>
+<p align="center">
+  <img src="./images/Portal-registerorganisation2.png" width="1000">
+</p>
+
+<p>Agree to the DS2 policy and click Register.</p>
+<p align="center">
+  <img src="./images/Portal-registerorganisationterms.png" width="1000">
+</p>
+
+<p>After that, organisation is registered.
+<img alt="Portal-RegisteredOrganisation" src="../images/Portal-registeredorganisation.png" /></p>
+<p>User can now log in with newly created organisation and username.
+<img alt="Portal-LogIn" src="../images/Portal-login.png" /></p>
+<p>User will receive a verification email upon first login attempt
+<img alt="Portal-LogIn" src="../images/Portal-email.png" /></p>
+<p>Once logged in there is a guided tour on the different options available that uses can follow.
+<img alt="Portal-Tour" src="../images/Portal-tour.png" /></p>
+<p>The main Dashboard of the Portal displays the default central modules running on the DS2 Cloud Platform, including IDM, Catalog, Marketplace, Chat, and more. For first-time users, the Dashboard also highlights any required profile fields that must be completed to enable full access to IDT and the DS2 ecosystem.
+<img alt="Portal-MainDashboard" src="../images/Portal-maindashboard.png" /></p>
+<p>The left navigation menu is organized into four main sections: Profile, Organization, DS2, and Admin. Each section provides access to different Portal features and management tasks.</p>
+<ul>
+<li>Profile – View and update personal profile information.</li>
+<li>Organization – Manage organization details, users, and other organization-related settings.</li>
+<li>DS2 – Access and manage dataspaces, catalogs, and documentation.</li>
+<li>Admin – Available only to administrator users. This section provides interfaces to manage Portal administration features, including dynamic registration forms, Dashboard configuration, policies, DLM settings, and other platform configurations.</li>
+</ul>
+<p><img alt="Portal-Directory" src="../images/Portal-directory.png" />
+<img alt="Portal-DashbuttonConfig" src="../images/Portal-dashbuttonconfig.png" /></p>
+<p>In addition, the Portal already includes the DashButton which is described in the DashButton section.</p>
+<!-- ### Marketplace
+The Marketplace includes two main different views. The first one is the so called Marketplace for users to be able to purchase modules. The second one is the Product License Manager aimed at module developers to be able to publish their modules and monitor sales.
+
+* Marketplace
+![Portal-MarketplaceUI](./images/Portal-marketplaceui.JPG)
+
+* Product License Manager -->
+
+<h3 id="marketplace_1">Marketplace</h3>
+<p>This guide explains how to use the DS2 Marketplace, for three types of users: <strong>Sellers</strong>, <strong>Buyers</strong>, and <strong>Admins</strong>.</p>
+<h4 id="a-few-terms-used-in-this-guide">A few terms used in this guide</h4>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Asset</strong></td>
+<td>An item a seller lists for sale, shown on the seller's "Assets" page and in the buyer's storefront.</td>
+</tr>
+<tr>
+<td><strong>Bundle</strong></td>
+<td>A kit of multiple assets sold together as one package.</td>
+</tr>
+<tr>
+<td><strong>Related Modules</strong></td>
+<td>Similar or complementary assets that the seller has linked to their listing, shown to buyers on the asset page.</td>
+</tr>
+<tr>
+<td><strong>Dev Connect</strong></td>
+<td>The support-ticket system connecting buyers and sellers — buyers raise issues from <strong>Issues</strong>, sellers respond from <strong>Requests</strong>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="1-seller-guide">1. Seller Guide</h4>
+<p>Sellers manage their listings from the <strong>Owner Panel</strong>, available after logging in.</p>
+<h5 id="11-getting-seller-access">1.1 Getting seller access</h5>
+<p>Seller access is given through the Portal — simply log in with a Portal account that has access, and you'll automatically see the seller menu and dashboard.</p>
+<h5 id="12-dashboard">1.2 Dashboard</h5>
+<p>After logging in, click <strong>Dashboard</strong> in the sidebar. Here you can see:
+- Total, active, disabled, and deleted assets and bundles
+- Monthly revenue and monthly paid orders
+- Top purchased assets and top revenue assets
+- Cart-to-purchase conversion rate</p>
+<p><img alt="Seller Dashboard overview page" src="../images/Marketplace-54SellerDahboard.png" /></p>
+<h5 id="13-starting-a-new-asset">1.3 Starting a new asset</h5>
+<ol>
+<li>From your Owner Panel, go to <strong>My Asset Catalog</strong>, then click <strong>Create Asset</strong>.</li>
+</ol>
+<p><img alt="My Asset Catalog with &quot;Create Asset&quot; button" src="../images/Marketplace-2CreateAssetButton.png" /></p>
+<ol>
+<li>If you haven't set up payments yet, you'll see a notice that payment setup isn't complete. You can choose <strong>Continue creating free asset</strong> to publish a free (freemium) listing now, and unlock paid pricing later once you've set up payments.</li>
+</ol>
+<p><img alt="Payment setup notice with &quot;Continue creating free asset&quot; option" src="../images/Marketplace-3PaymentSetupNotice.png" /></p>
+<ol>
+<li>Choose how the asset will be delivered to buyers — this decision shapes the rest of the form:</li>
+<li><strong>On-Premise</strong> — You provide a Helm chart and container images, which buyers deploy via their local Containerisation module.</li>
+<li><strong>Downloadable</strong> — You provide a ZIP file that buyers download directly.</li>
+</ol>
+<p><img alt="“Create New Asset” modal asking for deployment type" src="../images/Marketplace-4CreateNewAssetDeploymentTypeModal.png" /></p>
+<h5 id="13a-creating-an-on-premise-asset">1.3a Creating an On-Premise asset</h5>
+<ol>
+<li>Upload your Helm chart as a <code>.zip</code> file containing a <code>Chart.yaml</code>. The asset name and release version are read automatically from the chart, so you don't need to type them.</li>
+</ol>
+<p><img alt="“Upload Helm Chart” dialog" src="../images/Marketplace-5UploadHelmChartModal.png" /></p>
+<ol>
+<li><strong>Basic Information</strong> — the name is pre-filled from the chart; set the asset type (e.g. "Module") and write a clear description of what the asset does.</li>
+</ol>
+<p><img alt="Basic Information form with name locked from chart" src="../images/Marketplace-6BasicInfo.png" /></p>
+<ol>
+<li>Add the required <strong>logo</strong>. The built-in crop tool enforces a fixed size (800×1200) and checks image sharpness so it displays well in the catalog.</li>
+</ol>
+<p><img alt="Logo crop tool" src="../images/Marketplace-7LogoCropTool.png" /></p>
+<ol>
+<li>Add one or more <strong>screenshots</strong> using the same crop tool, at a fixed size of 1200×800, so buyers get a real preview of the asset.</li>
+</ol>
+<p><img alt="Screenshot crop tool" src="../images/Marketplace-8ScreenshotCropTool.png" /></p>
+<ol>
+<li>Under <strong>Deployment</strong>, you'll see the container image(s) referenced by the chart you uploaded — a chart can reference more than one image. For each one, upload its corresponding GHCR image as a <code>.tar</code> file; these are the actual runtimes the buyer's environment will pull.</li>
+</ol>
+<blockquote>
+<p>Tip: You can create the <code>.tar</code> file for an image with <code>docker save -o image.tar &lt;image&gt;:&lt;tag&gt;</code>.</p>
+</blockquote>
+<p><img alt="Deployment section with container image attached" src="../images/Marketplace-9DeploymentConfiguration.png" /></p>
+<ol>
+<li>Once the name, description, type, deployment, and logo are all filled in, the <strong>Publish Checklist</strong> turns green (5 of 5 complete). Set the licensing model — e.g. <strong>Freemium</strong> to offer the asset at no cost.</li>
+</ol>
+<p><img alt="Publish Checklist complete with licensing set" src="../images/Marketplace-10Licensing.png" /></p>
+<ol>
+<li><strong>Classification</strong> — add a tag and choose a category (e.g. "Data Layer") to make the asset easier to find in search and filters.</li>
+</ol>
+<p><img alt="Classification section with category selected" src="../images/Marketplace-11Classification.png" />
+   <img alt="Classification section with tag added" src="../images/Marketplace-12Tags.png" /></p>
+<ol>
+<li><strong>Review &amp; Publish</strong> — the summary panel confirms everything is 100% ready (media, deployment, and licensing all match what you configured). Click <strong>Create Asset</strong> to publish.</li>
+</ol>
+<p><img alt="Final Review panel at 100% ready" src="../images/Marketplace-13FinalReview.png" /></p>
+<ol>
+<li>Publishing uploads your files (logo, screenshots, Helm chart, and container image) with a live progress bar for each. Larger files such as container images can take noticeably longer.</li>
+</ol>
+<p><img alt="Upload progress panel tracking each file" src="../images/Marketplace-14UploadProgress.png" /></p>
+<ol>
+<li>
+<p>Behind the scenes, the platform runs through processing steps in order: <strong>Check your submission → Upload container images → Publish Helm Chart → Finalize your listing</strong>. Once every step shows a green checkmark, the asset is fully published.</p>
+<p><img alt="Processing steps all complete with green checkmarks" src="../images/Marketplace-15PublishGreen.png" /></p>
+</li>
+<li>
+<p>Your new asset now appears in <strong>My Asset Catalog</strong> as <strong>Active</strong>, showing its category and deployment type (On-Premise).</p>
+<p><img alt="My Asset Catalog showing the new on-premise asset as Active" src="../images/Marketplace-16MyAssets.png" /></p>
+</li>
+</ol>
+<h5 id="13b-creating-a-downloadable-asset">1.3b Creating a Downloadable asset</h5>
+<ol>
+<li>Since there's no chart to read the name from, type the asset <strong>name</strong> yourself and set the asset type (e.g. "Module").</li>
+</ol>
+<p><img alt="Basic Information form with name typed manually" src="../images/Marketplace-18BasicInfo.png" /></p>
+<ol>
+<li>Write a <strong>description</strong>, then add the required <strong>logo</strong> (800×1200 crop) and one or more <strong>screenshots</strong> (1200×800 crop), using the same crop tool as the on-premise flow.</li>
+</ol>
+<p><img alt="Logo crop tool for downloadable asset" src="../images/Marketplace-19LogoCrop.png" />
+   <img alt="Screenshot crop tool for downloadable asset" src="../images/Marketplace-20ScreenshotCrop.png" /></p>
+<ol>
+<li>If payment setup isn't finished yet, you'll see a reminder that only freemium pricing is available for now. Below that, fill in the <strong>Downloadable Configuration</strong> section: set the release version, attach the <strong>ZIP file</strong> buyers will receive, and select the license type (e.g. <strong>Freemium</strong>) to offer it under.</li>
+</ol>
+<p><img alt="Downloadable Configuration with release version, ZIP attached, and licensing" src="../images/Marketplace-21DeploymentZipAndLicense.png" /></p>
+<ol>
+<li><strong>Review &amp; Publish</strong> — once the summary shows 100% ready (tag, category, and deployment type all confirmed), click <strong>Create Asset</strong>.</li>
+</ol>
+<p><img alt="Final Review panel for downloadable asset" src="../images/Marketplace-22FinalReviewPanel.png" /></p>
+<ol>
+<li>Publishing uploads the logo, screenshots, and ZIP package (delivered via reliable large-file storage), then runs through <strong>Check your submission</strong> and <strong>Publish downloadable artifact</strong>.</li>
+</ol>
+<p><img alt="Upload progress and processing steps for downloadable asset" src="../images/Marketplace-22FinalReviewPanel.png" /></p>
+<ol>
+<li>Your asset now appears in <strong>My Asset Catalog</strong> as <strong>Active</strong>, alongside any other assets you've published (e.g. on-premise and downloadable side by side).</li>
+</ol>
+<p><img alt="My Asset Catalog showing both downloadable and on-premise assets" src="../images/Marketplace-23UploadProgress.png" /></p>
+<h5 id="13c-adding-related-module-suggestions-optional">1.3c Adding related module suggestions (optional)</h5>
+<p>Before publishing, either flow also lets you search for and attach other assets as related suggestions, with a short note on why they're related. Buyers will see these as "Related Modules" on the asset page.</p>
+<p><img alt="Recommendations section showing attached related assets" src="../images/Marketplace-24RelatedModules.png" /></p>
+<h5 id="14-tracking-publish-status">1.4 Tracking publish status</h5>
+<p>Go to <strong>Assets → Pipeline Jobs</strong> to see the progress of any asset as it's published, with the same stage-by-stage status (in progress, completed, or failed) shown during publishing.</p>
+<p><img alt="Pipeline job detail showing stage-by-stage progress" src="../images/Marketplace-25TrackProgress.png" /></p>
+<h5 id="15-managing-existing-assets-and-bundles">1.5 Managing existing assets and bundles</h5>
+<ul>
+<li><strong>Assets</strong> — edit, enable/disable, delete, or view different versions of your assets.</li>
+<li><strong>Bundles</strong> — group multiple assets into a single package that buyers purchase together.</li>
+</ul>
+<p><img alt="Manage asset menu with Manage/Disable/Delete actions" src="../images/Marketplace-26ManageAsset.png" /></p>
+<h5 id="15a-creating-a-new-version-of-an-asset">1.5a Creating a new version of an asset</h5>
+<p>When you need to release an update to an asset you've already published — for example, a new container image or an updated Helm chart — you create a new <strong>version</strong> rather than editing the original listing directly. Older versions are never deleted automatically: you always stay in control of which release is "current" and "live".</p>
+<ol>
+<li>From <strong>My Asset Catalog</strong>, open the asset you want to update, then go to its <strong>Versions</strong> page.</li>
+</ol>
+<p><img alt="Versions page for an existing asset" src="../images/Marketplace-27VarientsPage.png" /></p>
+<ol>
+<li>Click <strong>Create version</strong>. Any container images already linked to the asset (from the previous version) are carried over automatically, so you don't need to re-attach files that haven't changed.</li>
+</ol>
+<p><img alt="&quot;Create version&quot; panel with existing image carried over" src="../images/Marketplace-28CreateVersion.png" /></p>
+<ol>
+<li>To add a new or updated container image, give it a name and a version tag (e.g. <code>1.0.0</code>), then attach its image archive file. A single version can ship more than one container image if needed.</li>
+</ol>
+<p><img alt="New container image with name, tag, and archive file attached" src="../images/Marketplace-29NewImage.png" /></p>
+<ol>
+<li>
+<p>If you're also updating the underlying package (e.g. a new Helm chart), attach the updated chart file for this version as well.</p>
+</li>
+<li>
+<p>Decide how this version should behave once created:</p>
+</li>
+<li>Check <strong>Set as current version</strong> if buyers who already own this asset should be offered this release as their next update.</li>
+<li>Check <strong>Live</strong> if the version should be visible/available immediately once published.</li>
+</ol>
+<p>Leaving either box unchecked lets you prepare a version in advance without exposing it to buyers yet.</p>
+<p><img alt="&quot;Set as current version&quot; and &quot;Live&quot; checkboxes" src="../images/Marketplace-30SetAsCurrentVersion.png" /></p>
+<ol>
+<li>Click <strong>Create [version number]</strong> (e.g. <strong>Create 1.0.1</strong>) to start the upload. Progress is tracked file by file — the updated package and any large container images may take noticeably longer than smaller files.</li>
+</ol>
+<p><img alt="Upload progress for new version, tracked file by file" src="../images/Marketplace-31Progress.png" /></p>
+<ol>
+<li>Once the upload finishes, a <strong>"New version created successfully"</strong> confirmation appears, and the Variants page lists the new version as <strong>CURRENT</strong> while the previous version is marked <strong>NOT CURRENT</strong>.</li>
+</ol>
+<p><img alt="Variants page listing new version as CURRENT and previous as NOT CURRENT" src="../images/Marketplace-32NewCurrentVersion.png" /></p>
+<ol>
+<li>You can switch back to an older release at any time by opening that version and selecting <strong>Set as current</strong> — nothing is lost by publishing a new version.</li>
+</ol>
+<blockquote>
+<p><strong>What buyers see:</strong> Existing buyers are not force-upgraded. On their <strong>Purchased</strong> page, a <strong>Versions</strong> control lets them open a <strong>Manage versions</strong> dialog listing every release of the asset, with their current installed version marked and any newer version available to acquire whenever they choose to update.</p>
+</blockquote>
+<p><img alt="Buyer's &quot;Manage versions&quot; dialog showing current and available versions" src="../images/Marketplace-63MangeVersionBuyer.png" /></p>
+<h5 id="15b-bundling-assets-together">1.5b Bundling assets together</h5>
+<p>A bundle lets you package several of your own published assets into a single listing that buyers purchase as one unit, usually at a discount versus buying each asset separately.</p>
+<ol>
+<li>Go to <strong>Assets → Bundles</strong>, then click <strong>Bundle Assets</strong>.</li>
+</ol>
+<p><img alt="Bundle Assets page with asset selection list and Bundle Preview" src="../images/Marketplace-58BundleAsset.png" /></p>
+<ol>
+<li>Enter a <strong>Bundle Name</strong> (e.g. "Starter Pack"). A <strong>Bundle Description</strong> and a composite <strong>bundle logo</strong> (built automatically from your selected assets' logos) are generated for you as soon as you pick assets — you can edit the description freely, or click <strong>Regenerate</strong> to get a fresh auto-written version. Then set the <strong>Classification</strong> — categories and tags for the bundle, the same way as for a single asset, so it's easy for buyers to discover.</li>
+</ol>
+<p><img alt="Bundle Details: name, auto-generated description with Regenerate button, categories, and tags" src="../images/Marketplace-59BundleBasicInfo.png" /></p>
+<ol>
+<li><strong>Configure pricing</strong> — set a <strong>Bundle Discount</strong> (a percentage taken off the combined price of the included assets). The page shows you the discount amount and the <strong>Final After Discount</strong> price so you can check it before publishing.</li>
+</ol>
+<blockquote>
+<p>If any selected asset is missing a price for a license type/currency you want to use in the bundle, you can fill in that missing price right there on the same page — every included asset needs a price for each license type/currency combination the bundle offers.</p>
+</blockquote>
+<p><img alt="License Options showing Bundle Discount, subtotal, and Final After Discount" src="../images/Marketplace-60LicensePricingAndDiscount.png" /></p>
+<ol>
+<li>Click <strong>Publish Bundle</strong>. Once published, the bundle behaves like any other listing — buyers can find and purchase it from the storefront as a single package.</li>
+</ol>
+<p><img alt="Publish Bundle button in the Bundle Preview panel" src="../images/Marketplace-61PublishBundleButton.png" />
+   <img alt="Published bundle listed in My Asset Catalog" src="../images/Marketplace-62CreatedBundle.png" /></p>
+<h5 id="16-setting-up-payments">1.6 Setting up payments</h5>
+<p>Go to <strong>Payments</strong> and click <strong>Set up payments</strong> to start the payment setup process. The status will update from "Not set up" → "Setup in progress" → "Ready to get paid". Use <strong>Refresh status</strong> if it doesn't update automatically, or <strong>View payment dashboard</strong> once it's complete.</p>
+<p><img alt="Payments page before setup, status &quot;Not set up&quot;" src="../images/Marketplace-33SellerOnBoardStart.png" />
+<img alt="Payments page after setup, status &quot;Ready to get paid&quot;" src="../images/Marketplace-34SellerOnBoardStart.png" /></p>
+<h5 id="17-responding-to-buyer-support-requests-dev-connect">1.7 Responding to buyer support requests (Dev Connect)</h5>
+<p>Go to <strong>Requests</strong> to view and respond to Dev Connect tickets raised by buyers about your assets. New requests also appear under the notification bell icon at the top of the page.</p>
+<p><img alt="Notification bell showing an open buyer request" src="../images/Marketplace-50DevConnectNotificationSeller.png" />
+<img alt="Seller viewing a request and replying to the buyer" src="../images/Marketplace-51SellerIssueResponds.png" />
+<img alt="Seller issue actions: upload an update or change workflow status" src="../images/Marketplace-52SellerIssueActions.png" /></p>
+<hr />
+<h4 id="2-buyer-guide">2. Buyer Guide</h4>
+<p>Buyers can browse the storefront without logging in, but need to log in to make a purchase.</p>
+<h5 id="21-browsing-and-searching">2.1 Browsing and searching</h5>
+<p>Visit the marketplace homepage to browse the catalog. Use the search bar, sorting options, and grid/list view toggle to find what you need, and narrow results using the filters.</p>
+<p><img alt="Storefront catalog page with search and filters" src="../images/Marketplace-37SearchAssets.png" /></p>
+<h5 id="22-viewing-an-asset">2.2 Viewing an asset</h5>
+<p>Click any asset to open its detail page, which shows screenshots, a description, category, reviews, and a <strong>Related Modules</strong> section with similar assets suggested by the seller.</p>
+<p><img alt="Asset detail page with screenshots and purchase panel" src="../images/Marketplace-38AssetDetailsPage.png" />
+<img alt="Asset metadata with Related Modules section" src="../images/Marketplace-39RelatedModules.png" /></p>
+<h5 id="23-choosing-an-option-and-buying">2.3 Choosing an option and buying</h5>
+<p>On the asset page, the purchase panel groups the available options (On-Prem / Downloadable) and licenses, each with its price and billing cycle. Pick a quantity and click <strong>Add to Cart</strong> (or <strong>Login to Purchase</strong> if you haven't signed in yet).</p>
+<p><img alt="Purchase panel with license options and Add to Cart button" src="../images/Marketplace-40AddToCartButton.png" /></p>
+<h5 id="24-cart-and-checkout">2.4 Cart and checkout</h5>
+<ol>
+<li>If you're buying an <strong>On-Premise</strong> asset, go to <strong>GitHub Access</strong> first and enter your GitHub username, then click <strong>Update</strong>. This is required before checkout — access to on-premise assets is granted to this GitHub user, and changing it later only affects future purchases, not ones you've already made.</li>
+</ol>
+<p><img alt="GitHub Access page with GitHub Username field and Update button" src="../images/Marketplace-68GithubUsernameSetup.png" /></p>
+<ol>
+<li>Go to your <strong>Cart</strong> to review items.</li>
+</ol>
+<p><img alt="Cart page with items and Order Summary" src="../images/Marketplace-41CartPage.png" /></p>
+<ol>
+<li>Click <strong>Checkout</strong>, then confirm by clicking <strong>Proceed to Payment</strong> in the pop-up.</li>
+</ol>
+<p><img alt="Checkout confirmation dialog" src="../images/Marketplace-42PaymentConfirmationDialog.png" /></p>
+<ol>
+<li>You'll be taken to a secure payment page to complete your purchase, then brought back to a <strong>Payment successful!</strong> confirmation page.</li>
+</ol>
+<p><img alt="Secure payment page" src="../images/Marketplace-43PaymentPage.png" />
+   <img alt="Payment successful confirmation page" src="../images/Marketplace-44PaymentSuccessful.png" /></p>
+<h5 id="25-accessing-your-purchases">2.5 Accessing your purchases</h5>
+<p>Go to <strong>Purchased</strong> to see your library of purchased assets:
+- <strong>On-Prem assets</strong> are installed via your local Containerisation module, which picks up the purchased module's charts from your organisation's monitored GitHub repository.
+- <strong>Downloadable assets</strong> are simpler — just click the <strong>Download</strong> button. The file downloads directly to your computer as a ZIP, ready to unpack and use.</p>
+<p>You can also leave a review for a purchased asset from this page.</p>
+<p><img alt="Purchased Assets page for an on-premise asset" src="../images/Marketplace-45Purchases.png" />
+<img alt="Purchased Assets page with Download button for a downloadable asset" src="../images/Marketplace-46DownloadButton.png" /></p>
+<h5 id="26-getting-help-raising-a-support-ticket-dev-connect">2.6 Getting help / raising a support ticket (Dev Connect)</h5>
+<p>Go to <strong>Issues</strong> and click <strong>Open New Issue</strong> to report a problem with something you've purchased. Choose an issue type and priority, then click <strong>Create Issue</strong>. Once created, your issue appears in the Issues list where you can open it at any time to follow its progress as the seller responds via Dev Connect, and track its status there or via the notification bell.</p>
+<p><img alt="Issues list with &quot;Open New Issue&quot; button" src="../images/Marketplace-47Issuespage.png" />
+<img alt="Open New Issue form" src="../images/Marketplace-48CreateNewIssue.png" />
+<img alt="Issue detail with developer reply, tracked from the buyer's side" src="../images/Marketplace-53BuyerTrackProgress.png" /></p>
+<h5 id="27-rating-and-reviewing-a-purchased-asset">2.7 Rating and reviewing a purchased asset</h5>
+<ol>
+<li>Go to <strong>Purchased</strong>, find the asset, and click <strong>Add review</strong> (or <strong>Edit review</strong> if you've already left one for that asset). Choose a star rating from 1 to 5 and, optionally, write a comment about your experience, then submit.</li>
+</ol>
+<p><img alt="Your Review dialog with star rating and comment box" src="../images/Marketplace-64BuyerReview.png" /></p>
+<ol>
+<li>Your rating updates the asset's average rating, shown as a star badge next to it in the storefront catalog.</li>
+</ol>
+<p><img alt="Star ratings shown on asset cards in the storefront catalog" src="../images/Marketplace-65RatingsOnPublicStorefront.png" /></p>
+<ol>
+<li>The asset's detail page shows a <strong>Buyer Reviews</strong> summary with the average rating and the most recent review.</li>
+</ol>
+<p><img alt="Buyer Reviews summary with average rating and recent review on the asset detail page" src="../images/Marketplace-66RatingsOnDetailPage.png" /></p>
+<ol>
+<li>Click <strong>View all</strong> to see every review for that asset on its own dedicated reviews page.</li>
+</ol>
+<p><img alt="Dedicated Buyer Reviews page listing all reviews for an asset" src="../images/Marketplace-67ViewAllRating.png" /></p>
+<hr />
+<h4 id="3-admin-guide">3. Admin Guide</h4>
+<p>Admins have their own dashboard, which includes everything available to sellers plus tools for managing the whole marketplace.</p>
+<h5 id="32-platform-wide-dashboard">3.2 Platform-wide dashboard</h5>
+<p>The Dashboard has an extra <strong>Admin</strong> tab showing marketplace-wide analytics: catalog spread, category coverage, monthly purchases by year, purchase summaries, and rankings by organization.</p>
+<p><img alt="Admin dashboard tab with platform-wide analytics" src="../images/Marketplace-55AdminDashboard.png" /></p>
+<h5 id="33-managing-all-assets">3.3 Managing all assets</h5>
+<p><strong>Assets → All Assets</strong> gives admins visibility into every asset on the marketplace, not just their own.</p>
+<p><img alt="Admin &quot;All Assets&quot; page listing marketplace-wide assets" src="../images/Marketplace-56AdminAllAssets.png" /></p>
+<h5 id="34-managing-catalog-settings">3.4 Managing catalog settings</h5>
+<p>Use the following pages to manage the shared options that sellers choose from when listing an asset — each has a simple add/edit/delete screen:</p>
+<ul>
+<li><strong>Category</strong></li>
+<li><strong>Currency</strong></li>
+<li><strong>Asset Types</strong></li>
+<li><strong>Tags</strong></li>
+<li><strong>Deployment Types</strong></li>
+<li><strong>License Types</strong></li>
+</ul>
+<p><img alt="Category management page with category tree" src="../images/Marketplace-57AdminCategory.png" /></p>
+<h5 id="36-other-admin-capabilities">3.6 Other admin capabilities</h5>
+<p>Admins also have access to Purchased Assets, Cart, and GitHub Access pages, which work the same way as described in the Buyer and Seller guides above, but for the admin's own account.</p>
+<h3 id="dash-button_2">Dash Button</h3>
+<p>The Dash Button provides a convenient way for users to navigate between installed modules by displaying a pop-up dialog containing the list of available modules. In the latest version, Dash Button management is integrated into the Portal Dashboard, allowing administrators to update the default configuration easily without reinstalling or manually modifying the existing setup.</p>
+<p>First you click on the dash button, typically in the top right of the navigation bar and the main dialog is displayed which contains </p>
+<ul>
+<li>Info on the current user logged in</li>
+<li>A list of pre-defined modules to be displayed in this main dialog: this list is defined in the portal-api backend and can vary from Global to Local Portal</li>
+<li>The Main list which contains a link back to the Portal, the Logout button and the Modules link that displays a second pop-up dialog with the list of modules that the user has available in the Global Portal or the IDT</li>
+</ul>
+<p>The next figure shows an example of the main pop-up dialog of the Dash Button in the Global Portal</p>
+<p><img alt="Portal-DashButton" src="../images/Portal-dashbutton.png" /></p>
+<p>When clicking on the Modules icon, the second pop-up dialog with the list of available modules is displayed. The next figure shows and example of the Modules pop-up dialog of the Dash Button in the Local IDT Portal.</p>
+<p><img alt="Portal-DashButtonModules" src="../images/Portal-dashbuttonmodules.JPG" /> </p>
+<h2 id="other-information"><strong>Other Information</strong></h2>
+<p>No other information at the moment for Portal</p>
+<h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
+<p>To Be Done</p>
+<h2 id="additional-links"><strong>Additional Links</strong></h2>
+<p>Video <a href="https://youtube.com/portal">https://youtube.com/portal</a></p>
+<p>Portal Repository <a href="https://github.com/ds2-eu/portal">https://github.com/ds2-eu/portal</a> (Private Link for Project Members)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
