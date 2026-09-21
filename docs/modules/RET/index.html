@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1147,25 +1147,25 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-install" class="md-nav__link">
+    <nav class="md-nav" aria-label="Top Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ds2-installation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How To Install
+        DS2 installation
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How To Install">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#running-the-module" class="md-nav__link">
+  <a href="#standalone-installation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Running the module
+        Standalone installation
       
     </span>
   </a>
@@ -1217,28 +1217,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#idt-portal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        IDT Portal
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connector-ui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Connector UI
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#other-information" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1254,6 +1232,17 @@
     <span class="md-ellipsis">
       
         OpenApiSpec
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video
       
     </span>
   </a>
@@ -1450,25 +1439,25 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-install" class="md-nav__link">
+    <nav class="md-nav" aria-label="Top Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ds2-installation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How To Install
+        DS2 installation
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How To Install">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#running-the-module" class="md-nav__link">
+  <a href="#standalone-installation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Running the module
+        Standalone installation
       
     </span>
   </a>
@@ -1520,28 +1509,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#idt-portal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        IDT Portal
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connector-ui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Connector UI
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#other-information" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1557,6 +1524,17 @@
     <span class="md-ellipsis">
       
         OpenApiSpec
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video
       
     </span>
   </a>
@@ -1614,7 +1592,7 @@
 <h3 id="description">Description</h3>
 <p>Data offered by a data provider may be either a fix set of data, or, more typically for large sets of data, a slice extracted from a larger set of data, selectable through parameters such as a time window, or the ID of a specific entity.  While in the former case the creation of the REST call to obtain the data is straightforward, the latter case can be challenging, especially if special formatting of the request parameters – such as creating timestamp in a given RFC format – is needed.  Additionally, the data in the data offering may not conform to the requirements of the data requester (format, data field names, units etc.).  Both of these cases can benefit from technical features to allow a data consumer to obtain and use data, which in the worst case will prevent non-technical users from taking advantage of the data space concept.</p>
 <p>The Data Retrieval module addresses both of these issues through the use of a machine learning Large Language Model (LLM).  Using an OpenAPI spec for the Provider data (obtained through the Catalogue), the user is guided to enter whatever request parameters are required by the REST call to the provider.  The LLM is supplemented with the relevant portions of the OpenAPI spec and will compose the correct REST call, automatically formatting the input parameters to conform to the requirements of the spec.  The REST command can then be automatically executed from the Data Retrieval GUI.</p>
-<p>Optionally, to supply the consumer with data in the expected format, a data schema for the target must be supplied.  The OpenAI spec supplies the data schema for the source data.  Additionally, the consumer will require a library of various commonly required transformations, such as changing column names.  Once again, LLM RAG technology is used, supplying the LLM with the source and destination schemas, as well as a description of the functions in the transformation library.  The LLM is then able to determine what transformations are required on the source data, and the Data Retrieval module then automatically adds to the data acquisition pipeline the required transformations on the data.  Optionally, a target application can be specified, and the Data Retrieval module will automatically add this to its pipeline and execute the target application with the obtained and transformed data.</p>
+<p>Optionally, to supply the consumer with data in the expected format, a data schema for the target must be supplied.  The OpenAPI spec supplies the data schema for the source data.  Additionally, the consumer will require a library of various commonly required transformations, such as changing column names.  Once again, LLM RAG technology is used, supplying the LLM with the source and destination schemas, as well as a description of the functions in the transformation library.  The LLM is then able to determine what transformations are required on the source data, and the Data Retrieval module then automatically adds to the data acquisition pipeline the required transformations on the data.  Optionally, a target application can be specified, and the Data Retrieval module will automatically add this to its pipeline and execute the target application with the obtained and transformed data.</p>
 <p>Function generation (i.e. the creation of the REST call) works without any errors for use case data sets that take parameters.  In the GreenDeal use case, for example, the module will correctly create timestamps entered in natural language to the required RFC 3339 format. Similarly, the selection of a transformation routine from the transformation library works properly for our test.</p>
 <p>More experimentation is required, however with a larger number of required transformations from actual user requirements.</p>
 <h2 id="architecture"><strong>Architecture</strong></h2>
@@ -1631,8 +1609,8 @@
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
 <p>The picture below represents how RET guides the user through the parameter input process:
 <img alt="DS2 RET Basic GUI" src="../images/screenshot_file.png" /></p>
-<p>The following picture shows the result of executing the RET, requesting transformations and application execution.
-<img alt="DS2 RET Graph GUI" src="../images/screenshot_graph.png" /></p>
+<p>The following picture shows the result of executing the RET when run from IDT marketplace with dash button
+<img alt="DS2 RET Screenshots" src="../images/ret_UI.png" /></p>
 <h2 id="commercial-information"><strong>Commercial Information</strong></h2>
 <table>
 <thead>
@@ -1646,7 +1624,7 @@
 <tr>
 <td>IBM</td>
 <td>Consortium Confidential</td>
-<td>TBD</td>
+<td>Consortium Confidential</td>
 </tr>
 </tbody>
 </table>
@@ -1668,16 +1646,76 @@
 <p>Automatic injection of API token into the composed REST call.</p>
 </li>
 </ol>
-<h2 id="how-to-install"><strong>How To Install</strong></h2>
+<h3 id="ds2-installation">DS2 installation</h3>
+<p>In order to run the RET module from DS2 marketplace, the postgres database needs to be preinstalled and exposed to the DS2 IDT docker cotainer.
+The first action needed to install the module is to acquire the module from the Marketplace.
+Then from the Containerisation UI: 
+1. Refresh the Containerisation DS2 repository
+2. Navigate to available modules section
+3. Click on the RET module 
+4. Click on Install button 
+5. Click on Next-Apps configurations button 
+6. Configure the required env variables below:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Example value</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LLM_MODEL_ID</td>
+<td>"openai/gpt-oss-120b"</td>
+<td>LLM model ID</td>
+</tr>
+<tr>
+<td>LLM_MODEL_NAME</td>
+<td>"openai/gpt-oss-120b"</td>
+<td>LLM model name</td>
+</tr>
+<tr>
+<td>LLM_BASE_URL</td>
+<td>"https://api.groq.com/openai/v1"</td>
+<td>openai API LLM base URL</td>
+</tr>
+<tr>
+<td>loglevel</td>
+<td>"ERROR"</td>
+<td>standard docker log level reporting</td>
+</tr>
+<tr>
+<td>LLM_APIKEY</td>
+<td>"some hash code "</td>
+<td>created together with you account related to your LLM provider configured in LLM_BASE_URL</td>
+</tr>
+<tr>
+<td>DATA_APIKEY</td>
+<td>"some hash code "</td>
+<td>data api key (such as DADS token)</td>
+</tr>
+<tr>
+<td>OUTPUT_PATH</td>
+<td>"./output_folder"</td>
+<td>the output path to save files</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Click on Install Module button </li>
+<li>Navigate to the Installed Modules </li>
+<li>When RET module is running, click on the Open Module button to navigate to the RET module or navigate via Dash Button</li>
+</ol>
+<h3 id="standalone-installation">Standalone installation</h3>
 <p>Clone this git module.  </p>
 <p>In order to run the RET module, the correct python environment needs to be created.  It is recommended that you create a virtual environment as follows:</p>
 <ul>
 <li>python -m venv [name]  where "name" will be the name of the virtual environment, for example, "venv".</li>
 <li>Activate the virtual environment: On Mac or Linux this will be: <code>source &lt;name&gt;/bin/activate</code>, where the value of "name" is from the previous step.</li>
-<li>Install inside the virtual environment the required modules: <code>pip install -r requirements.txt</code></li>
+<li>Install inside the virtual environment the required modules: <code>pip install -r requirements.txt</code>
+To run the local GUI version:</li>
 </ul>
-<h3 id="running-the-module">Running the module</h3>
-<p>To run the local GUI version:</p>
 <p>Run the RET module as: <code>python local_gui/code/data_discovery_main.py</code> with the command line options described in the following table:</p>
 <table>
 <thead>
@@ -1840,16 +1878,14 @@ If using Rancher Desktop, the mounted file system on the local host must be unde
 home directory</p>
 <p>If using Docker Desktop, in Docker Desktop go to: Settings → Resources → File Sharing and
 add the path to the local directory to be mounted.</p>
-<h2 id="idt-portal">IDT Portal</h2>
-<p>TBD</p>
-<h2 id="connector-ui">Connector UI</h2>
-<p>TBD</p>
 <h2 id="other-information">Other Information</h2>
-<p>N/A</p>
+<p>No other information</p>
 <h2 id="openapispec">OpenApiSpec</h2>
 <p>N/A</p>
-<h2 id="additional-links">Additional Links</h2>
-<p>N/A</p>
+<h2 id="video">Video</h2>
+<p>https://vttgroup.sharepoint.com/sites/DS2/_layouts/15/stream.aspx?id=%2Fsites%2FDS2%2FShared%20Documents%2FGeneral%2FGeneral%20Technical%2FM30%20Videos%2FM30%20Module%20Video%20Final%20for%20TM%2DIM%20Review%2FDS2%20RET%20Final%20%2D%20v1%2E1%2Emp4&amp;referrer=StreamWebApp%2EWeb&amp;referrerScenario=AddressBarCopied%2Eview%2E16e30f3b%2Dc6f7%2D4875%2D86a4%2Dd6fe69f45885</p>
+<h2 id="additional-links"><strong>Additional Links</strong></h2>
+<p>Helm https://helm.sh/docs/topics/charts</p>
 
 
 
@@ -1902,7 +1938,7 @@ add the path to the local directory to be mounted.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

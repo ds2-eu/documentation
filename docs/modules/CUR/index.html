@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -630,10 +630,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#running-the-cur-module" class="md-nav__link">
+  <a href="#ds2-installation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Running the CUR module
+        DS2 installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standalone-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standalone installation
       
     </span>
   </a>
@@ -711,6 +722,17 @@
     <span class="md-ellipsis">
       
         OpenAPI Specification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video
       
     </span>
   </a>
@@ -1510,10 +1532,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#running-the-cur-module" class="md-nav__link">
+  <a href="#ds2-installation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Running the CUR module
+        DS2 installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standalone-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standalone installation
       
     </span>
   </a>
@@ -1598,6 +1631,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#additional-links" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1667,8 +1711,18 @@ In particular, this latter component is composed of a number of stages which inc
 </ul>
 <p>Within the above stages, there are a number of substages such as RAG retrieval, vector store population, prompt creation etc.</p>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
+<p>The following is a diagram of internal components logic.
+<img alt="DS2 CUR Screenshots" src="../images/system.png" /></p>
 <p>The following shows how a natural language query asking about pollution levels in the vicinity of the monitoring station, "MS Rakičan" can be executed.
 <img alt="DS2 CUR Screenshots" src="../images/screenshot_sequence.gif" /></p>
+<p>The following shows how a natural language query can use selected map area.
+<img alt="DS2 CUR Screenshots" src="../images/sql_selection.png" /></p>
+<p>The following shows how a geospatial results is loaded as map area.
+<img alt="DS2 CUR Screenshots" src="../images/show_geo.png" /></p>
+<p>The following shows how a geospatial results time series is loaded as map area.
+<img alt="DS2 CUR Screenshots" src="../images/time_series.png" /></p>
+<p>The following shows how a overpassQL can be executed.
+<img alt="DS2 CUR Screenshots" src="../images/overpass.png" /></p>
 <h2 id="commercial-information"><strong>Commercial Information</strong></h2>
 <table>
 <thead>
@@ -1749,7 +1803,89 @@ To preprocess, first run <code>python preprocess_greek_usecase.py --config_file 
 <ol>
 <li>For testing purpose, a time window of one year has been selected, from 2024-11-08 to 2025-11-09.</li>
 </ol>
-<h3 id="running-the-cur-module">Running the CUR module</h3>
+<h3 id="ds2-installation">DS2 installation</h3>
+<p>In order to run the CUR module from DS2 marketplace, the postgres database needs to be preinstalled and exposed to the DS2 IDT docker cotainer.
+The first action needed to install the module is to acquire the module from the Marketplac. Then from the Containerisation UI: 
+1. Refresh the Containerisation DS2 repository
+2. Navigate to available modules section
+3. Click on the CUR module 
+4. Click on Install button 
+5. Click on Next-Apps configurations button 
+6. Configure the required env variables,
+You will have to configure the db host and port in the helm chart values along with the other variables below:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Example value</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FED_PREFIX</td>
+<td>"Slovenia"</td>
+<td>The use case / Country name {Slovenia, Romania, Greece} db name should be db2_FED_PREFIX</td>
+</tr>
+<tr>
+<td>LLM_MODEL_ID</td>
+<td>"openai/gpt-oss-120b"</td>
+<td>LLM model ID</td>
+</tr>
+<tr>
+<td>LLM_MODEL_NAME</td>
+<td>"openai/gpt-oss-120b"</td>
+<td>LLM model name</td>
+</tr>
+<tr>
+<td>LLM_BASE_URL</td>
+<td>"https://api.groq.com/openai/v1"</td>
+<td>openai API LLM base URL</td>
+</tr>
+<tr>
+<td>loglevel</td>
+<td>"ERROR"</td>
+<td>standard docker log level reporting</td>
+</tr>
+<tr>
+<td>LLM_APIKEY</td>
+<td>"some hash code "</td>
+<td>created together with you account related to your LLM provider configured in LLM_BASE_URL</td>
+</tr>
+<tr>
+<td>DS2_DB_HOST</td>
+<td>"localhost"</td>
+<td>postgres host</td>
+</tr>
+<tr>
+<td>DS2_DB_PORT</td>
+<td>"5432"</td>
+<td>postgres port</td>
+</tr>
+<tr>
+<td>DS2_DB_USERNAME</td>
+<td>"admin"</td>
+<td>postgres username</td>
+</tr>
+<tr>
+<td>DS2_DB_PASSWORD</td>
+<td>"xxxx"</td>
+<td>postgres password</td>
+</tr>
+<tr>
+<td>ENABLE_REASONING_TOKENS</td>
+<td>"False"</td>
+<td>In case your LLM provider support responses API and is reasoning model this can set to True and expose resoining tokens out in UI</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Click on Install Module button </li>
+<li>Navigate to the Installed Modules </li>
+<li>When CUR module is running, click on the Open Module button to navigate to the CUR module or navigate via Dash Button</li>
+</ol>
+<p><img alt="DS2 CUR Screenshots" src="../images/marketplace.png" /></p>
+<h3 id="standalone-installation">Standalone installation</h3>
 <p>In order to run the CUR module, the correct python environment needs to be created.  It is recommended that you create a virtual environment as follows (if not done in the the previous section):</p>
 <ul>
 <li>python -m venv [name]  where "name" will be the name of the virtual environment, for example, "venv".</li>
@@ -1797,8 +1933,10 @@ To preprocess, first run <code>python preprocess_greek_usecase.py --config_file 
 <p>No other information</p>
 <h2 id="openapi-specification">OpenAPI Specification</h2>
 <p>N/A</p>
+<h2 id="video">Video</h2>
+<p>https://urldefense.proofpoint.com/v2/url?u=https-3A__vttgroup.sharepoint.com_sites_DS2_-5Flayouts_15_stream.aspx-3Fid-3D-252Fsites-252FDS2-252FShared-2520Documents-252FGeneral-252FGeneral-2520Technical-252FM30-2520Videos-252FM30-2520Module-2520Video-2520Final-2520for-2520TM-252DIM-2520Review-252FDS2-2520CUR-2520Final-2520-252D-2520v1-252E1-252Emp4-26referrer-3DStreamWebApp-252EWeb-26referrerScenario-3DAddressBarCopied-252Eview-252Ebe4e0b3c-252D540e-252D4fb2-252Da190-252D6b232a8247f2&amp;d=DwMFaQ&amp;c=BSDicqBQBDjDI9RkVyTcHQ&amp;r=_K8j4RKzuLgtPIFSxWGxvPdyKRn4V4TwoqNrXrlSc4o&amp;m=K302q8akHIIO5kTNnu4Zk3zb2lAJ0MGpTsekmfKyl33Ny0K6T4ScXgHcalFmL20d&amp;s=3gVbsfUDPqePvdGtkNj79WTrXbnUsZ5JYjhOsTyXZug&amp;e=</p>
 <h2 id="additional-links"><strong>Additional Links</strong></h2>
-<p>N/A</p>
+<p>Helm https://helm.sh/docs/topics/charts</p>
 
 
 
@@ -1851,7 +1989,7 @@ To preprocess, first run <code>python preprocess_greek_usecase.py --config_file 
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

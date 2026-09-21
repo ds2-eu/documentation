@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -875,28 +875,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#run-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Run container
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#running-e2c-stream-component" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Running E2C stream component
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -957,17 +935,6 @@
     <span class="md-ellipsis">
       
         Assign configurations to Workers
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optional-define-data-assets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Optional: Define Data Assets
       
     </span>
   </a>
@@ -1591,28 +1558,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#run-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Run container
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#running-e2c-stream-component" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Running E2C stream component
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1673,17 +1618,6 @@
     <span class="md-ellipsis">
       
         Assign configurations to Workers
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optional-define-data-assets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Optional: Define Data Assets
       
     </span>
   </a>
@@ -1857,30 +1791,14 @@ to the endpoints that are to be streamed as well as network access to the cloud 
 </ol>
 <h3 id="detailed-steps">Detailed steps</h3>
 <h4 id="1-idt-based-installation">1. IDT based installation</h4>
-<p>TODO - needs to be documented</p>
+<p>You can purchase and install DVM in IDT. Please follow the IDT documentation for buying and installing modules.</p>
 <h4 id="2-running-containers-separately">2. Running containers separately</h4>
-<p>TODO - needs to be updated</p>
-<h4 id="run-container">Run container</h4>
 <p>Clone E2C Git repository. <code>ds2-e2c/docker-compose.yaml</code> runs three containers.
 One contains an MQTT-Broker, one a PostgreSQL and one the E2C Configuration Management.</p>
 <p>Start them by executing
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>--build
-</span></code></pre></div></p>
-<h4 id="running-e2c-stream-component">Running E2C stream component</h4>
-<p>Currently, E2C stream component is to be started manually.</p>
-<p>To start the E2C streamer, switch into the <code>tedge-container</code> by running:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>tedge-container<span class="w"> </span>bash
 </span></code></pre></div>
-<p>Once inside the container, the E2C streamer can be started using the following command:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/venv/bin/python3<span class="w"> </span>/app/main.py<span class="w"> </span>--config<span class="w"> </span>config.json
-</span></code></pre></div>
-<p>The parameter <code>--config config.json</code> is optional and allows to pass an existing configuration file, while the streamer
-can be configured entirely using the E2C UI.</p>
-<p>Once the E2C streamer is running, it's configuration can be retrieved and updated by E2C UI.
-To start the UI, clone the UI Git repository path 'ds2-e2c-stream' and execute
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-</span></code></pre></div></p>
-<p>E2C streamer is now ready to stream data to the configured cloud platform.</p>
+Open the E2C configuration management in your browser as configured in the docker-compose file.</p>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
 <p>Open the application in your browser.</p>
 <p>To start using E2C, follow these simple steps:
@@ -1911,8 +1829,6 @@ cloud platform of your choice.</p>
 For each worker, you can select the configuration and the target cloud platform. Using the 
 toggle switch, you can pause and resume worker.</p>
 <p>Congratulations, the data is now being streamed to the configured cloud.</p>
-<h3 id="optional-define-data-assets">Optional: Define Data Assets</h3>
-<p>TODO.</p>
 <h2 id="other-information"><strong>Other Information</strong></h2>
 <p>No other information at the moment for E2C.</p>
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
@@ -1971,7 +1887,7 @@ toggle switch, you can pause and resume worker.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

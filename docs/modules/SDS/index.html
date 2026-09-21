@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1542,8 +1542,8 @@
 </tbody>
 </table>
 <h2 id="general-description"><strong>General Description</strong></h2>
-<p>This module supports the identification of risks in data management through a comprehensive analysis of the user system. It has a front-end for the user to interact with and a back end with a rich knowledge base where the risks are calculated. It is based on ISO 27005 methodology , and it includes concepts associated with data sovereignty.
-In an ideal scenario the analysis should be performed including the data provider and data consumer together, but this is possible only in limited context because it requires the sharing of sensitive information. The tool will therefore have an additional module where reports about risks created locally to a user can be analysed by the counterpart in order to take an informed decision about the data sharing</p>
+<p>This module supports the identification of risks in data management through a comprehensive analysis of the user system. It has a front-end for the user to interact with and a back end with a rich knowledge base where the risks are calculated. It is based on ISO 27005 methodology, and it includes concepts associated with data sovereignty.
+In an ideal scenario the analysis should be performed including the data provider and data consumer together, but this is possible only in limited context because it requires the sharing of sensitive information. The tool therefore includes Sovereignty Decision Support (SDS) client functionality where reports about risks created locally by each party can be compared to support an informed decision about data sharing.</p>
 <h2 id="architecture"><strong>Architecture</strong></h2>
 <p>The figure below represents the module fit into the DS-DS environment.
 <img alt="Sovereignty-Decision-Support-System" src="../images/SDS_Architecture.png" /></p>
@@ -1553,9 +1553,9 @@ In an ideal scenario the analysis should be performed including the data provide
 <p>This module has the following subcomponent and other functions (most of them appear two times in a symmetric fashion in the figure but are discussed only once):
 DSS Core:
 * GUI (System Model Creation): This is the graphical interface (front-end) where a user can describe its system in a canvas, provide all the necessary information (a.k.a. system modelling) and perform a risk assessment. For the tier 1 standard connections (Portal etc) it can be perceived as the entry point. This is currently UOS background and will involve minimum development except for a DS2 compliant UI splash page and Dash button integration.
-* Security Layer: This module oversees managing user authentication and authorization. It is based on Keycloak and will interface with the Identity provider to enable Single Sign On functionalities. The roles of the user will be managed locally. This is currently UOS background and will see little development in DS2, mainly devoted to integrating the security layer with the other identity services in DS2. 
+* Security Layer: This module oversees managing user authentication and authorization. It is based on Keycloak and will interface with the Identity provider to enable Single Sign On functionalities. The roles of the user will be managed locally. This is currently UOS background and will see little development in DS2, mainly devoted to integrating the security layer with the other identity services in DS2.
 * Risk Assessment Engine: This back-end module performs the risk assessment based on the provided system model and exploiting the DS2 risk Knowledge Base. This engine is currently UOS background and will see little development, mainly related to support new concepts defined in the Knowledge Base. This module is also available via a REST API.
-* DS2 Risk Knowledge Base: This is the knowledge base (KB) underpinning the risk assessment. In the knowledge initialization phase, it will be improved with risks associated to the data sharing and sovereignty aspects. It will also be used by the DARC module for providing the support to configuration feature. 
+* DS2 Risk Knowledge Base: This is the knowledge base (KB) underpinning the risk assessment. In the knowledge initialization phase, it will be improved with risks associated to the data sharing and sovereignty aspects. It will also be used by the DARC module for providing the support to configuration feature.
 * System Model Repository: This is the repository hosting the saved system models and the local users. This is currently UOS background and no foreseen development in DS2.
 * Reporting Module: One of the outcomes of DS2 will be the definition of the set of information to be shared with the counterpart to establish mutual trust. The reporting module extracts such info from the risk assessment and provide them to the end-users, so he can share them. Development will include automatic content extraction, formatting, and adherence to established formats (e.g. cyber-essentials). A reporting module already exists in Spyderisk, but it will be improved and enhanced during DS2.</p>
 <p>SDS Analysis
@@ -1565,13 +1565,20 @@ DSS Core:
 * The “Remote Interface for risk assessment” allows the execution of risk assessment calculation via remote interaction, without the use of the GUI. It is provided by the system, but currently not foreseen to be used at the by other components.
 * The “Remote User Interface to analyse risk report” allows the execution of the remote execution of the risk report analysis. It is provided by the system, but not foreseen to be used by other components.
 * The “Interface to the KB” provides remote access to the KB and will be used by the DARC module to query the KB.</p>
-<p>External Components 
+<p>External Components
 * DARC. This is the automatic discovery and confirmation module.
 * Identity Provider. This is the Identity provider used by the DSS internal security layer to get user identities.
 * Tier1. Service Stack for Marketplace and deployment and API: The full stack will be implemented as generically described elsewhere in this document. Exceptions: The Platform will only be needed for inter-participant service orchestrations if used
-* System User. This represents a system user that might want to perform risk assessment via a remote interface, rather than via GUI.  </p>
+* System User. This represents a system user that might want to perform risk assessment via a remote interface, rather than via GUI.</p>
 <h2 id="screenshots"><strong>Screenshots</strong></h2>
 <p><img alt="Sovereignty-Decision-Support-System" src="../images/Spyderisk_DS2_Screenshot.png" /></p>
+<p>The screenshots show the main SDS client views and report outputs:
+<img alt="SDS Reporting Page" src="../images/SDS_Reporting_Page.png" />
+* The SDS reporting page, where users can upload two generated reports and start the comparison workflow.
+<img alt="SDS Compliance Report" src="../images/SDS_Compliance_Report.png" />
+* An example compliance report produced from a Spyderisk risk assessment, showing the type of evidence that can be shared between data-sharing parties.
+* <img alt="SDS Comparison Output" src="../images/SDS_Comparison_Output.png" />
+* An example comparison output, summarising the differences between two reports and presenting the result as a decision-support view.</p>
 <h2 id="commercial-information"><strong>Commercial Information</strong></h2>
 <p>Table with the organisation, license nature (Open Source, Commercial ... ) and the license. Replace with the values of your module.</p>
 <table>
@@ -1593,28 +1600,64 @@ DSS Core:
 <h2 id="top-features"><strong>Top Features</strong></h2>
 <ol>
 <li>Risk Assessment</li>
-<li>currently available at https://github.com/Spyderisk</li>
-<li>Risk report Comparison.
-   currently under development and not yet available. </li>
+<li>Available through the configured Spyderisk DS2 instance.</li>
+<li>Exposed through the SDS client with DS2 Dash Button integration.</li>
+<li>Risk report comparison</li>
+<li>Available through the SDS reporting page.</li>
+<li>Compares two generated risk/compliance reports and provides a traffic-light decision-support summary.</li>
+<li>Supports downloading the comparison output as a PDF report.</li>
+<li>DS2 deployment integration</li>
+<li>Packaged as an on-premise DS2 module using a Docker image and Helm chart for deployment through IDT Containerisation.</li>
+<li>Supports deployment-time configuration of the Spyderisk service URL and DS2 Portal/Dash Button settings.</li>
 </ol>
 <h2 id="how-to-install"><strong>How To Install</strong></h2>
-<p>DS2 version of Spyderisk is maintend as an instance of the SPyderisk project that is available with all the instruction in https://github.com/Spyderisk</p>
+<p>Below are the main information. For developer and deployer configuration details, including environment variables, Dash Button setup, Spyderisk access requirements, Marketplace packaging, and operational checks, see <a href="./DEVELOPER-INSTRUCTIONS.md">SDS Developer and Deployer Instructions</a>.</p>
+<p>Sovereignty Decision Support (SDS) is delivered as a lightweight DS2 client module. The SDS client is packaged as a Docker image and Helm chart for on-premise deployment through the DS2 Marketplace and IDT Containerisation workflow.</p>
+<p>The Spyderisk risk assessment service is treated as an external service and is configured at deployment time. The current DS2 Spyderisk service endpoint is:
+https://ds2.it-innovation.soton.ac.uk/system-modeller/</p>
 <h3 id="requirements">Requirements</h3>
-<p>To be defined. </p>
+<ul>
+<li>Access to the DS2 Portal and Marketplace.</li>
+<li>A local IDT environment with the DS2 Containerisation module.</li>
+<li>Access to the SDS Marketplace asset.</li>
+<li>Network access from the deployed SDS client to the configured Spyderisk service.</li>
+<li>DS2 Dash Button access configured for the deployed SDS URL.</li>
+<li>For embedded Spyderisk access, the Spyderisk proxy must allow the SDS origin to frame the service.</li>
+</ul>
 <h3 id="software">Software</h3>
-<p>n/a</p>
+<ul>
+<li>SDS client Docker image: <code>sds:0.1.0</code></li>
+<li>SDS Helm chart: <code>sds</code>, version <code>0.1.1</code></li>
+<li>Spyderisk service: configured externally at deployment time</li>
+</ul>
 <h3 id="summary-of-installation-steps">Summary of installation steps</h3>
-<p>Currently offered as a service at https://ds2.it-innovation.soton.ac.uk/system-modeller/. </p>
-<p>To obtain a login write an email to sdm2d11@soton.ac.uk. </p>
+<ol>
+<li>Acquire the SDS asset from the DS2 Marketplace.</li>
+<li>Deploy the SDS on-premise asset through the local IDT Containerisation workflow.</li>
+<li>Configure the deployment values for:</li>
+<li><code>SPYDERISK_URL</code></li>
+<li><code>SPYDERISK_SSO_LOGIN_URL</code></li>
+<li><code>SSO_MODE</code></li>
+<li><code>PORTAL_API_URL</code></li>
+<li>Register the deployed SDS URL in the DS2 Portal so the Dash Button application-access check can authorise users.</li>
+<li>Coordinate the Spyderisk service/proxy configuration so the deployed SDS origin is allowed to embed Spyderisk.</li>
+</ol>
 <h3 id="detailed-steps">Detailed steps</h3>
-<p>The custom version for DS2 is still uneder development.
-The software is accessible at https://github.com/Spyderisk </p>
+<p>The SDS client is published as an on-premise DS2 Marketplace asset. The Marketplace package contains the Helm chart and Docker image archive used by the IDT Containerisation workflow.</p>
+<p>The current default Spyderisk endpoint is:</p>
+<p>https://ds2.it-innovation.soton.ac.uk/system-modeller/</p>
+<p>In operational deployment, the Dash Button should use DS2 Portal mode and the deployed SDS URL must be registered in the DS2 Portal organisation/application configuration. Local testing can use a temporary local URL, but production deployments should use the final stable SDS URL.</p>
+<p>Spyderisk itself remains externally hosted and separately operated. If it is shown inside the SDS iframe, its UoS proxy configuration must permit framing from the approved SDS origin.</p>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
 <ul>
 <li>Spyderisk online documentation: https://docs.spyderisk.org/system-modeller/latest/</li>
+<li>Open the SDS client from the deployed DS2/IDT URL.</li>
+<li>Use the Dash Button to authenticate through DS2.</li>
+<li>Use the Spyderisk page to access the configured Spyderisk service.</li>
+<li>Use the reporting page to upload and compare two generated risk/compliance reports.</li>
 </ul>
 <h2 id="other-information"><strong>Other Information</strong></h2>
-<p>n/a</p>
+<p>The SDS module is composed of a local SDS client and an externally configured Spyderisk risk assessment service. The SDS client includes the DS2 Dash Button, a Spyderisk access page, and a report comparison page. Report comparison uses information extracted from generated reports and does not require the end user to run scripts manually.</p>
 <h2 id="openapi-specification"><strong>OpenAPI Specification</strong></h2>
 <p>n/a</p>
 <h2 id="additional-links"><strong>Additional Links</strong></h2>
@@ -1671,7 +1714,7 @@ The software is accessible at https://github.com/Spyderisk </p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1160,6 +1160,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#helm-configure-the-local-lcat-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Helm: configure the local LCAT endpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1627,6 +1638,17 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helm-configure-the-local-lcat-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Helm: configure the local LCAT endpoint
+      
+    </span>
+  </a>
   
 </li>
         
@@ -2154,6 +2176,15 @@
 <li>Policy builder catalog: <code>GET http://localhost:8010/policy-builder/status</code></li>
 <li>UI: <code>http://localhost:8080</code></li>
 </ul>
+<h3 id="helm-configure-the-local-lcat-endpoint">Helm: configure the local LCAT endpoint</h3>
+<p>Chart version <code>1.0.9</code> passes the release name as <code>module.name</code> to all three component charts and exposes <code>pcrbackend.config.LCAT_BASE_URL_OVERRIDE</code> in deployment values. The default is the IDTA example URL (<code>https://localcatalogbackend.idta.ds2.icelab.cloud</code>). Other deployments must override it with their own local catalogue URL. An explicitly empty value preserves organisation-based URL derivation.</p>
+<p>For the xfarms deployment, supply these values:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">pcrbackend</span><span class="p">:</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">config</span><span class="p">:</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">LCAT_BASE_URL_OVERRIDE</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://localcatalogbackend.xfarms.ds2.icelab.cloud&quot;</span>
+</span></code></pre></div>
+<p>Use the full base URL, including <code>https://</code>, without an API route. PCR appends the publication routes. This setting takes precedence over organisation-based derivation and applies to provider offer publication and consumer credential creation performed by this PCR instance. Configure each deployment with its own local LCAT URL.</p>
+<p>Update the deployment values through the chart delivery process and ensure the backend pods restart with the new environment value. Then retry the failed LCAT synchronization. This chart-only change keeps the backend image and application code unchanged.</p>
 <h2 id="how-to-use"><strong>How To Use</strong></h2>
 <p>PCR is implemented and operational via the UI and API. Authenticate with a Keycloak JWT (Bearer token) unless using a public preview route or a read-only deployment.</p>
 <h3 id="global-vs-local-usage">Global vs local usage</h3>
@@ -2451,7 +2482,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
